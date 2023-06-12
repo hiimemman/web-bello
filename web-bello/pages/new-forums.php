@@ -167,6 +167,9 @@ content += `
                     <i class='bx bxs-like'></i>
                 </span>
             </div>
+            <div class="text-gray-500 dark:text-dark-txt">
+                <span>90 comments</span>
+            </div>
         </div>
     </div>
     <!-- END POST REACT -->
@@ -180,6 +183,10 @@ content += `
                     <button id="btnLike`+forum.id+`" onClick="likedButtonClicked(`+forum.id+`)">
                     <span class="text-sm font-semibold">Like</span>
                     </button>
+                </div>
+                <div class="w-1/3 flex space-x-2 justify-center items-center hover:bg-gray-100 dark:hover:bg-dark-third text-xl py-2 rounded-lg cursor-pointer text-gray-500 dark:text-dark-txt">
+                    <i class='bx bx-comment'></i>
+                    <span class="text-sm font-semibold">Comment</span>
                 </div>
         </div>
     </div>
