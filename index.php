@@ -83,7 +83,7 @@ if (isset($_SESSION['IDUSER'])) {
             <div class="mr-auto place-self-center lg:col-span-7">
                 <h1
                     class="landing-content max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
-                    Hello Welcome to Web-Bello!</h1>
+                    Welcome to Web-Bello!</h1>
                 <p class="landing-content max-w-2xl mb-6 font-medium text-white lg:mb-8 md:text-lg lg:text-xl dark:text-white">
                     The
                     ultimate hub for homeowners to stay connected and informed! With Web-Bello, you can easily connect
