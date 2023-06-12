@@ -51,7 +51,7 @@ if (!isset($_SESSION['IDUSER'])) {
 <div class="px-4 mt-4 shadow rounded-lg bg-white dark:bg-dark-second">
                 <div class="p-2 border-b border-gray-300 dark:border-dark-third flex space-x-4">
                 <!-- LIST POST -->
-                <h1 class="text-gray-500 dark:text-gray-400">This is result id<?php echo $_SESSION['IDUSER']; ?></h1>
+                <!-- <h1 class="text-gray-500 dark:text-gray-400">This is result id<?php //echo $_SESSION['IDUSER']; ?></h1> -->
                 <main class="px-6 sm:ml-64 h-auto" id="forumMain">
                 <!-- FORUM -->
 
