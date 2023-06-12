@@ -47,7 +47,7 @@ if (!isset($_SESSION['IDUSER'])) {
 </head>
 
 <body class="bg-white dark:bg-gray-900">
-
+    <div class="w-full lg:w-2/3 xl:w-2/5 pt-32 lg:pt-16 px-2">Hello</div>
 
 
 </body>
