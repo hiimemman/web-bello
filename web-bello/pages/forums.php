@@ -374,7 +374,8 @@ if (!isset($_SESSION['IDUSER'])) {
         <div class="flex items-center">
           <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
             <img class="mr-2 w-6 h-6 rounded-full" src="` + forum.image_url + `" alt="` + forum.editor_email + `">` + forum.editor_email + `
-          </p>
+            <img class="h-auto max-w-xs rounded-lg m-2 forum-image" src="${forum.image_url}" alt="image description">
+            </p>
           `+categoryBadge+`
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 mr-2">
