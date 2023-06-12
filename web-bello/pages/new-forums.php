@@ -47,7 +47,7 @@ if (!isset($_SESSION['IDUSER'])) {
 </style>
 </head>
 
-<body class="bg-white dark:bg-gray-900">
+<body class="bg-white dark:bg-gray-900 ml-64">
 <div class="px-4 mt-4 shadow rounded-lg bg-white dark:bg-dark-second">
                 
                 <!-- LIST POST -->
@@ -365,7 +365,7 @@ content += `
     <!-- LIST COMMENT -->
     <div class="py-2 px-4">
         <!-- COMMENT -->
-        <div class="flex space-x-2">
+        <div class="flex space-x-2" id="commentSection`+forum.id+`">
             <img src="./images/avt-5.jpg" alt="Profile picture" class="w-9 h-9 rounded-full">
             <div>
                 <div class="bg-gray-100 dark:bg-dark-third p-2 rounded-2xl text-sm">
