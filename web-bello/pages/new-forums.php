@@ -159,16 +159,16 @@ content += `
     <!-- END POST IMAGE -->
 
     <!-- POST REACT -->
-    <div class="px-4 py-2">
-        <div class="flex items-center justify-between">
-            <div class="flex flex-row-reverse items-center">
-                <span class="ml-2 text-gray-500 dark:text-dark-txt" id="likeCount`+forum.id+`"> `+forum.like_count+`</span>
-                <span class="rounded-full grid place-items-center text-2xl -ml-1 text-blue-800">
-                    <i class='bx bxs-like'></i>
-                </span>
-            </div>
+    <div class="px-4 py-2 flex justify-center">
+    <div class="flex items-center justify-between">
+        <div class="flex flex-row-reverse items-center">
+            <span class="ml-2 text-gray-500 dark:text-dark-txt" id="likeCount`+forum.id+`"> `+forum.like_count+`</span>
+            <span class="rounded-full grid place-items-center text-2xl -ml-1 text-blue-800">
+                <i class='bx bxs-like'></i>
+            </span>
         </div>
     </div>
+</div>
     <!-- END POST REACT -->
 
     <!-- POST ACTION -->
