@@ -164,7 +164,7 @@ content += `
             <div class="flex flex-row-reverse items-center">
                 <span class="ml-2 text-gray-500 dark:text-dark-txt" id="likeCount`+forum.id+`">👍 `+forum.like_count+`</span>
                 <span class="rounded-full grid place-items-center text-2xl -ml-1 text-red-800">
-                    <i class='bx bxs-angry'></i>
+                    <i class='bx bxs-like'></i>
                 </span>
                 <span class="rounded-full grid place-items-center text-2xl -ml-1 text-red-500">
                     <i class='bx bxs-heart-circle'></i>
