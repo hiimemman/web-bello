@@ -18,7 +18,7 @@
         // Send the data to the server
         $.ajax({
           type: "POST",
-          url: "../schedule/sched.php",
+          url: "../api/schedule/sched.php",
           data: { title: title, start_date: start_date, end_date: end_date },
           dataType: "json",
           success: function(response) {
