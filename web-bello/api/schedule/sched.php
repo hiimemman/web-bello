@@ -19,8 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Return the response as JSON
   echo json_encode($response);
+  exit(); // Add this line to stop further execution
 }
-
 
 // Fetch all events from the database
 $sql = "SELECT * FROM tbl_sched";
@@ -42,9 +42,10 @@ if (mysqli_num_rows($result) > 0) {
   }
 
   // Return the events as JSON response
+  header('Content-Type: application/json'); // Set the content type header
   echo json_encode($events);
 } else {
   // No events found
-  echo json_encode([]);
+  header('Content-Type: application/json'); // Set the content type header
+  echo json_encode([]); // Return an empty array as JSON response
 }
-?>
