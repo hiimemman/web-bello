@@ -49,16 +49,16 @@ if (!isset($_SESSION['IDUSER'])) {
 
 <body class="bg-white dark:bg-gray-900">
 <div class="px-4 mt-4 shadow rounded-lg bg-white dark:bg-dark-second">
-                <div class="p-2 border-b border-gray-300 dark:border-dark-third flex mr-auto space-x-4">
+                
                 <!-- LIST POST -->
-                <!-- <h1 class="text-gray-500 dark:text-gray-400">This is result id<?php //echo $_SESSION['IDUSER']; ?></h1> -->
+                
                 <main class="px-6 sm:ml-64 h-auto" id="forumMain">
                 <!-- FORUM -->
 
 
 
                 </main>            
-                <div>
+                
 
 <!-- POST -->
 <div class="shadow bg-white dark:bg-dark-second dark:text-dark-txt mt-4 rounded-lg">
