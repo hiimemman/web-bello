@@ -1,3 +1,29 @@
+<?php
+session_start(); //if there is no session then start session
+include_once("../connections/connection.php");
+$con = connection();
+if (!isset($_SESSION['IDUSER'])) {
+  header('Location: /web-bello/pages/user-login.php');
+  exit();
+} else {
+
+  $sql = mysqli_query($con, "SELECT * FROM `tbl_residents` WHERE `id` = {$_SESSION['IDUSER']}");
+
+  //store in result
+
+  $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
+
+  // Get the current URL
+  $url = $_SERVER['REQUEST_URI'];
+
+  // Extract the page name from the URL
+  $pageName = basename($url, '.php');
+
+  // Remove hyphens and replace them with spaces
+  $pageName = str_replace('-', ' ', $pageName);
+  $pageName = strtoupper($pageName);
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
