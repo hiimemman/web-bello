@@ -344,10 +344,6 @@ content += `
                     <i class='bx bx-happy-alt'></i>
                 </span>
             </div>
-            <div class="text-gray-500 dark:text-dark-txt">
-                <span>90 comments</span>
-                <span>66 Shares</span>
-            </div>
         </div>
     </div>
     <!-- END POST REACT -->
