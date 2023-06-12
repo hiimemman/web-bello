@@ -30,7 +30,7 @@ if (!isset($_SESSION['IDUSER'])) {
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- Style -->
   <link rel="stylesheet" href="css/style.css">
-  <title>Calendar #9</title>
+  <title>Community Schedule</title>
 </head>
 <body>
   <div class="content">
@@ -51,67 +51,11 @@ if (!isset($_SESSION['IDUSER'])) {
         plugins: [ 'interaction', 'dayGrid' ],
         defaultDate: '2023-06-12',
         editable: true,
-        eventLimit: true, // allow "more" link when too many events
-        events: [
-          {
-            title: 'All Day Event',
-            start: '2023-06-01'
-          },
-          {
-            title: 'Long Event',
-            start: '2023-06-07',
-            end: '2023-06-10'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2023-06-09T16:00:00'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2023-06-16T16:00:00'
-          },
-          {
-            title: 'Conference',
-            start: '2023-06-11',
-            end: '2023-06-13'
-          },
-          {
-            title: 'Meeting',
-            start: '2023-06-12T10:30:00',
-            end: '2023-06-12T12:30:00'
-          },
-          {
-            title: 'Lunch',
-            start: '2023-06-12T12:00:00'
-          },
-          {
-            title: 'Meeting',
-            start: '2023-06-12T14:30:00'
-          },
-          {
-            title: 'Happy Hour',
-            start: '2023-06-12T17:30:00'
-          },
-          {
-            title: 'Dinner',
-            start: '2023-06-12T20:00:00'
-          },
-          {
-            title: 'Birthday Party',
-            start: '2023-06-13T07:00:00'
-          },
-          {
-            title: 'Click for Google',
-            url: 'http://google.com/',
-            start: '2023-06-28'
-          }
-        ]
+        eventLimit: true, // allow "more" link when too many events,
+        events: 'get-events.php', // URL to fetch events from server
       });
       calendar.render();
     });
   </script>
-  <script src="js/main.js"></script>
 </body>
 </html>
