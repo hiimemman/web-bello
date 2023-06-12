@@ -58,8 +58,9 @@ if (!isset($_SESSION['IDUSER'])) {
           extraParams: {
             user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
           },
-          failure: function() {
-            alert('Failed to fetch events from the server.');
+          failure: function(xhr, status, error) {
+            console.log(xhr.responseText); // Print the error response
+            alert('Failed to fetch events from the server.'+failure);
           }
         }
       });
