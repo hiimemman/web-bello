@@ -369,34 +369,31 @@ if (!isset($_SESSION['IDUSER'])) {
             }
             content += `  <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mb-5">
   <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 mb-4">
-
-  <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
-    <footer class="flex justify-between items-center mb-2">
+    <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
+      <footer class="flex justify-between items-center mb-2">
         <div class="flex items-center">
-            <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                <img class="mr-2 w-6 h-6 rounded-full" src="${forum.image_url}" alt="${forum.editor_email}">
-                ${forum.editor_email}
-            </p>
-            ${categoryBadge}
+          <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+            <img class="mr-2 w-6 h-6 rounded-full" src="` + forum.image_url + `" alt="` + forum.editor_email + `">` + forum.editor_email + `
+          </p>
+          `+categoryBadge+`
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400 mr-2">
-            <time pubdate datetime="${forum.created_at}" title="${forum.created_at}">${forum.created_at}</time>
+          <time pubdate datetime="` + forum.created_at + `" title="` + forum.created_at + `">` + forum.created_at + `</time>
         </p>
-    </footer>
-</article>
+      </footer>
+    </article>
 
-<h2 class="text-gray-500 dark:text-gray-400"><strong>${forum.title}</strong></h2>
-<p class="text-gray-500 dark:text-gray-400">${forum.message_body}</p>
-<img class="h-auto max-w-xs rounded-lg m-2 forum-image" src="${forum.image_url}" alt="image description">
-
-<div class="flex items-center">
-    <button class="flex items-center px-3 py-2 bg-blue-500 text-white rounded-full focus:outline-none" id="btnLike${forum.id}" onClick="likedButtonClicked(${forum.id})">
+    <h2 class="text-gray-500 dark:text-gray-400"><strong>` + forum.title + `</strong></h2>
+    <p class="text-gray-500 dark:text-gray-400">` + forum.message_body + `</p>
+    <img class="h-auto max-w-xs rounded-lg m-2 forum-image" src="` + forum.image_url + `" alt="image description">
+    <div class="flex items-center">
+      <button class="flex items-center px-3 py-2 bg-blue-500 text-white rounded-full focus:outline-none" id="btnLike`+forum.id+`" onClick="likedButtonClicked(`+forum.id+`)">
         👍
-        <span id="likeCount${forum.id}" class="text-sm">${forum.like_count}</span>
-    </button>
-</div>
-<hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-<h2 class="text-gray-500 dark:text-gray-400 m-1"><strong>Comments</h2>
+        <span id="likeCount`+forum.id+`" class="text-sm">`+forum.like_count+`</span>
+      </button>
+    </div>
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+    <h2 class="text-gray-500 dark:text-gray-400 m-1"><strong>Comments</h2>
   </div>
   <form action="https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php" method="POST">
     <div id="commentSection`+forum.id+`"></div>
