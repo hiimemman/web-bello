@@ -35,6 +35,7 @@ if (!isset($_SESSION['IDUSER'])) {
     <title>Web-Bello Forums</title>
     <link rel="stylesheet" href="../style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../tailwind/tailwind.css">
     <style>
 .material-symbols-outlined {
