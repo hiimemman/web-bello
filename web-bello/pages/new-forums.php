@@ -153,7 +153,7 @@ content += `
 
     <!-- POST IMAGE -->
     <div class="py-2">
-        <img class="mx-auto max-w-full" style="max-width: 100%; height: auto;" src="` + forum.image_url + `">
+        <img class="w-full" src="` + forum.image_url + `">
     </div>
     <!-- END POST IMAGE -->
 
