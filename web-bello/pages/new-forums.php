@@ -300,7 +300,7 @@ content += `
         <div class="flex space-x-2 items-center">
             <div class="relative">
                 <img src="` + forum.image_url + `" alt="` + forum.editor_email + `" class="w-10 h-10 rounded-full">
-                <span class="bg-green-500 w-3 h-3 rounded-full absolute right-0 top-3/4 border-white border-2"></span>
+                
             </div>
             <div>
                 <div class="font-semibold">
