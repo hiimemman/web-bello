@@ -47,7 +47,15 @@ if (!isset($_SESSION['IDUSER'])) {
 </head>
 
 <body class="bg-white dark:bg-gray-900">
-    <div class="w-full lg:w-2/3 xl:w-2/5 pt-32 lg:pt-16 px-2">Hello</div>
+<div class="px-4 mt-4 shadow rounded-lg bg-white dark:bg-dark-second">
+                <div class="p-2 border-b border-gray-300 dark:border-dark-third flex space-x-4">
+                    <img src="./images/tuat.jpg" alt="Profile picture" class="w-10 h-10 rounded-full">
+                    <div class="flex-1 bg-gray-100 rounded-full flex items-center justify-start pl-4 cursor-pointer dark:bg-dark-third text-gray-500 text-lg dark:text-dark-txt">
+                        <span>
+                            Hello <?php echo $_SESSION['firstname'];?>
+                        </span>
+                    </div>
+                </div>
 
 
 </body>
