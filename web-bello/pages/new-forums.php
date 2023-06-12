@@ -116,7 +116,7 @@ if (!isset($_SESSION['IDUSER'])) {
 // CONTENTS FORM            
 content += `  
 <!-- POST -->
-<div class="shadow bg-white dark:bg-dark-second dark:text-dark-txt mt-4 rounded-lg">
+<div class="shadow bg-white dark:bg-dark-second dark:text-dark-txt mt-4 rounded-lg mx-auto max-w-full">
     <!-- POST AUTHOR -->
     <div class="flex items-center justify-between px-4 py-2">
         <div class="flex space-x-2 items-center">
