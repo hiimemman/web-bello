@@ -47,7 +47,7 @@ if (!isset($_SESSION['IDUSER'])) {
 </style>
 </head>
 
-<body class="bg-white dark:bg-gray-900 ml-64">
+<body class="bg-white dark:bg-gray-900 ml-100">
 <div class="px-4 mt-4 shadow rounded-lg bg-white dark:bg-dark-second">
                 
                 <!-- LIST POST -->
