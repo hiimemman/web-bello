@@ -306,6 +306,7 @@ content += `
                 <div class="font-semibold">
                 ` + forum.editor_email + `
                 </div>
+                `+categoryBadge+`
                 <span class="text-sm text-gray-500">38m</span>
             </div>
         </div>
