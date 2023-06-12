@@ -359,7 +359,7 @@ content += `
                     </button>
                 </div>
                 <div class="w-1/3 flex space-x-2 justify-center items-center hover:bg-gray-100 dark:hover:bg-dark-third text-xl py-2 rounded-lg cursor-pointer text-gray-500 dark:text-dark-txt">
-                    <i class='bx bx-comment'></i>
+                <i class='bx bx-comment'></i>
                     <span class="text-sm font-semibold">Comment</span>
                 </div>
             </div>
