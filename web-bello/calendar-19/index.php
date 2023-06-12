@@ -53,7 +53,7 @@ if (!isset($_SESSION['IDUSER'])) {
         editable: true,
         eventLimit: true, // allow "more" link when too many events,
         events: {
-          url: '../api/schedule/all-sched.php',
+          url: '../api/schedule/sched.php',
           method: 'POST',
           extraParams: {
             user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
