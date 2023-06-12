@@ -418,7 +418,7 @@ if (!isset($_SESSION['IDUSER'])) {
 <!-- END LIST POST -->
                 
 </div>
-
+<script src="./static/app.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 <script defer>
     const forumMain = document.querySelector('#forumMain')
@@ -469,7 +469,10 @@ if (!isset($_SESSION['IDUSER'])) {
             if(forum.category === 'News'){
                 categoryBadge = badgeNews
             }
-            content += `  <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mb-5">
+
+// CONTENTS FORM            
+content += `  
+<div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mb-5">
   <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 mb-4">
     <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
       <footer class="flex justify-between items-center mb-2">
