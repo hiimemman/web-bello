@@ -166,12 +166,6 @@ content += `
                 <span class="rounded-full grid place-items-center text-2xl -ml-1 text-blue-800">
                     <i class='bx bxs-like'></i>
                 </span>
-                <span class="rounded-full grid place-items-center text-2xl -ml-1 text-red-500">
-                    <i class='bx bxs-heart-circle'></i>
-                </span>
-                <span class="rounded-full grid place-items-center text-2xl -ml-1 text-yellow-500">
-                    <i class='bx bx-happy-alt'></i>
-                </span>
             </div>
         </div>
     </div>
