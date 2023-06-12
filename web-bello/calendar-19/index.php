@@ -52,7 +52,16 @@ if (!isset($_SESSION['IDUSER'])) {
         defaultDate: '2023-06-12',
         editable: true,
         eventLimit: true, // allow "more" link when too many events,
-        events: 'get-events.php', // URL to fetch events from server
+        events: {
+          url: '../api/schedule/all-sched.php',
+          method: 'POST',
+          extraParams: {
+            user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
+          },
+          failure: function() {
+            alert('Failed to fetch events from the server.');
+          }
+        }
       });
       calendar.render();
     });
