@@ -310,131 +310,151 @@ if (!isset($_SESSION['IDUSER'])) {
         </div> -->
     </aside>
 <h1 class="text-gray-500 dark:text-gray-400">This is result id<?php echo $_SESSION['IDUSER']; ?></h1>
-<main class="px-6 sm:ml-64 h-auto" id="forumMain">
-  <!-- FORUM POSTS -->
-</main>
+    <main class="px-6 sm:ml-64 h-auto" id="forumMain">
+        <!-- FORUM -->
 
-<!-- End of Forum page with sidebar and navbar -->
-<script defer>
-const forumMain = document.querySelector('#forumMain')
 
-window.onload = function() {
-  getAllForum()
-}
 
-const getAllForum = async () => {
-  const request = await fetch('../api/forum/all-forums-only.php')
-  const response = await request.json()
-  let content = ''
+    </main>
 
-  if (response.responseContent.length <= 0) {
-    forumMain.innerHTML = `
-      <h2 class="text-white">NO DATA FOUND</h2>
-    `
-  }
-
-  response.responseContent.map((forum) => {
-    let categoryBadge = ''
-
-    if (forum.category === 'Announcement') {
-      categoryBadge = '<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Announcement</span>'
-    } else if (forum.category === 'Collecting Schedule') {
-      categoryBadge = '<span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Collecting Schedule</span>'
-    } else if (forum.category === 'Events') {
-      categoryBadge = '<span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Events</span>'
-    } else if (forum.category === 'Forum') {
-      categoryBadge = '<span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">Forum</span>'
-    } else if (forum.category === 'News') {
-      categoryBadge = '<span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">News</span>'
+    <!-- End of Forum page with sidebar and navbar -->
+    <script defer>
+    const forumMain = document.querySelector('#forumMain')
+    
+    
+    
+    const badgeAnnouncement = '<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Announcement</span>';
+    const badgeCollectingSchedule = '<span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Collecting Schedule</span>'
+    const badgeEvents = '<span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Events</span>'
+    const badgeForum = '<span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">Forum</span>'
+    const badgeNews = '<span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">News</span>'
+    window.onload = function() {
+        getAllForum()
     }
 
-    content += `
-      <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mb-5">
-        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 mb-4">
-          <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
-            <footer class="flex justify-between items-center mb-2">
-              <div class="flex items-center">
-                <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                  <img class="mr-2 w-6 h-6 rounded-full" src="${forum.image_url}" alt="${forum.editor_email}">${forum.editor_email}
-                </p>
-                ${categoryBadge}
-              </div>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mr-2">
-                <time pubdate datetime="${forum.created_at}" title="${forum.created_at}">${forum.created_at}</time>
-              </p>
-            </footer>
-          </article>
+    const getAllForum = async () => {
+        
+        
 
-          <h2 class="text-gray-500 dark:text-gray-400"><strong>${forum.title}</strong></h2>
-          <p class="text-gray-500 dark:text-gray-400">${forum.message_body}</p>
-          <img class="h-auto max-w-xs rounded-lg m-2 forum-image" src="${forum.image_url}" alt="image description">
-          <div class="flex items-center">
-            <button class="flex items-center px-3 py-2 bg-blue-500 text-white rounded-full focus:outline-none" id="btnLike${forum.id}" onClick="likedButtonClicked(${forum.id})">
-              👍
-              <span id="likeCount${forum.id}" class="text-sm">${forum.like_count}</span>
-            </button>
-          </div>
-          <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-          <h2 class="text-gray-500 dark:text-gray-400 m-1"><strong>Comments</strong></h2>
+        const request = await fetch('../api/forum/all-forums-only.php')
+
+        const response = await request.json()
+        content = ''
+        
+        if(response.responseContent.length <= 0){
+            console.log("Pumasok")
+            forumMain.innerHTML = `
+           <h2 class ="text-white">NO DATA FOUND </h2>
+            `
+        }
+        
+        response.responseContent.map((forum) => {
+            
+           
+            let categoryBadge = badgeAnnouncement;
+            if(forum.category === 'Announcement'){
+                categoryBadge = badgeAnnouncement
+            }
+            if(forum.category === 'Collecting Schedule'){
+                categoryBadge = badgeCollectingSchedule
+            }
+            if(forum.category === 'Events'){
+                categoryBadge = badgeEvents
+            }
+            if(forum.category === 'Forum'){
+                categoryBadge = badgeForum
+            }
+            if(forum.category === 'News'){
+                categoryBadge = badgeNews
+            }
+            content += `  <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mb-5">
+  <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 mb-4">
+    <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
+      <footer class="flex justify-between items-center mb-2">
+        <div class="flex items-center">
+          <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+            <img class="mr-2 w-6 h-6 rounded-full" src="` + forum.image_url + `" alt="` + forum.editor_email + `">` + forum.editor_email + `
+          </p>
+          `+categoryBadge+`
         </div>
-        <form action="https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php" method="POST">
-          <div id="commentSection${forum.id}"></div>
-          <input type="text" style="display: none;" name="user_id" value="<?php echo $result[0]['id']; ?>">
-          <input type="text" style="display: none;" name="forum_id" value="${forum.id}">
-          <input type="text" style="display: none;" name="user_email" value="<?php echo $result[0]['email']; ?>">
-          <input type="text" style="display: none;" name="user_full_name" value="<?php echo $result[0]['firstname'] . ' ' . $result[0]['lastname']; ?>">
-          <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
-            <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
-              <label for="comment_text" class="sr-only">Your comment</label>
-              <textarea id="comment_text" name="comment_text" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 font-sans" placeholder="Write a comment..." required></textarea>
-            </div>
-            <div class="mt-2" id="imageHolder${forum.id}"></div>
-            <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
-              <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
-                Post comment
-              </button>
-              <div class="flex pl-0 space-x-1 sm:pl-2">
-                <input style="display: none;" id="imageUrl${forum.id}" type="file" onchange="changeProfile()" />
-                <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick="triggerInputClick(${forum.id})">
-                  <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="sr-only">Upload image</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mr-2">
+          <time pubdate datetime="` + forum.created_at + `" title="` + forum.created_at + `">` + forum.created_at + `</time>
+        </p>
+      </footer>
+    </article>
+
+    <h2 class="text-gray-500 dark:text-gray-400"><strong>` + forum.title + `</strong></h2>
+    <p class="text-gray-500 dark:text-gray-400">` + forum.message_body + `</p>
+    <img class="h-auto max-w-xs rounded-lg m-2 forum-image" src="` + forum.image_url + `" alt="image description">
+    <div class="flex items-center">
+      <button class="flex items-center px-3 py-2 bg-blue-500 text-white rounded-full focus:outline-none" id="btnLike`+forum.id+`" onClick="likedButtonClicked(`+forum.id+`)">
+        👍
+        <span id="likeCount`+forum.id+`" class="text-sm">`+forum.like_count+`</span>
+      </button>
+    </div>
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+    <h2 class="text-gray-500 dark:text-gray-400 m-1"><strong>Comments</h2>
+  </div>
+  <form action="https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php" method="POST">
+    <div id="commentSection`+forum.id+`"></div>
+    <input type="text" style="display: none;" name="user_id" value="<?php echo $result[0]['id']; ?>">
+    <input type="text" style="display: none;" name="forum_id" value="`+forum.id+`">
+    <input type="text" style="display: none;" name="user_email" value="<?php echo $result[0]['email']; ?>">
+    <input type="text" style="display: none;" name="user_full_name" value="<?php echo $result[0]['firstname'] . ' ' . $result[0]['lastname']; ?>">
+    <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+      <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
+        <label for="comment_text" class="sr-only">Your comment</label>
+        <textarea id="comment_text" name="comment_text" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 font-sans" placeholder="Write a comment..." required></textarea>
       </div>
+      <div class="mt-2" id="imageHolder`+forum.id+`"></div>
+      <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
+        <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+          Post comment
+        </button>
+        <div class="flex pl-0 space-x-1 sm:pl-2">
+          <input style="display: none;" id="imageUrl`+forum.id+`" type="file" onchange="changeProfile()" />
+          <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick="triggerInputClick(`+forum.id+`)">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Upload image</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
 
-      <style>
-        .forum-image {
-          object-fit: cover;
-          object-position: center;
-        }
+<style>
+.forum-image {
+  object-fit: cover;
+  object-position: center;
+}
 
-        .comment-image {
-          max-width: 100%;
-          height: auto;
-          border-radius: 0.375rem;
-          filter: none; /* Remove blur effect */
-        }
+.comment-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.375rem;
+  filter: none; /* Remove blur effect */
+}
 
-        .font-sans {
-          font-family: sans-serif; /* Replace with your desired font */
-        }
-      </style>
-    `;
+.font-sans {
+  font-family: sans-serif; /* Replace with your desired font */
+}
 
-    });
+</style>
+        
+       `;
+       
+        })
 
-    forumMain.innerHTML = content;
-  }
-  window.onload = function () {
-    getAllForum();
-  };
-</script>
 
+
+
+
+        forumMain.innerHTML = content;
+        
+        
       
 
 
