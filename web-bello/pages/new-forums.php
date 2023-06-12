@@ -304,7 +304,7 @@ content += `
             </div>
             <div>
                 <div class="font-semibold">
-                    John Doe
+                ` + forum.editor_email + `
                 </div>
                 <span class="text-sm text-gray-500">38m</span>
             </div>
