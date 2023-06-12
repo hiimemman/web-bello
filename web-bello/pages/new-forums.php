@@ -52,7 +52,7 @@ if (!isset($_SESSION['IDUSER'])) {
                 
                 <!-- LIST POST -->
                 
-                <main class="px-6 sm:ml-64 h-auto" id="forumMain">
+                <main id="forumMain">
                 <!-- FORUM -->
 
 
