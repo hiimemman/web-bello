@@ -325,7 +325,7 @@ content += `
 
     <!-- POST IMAGE -->
     <div class="py-2">
-        <img class="w-auto" src="` + forum.image_url + `">
+        <img class="w-full" src="` + forum.image_url + `">
     </div>
     <!-- END POST IMAGE -->
 
