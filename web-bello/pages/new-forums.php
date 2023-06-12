@@ -176,20 +176,22 @@ content += `
 
     <!-- POST ACTION -->
     <div class="py-2 px-4">
-        <div class="border border-gray-200 dark:border-dark-third border-l-0 border-r-0 py-1">
-            <div class="flex space-x-2">
-                <div class="w-1/3 flex space-x-2 justify-center items-center hover:bg-gray-100 dark:hover:bg-dark-third text-xl py-2 rounded-lg cursor-pointer text-gray-500 dark:text-dark-txt">
-                    <i class='bx bxs-like'></i>
-                    <button id="btnLike`+forum.id+`" onClick="likedButtonClicked(`+forum.id+`)">
+    <div class="border border-gray-200 dark:border-dark-third border-l-0 border-r-0 py-1">
+        <div class="flex space-x-2">
+            <div class="w-1/2 flex space-x-2 justify-center items-center hover:bg-gray-100 dark:hover:bg-dark-third text-xl py-2 rounded-lg cursor-pointer text-gray-500 dark:text-dark-txt">
+                <i class='bx bxs-like'></i>
+                <button id="btnLike`+forum.id+`" onClick="likedButtonClicked(`+forum.id+`)">
                     <span class="text-sm font-semibold">Like</span>
-                    </button>
-                </div>
-                <div class="w-1/3 flex space-x-2 justify-center items-center hover:bg-gray-100 dark:hover:bg-dark-third text-xl py-2 rounded-lg cursor-pointer text-gray-500 dark:text-dark-txt">
-                    <i class='bx bx-comment'></i>
-                    <span class="text-sm font-semibold">Comment</span>
-                </div>
+                </button>
+            </div>
+            <div class="w-1/2 flex space-x-2 justify-center items-center hover:bg-gray-100 dark:hover:bg-dark-third text-xl py-2 rounded-lg cursor-pointer text-gray-500 dark:text-dark-txt">
+                <i class='bx bx-comment'></i>
+                <span class="text-sm font-semibold">Comment</span>
+            </div>
         </div>
     </div>
+</div>
+
     <!-- END POST ACTION -->
 
     <!-- LIST COMMENT -->
