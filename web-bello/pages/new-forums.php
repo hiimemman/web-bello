@@ -318,7 +318,8 @@ content += `
 
     <!-- POST CONTENT -->
     <div class="text-justify px-4 py-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, autem earum cum ullam odio, molestias maxime aperiam in id aspernatur vel ratione odit molestiae minus ipsa obcaecati quia! Doloribus, illum.
+    <h2 class="text-gray-500 dark:text-gray-400"><strong>` + forum.title + `</strong></h2>
+    ` + forum.message_body + `
     </div>
     <!-- END POST CONTENT -->
 
