@@ -35,6 +35,7 @@ if (!isset($_SESSION['IDUSER'])) {
     <title>Web-Bello Forums</title>
     <link rel="stylesheet" href="../style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../tailwind/tailwind.css">
     <style>
 .material-symbols-outlined {
   font-variation-settings:
@@ -49,9 +50,15 @@ if (!isset($_SESSION['IDUSER'])) {
 <body class="bg-white dark:bg-gray-900">
 <div class="px-4 mt-4 shadow rounded-lg bg-white dark:bg-dark-second">
                 <div class="p-2 border-b border-gray-300 dark:border-dark-third flex space-x-4">
-                                <!-- LIST POST -->
+                <!-- LIST POST -->
+                <h1 class="text-gray-500 dark:text-gray-400">This is result id<?php echo $_SESSION['IDUSER']; ?></h1>
+                <main class="px-6 sm:ml-64 h-auto" id="forumMain">
+                <!-- FORUM -->
 
-            <div>
+
+
+                </main>            
+                <div>
 
 <!-- POST -->
 <div class="shadow bg-white dark:bg-dark-second dark:text-dark-txt mt-4 rounded-lg">
@@ -410,7 +417,7 @@ if (!isset($_SESSION['IDUSER'])) {
 
 <!-- END LIST POST -->
                 
-                </div>
+</div>
 
-                <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 </body>
