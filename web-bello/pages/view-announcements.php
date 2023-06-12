@@ -93,11 +93,11 @@ require_once('../components/navbar.php')
                     <img alt="image" src="https://via.placeholder.com/1920x1080" class="mt-8 h-auto w-auto object-cover" />
                 </div>
                 <div class="flex items-center">
-                    <button class="flex py-2 text-white rounded-full focus:outline-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon h-6 w-6 text-blue-600" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    <button id="likeButton" class="flex py-2 text-blue-400 rounded-full focus:outline-none" onclick="toggleLike()">
+                        <svg id="likeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon h-6 w-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
                             <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
                         </svg>
-                        <span class="inline-flex items-center justify-center px-2.5 py-0.5 text-emerald-700">
+                        <span id="likeCount" class="inline-flex items-center justify-center px-2.5 py-0.5 text-emerald-700">
                             <p class="whitespace-nowrap text-md">1</p>
                         </span>
                     </button>
@@ -206,6 +206,21 @@ require_once('../components/navbar.php')
             announcementText.classList.toggle("line-clamp-2");
             checkTextLength();
         });
+    </script>
+
+    <script>
+        let isLiked = false;
+        const likeIcon = document.getElementById("likeIcon");
+
+        function toggleLike() {
+            if (isLiked) {
+                likeIcon.style.fill = "none";
+            } else {
+                likeIcon.style.fill = "#1D4ED8";
+            }
+
+            isLiked = !isLiked;
+        }
     </script>
 </body>
 
