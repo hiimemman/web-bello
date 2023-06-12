@@ -304,10 +304,10 @@ content += `
             </div>
             <div>
                 <div class="font-semibold">
-                ` + forum.editor_email + `
+                ` + forum.editor_email + ` `+categoryBadge+`
                 </div>
-                `+categoryBadge+`
-                <span class="text-sm text-gray-500">38m</span>
+                
+                <span class="text-sm text-gray-500">`+ forum.created_at + `</span>
             </div>
         </div>
         <div class="w-8 h-8 grid place-items-center text-xl text-gray-500 hover:bg-gray-200 dark:text-dark-txt dark:hover:bg-dark-third rounded-full cursor-pointer">
