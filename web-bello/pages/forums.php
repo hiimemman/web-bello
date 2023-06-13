@@ -367,6 +367,11 @@ if (!isset($_SESSION['IDUSER'])) {
             if(forum.category === 'News'){
                 categoryBadge = badgeNews
             }
+            let commentImage = ""
+            //check image
+            if(forum.image_url !== ""){
+                commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+forum.image_url+`" alt="image description">`
+            }
             content += `  <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mb-5">
   <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 mb-4">
     <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
@@ -385,7 +390,7 @@ if (!isset($_SESSION['IDUSER'])) {
 
     <h2 class="text-gray-500 dark:text-gray-400"><strong>` + forum.title + `</strong></h2>
     <p class="text-gray-500 dark:text-gray-400">` + forum.message_body + `</p>
-    <img class="h-auto max-w-xs rounded-lg m-2 forum-image" src="` + forum.image_url + `" alt="image description">
+    `+commentImage+`
     <div class="flex items-center">
       <button class="flex items-center px-3 py-2 bg-blue-500 text-white rounded-full focus:outline-none" id="btnLike`+forum.id+`" onClick="likedButtonClicked(`+forum.id+`)">
         👍
@@ -482,6 +487,12 @@ if (!isset($_SESSION['IDUSER'])) {
           let contents = '';
             response.responseContent.map((comments)=>{
                 console.log(comments)
+                let commentImaged = ""
+            //check image
+            if(comments.image_url !== ""){
+                console.log("pumasok dito")
+                commentImaged += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+comments.image_url+`" alt="image description">`
+            }
                contents += `
               
                 <div class="flex items-center ml-2">
@@ -502,7 +513,7 @@ if (!isset($_SESSION['IDUSER'])) {
                 
                 <p class="text-gray-500 dark:text-gray-400 ml-2">` + comments
                 .comment_text + `</p>
-                <img class="h-auto max-w-xs transition-all duration-300 rounded-lg blur-sm hover:blur-none m-2" src="`+comments.image_url+`" alt="image description">
+                `+commentImaged+`
                 <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
                 
             `

@@ -238,7 +238,7 @@ th.sort-desc::after {
             <!-- Modal header -->
             <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                    Update Hoa
+                    Update Monthly Due
                 </h3>
                 <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="updateProductModal">
                     <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -250,7 +250,7 @@ th.sort-desc::after {
 
             </div>
             
-            <input type ="hidden" name ="idUpdate" id ="idUpdate" >
+          
                     <div>
                         <label for="amountUpdateFix" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount</label>
                         <input type="text" disabled name="amountUpdateFix" id="amountUpdateFix"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
@@ -261,7 +261,7 @@ th.sort-desc::after {
                 <div class="grid gap-4 mb-4 sm:grid-cols-2">
                     <input type ="hidden" name ="idUpdate" id ="idUpdate" >
                     <div>
-                        <label for="balanceUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount</label>
+                        <label for="balanceUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Balance</label>
                         <input type="text" name="balanceUpdate" id="balanceUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                     </div>
 
@@ -449,12 +449,12 @@ updateHoaInformation.addEventListener('submit', async (event) =>{
     event.preventDefault()
     formData = new FormData(updateHoaInformation)
     // uncomment this to print all the content of formData
-//     for (const [key, value] of formData.entries()) {
-//   console.log(`${key}: ${value}`);
-// }
+    for (const [key, value] of formData.entries()) {
+  console.log(`${key}: ${value}`);
+}
 
 //fetch data
-const request =  await fetch("../api/hoa/update-hoa.php",{
+const request =  await fetch("../api/monthly-due/all-monthly-due-update.php",{
     method: "POST",
     body:formData,
   });
@@ -462,14 +462,13 @@ const request =  await fetch("../api/hoa/update-hoa.php",{
 //get the response
 
 const response = await request.json();
-
+console.log(response)
 if(response.responseStatus === 'success'){
     //reload table
-    location.reload();
-   localStorage.setItem('showToast', 'true');
-   localStorage.setItem('showToastMessage', response.responseMessage)
-}
-
+    //location.reload();
+    localStorage.setItem('showToast', 'true');
+    localStorage.setItem('showToastMessage', response.responseMessage)
+    }
 })
 
 
@@ -487,7 +486,7 @@ const addTableSorting = (tableElement) => {
       const sortedRows = rows.sort((a, b) => {
         const aCellValue = a.children[columnIndex].textContent.trim();
         const bCellValue = b.children[columnIndex].textContent.trim();
-
+        
         if (aCellValue < bCellValue) {
           return isAscending ? -1 : 1;
         }
@@ -529,8 +528,8 @@ const deleteModal = async (button) =>{
     console.log(user)
 
     formData = new FormData();
-    formData.append('IdDelete', user.id)
-    const request =  await fetch("../api/hoa/delete-hoa.php",{
+    formData.append('IdDelete', user.payment_id)
+    const request =  await fetch("../api/monthly-due/monthly-due-delete.php",{
     method: "POST",
     body:formData,
     });
@@ -564,7 +563,7 @@ updateHiddenButton.click()
 // const statusUpdate =document.querySelector('#statusUpdate')
 
 //set the value of input fields
-idUpdate.value = content.id;
+idUpdate.value = content.payment_id;
 amountUpdateFix.value = content.amount;
 statusUpdate.value = content.status;
 balanceUpdate.value = content.balance;

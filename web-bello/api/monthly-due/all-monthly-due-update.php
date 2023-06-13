@@ -6,20 +6,19 @@
  $con = connection();
 
 $ID = $_POST['idUpdate'];
-$Month = $_POST['month'];
-$Balance = $_POST['balance'];
-$Status = $_POST['status'];
+$Balance = $_POST['balanceUpdate'];
+$Status = $_POST['statusUpdate'];
 
 try{
     
 
 
-    $sql = "UPDATE `tbl_payment` SET `balance` ='$Balance',`status` ='$Status'WHERE `tbl_payment`.`id` = '$ID';";
+    $sql = "UPDATE `tbl_payment` SET `balance` ='$Balance',`status` ='$Status'WHERE `tbl_payment`.`payment_id` = '$ID';";
     mysqli_query($con, $sql);
 
    
     
-    exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Home owner information has been updated!')));
+    exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Monthly due has been updated!')));
 
 }catch(Exception $e){
     exit(json_encode(array("responseStatus" =>'error', "responseContent" =>$e->getMessage(), "responseMessage" =>'Update failed error:!')));
