@@ -19,7 +19,7 @@ try{
 
 
     
-    exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Home owner has been deleted!')));
+    exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Due has been deleted!')));
 
 }catch(Exception $e){
     exit(json_encode(array("responseStatus" =>'error', "responseContent" =>$e->getMessage(), "responseMessage" =>'Update failed error:!')));
