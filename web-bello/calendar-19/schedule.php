@@ -81,49 +81,7 @@ if (!isset($_SESSION['ID'])) {
     }
   </style>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Handle form submission
-      document.getElementById("schedule-form").addEventListener("submit", function(e) {
-        e.preventDefault();
 
-        // Retrieve form data
-        let title = document.getElementById("title").value;
-        let start_date = document.getElementById("start_date").value;
-        let end_date = document.getElementById("end_date").value;
-
-        // Send the data to the server
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "../api/schedule/sched.php", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-              let response = JSON.parse(xhr.responseText);
-              if (response.status === "success") {
-                alert("Event scheduled successfully.");
-                // Clear the form
-                document.getElementById("title").value = "";
-                document.getElementById("start_date").value = "";
-                document.getElementById("end_date").value = "";
-              } else {
-                alert("Error: " + response.message);
-              }
-            } else {
-              alert("An error occurred: " + xhr.status);
-            }
-          }
-        };
-        xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(start_date) + "&end_date=" + encodeURIComponent(end_date));
-      });
-
-      // Close the modal when the close button is clicked
-      document.getElementById("modal-close").addEventListener("click", function() {
-        document.getElementById("modal-container").style.display = "none";
-      });
-    });
-  </script>
 </head>
 
 <body>
@@ -213,7 +171,7 @@ if (!isset($_SESSION['ID'])) {
     <script src='fullcalendar/packages/core/main.js'></script>
     <script src='fullcalendar/packages/interaction/main.js'></script>
     <script src='fullcalendar/packages/daygrid/main.js'></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -266,6 +224,47 @@ if (!isset($_SESSION['ID'])) {
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+      // Handle form submission
+      document.getElementById("schedule-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Retrieve form data
+        let title = document.getElementById("title").value;
+        let start_date = document.getElementById("start_date").value;
+        let end_date = document.getElementById("end_date").value;
+
+        // Send the data to the server
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "../api/schedule/sched.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              let response = JSON.parse(xhr.responseText);
+              if (response.status === "success") {
+                alert("Event scheduled successfully.");
+                // Clear the form
+                document.getElementById("title").value = "";
+                document.getElementById("start_date").value = "";
+                document.getElementById("end_date").value = "";
+              } else {
+                alert("Error: " + response.message);
+              }
+            } else {
+              alert("An error occurred: " + xhr.status);
+            }
+          }
+        };
+        xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(start_date) + "&end_date=" + encodeURIComponent(end_date));
+      });
+
+      // Close the modal when the close button is clicked
+      document.getElementById("modal-close").addEventListener("click", function() {
+        document.getElementById("modal-container").style.display = "none";
+      });
+    });
 
 function openModal() {
       document.getElementById("modal-container").style.display = "block";
