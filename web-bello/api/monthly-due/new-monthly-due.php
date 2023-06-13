@@ -28,7 +28,7 @@ try{
 
     //get updated dues
 
-    $sqlDues = mysqli_query($con, "SELECT * FROM `tbl_payments`");
+    $sqlDues = mysqli_query($con, "SELECT * FROM `tbl_payment`");
     //store in result
     $resultDues = mysqli_fetch_all($sqlDues, MYSQLI_ASSOC);
 
