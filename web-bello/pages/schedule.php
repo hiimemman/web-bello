@@ -456,55 +456,51 @@ const statusUpdate =document.querySelector('#statusUpdate')
 window.onload = function(){
     loadTable();
 }
-
 //load table
-const loadTable = async function(){
-    //api
-  const getUsers =  await fetch("../api/hoa/all-hoa.php");
-  const response = await getUsers.json();
-    console.log(response)
-  if(response.responseStatus === 'OK'){
+const loadTable = async function() {
+  // Fetch schedule data from the API
+  const response = await fetch("../api/schedule/all-sched.php");
+  const data = await response.json();
+  
+  console.log(data);
 
+  if (data.responseStatus === 'OK') {
     let content = '';
-    response.responseContent.map((users)=>{
-        //by default inactive
-        let user = '<span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Inactive</span>'
-
-        //change the badge color to active if active
-        if(users.status === 'Active'){
-          user =  '<span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Active</span>'
-        }
-
-        content += `<tr class="border-b dark:border-gray-700">
-        <td class="px-4 py-3">`+users.firstname+" "+users.lastname+`</td>
-        <td class="px-4 py-3">`+users.email+`</td>
-        <td class="px-4 py-3">`+users.role+`</td>
-        <td class="px-4 py-3">`+users.address+`</td>
-        <td class="px-4 py-3">`+user+`</td>
-        <td class="px-4 py-3">`+users.created_at+`</td>
-        <td class="px-4 py-3 flex items-center justify-end">
-        <div class="inline-flex rounded-md shadow-sm" role="group">
-            <button id ="btnView`+users.id+`" type="button" data-modal-toggle = "updateProductModal" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border    border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"  data-user='`+JSON.stringify(users)+`' onclick="updateModal(this)" >
-                   Edit
-            </button>
-             
-             <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
-             id ="btnDelete`+users.id+`"
-             data-user='`+JSON.stringify(users)+`' onclick="deleteModal(this)">
-              Delete
-             </button>
-        </div>                
-        </div>
-        </td>
+    
+    data.responseContent.forEach((schedule) => {
+      // By default inactive
+      let status = '<span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Inactive</span>';
+      
+      // Change the badge color to active if active
+      if (schedule.status === 'Active') {
+        status = '<span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Active</span>';
+      }
+      
+      content += `
+        <tr class="border-b dark:border-gray-700">
+          <td class="px-4 py-3">${schedule.title}</td>
+          <td class="px-4 py-3">${schedule.start_date}</td>
+          <td class="px-4 py-3">${schedule.end_date}</td>
+          <td class="px-4 py-3">${status}</td>
+          <td class="px-4 py-3 flex items-center justify-end">
+            <div class="inline-flex rounded-md shadow-sm" role="group">
+              <button id="btnView${schedule.id}" type="button" data-modal-toggle="updateProductModal" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white" data-schedule='${JSON.stringify(schedule)}' onclick="updateModal(this)">
+                Edit
+              </button>
+              <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white" id="btnDelete${schedule.id}" data-schedule='${JSON.stringify(schedule)}' onclick="deleteModal(this)">
+                Delete
+              </button>
+            </div>
+          </td>
         </tr>
-        `
-    })
-   
-
+      `;
+    });
+    
+    // Assign the generated HTML content to the table body element
     usersTblBody.innerHTML = content;
-
   }
-}//end of onload
+};
+
 
 
 frmRegisterHOA.addEventListener('submit', async (event) =>{
