@@ -580,6 +580,7 @@ TODO: more distinction between this file and common.css
 }
 
 .fc-unthemed td.fc-today {
+  color: #fff;
   background: #1e293b;
 }
 
