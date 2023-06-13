@@ -100,35 +100,35 @@ require_once('../components/navbar.php')
     <!-- End of Footer-->
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
     <script src='fullcalendar/packages/core/main.js'></script>
     <script src='fullcalendar/packages/interaction/main.js'></script>
     <script src='fullcalendar/packages/daygrid/main.js'></script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: ['interaction', 'dayGrid'],
-            defaultDate: '2023-06-12',
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events,
-            events: {
-                url: '../api/schedule/all-sched.php',
-                method: 'POST',
-                extraParams: {
-                    user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
-                },
-                failure: function(xhr, status, error) {
-                    console.log(xhr.responseText); // Print the error response
-                    alert('Failed to fetch events from the server.' + failure);
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['interaction', 'dayGrid'],
+                defaultDate: '2023-06-12',
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events,
+                events: {
+                    url: '../api/schedule/all-sched.php',
+                    method: 'POST',
+                    extraParams: {
+                        user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
+                    },
+                    failure: function(xhr, status, error) {
+                        console.log(xhr.responseText); // Print the error response
+                        alert('Failed to fetch events from the server.' + failure);
+                    }
                 }
-            }
+            });
+            calendar.render();
         });
-        calendar.render();
-    });
     </script>
 </body>
 
