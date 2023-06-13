@@ -69,6 +69,33 @@ require_once('../components/navbar.php')
                         </p>
 
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <!-- Change Photo -->
+                            <div class="col-span-full">
+                                <label for="photo"
+                                    class="block text-sm font-medium leading-6 text-gray-900">Photo</label>
+                                <div class="mt-2 flex items-center gap-x-3">
+                                    <img class="h-12 w-12 rounded-full" src="https://via.placeholder.com/150" alt="" />
+                                    <div class="inline-flex">
+                                        <button type="button"
+                                            class="rounded-md bg-white px-5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-100">
+                                            <span
+                                                class="inline-flex items-center justify-center rounded-full py-0.5 text-gray-700">
+                                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125">
+                                                    </path>
+                                                </svg>
+
+                                                <p class="whitespace-nowrap text-sm">Change</p>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Change Photo -->
+
                             <!-- Name Input -->
                             <div class="sm:col-span-3">
                                 <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First
