@@ -267,7 +267,8 @@ require_once('../components/navbar.php')
             if(forum.image_url !== ""){
                 commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+forum.image_url+`" alt="image description">`
             }
-            content += `
+            
+    content += `
     <section class="border-t-4 border-sky-300 mb-10">
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-24 mt-10">
             <article class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
@@ -325,41 +326,14 @@ require_once('../components/navbar.php')
                 <!-- End of Like Button -->
                 <!-- Comments -->
                 <form action="https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php" method="POST">
-                    <div id ="commentSection`+forum.id+`">
+                    <!-- <div id ="commentSection`+forum.id+`">
                 
-                </div>
+                    </div> -->
                 <input type="text" style="display: none;" name="user_id" value="<?php echo $result[0]['id']; ?>">
                 <input type="text" style="display: none;" name="forum_id" value="`+forum.id+`">
                 <input type="text" style="display: none;" name="user_email" value="<?php echo $result[0]['email']; ?>">
                 <input type="text" style="display: none;" name="user_full_name" value="<?php echo $result[0]['firstname'] . ' ' . $result[0]['lastname']; ?>">
-
-                    <div class="py-2 px-4 mb-4 bg-white rounded-xl border-2 border-gray-400">
-                        <label for="comment" class="sr-only">Your comment</label>
-                        <textarea id="comment" rows="3"
-                            class="px-0 w-full text-md text-gray-900 border-0 focus:ring-0 focus:outline-none"
-                            placeholder="Write a comment..." required></textarea>
-                    </div>
-                    <div class ="mt-2" id ="imageHolder`+forum.id+`">
-
-                    </div>
-                    <button type="submit" id="postButton"
-                        class="text-white bg-sky-800 cursor-not-allowed focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-6 focus:outline-none"
-                        disabled>
-                        Post comment
-                    </button>
-                    <div class="flex pl-0 space-x-1 sm:pl-2">
-                        <input  style="display: none;" id = "imageUrl`+forum.id+`"type ="file" onchange="changeProfile()" />
-                        <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick = "triggerInputClick(`+forum.id+`)">
-                   <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
-                   <span class="sr-only">Upload image</span>
-               </button>
-           </div>
-                </form>
-
-                <!-- End of Comments -->
-
-                <!-- Reply Section -->
-
+                
                 <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
                     <div class="inline-flex">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
@@ -389,6 +363,35 @@ require_once('../components/navbar.php')
                     </p>
                 </article>
 
+
+                    <div class="py-2 px-4 mb-4 bg-white rounded-xl border-2 border-gray-400">
+                        <label for="comment" class="sr-only">Your comment</label>
+                        <textarea id="comment" rows="3"
+                            class="px-0 w-full text-md text-gray-900 border-0 focus:ring-0 focus:outline-none"
+                            placeholder="Write a comment..." required></textarea>
+                    </div>
+                    <div class ="mt-2" id ="imageHolder`+forum.id+`">
+
+                    </div>
+                    <button type="submit" id="postButton"
+                        class="text-white bg-sky-800 cursor-not-allowed focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-6 focus:outline-none"
+                        disabled>
+                        Post comment
+                    </button>
+                    <div class="flex pl-0 space-x-1 sm:pl-2">
+                        <input  style="display: none;" id = "imageUrl`+forum.id+`"type ="file" onchange="changeProfile()" />
+                        <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick = "triggerInputClick(`+forum.id+`)">
+                   <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+                   <span class="sr-only">Upload image</span>
+               </button>
+           </div>
+                </form>
+
+                <!-- End of Comments -->
+
+                <!-- Reply Section -->
+
+                
                 <!-- End of Reply Section -->
             </article>
         </div>
