@@ -41,7 +41,7 @@ require_once('../components/navbar.php')
             <div class="sm:flex sm:items-center sm:justify-between">
                 <div class="text-center sm:text-left">
                     <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
-                        Hello, <?php echo $_SESSION['firstname']; ?>!
+                        Hello, <?php echo $_SESSION['editor_email']; ?>!
                     </h1>
 
                     <p class="mt-1.5 text-lg text-gray-500">
