@@ -14,7 +14,7 @@ try{
     
 
 
-    $sql = "UPDATE `tbl_payment` SET `balance` ='$Balance',`status` ='$Status'WHERE `tbl_payment`.`id` = '$ID';";
+    $sql = "UPDATE `tbl_payment` SET `balance` ='$Balance',`status` ='$Status'WHERE `tbl_payment`.`payment_id` = '$ID';";
     mysqli_query($con, $sql);
 
    
