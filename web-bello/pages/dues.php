@@ -424,7 +424,7 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
 }
 
 //fetch data
-  const request =  await fetch("../api/hoa/register-new-hoa.php",{
+  const request =  await fetch("../api/monthly-due/new-monthly-due.php",{
     method: "POST",
     body:formData,
   });
