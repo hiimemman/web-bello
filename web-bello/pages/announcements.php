@@ -358,6 +358,11 @@ if (!isset($_SESSION['IDUSER'])) {
             if(forum.category === 'News'){
                 categoryBadge = badgeNews
             }
+            let commentImage = ""
+            //check image
+            if(forum.image_url.toString() !== ""){
+                commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+forum.image_url+`" alt="image description">`
+            }
             content += `  <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mb-5">
             <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 mb-4">
                 <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
@@ -387,7 +392,7 @@ if (!isset($_SESSION['IDUSER'])) {
                 .title + `</strong></h2>
                     <p class="text-gray-500 dark:text-gray-400">` + forum
                 .message_body + `</p>
-                <img class="h-auto max-w-xs  rounded-lg  m-2" src="`+forum.image_url+`" alt="image description">
+                `+commentImage+`
                  <div class="flex items-center">
                                     <button class="flex items-center px-3 py-2 bg-blue-500 text-white rounded-full focus:outline-none" id ="btnLike`+forum.id+`"onClick ="likedButtonClicked(`+forum.id+`)">
                                     👍
