@@ -479,11 +479,11 @@ if (!isset($_SESSION['IDUSER'])) {
             response.responseContent.map((comments)=>{
                 console.log(comments)
 
-                let commentImage = ""
+                let commentImaged = ""
             //check image
             if(comments.image_url !== ""){
                 console.log("pumasok dito")
-                commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+comments.image_url+`" alt="image description">`
+                commentImaged += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+comments.image_url+`" alt="image description">`
             }
 
                contents += `
@@ -502,7 +502,7 @@ if (!isset($_SESSION['IDUSER'])) {
                 
                 <p class="text-gray-500 dark:text-gray-400 ml-2">` + comments
                 .comment_text + `</p>
-                `+commentImage+`
+                `+commentImaged+`
                 <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
                 
             `
