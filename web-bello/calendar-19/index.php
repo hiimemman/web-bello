@@ -32,10 +32,12 @@ require_once('../components/navbar.php')
     <link href='fullcalendar/packages/core/main.css' rel='stylesheet' />
     <link href='fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
     <title>Community Schedules - Web-Bello Online!</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
