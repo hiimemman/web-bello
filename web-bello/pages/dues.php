@@ -449,9 +449,9 @@ updateHoaInformation.addEventListener('submit', async (event) =>{
     event.preventDefault()
     formData = new FormData(updateHoaInformation)
     // uncomment this to print all the content of formData
-//     for (const [key, value] of formData.entries()) {
-//   console.log(`${key}: ${value}`);
-// }
+    for (const [key, value] of formData.entries()) {
+  console.log(`${key}: ${value}`);
+}
 
 //fetch data
 const request =  await fetch("../api/monthly-due/all-monthly-due-update.php",{
@@ -466,9 +466,9 @@ console.log(response)
 if(response.responseStatus === 'success'){
     //reload table
     location.reload();
-   localStorage.setItem('showToast', 'true');
-   localStorage.setItem('showToastMessage', response.responseMessage)
-}
+    localStorage.setItem('showToast', 'true');
+    localStorage.setItem('showToastMessage', response.responseMessage)
+    }
 })
 
 
@@ -486,7 +486,7 @@ const addTableSorting = (tableElement) => {
       const sortedRows = rows.sort((a, b) => {
         const aCellValue = a.children[columnIndex].textContent.trim();
         const bCellValue = b.children[columnIndex].textContent.trim();
-
+        
         if (aCellValue < bCellValue) {
           return isAscending ? -1 : 1;
         }
