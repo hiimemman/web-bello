@@ -197,7 +197,7 @@ th.sort-desc::after {
                 <form class="space-y-6" action="#" id ="frmRegisterHOA">
                      <div>
                         <label for="month" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Month</label>
-                            <select id="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                            <select id="month" name ="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                             <option selected>Choose a month</option>
                             <option value="January">January</option>
                             <option value="February">February</option>
