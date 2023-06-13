@@ -3,8 +3,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: BasicAuth
 $config = ClickSend\Configuration::getDefaultConfiguration()
-              ->setUsername('delachicadental@gmail.com')
-              ->setPassword('E6B0781F-906F-0F4C-5BE6-51F6B533C2F8');
+              ->setUsername('megumionaka28@gmail.com')
+              ->setPassword('AF129BBA-2824-E020-7471-42EE0608670B');
 
 $apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(),$config);
 $msg = new \ClickSend\Model\SmsMessage();
