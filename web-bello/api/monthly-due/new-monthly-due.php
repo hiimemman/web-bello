@@ -32,7 +32,7 @@ try{
     //store in result
     $resultDues = mysqli_fetch_all($sqlDues, MYSQLI_ASSOC);
 
-    exit(json_encode(array("responseStatus" =>'OK', "responseContent" => $resultDues)));
+    exit(json_encode(array("responseStatus" =>'success', "responseContent" => $resultDues)));
   
 }catch(Exception $e){
     exit(json_encode(array("responseStatus" =>'error', "responseContent" => $e->getMessage(), "responseMessage" =>'Comment new home owner failed error:!')));
