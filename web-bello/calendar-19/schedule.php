@@ -43,6 +43,7 @@ if (!isset($_SESSION['ID'])) {
 
     <!-- Footer -->
     <footer class="bg-gray-100">
+        <img src="../" alt="" srcset="">
         <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
             <div class="lg:flex lg:items-end lg:justify-between">
                 <div>
@@ -115,7 +116,7 @@ if (!isset($_SESSION['ID'])) {
                 url: '../api/schedule/all-sched.php',
                 method: 'POST',
                 extraParams: {
-                    user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
+                    user_id: <?php echo $_SESSION['ID']; ?> // Pass the user ID to the server
                 },
                 failure: function(xhr, status, error) {
                     console.log(xhr.responseText); // Print the error response
