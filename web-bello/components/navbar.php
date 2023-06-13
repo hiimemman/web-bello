@@ -29,91 +29,86 @@ if (!isset($_SESSION['IDUSER'])) {
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-    <link rel="stylesheet" href="../style.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 
 </head>
 
 <body>
-    <style>
+  <style>
     :root {
-        --underline-color: #000000;
-        /* Set the underline color to white */
+      --underline-color: #000000;
+      /* Set the underline color to white */
     }
 
     @media (prefers-color-scheme: dark) {
-        :root {
-            --underline-color: #ffffff;
-        }
+      :root {
+        --underline-color: #ffffff;
+      }
     }
 
     .nav-link {
-        position: relative;
-        display: inline-block;
-        line-height: 2;
+      position: relative;
+      display: inline-block;
+      line-height: 2;
     }
 
     .nav-link::before {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: transparent;
-        transition: background-color 0.3s ease-in-out;
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s ease-in-out;
     }
 
     .nav-link:hover::before {
-        background-color: var(--underline-color);
+      background-color: var(--underline-color);
     }
-    </style>
+  </style>
 
-    <nav class="fixed bg-white dark:bg-gray-900 top-0 left-0 right-0 shadow-lg z-10">
-        <div class="container mx-auto flex flex-wrap max-w-7xl items-center justify-between py-10 lg:px-8">
-            <div class="flex lg:flex-1 px-6">
-                <a href="#" class="-m-1.5 p-1.5">
-                    <span class="sr-only"></span>
-                    <h2 class="drop-shadow text-lg tracking-wider font-medium dark:text-white">
-                        WEB-BELLO
-                    </h2>
-                </a>
-            </div>
+  <nav class="fixed bg-white dark:bg-gray-900 top-0 left-0 right-0 shadow-lg z-10">
+    <div class="container mx-auto flex flex-wrap max-w-7xl items-center justify-between py-10 lg:px-8">
+      <div class="flex lg:flex-1 px-6">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only"></span>
+          <h2 class="drop-shadow text-lg tracking-wider font-medium dark:text-white">
+            WEB-BELLO
+          </h2>
+        </a>
+      </div>
 
-            <div class="flex lg:hidden px-6">
-                <button data-collapse-toggle="navbar-default" type="button"
-                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                    aria-controls="navbar-default" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                        aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                </button>
-            </div>
+      <div class="flex lg:hidden px-6">
+        <button data-collapse-toggle="navbar-default" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
 
-            <!-- Nav Links -->
-            <div class="hidden lg:flex lg:gap-x-12" id="navbar-default">
-                <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Home</a>
-                <a href="#"
-                    class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Announcements</a>
-                <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Events</a>
-                <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Forums</a>
-                <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Schedules</a>
-                <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-400 dark:text-gray-400">Sign
-                    out</a>
-            </div>
-        </div>
-    </nav>
+      <!-- Nav Links -->
+      <div class="hidden lg:flex lg:gap-x-12" id="navbar-default">
+        <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Home</a>
+        <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Announcements</a>
+        <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Events</a>
+        <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Forums</a>
+        <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Schedules</a>
+        <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-400 dark:text-gray-200">Sign
+          out</a>
+      </div>
+    </div>
+  </nav>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-    <script defer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  <script defer>
     //Dark theme toggle 
     let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
     let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
@@ -122,50 +117,50 @@ if (!isset($_SESSION['IDUSER'])) {
 
     // Change the icons inside the button based on previous settings
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-            '(prefers-color-scheme: dark)').matches)) {
-        themeToggleLightIcon.classList.remove('hidden');
+        '(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
     } else {
-        themeToggleDarkIcon.classList.remove('hidden');
+      themeToggleDarkIcon.classList.remove('hidden');
     }
 
     let themeToggleBtn = document.getElementById('theme-toggle');
 
     themeToggleBtn.addEventListener('click', function() {
 
-        // toggle icons inside button
-        themeToggleDarkIcon.classList.toggle('hidden');
-        themeToggleLightIcon.classList.toggle('hidden');
+      // toggle icons inside button
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
 
-        // if set via local storage previously
-        if (localStorage.getItem('color-theme')) {
-            if (localStorage.getItem('color-theme') === 'light') {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            }
-
-            // if NOT set via local storage previously
+      // if set via local storage previously
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
         } else {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            }
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
         }
+
+        // if NOT set via local storage previously
+      } else {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      }
 
     });
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-            '(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
+        '(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
     } else {
-        document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove('dark')
     }
-    </script>
+  </script>
 </body>
 
 </html>
