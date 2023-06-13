@@ -456,6 +456,9 @@ const statusUpdate =document.querySelector('#statusUpdate')
 window.onload = function(){
     loadTable();
 }
+// Define the currentPage variable outside the loadTable function
+let currentPage = 1;
+
 //load table
 const loadTable = async function() {
   // Fetch schedule data from the API
