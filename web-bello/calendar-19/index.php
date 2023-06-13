@@ -32,7 +32,7 @@ require_once('../components/navbar.php')
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- Style -->
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/style.css">
     <title>Community Schedules - Web-Bello Online!</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
