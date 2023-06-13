@@ -179,62 +179,6 @@ th.sort-desc::after {
 
 </style>
 
-<script>
-    // Get the previous and next buttons by their ids
-const previousBtn = document.getElementById("previousBtn");
-const nextBtn = document.getElementById("nextBtn");
-
-// Initialize the current page
-let currentPage = 1;
-
-// Function to update the pagination buttons
-function updatePaginationButtons() {
-  // Enable or disable the previous button based on the current page
-  previousBtn.disabled = currentPage === 1;
-
-  // Enable or disable the next button based on the current page
-  nextBtn.disabled = currentPage === totalPages;
-}
-
-// Function to handle the click event of the previous button
-function goToPreviousPage() {
-  if (currentPage > 1) {
-    currentPage--;
-    updatePaginationButtons();
-    // Call a function to load the previous page content
-    loadPage(currentPage);
-  }
-}
-
-// Function to handle the click event of the next button
-function goToNextPage() {
-  if (currentPage < totalPages) {
-    currentPage++;
-    updatePaginationButtons();
-    // Call a function to load the next page content
-    loadPage(currentPage);
-  }
-}
-
-// Add event listeners to the previous and next buttons
-previousBtn.addEventListener("click", goToPreviousPage);
-nextBtn.addEventListener("click", goToNextPage);
-
-// Example function to load page content
-function loadPage(page) {
-  // Here you can make an API request or update the content on the page
-  // based on the provided page number
-  console.log("Loading page", page);
-  // Replace this with your actual logic to load the page content
-}
-
-// Set the total number of pages (replace 10 with your actual number of pages)
-const totalPages = 10;
-
-// Initial update of the pagination buttons
-updatePaginationButtons();
-
-</script>
     </div>
 
       
@@ -689,7 +633,59 @@ const showToast = () => {
 document.addEventListener('DOMContentLoaded', showToast);
 
 
+    // Get the previous and next buttons by their ids
+    const previousBtn = document.getElementById("previousBtn");
+const nextBtn = document.getElementById("nextBtn");
 
+// Initialize the current page
+let currentPage = 1;
+
+// Function to update the pagination buttons
+function updatePaginationButtons() {
+  // Enable or disable the previous button based on the current page
+  previousBtn.disabled = currentPage === 1;
+
+  // Enable or disable the next button based on the current page
+  nextBtn.disabled = currentPage === totalPages;
+}
+
+// Function to handle the click event of the previous button
+function goToPreviousPage() {
+  if (currentPage > 1) {
+    currentPage--;
+    updatePaginationButtons();
+    // Call a function to load the previous page content
+    loadPage(currentPage);
+  }
+}
+
+// Function to handle the click event of the next button
+function goToNextPage() {
+  if (currentPage < totalPages) {
+    currentPage++;
+    updatePaginationButtons();
+    // Call a function to load the next page content
+    loadPage(currentPage);
+  }
+}
+
+// Add event listeners to the previous and next buttons
+previousBtn.addEventListener("click", goToPreviousPage);
+nextBtn.addEventListener("click", goToNextPage);
+
+// Example function to load page content
+function loadPage(page) {
+  // Here you can make an API request or update the content on the page
+  // based on the provided page number
+  console.log("Loading page", page);
+  // Replace this with your actual logic to load the page content
+}
+
+// Set the total number of pages (replace 10 with your actual number of pages)
+const totalPages = 10;
+
+// Initial update of the pagination buttons
+updatePaginationButtons();
 
 
 </script>
