@@ -6,7 +6,6 @@
  $con = connection();
 
 $ID = $_POST['idUpdate'];
-$Month = $_POST['month'];
 $Balance = $_POST['balanceUpdate'];
 $Status = $_POST['statusUpdate'];
 
