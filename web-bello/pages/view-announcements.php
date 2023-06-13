@@ -295,7 +295,7 @@ require_once('../components/navbar.php')
                 ` + forum
                 .title + `
                 </h2>
-                <p id="announcementText" class="font-normal text-lg text-gray-500">
+                <p class="font-normal text-lg text-gray-500">
                 ` + forum
                 .message_body + `
                 </p>
