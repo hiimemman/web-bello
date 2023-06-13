@@ -469,7 +469,6 @@ if(response.responseStatus === 'success'){
    localStorage.setItem('showToast', 'true');
    localStorage.setItem('showToastMessage', response.responseMessage)
 }
-
 })
 
 
