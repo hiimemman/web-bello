@@ -38,8 +38,34 @@ if (!isset($_SESSION['ID'])) {
 
 <body>
     <div class="content">
+    <button id="addScheduleBtn" class="btn btn-primary">Add Schedule</button>
         <div id='calendar'></div>
     </div>
+
+<!-- Modal -->
+<div id="addScheduleModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <!-- Add your modal content here -->
+    <!-- For example, a form to add schedule details -->
+    <form id="scheduleForm">
+      <!-- Add your form fields here -->
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="start">Start Time</label>
+        <input type="datetime-local" class="form-control" id="start" name="start" required>
+      </div>
+      <div class="form-group">
+        <label for="end">End Time</label>
+        <input type="datetime-local" class="form-control" id="end" name="end" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+</div>
 
     <!-- Footer -->
     <footer class="bg-gray-100">
@@ -126,6 +152,37 @@ if (!isset($_SESSION['ID'])) {
         });
         calendar.render();
     });
+
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+  // Get the modal element
+  var modal = document.getElementById("addScheduleModal");
+
+  // Get the button that opens the modal
+  var addScheduleBtn = document.getElementById("addScheduleBtn");
+
+  // Get the <span> element that closes the modal
+  var closeBtn = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal
+  addScheduleBtn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+});
+
     </script>
 </body>
 
