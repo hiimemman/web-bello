@@ -454,7 +454,7 @@ updateHoaInformation.addEventListener('submit', async (event) =>{
 // }
 
 //fetch data
-const request =  await fetch("../api/hoa/update-hoa.php",{
+const request =  await fetch("../api/monthly-due/all-monthly-due-update.php",{
     method: "POST",
     body:formData,
   });
