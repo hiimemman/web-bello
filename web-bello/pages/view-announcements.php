@@ -64,120 +64,6 @@ require_once('../components/navbar.php')
 
 
 
-    <section class="border-t-4 border-sky-300 mb-10">
-        <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-24 mt-10">
-            <article class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
-                <div class="flex justify-between items-center mb-5 text-gray-500">
-                    <span
-                        class="bg-purple-100 text-purple-700 text-md font-medium inline-flex items-center px-2.5 py-0.5 rounded">
-                        Announcements
-                    </span>
-                    <span class="text-sm">2023-06-09 01:36:10</span>
-                </div>
-
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center space-x-4">
-                        <img class="w-7 h-7 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
-                            alt="Bonnie Green avatar" />
-                        <span class="font-medium"> John Doe </span>
-                    </div>
-                </div>
-                <h2 class="mt-6 text-2xl font-bold tracking-tight text-gray-900">
-                    Our first project with React
-                </h2>
-                <p id="announcementText" class="font-normal line-clamp-2 text-lg text-gray-500">
-                    Static websites are now used to bootstrap lots of websites and are
-                    becoming the basis for a variety of tools that even influence both
-                    web designers and developers influence both web designers and
-                    developers. Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Architecto delectus cum velit dignissimos minus nesciunt
-                    numquam, magni laborum sapiente debitis amet, provident fugiat odio
-                    cupiditate blanditiis eaque illo voluptatum quis! Lorem ipsum dolor
-                    sit amet consectetur adipisicing elit. Corrupti quia assumenda
-                    provident omnis dicta velit quibusdam reiciendis rerum, perspiciatis
-                    nostrum molestias at aut. Minima quasi saepe maxime quas quibusdam
-                    ipsa!
-                </p>
-                <a id="readMoreLink" href="#"
-                    class="mb-5 inline-flex items-center font-medium text-lg text-primary-600 hover:underline">
-                    See more...
-                </a>
-                <!-- Image -->
-                <div class="flex justify-center">
-                    <img alt="image" src="https://via.placeholder.com/1920x1080"
-                        class="mt-8 h-auto w-auto object-cover" />
-                </div>
-                <!-- End of Image -->
-                <!-- Like Button -->
-                <div class="flex items-center">
-                    <button id="likeButton" class="flex py-2 text-blue-400 rounded-full focus:outline-none"
-                        onclick="toggleLike()">
-                        <svg id="likeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                            class="main-grid-item-icon h-6 w-6" fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5">
-                            <path
-                                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
-                        </svg>
-                        <span id="likeCount"
-                            class="inline-flex items-center justify-center px-2.5 py-0.5 text-emerald-700">
-                            <p class="whitespace-nowrap text-md">1</p>
-                        </span>
-                    </button>
-                </div>
-                <!-- End of Like Button -->
-                <!-- Comments -->
-                <form>
-                    <div class="py-2 px-4 mb-4 bg-white rounded-xl border-2 border-gray-400">
-                        <label for="comment" class="sr-only">Your comment</label>
-                        <textarea id="comment" rows="3"
-                            class="px-0 w-full text-md text-gray-900 border-0 focus:ring-0 focus:outline-none"
-                            placeholder="Write a comment..." required></textarea>
-                    </div>
-                    <button type="submit" id="postButton"
-                        class="text-white bg-sky-800 cursor-not-allowed focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-6 focus:outline-none"
-                        disabled>
-                        Post comment
-                    </button>
-                </form>
-
-                <!-- End of Comments -->
-
-                <!-- Reply Section -->
-
-                <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
-                    <div class="inline-flex">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z">
-                            </path>
-                        </svg>
-                        <h1 class="font-semibold text-xl mb-6 ml-2">Comments</h1>
-                    </div>
-                    <footer class="flex justify-between items-center mb-2">
-                        <div class="flex items-center">
-                            <p class="inline-flex items-center mr-3 text-md font-medium text-gray-900">
-                                Michael Gough
-                            </p>
-                            <p class="text-md text-gray-600">
-                                <time pubdate datetime="2022-02-08" title="February 8th, 2022">2023-06-12
-                                    03:56:33</time>
-                            </p>
-                        </div>
-                    </footer>
-                    <p class="text-gray-600">
-                        Very straight-to-point article. Really worth time reading. Thank
-                        you! But tools are just the instruments for the UX designers. The
-                        knowledge of the design tools are as important as the creation of
-                        the design strategy.
-                    </p>
-                </article>
-
-                <!-- End of Reply Section -->
-            </article>
-        </div>
-    </section>
 
     <!-- End of Announcement Section -->
 
@@ -381,84 +267,133 @@ require_once('../components/navbar.php')
             if(forum.image_url !== ""){
                 commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+forum.image_url+`" alt="image description">`
             }
-            content += `  <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mb-5">
-            <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 mb-4">
-                <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
-                    <footer class="flex justify-between items-center mb-2">
-                        <div class="flex items-center">
-                            <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
-                                                class="mr-2 w-6 h-6 rounded-full"
-                                                src="` + forum
-                            .image_url + `"
-                                                alt="` + forum.editor_email + `">` + forum.editor_email + `</p>
-                                                `+categoryBadge+`
-                                       
-                         
-                        </div>
-                         <p class="text-sm text-gray-600 dark:text-gray-400 mr-2"><time pubdate datetime="` + forum
-                            .created_at + `"
-                                                title="` + forum
-                            .created_at + `">` + forum
-                            .created_at + `</time></p>
-                               
-                    </footer>
-                
-                </article>
-                
-
-        <h2 class="text-gray-500 dark:text-gray-400"><strong>` + forum
-                .title + `</strong></h2>
-                    <p class="text-gray-500 dark:text-gray-400">` + forum
-                .message_body + `</p>
-                `+commentImage+`
-                 <div class="flex items-center">
-                                    <button class="flex items-center px-3 py-2 bg-blue-500 text-white rounded-full focus:outline-none" id ="btnLike`+forum.id+`"onClick ="likedButtonClicked(`+forum.id+`)">
-                                    👍
-                                      <span id="likeCount`+forum.id+`" class="text-sm">`+forum.like_count+`</span>
-                                    </button>
+            content += `
+    <section class="border-t-4 border-sky-300 mb-10">
+        <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-24 mt-10">
+            <article class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
+                <div class="flex justify-between items-center mb-5 text-gray-500">
+                    <span
+                        class="bg-purple-100 text-purple-700 text-md font-medium inline-flex items-center px-2.5 py-0.5 rounded">
+                        Announcements
+                    </span>
+                    <span class="text-sm">` + forum
+                            .created_at + `</span>
                 </div>
-                <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-                <h2 class="text-gray-500 dark:text-gray-400 m-1"><strong>Comments</h2>
-                
-                
 
-
-            </div>
-            <form action="https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php" method="POST">
-            <div id ="commentSection`+forum.id+`">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-4">
+                        <img class="w-7 h-7 rounded-full"
+                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                            alt="Bonnie Green avatar" />
+                        <span class="font-medium"> ` + forum.editor_email + ` </span>
+                    </div>
+                </div>
+                <h2 class="mt-6 text-2xl font-bold tracking-tight text-gray-900">
+                ` + forum
+                .title + `
+                </h2>
+                <p id="announcementText" class="font-normal line-clamp-2 text-lg text-gray-500">
+                ` + forum
+                .message_body + `
+                </p>
+                <a id="readMoreLink" href="#"
+                    class="mb-5 inline-flex items-center font-medium text-lg text-primary-600 hover:underline">
+                    See more...
+                </a>
+                <!-- Image -->
+                <div class="flex justify-center">
+                    <img alt="image" src="https://via.placeholder.com/1920x1080"
+                        class="mt-8 h-auto w-auto object-cover" />
+                </div>
+                <!-- End of Image -->
+                <!-- Like Button -->
+                <div class="flex items-center">
+                    <button id="likeButton" class="flex py-2 text-blue-400 rounded-full focus:outline-none"
+                        onclick="toggleLike()">
+                        <svg id="likeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            class="main-grid-item-icon h-6 w-6" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="1.5">
+                            <path
+                                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                        </svg>
+                        <span id="likeCount"
+                            class="inline-flex items-center justify-center px-2.5 py-0.5 text-emerald-700">
+                            <p class="whitespace-nowrap text-md">1</p>
+                        </span>
+                    </button>
+                </div>
+                <!-- End of Like Button -->
+                <!-- Comments -->
+                <form action="https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php" method="POST">
+                    <div id ="commentSection`+forum.id+`">
                 
-            </div>
-   <input type="text" style="display: none;" name="user_id" value="<?php echo $result[0]['id']; ?>">
-        <input type="text" style="display: none;" name="forum_id" value="`+forum.id+`">
-        <input type="text" style="display: none;" name="user_email" value="<?php echo $result[0]['email']; ?>">
-        <input type="text" style="display: none;" name="user_full_name" value="<?php echo $result[0]['firstname'] . ' ' . $result[0]['lastname']; ?>">
-   <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
-       <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
-           <label for="comment_text" class="sr-only">Your comment</label>
-           
-           <textarea id="comment_text" name ="comment_text" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..." required></textarea>
-       </div>
-       <div class ="mt-2" id ="imageHolder`+forum.id+`">
-        </div>
-       <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
-           <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
-               Post comment
-           </button>
-           <div class="flex pl-0 space-x-1 sm:pl-2">
-            <input  style="display: none;" id = "imageUrl`+forum.id+`"type ="file" onchange="changeProfile()" />
-            
-               <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick = "triggerInputClick(`+forum.id+`)">
+                </div>
+                <input type="text" style="display: none;" name="user_id" value="<?php echo $result[0]['id']; ?>">
+                <input type="text" style="display: none;" name="forum_id" value="`+forum.id+`">
+                <input type="text" style="display: none;" name="user_email" value="<?php echo $result[0]['email']; ?>">
+                <input type="text" style="display: none;" name="user_full_name" value="<?php echo $result[0]['firstname'] . ' ' . $result[0]['lastname']; ?>">
+
+                    <div class="py-2 px-4 mb-4 bg-white rounded-xl border-2 border-gray-400">
+                        <label for="comment" class="sr-only">Your comment</label>
+                        <textarea id="comment" rows="3"
+                            class="px-0 w-full text-md text-gray-900 border-0 focus:ring-0 focus:outline-none"
+                            placeholder="Write a comment..." required></textarea>
+                    </div>
+                    <div class ="mt-2" id ="imageHolder`+forum.id+`">
+
+                    </div>
+                    <button type="submit" id="postButton"
+                        class="text-white bg-sky-800 cursor-not-allowed focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-6 focus:outline-none"
+                        disabled>
+                        Post comment
+                    </button>
+                    <div class="flex pl-0 space-x-1 sm:pl-2">
+                        <input  style="display: none;" id = "imageUrl`+forum.id+`"type ="file" onchange="changeProfile()" />
+                        <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick = "triggerInputClick(`+forum.id+`)">
                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
                    <span class="sr-only">Upload image</span>
                </button>
            </div>
-       </div>
-   </div>
-</form>
+                </form>
 
+                <!-- End of Comments -->
+
+                <!-- Reply Section -->
+
+                <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
+                    <div class="inline-flex">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z">
+                            </path>
+                        </svg>
+                        <h1 class="font-semibold text-xl mb-6 ml-2">Comments</h1>
+                    </div>
+                    <footer class="flex justify-between items-center mb-2">
+                        <div class="flex items-center">
+                            <p class="inline-flex items-center mr-3 text-md font-medium text-gray-900">
+                                Michael Gough
+                            </p>
+                            <p class="text-md text-gray-600">
+                                <time pubdate datetime="2022-02-08" title="February 8th, 2022">2023-06-12
+                                    03:56:33</time>
+                            </p>
+                        </div>
+                    </footer>
+                    <p class="text-gray-600">
+                        Very straight-to-point article. Really worth time reading. Thank
+                        you! But tools are just the instruments for the UX designers. The
+                        knowledge of the design tools are as important as the creation of
+                        the design strategy.
+                    </p>
+                </article>
+
+                <!-- End of Reply Section -->
+            </article>
         </div>
-        
-       `;
+    </section>
+    `;
        
         })
 
