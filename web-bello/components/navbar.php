@@ -105,8 +105,7 @@ if (!isset($_SESSION['IDUSER'])) {
                 <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Events</a>
                 <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Forums</a>
                 <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Schedules</a>
-                <a href="#"
-                    class="nav-link text-sm font-semibold leading-6 text-gray-400 dark:text-gray-600 dark:hover:text-white">Sign
+                <a href="#" class="nav-link text-sm font-semibold leading-6 text-gray-400 dark:text-gray-600">Sign
                     out</a>
             </div>
         </div>
