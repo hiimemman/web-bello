@@ -299,10 +299,6 @@ require_once('../components/navbar.php')
     
     ` + forum.message_body + `
     </div>
-                <a id="readMoreLink" href="#"
-                    class="mb-5 inline-flex items-center font-medium text-lg text-primary-600 hover:underline">
-                    See more...
-                </a>
                 <!-- Image -->
                 <div class="flex justify-center">
                     <img alt="image" src="https://via.placeholder.com/1920x1080"
