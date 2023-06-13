@@ -3,16 +3,20 @@ session_start();
 include_once("../connections/connection.php");
 $con = connection();
 if (!isset($_SESSION['IDUSER'])) {
-  header('Location: ../pages/user-login.php');
-  exit();
+    header('Location: ../pages/user-login.php');
+    exit();
 } else {
-  $sql = mysqli_query($con, "SELECT * FROM `tbl_residents` WHERE `id` = {$_SESSION['IDUSER']}");
-  $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
-  $url = $_SERVER['REQUEST_URI'];
-  $pageName = basename($url, '.php');
-  $pageName = str_replace('-', ' ', $pageName);
-  $pageName = strtoupper($pageName);
+    $sql = mysqli_query($con, "SELECT * FROM `tbl_residents` WHERE `id` = {$_SESSION['IDUSER']}");
+    $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
+    $url = $_SERVER['REQUEST_URI'];
+    $pageName = basename($url, '.php');
+    $pageName = str_replace('-', ' ', $pageName);
+    $pageName = strtoupper($pageName);
 }
+?>
+
+<?php
+require_once('../components/navbar.php')
 ?>
 
 <!doctype html>
@@ -31,16 +35,13 @@ if (!isset($_SESSION['IDUSER'])) {
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
-
     <title>Community Schedules - Web-Bello Online!</title>
 
 </head>
 
 <body>
     <div class="content">
-        <?php
-require_once('../components/navbar.php')
-?>
+
         <div id='calendar'></div>
     </div>
 
@@ -107,27 +108,27 @@ require_once('../components/navbar.php')
     <script src='fullcalendar/packages/daygrid/main.js'></script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: ['interaction', 'dayGrid'],
-            defaultDate: '2023-06-12',
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events,
-            events: {
-                url: '../api/schedule/all-sched.php',
-                method: 'POST',
-                extraParams: {
-                    user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
-                },
-                failure: function(xhr, status, error) {
-                    console.log(xhr.responseText); // Print the error response
-                    alert('Failed to fetch events from the server.' + failure);
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['interaction', 'dayGrid'],
+                defaultDate: '2023-06-12',
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events,
+                events: {
+                    url: '../api/schedule/all-sched.php',
+                    method: 'POST',
+                    extraParams: {
+                        user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
+                    },
+                    failure: function(xhr, status, error) {
+                        console.log(xhr.responseText); // Print the error response
+                        alert('Failed to fetch events from the server.' + failure);
+                    }
                 }
-            }
+            });
+            calendar.render();
         });
-        calendar.render();
-    });
     </script>
 </body>
 
