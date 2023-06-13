@@ -303,7 +303,7 @@ require_once('../components/navbar.php')
 
                 <!-- Image -->
                 <div class="flex justify-center">
-                    <img alt="image" src="https://via.placeholder.com/1920x1080"
+                    <img alt="image" src="` + forum.image_url + `"
                         class="mt-8 h-auto w-auto object-cover" />
                 </div>
                 <!-- End of Image -->
