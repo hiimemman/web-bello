@@ -295,8 +295,9 @@ require_once('../components/navbar.php')
                 <h2 class="mt-6 text-2xl font-bold tracking-tight text-gray-900">
                 ` + forum
                 .title + `
+                ` + forum.message_body + `
                 </div>
-                <p>` + forum.message_body + `</p>
+                
 
                 <!-- Image -->
                 <div class="flex justify-center">
