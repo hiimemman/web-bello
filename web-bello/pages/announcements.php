@@ -360,7 +360,7 @@ if (!isset($_SESSION['IDUSER'])) {
             }
             let commentImage = ""
             //check image
-            if(forum.image_url.toString() !== ""){
+            if(forum.image_url !== ""){
                 commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+forum.image_url+`" alt="image description">`
             }
             content += `  <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mb-5">
