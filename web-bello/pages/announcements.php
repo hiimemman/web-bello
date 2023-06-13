@@ -501,7 +501,7 @@ if (!isset($_SESSION['IDUSER'])) {
                 
                 <p class="text-gray-500 dark:text-gray-400 ml-2">` + comments
                 .comment_text + `</p>
-                
+                `+commentImage+`
                 <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
                 
             `
