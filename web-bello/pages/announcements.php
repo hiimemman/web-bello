@@ -479,18 +479,14 @@ if (!isset($_SESSION['IDUSER'])) {
             response.responseContent.map((comments)=>{
                 console.log(comments)
 
-            let commentImage = ""
+                let commentImage = ""
             //check image
             if(comments.image_url !== ""){
                 commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+comments.image_url+`" alt="image description">`
             }
 
                contents += `
-              
                 <div class="flex items-center ml-2">
-                
-                
-                
                             <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">` + comments.user_full_name + `</p>
                             <div class ="flex items-end ml-auto">
                              <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="` + comments
