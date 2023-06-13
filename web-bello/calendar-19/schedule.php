@@ -90,24 +90,26 @@ if (!isset($_SESSION['ID'])) {
         <div id='calendar'></div>
     </div>
 
-<!-- Modal -->
-<button id="addScheduleBtn" onclick="openModal()">Add Schedule</button>
-  <div id="modal-container" class="modal-container" style="display: none;">
-    <h1>Schedule an Event</h1>
-    <form id="schedule-form">
-      <label for="title">Title:</label>
-      <input type="text" name="title" id="title" required>
-      <br><br>
-      <label for="start_date">Start Date:</label>
-      <input type="datetime-local" name="start_date" id="start_date" required>
-      <br><br>
-      <label for="end_date">End Date:</label>
-      <input type="datetime-local" name="end_date" id="end_date" required>
-      <br><br>
-      <input type="submit" value="Schedule Event">
-    </form>
-    <span id="modal-close" class="modal-close">&times;</span>
-  </div>
+     <!-- Modal -->
+     <div id="addScheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="scheduleForm">
+                <h1>Schedule an Event</h1>
+                <form id="schedule-form">
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title" required>
+                <br><br>
+                <label for="start_date">Start Date:</label>
+                <input type="datetime-local" name="start_date" id="start_date" required>
+                <br><br>
+                <label for="end_date">End Date:</label>
+                <input type="datetime-local" name="end_date" id="end_date" required>
+                <br><br>
+                <input type="submit" value="Schedule Event">
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-100">
@@ -197,33 +199,28 @@ if (!isset($_SESSION['ID'])) {
 
 
 
-    document.addEventListener('DOMContentLoaded', function() {
-  // Get the modal element
-  var modal = document.getElementById("addScheduleModal");
+    document.addEventListener('DOMContentLoaded', function () {
+            var modal = document.getElementById("addScheduleModal");
+            var addScheduleBtn = document.getElementById("addScheduleBtn");
+            var closeBtn = document.getElementsByClassName("close")[0];
 
-  // Get the button that opens the modal
-  var addScheduleBtn = document.getElementById("addScheduleBtn");
+            // Open the modal when the button is clicked
+            addScheduleBtn.onclick = function () {
+                modal.style.display = "block";
+            }
 
-  // Get the <span> element that closes the modal
-  var closeBtn = document.getElementsByClassName("close")[0];
+            // Close the modal when the close button is clicked
+            closeBtn.onclick = function () {
+                modal.style.display = "none";
+            }
 
-  // When the user clicks the button, open the modal
-  addScheduleBtn.onclick = function() {
-    modal.style.display = "block";
-  }
-
-  // When the user clicks on <span> (x), close the modal
-  closeBtn.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-});
+            // Close the modal when clicked outside of it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
 
 document.addEventListener("DOMContentLoaded", function() {
       // Handle form submission
