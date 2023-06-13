@@ -34,6 +34,96 @@ if (!isset($_SESSION['ID'])) {
 
     <title>Community Schedules - Web-Bello Online!</title>
 
+    <style>
+    /* Modal Styles */
+    .modal-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 300px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-container h1 {
+      margin-top: 0;
+    }
+
+    .modal-container label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .modal-container input[type="text"],
+    .modal-container input[type="datetime-local"],
+    .modal-container input[type="submit"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    .modal-container input[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Handle form submission
+      document.getElementById("schedule-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Retrieve form data
+        let title = document.getElementById("title").value;
+        let start_date = document.getElementById("start_date").value;
+        let end_date = document.getElementById("end_date").value;
+
+        // Send the data to the server
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "../api/schedule/sched.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              let response = JSON.parse(xhr.responseText);
+              if (response.status === "success") {
+                alert("Event scheduled successfully.");
+                // Clear the form
+                document.getElementById("title").value = "";
+                document.getElementById("start_date").value = "";
+                document.getElementById("end_date").value = "";
+              } else {
+                alert("Error: " + response.message);
+              }
+            } else {
+              alert("An error occurred: " + xhr.status);
+            }
+          }
+        };
+        xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(start_date) + "&end_date=" + encodeURIComponent(end_date));
+      });
+
+      // Close the modal when the close button is clicked
+      document.getElementById("modal-close").addEventListener("click", function() {
+        document.getElementById("modal-container").style.display = "none";
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -43,29 +133,23 @@ if (!isset($_SESSION['ID'])) {
     </div>
 
 <!-- Modal -->
-<div id="addScheduleModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <!-- Add your modal content here -->
-    <!-- For example, a form to add schedule details -->
-    <form id="scheduleForm">
-      <!-- Add your form fields here -->
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" name="title" required>
-      </div>
-      <div class="form-group">
-        <label for="start">Start Time</label>
-        <input type="datetime-local" class="form-control" id="start" name="start" required>
-      </div>
-      <div class="form-group">
-        <label for="end">End Time</label>
-        <input type="datetime-local" class="form-control" id="end" name="end" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Save</button>
+<button id="addScheduleBtn" onclick="openModal()">Add Schedule</button>
+  <div id="modal-container" class="modal-container" style="display: none;">
+    <h1>Schedule an Event</h1>
+    <form id="schedule-form">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" required>
+      <br><br>
+      <label for="start_date">Start Date:</label>
+      <input type="datetime-local" name="start_date" id="start_date" required>
+      <br><br>
+      <label for="end_date">End Date:</label>
+      <input type="datetime-local" name="end_date" id="end_date" required>
+      <br><br>
+      <input type="submit" value="Schedule Event">
     </form>
+    <span id="modal-close" class="modal-close">&times;</span>
   </div>
-</div>
 
     <!-- Footer -->
     <footer class="bg-gray-100">
@@ -154,7 +238,7 @@ if (!isset($_SESSION['ID'])) {
     });
 
 
-    
+
     document.addEventListener('DOMContentLoaded', function() {
   // Get the modal element
   var modal = document.getElementById("addScheduleModal");
@@ -182,6 +266,10 @@ if (!isset($_SESSION['ID'])) {
     }
   }
 });
+
+function openModal() {
+      document.getElementById("modal-container").style.display = "block";
+    }
 
     </script>
 </body>
