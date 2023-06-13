@@ -26,9 +26,7 @@ require_once('../components/navbar.php')
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet"> -->
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
     <link href='fullcalendar/packages/core/main.css' rel='stylesheet' />
     <link href='fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
     <!-- Bootstrap CSS -->
@@ -110,27 +108,27 @@ require_once('../components/navbar.php')
     <script src='fullcalendar/packages/daygrid/main.js'></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: ['interaction', 'dayGrid'],
-                defaultDate: '2023-06-12',
-                editable: true,
-                eventLimit: true, // allow "more" link when too many events,
-                events: {
-                    url: '../api/schedule/all-sched.php',
-                    method: 'POST',
-                    extraParams: {
-                        user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
-                    },
-                    failure: function(xhr, status, error) {
-                        console.log(xhr.responseText); // Print the error response
-                        alert('Failed to fetch events from the server.' + failure);
-                    }
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: ['interaction', 'dayGrid'],
+            defaultDate: '2023-06-12',
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events,
+            events: {
+                url: '../api/schedule/all-sched.php',
+                method: 'POST',
+                extraParams: {
+                    user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
+                },
+                failure: function(xhr, status, error) {
+                    console.log(xhr.responseText); // Print the error response
+                    alert('Failed to fetch events from the server.' + failure);
                 }
-            });
-            calendar.render();
+            }
         });
+        calendar.render();
+    });
     </script>
 </body>
 
