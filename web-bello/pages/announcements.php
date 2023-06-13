@@ -478,6 +478,13 @@ if (!isset($_SESSION['IDUSER'])) {
           let contents = '';
             response.responseContent.map((comments)=>{
                 console.log(comments)
+
+            let commentImage = ""
+            //check image
+            if(comments.image_url !== ""){
+                commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+comments.image_url+`" alt="image description">`
+            }
+
                contents += `
               
                 <div class="flex items-center ml-2">
@@ -498,7 +505,7 @@ if (!isset($_SESSION['IDUSER'])) {
                 
                 <p class="text-gray-500 dark:text-gray-400 ml-2">` + comments
                 .comment_text + `</p>
-                <img class="h-auto max-w-xs transition-all duration-300 rounded-lg blur-sm hover:blur-none m-2" src="`+comments.image_url+`" alt="image description">
+                `+commentImage+`
                 <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
                 
             `
