@@ -528,7 +528,7 @@ const deleteModal = async (button) =>{
     console.log(user)
 
     formData = new FormData();
-    formData.append('IdDelete', user.id)
+    formData.append('IdDelete', user.payment_id)
     const request =  await fetch("../api/monthly-due/monthly-due-delete.php",{
     method: "POST",
     body:formData,
