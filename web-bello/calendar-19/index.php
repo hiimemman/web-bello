@@ -41,19 +41,19 @@ require_once('../components/navbar.php')
 
 <body>
     <style>
-    #calendar {
-        max-width: 900px;
-        margin: 0 auto;
-    }
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-    #calendar .fc-view-container {
-        padding: 30px;
-        background-color: #efefef;
-        -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-        box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-    }
+        #calendar .fc-view-container {
+            padding: 30px;
+            background-color: #efefef;
+            -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+        }
     </style>
-    <div class="content mt-20">
+    <div class="content mt-36">
 
         <div id='calendar'></div>
     </div>
@@ -121,27 +121,27 @@ require_once('../components/navbar.php')
     <script src='fullcalendar/packages/daygrid/main.js'></script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: ['interaction', 'dayGrid'],
-            defaultDate: '2023-06-12',
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events,
-            events: {
-                url: '../api/schedule/all-sched.php',
-                method: 'POST',
-                extraParams: {
-                    user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
-                },
-                failure: function(xhr, status, error) {
-                    console.log(xhr.responseText); // Print the error response
-                    alert('Failed to fetch events from the server.' + failure);
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['interaction', 'dayGrid'],
+                defaultDate: '2023-06-12',
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events,
+                events: {
+                    url: '../api/schedule/all-sched.php',
+                    method: 'POST',
+                    extraParams: {
+                        user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
+                    },
+                    failure: function(xhr, status, error) {
+                        console.log(xhr.responseText); // Print the error response
+                        alert('Failed to fetch events from the server.' + failure);
+                    }
                 }
-            }
+            });
+            calendar.render();
         });
-        calendar.render();
-    });
     </script>
 </body>
 
