@@ -346,7 +346,7 @@ require_once('../components/navbar.php')
 
                     </div>
                     <button type="submit" id="postButton"
-                        class="text-white bg-sky-800 cursor-not-allowed focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-6 focus:outline-none"
+                        class="text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-6 focus:outline-none"
                         disabled>
                         Post comment
                     </button>
@@ -441,7 +441,6 @@ require_once('../components/navbar.php')
                 .comment_text + `</p>
                     `+commentImaged+`
                 </article>
-                <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
                 
             `
             })
