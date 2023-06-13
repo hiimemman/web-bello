@@ -604,9 +604,14 @@ console.log(receivedStatus)
 if(receivedStatus.statusCode === 200){
     console.log("pumasok dito")
 let output = ''; 
+let checkIfBlankImage =""
+
+if(receivedStatus.image !== ""){
+    checkIfBlankImage += `<img class="m-2 h-auto max-w-xs transition-all duration-300 rounded-lg blur-sm hover:blur-none" src="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" alt="image description">`
+}
 output += `
  <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />
-<img class="m-2 h-auto max-w-xs transition-all duration-300 rounded-lg blur-sm hover:blur-none" src="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" alt="image description">
+`+checkIfBlankImage+`
 `;
   
 imageHolder.innerHTML = output;
