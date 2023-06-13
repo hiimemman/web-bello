@@ -8,8 +8,8 @@ $config = ClickSend\Configuration::getDefaultConfiguration()
 
 $apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(),$config);
 $msg = new \ClickSend\Model\SmsMessage();
-$msg->setBody("test body"); 
-$msg->setTo("09454992459");
+$msg->setBody("Manuel Olarve"); 
+$msg->setTo("09959603361");
 $msg->setSource("sdk");
 
 // \ClickSend\Model\SmsMessageCollection | SmsMessageCollection model
