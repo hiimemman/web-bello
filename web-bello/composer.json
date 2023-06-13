@@ -1,14 +1,13 @@
 {
     "require": {
-        "phpmailer/phpmailer": "^6.7"
+        "phpmailer/phpmailer": "^6.7",
+        "clicksend/clicksend-php": "^5.0",
+        "smsgatewayme/client": "^0.0.1"
     },
     "repositories": [
         {
           "type": "git",
           "url": "https://github.com/smsgatewayme/client-php.git"
         }
-      ],
-      "require": {
-        "smsgatewayme/client": "^0.0.1"
-      }
+      ]
 }
