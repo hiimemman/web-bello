@@ -462,7 +462,7 @@ const request =  await fetch("../api/monthly-due/all-monthly-due-update.php",{
 //get the response
 
 const response = await request.json();
-
+console.log(response.responseStatus)
 if(response.responseStatus === 'success'){
     //reload table
     location.reload();
