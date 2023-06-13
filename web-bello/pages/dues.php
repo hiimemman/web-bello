@@ -563,7 +563,7 @@ updateHiddenButton.click()
 // const statusUpdate =document.querySelector('#statusUpdate')
 
 //set the value of input fields
-idUpdate.value = content.id;
+idUpdate.value = content.payment_id;
 amountUpdateFix.value = content.amount;
 statusUpdate.value = content.status;
 balanceUpdate.value = content.balance;
