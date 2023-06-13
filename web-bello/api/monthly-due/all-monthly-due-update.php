@@ -7,8 +7,8 @@
 
 $ID = $_POST['idUpdate'];
 $Month = $_POST['month'];
-$Balance = $_POST['balance'];
-$Status = $_POST['status'];
+$Balance = $_POST['balanceUpdate'];
+$Status = $_POST['statusUpdate'];
 
 try{
     
