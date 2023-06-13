@@ -432,7 +432,7 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
 //get the response
 
 const response = await request.json();
-
+console.log(response)
 if(response.responseStatus === 'success'){
     //reload table
    location.reload();
