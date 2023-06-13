@@ -3,7 +3,7 @@ session_start();
 include_once("../connections/connection.php");
 $con = connection();
 if (!isset($_SESSION['IDUSER'])) {
-  header('Location: ../web-bello/pages/user-login.php');
+  header('Location: ../pages/user-login.php');
   exit();
 } else {
   $sql = mysqli_query($con, "SELECT * FROM `tbl_residents` WHERE `id` = {$_SESSION['IDUSER']}");
