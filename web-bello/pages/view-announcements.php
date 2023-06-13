@@ -291,14 +291,14 @@ require_once('../components/navbar.php')
                         <span class="font-medium"> ` + forum.editor_email + ` </span>
                     </div>
                 </div>
+                <div class="text-justify px-4 py-2">
                 <h2 class="mt-6 text-2xl font-bold tracking-tight text-gray-900">
                 ` + forum
                 .title + `
-                </h2>
-                <p class="font-normal text-lg text-gray-500">
-                ` + forum
-                .message_body + `
-                </p>
+                
+    
+    ` + forum.message_body + `
+    </div>
                 <a id="readMoreLink" href="#"
                     class="mb-5 inline-flex items-center font-medium text-lg text-primary-600 hover:underline">
                     See more...
