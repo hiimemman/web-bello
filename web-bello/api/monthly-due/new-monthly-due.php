@@ -16,10 +16,10 @@ try{
 
     // Iterate over each item in $result and insert a query
     foreach ($result as $item) {
-        $userId = $item['user_id'];
-        $userEmail = $item['user_email'];
-        $balance = 0; // Assuming the balance is initially 0
-        $status = 'pending'; // Assuming the status is initially 'pending'
+        $userId = $item['id'];
+        $userEmail = $item['email'];
+        $balance = $Amount; // Assuming the balance is initially 0
+        $status = 'unpaid'; // Assuming the status is initially 'pending'
         $receiptUrl = ''; // Assuming the receipt URL is initially empty
         
         $sqlGeneratePayment = "INSERT INTO `tbl_payment` (`user_id`, `user_email`, `month`, `amount`, `balance`, `status`, `receipt_url`) VALUES ('$userId', '$userEmail', '$Month', '$Amount', '$balance', '$status', '$receiptUrl')";
