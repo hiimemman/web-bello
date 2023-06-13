@@ -38,6 +38,9 @@ if (!isset($_SESSION['IDUSER'])) {
 
 <body>
     <div class="content">
+        <?php
+require_once('../components/navbar.php')
+?>
         <div id='calendar'></div>
     </div>
 
