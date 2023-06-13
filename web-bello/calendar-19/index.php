@@ -32,7 +32,7 @@ require_once('../components/navbar.php')
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <title>Community Schedules - Web-Bello Online!</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,6 +40,19 @@ require_once('../components/navbar.php')
 </head>
 
 <body>
+    <style>
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        #calendar .fc-view-container {
+            padding: 30px;
+            background-color: #efefef;
+            -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+        }
+    </style>
     <div class="content">
 
         <div id='calendar'></div>
