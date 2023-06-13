@@ -18,7 +18,7 @@ try{
 
    
     
-    exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Home owner information has been updated!')));
+    exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Monthly due has been updated!')));
 
 }catch(Exception $e){
     exit(json_encode(array("responseStatus" =>'error', "responseContent" =>$e->getMessage(), "responseMessage" =>'Update failed error:!')));
