@@ -55,7 +55,7 @@ $sms_messages->setMessages([$msg]);
 
 try {
 $result = $apiInstance->smsSendPost($sms_messages);
-print_r($result);
+//print_r($result);
 } catch (Exception $e) {
 echo 'Exception when calling SMSApi->smsSendPost: ', $e->getMessage(), PHP_EOL;
 }
