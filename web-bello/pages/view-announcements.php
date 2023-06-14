@@ -411,9 +411,7 @@ require_once('../components/navbar.php')
                 console.log("pumasok dito")
                 commentImaged += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+comments.image_url+`" alt="image description">`
             }
-
-               contents += `
-               <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
+            <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
                     <div class="inline-flex">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -423,6 +421,8 @@ require_once('../components/navbar.php')
                         </svg>
                         <h1 class="font-semibold text-xl mb-6 ml-2">Comments</h1>
                     </div>
+               contents += `
+
                     <footer class="flex justify-between items-center mb-2">
                         <div class="flex items-center">
                             <p class="inline-flex items-center mr-3 text-md font-medium text-gray-900">
