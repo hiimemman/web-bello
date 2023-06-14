@@ -366,6 +366,17 @@ require_once('../components/navbar.php')
             </article>
         </div>
     </section>
+
+    <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
+                    <div class="inline-flex">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z">
+                            </path>
+                        </svg>
+                        <h1 class="font-semibold text-xl mb-6 ml-2">Comments</h1>
+                    </div>
     `;
        
         })
@@ -411,10 +422,9 @@ require_once('../components/navbar.php')
                 console.log("pumasok dito")
                 commentImaged += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+comments.image_url+`" alt="image description">`
             }
-            
 
                contents += `
-               <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
+
                     <footer class="flex justify-between items-center mb-2">
                         <div class="flex items-center">
                             <p class="inline-flex items-center mr-3 text-md font-medium text-gray-900">
