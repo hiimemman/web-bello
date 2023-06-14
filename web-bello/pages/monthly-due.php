@@ -286,7 +286,7 @@ const loadTable = async function() {
   console.log("response: "+response.responseStatus);
   console.log("content: " +JSON.stringify(response.responseContent))
 
-  if (response.responseStatus === 'OK') {
+  if (response.responseStatus === 'success') {
     let content = '';
 
     JSON.parse(response.responseContent).forEach((contents) => {
