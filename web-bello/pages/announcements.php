@@ -1,7 +1,6 @@
 <?php
 session_start(); //if there is no session then start session
 include_once("../connections/connection.php");
-
 $con = connection();
 if (!isset($_SESSION['IDUSER'])) {
   header('Location: /web-bello/pages/user-login.php');
@@ -37,7 +36,6 @@ require_once('../components/navbar.php')
     <meta content="" name="keywords">
     <title>Web-Bello Forums</title>
     <link rel="stylesheet" href="../style.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <style>
 .material-symbols-outlined {
   font-variation-settings:
@@ -47,12 +45,44 @@ require_once('../components/navbar.php')
   'opsz' 48
 }
 </style>
+
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-white dark:bg-gray-900">
 
     <!-- Forum page with sidebar and navbar -->
 
+    <header class=" border-b-4 border-sky-300">
+        <!-- Intro Header -->
+        <div class="container mt-32 mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <div class="text-center sm:text-left">
+                    <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+                        Hello, <?php echo $result[0]['firstname']; ?>!
+                    </h1>
+
+                    <p class="mt-1.5 text-lg text-gray-500">
+                        Welcome to your Web-Bello Online account!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- End of Intro Header -->
+    </header>
+
+
+    <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
+        type="button"
+        class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd"
+                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+            </path>
+        </svg>
+    </button>
 
     <aside id="default-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0"
