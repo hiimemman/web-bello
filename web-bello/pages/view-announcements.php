@@ -359,7 +359,7 @@ require_once('../components/navbar.php')
 
                     </div>
                     <div class="flex items-center">
-                        <button type="submit" id="postButton" class="text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-6 focus:outline-none">
+                        <button type="submit" id="postButton" class="text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-12 focus:outline-none">
                             Post comment
                         </button>
                         <div class="flex pl-0 space-x-1 sm:pl-2">
@@ -370,7 +370,7 @@ require_once('../components/navbar.php')
                             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="sr-only">Upload image</span>
+                            <span>Upload image</span>
                             </button>
                         </div>
                         </div>
