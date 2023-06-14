@@ -186,6 +186,7 @@ require_once('../components/navbar.php');
                 
                 <div class="grid gap-4 mb-4 sm:grid-cols-2">
                     <input type ="hidden" name ="idUpdate" id ="idUpdate" >
+                    <input type ="hidden" name ="receipt_url" id ="receipt_url">
                     <div>
                         <div id ="imageviewer" >
                             
@@ -210,7 +211,7 @@ require_once('../components/navbar.php');
 <script defer>
 const imageviewer = document.querySelector('#imageviewer')
 const receiptInput = document.querySelector('#receiptInput')
-
+const receipt_url = document.querySelector('#receipt_url')
 receiptInput.addEventListener('change'  , async () =>{
     
 // Picking up files from the input .  .  .
