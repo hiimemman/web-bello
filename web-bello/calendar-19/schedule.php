@@ -86,9 +86,32 @@ if (!isset($_SESSION['ID'])) {
 
 <body>
     <div class="content">
-        <button id="addScheduleBtn" class="btn btn-primary">Add Schedule</button>
-        <div id='calendar'></div>
-    </div>
+    <div class="calendar-toolbar">
+    <button id="addScheduleBtn" class="btn btn-primary">Add Schedule</button>
+    <button id="todayBtn" class="fc-today-button fc-button fc-button-primary">Today</button>
+  </div>
+  <div id="calendar"></div>
+</div>
+
+<style>
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calendar-toolbar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  #calendar {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+</style>
 <!-- Modal -->
 <div id="addScheduleModal" class="modal">
   <div class="modal-content">
