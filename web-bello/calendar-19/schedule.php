@@ -33,8 +33,6 @@ if (!isset($_SESSION['ID'])) {
     <link rel="stylesheet" href="css/style.css">
 
     <title>Community Schedules - Web-Bello Online!</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- 
     <style>
     /* Modal Styles */
@@ -87,12 +85,12 @@ if (!isset($_SESSION['ID'])) {
 </head>
 
 <body>
-    <h1 class="text-center justify-center text-3xl font-bold mx-auto">Community Schedules</h1>
-    <div class="content">
+    <h1 class="text-center justify-center text-3xl font-bold mx-auto mt-12">COMMUNITY SCHEDULES</h1>
+    <div class="content mt-12">
         <div class="calendar-toolbar">
-            <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3 mt-50">Return to
+            <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3">Return to
                     dashboard</button></a>
-            <button id="addScheduleBtn" class="btn btn-primary mr-3 mt-50">Add schedule</button>
+            <button id="addScheduleBtn" class="btn btn-primary mr-3">Add schedule</button>
         </div>
         <div id="calendar"></div>
     </div>
