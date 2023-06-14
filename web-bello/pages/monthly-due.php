@@ -274,7 +274,12 @@ window.onload = function(){
 
 //load table
 const loadTable = async function() {
-  const getUsers = await fetch("../api/monthly-due/all-monthly-due.php");
+    const formData = new FormData()
+    formData.append('UserId', <?php echo $result[0]['id']?>)
+  const getUsers = await fetch("../api/monthly-due/all-monthly-due-per-id.php",{
+    method: "POST",
+    body: formData
+  });
   const response = await getUsers.json();
   console.log(response);
 
