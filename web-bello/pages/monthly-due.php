@@ -244,7 +244,7 @@ const updateModal = (button) =>{
     console.log("This is the button")
     console.log(button);
     //const dataJson = button.getAttribute('data-user');
-    const content = JSON.parse(button)
+    //const content = JSON.parse(button)
 console.log(content)
 
 updateHiddenButton.click()
@@ -257,10 +257,10 @@ updateHiddenButton.click()
 // const statusUpdate =document.querySelector('#statusUpdate')
 
 //set the value of input fields
-idUpdate.value = content.payment_id;
-amountUpdateFix.value = content.amount;
-statusUpdate.value = content.status;
-balanceUpdate.value = content.balance;
+idUpdate.value = button.payment_id;
+amountUpdateFix.value = button.amount;
+statusUpdate.value = button.status;
+balanceUpdate.value = button.balance;
 }
 
 
