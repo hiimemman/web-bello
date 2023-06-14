@@ -63,7 +63,7 @@ require_once('../components/navbar.php')
 
 
 
-  
+
 
 
     <!-- End of Announcement Section -->
@@ -111,7 +111,8 @@ require_once('../components/navbar.php')
                     </li>
 
                     <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/">
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/calendar-19/index.php">
                             Schedules
                         </a>
                     </li>
@@ -222,51 +223,57 @@ require_once('../components/navbar.php')
     });
     </script>
 
-<script defer>
+    <script defer>
     const forumMain = document.querySelector('#forumMain')
-    
-    
-    
-    const badgeAnnouncement = '<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Announcement</span>';
-    const badgeCollectingSchedule = '<span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Collecting Schedule</span>'
-    const badgeEvents = '<span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Events</span>'
-    const badgeForum = '<span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">Forum</span>'
-    const badgeNews = '<span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">News</span>'
+
+
+
+    const badgeAnnouncement =
+        '<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Announcement</span>';
+    const badgeCollectingSchedule =
+        '<span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Collecting Schedule</span>'
+    const badgeEvents =
+        '<span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Events</span>'
+    const badgeForum =
+        '<span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">Forum</span>'
+    const badgeNews =
+        '<span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">News</span>'
     window.onload = function() {
         getAllForum()
     }
 
     const getAllForum = async () => {
-        
-        
+
+
 
         const request = await fetch('../api/forum/all-announcement.php')
 
         const response = await request.json()
         content = ''
         response.responseContent.map((forum) => {
-            
-           
+
+
             let categoryBadge = badgeAnnouncement;
-            if(forum.category === 'Announcement'){
+            if (forum.category === 'Announcement') {
                 categoryBadge = badgeAnnouncement
             }
-            if(forum.category === 'Collecting Schedule'){
+            if (forum.category === 'Collecting Schedule') {
                 categoryBadge = badgeCollectingSchedule
             }
-            if(forum.category === 'Events'){
+            if (forum.category === 'Events') {
                 categoryBadge = badgeEvents
             }
-            if(forum.category === 'Forum'){
+            if (forum.category === 'Forum') {
                 categoryBadge = badgeForum
             }
-            if(forum.category === 'News'){
+            if (forum.category === 'News') {
                 categoryBadge = badgeNews
             }
             let commentImage = ""
             //check image
-            if(forum.image_url !== ""){
-                commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+forum.image_url+`" alt="image description">`
+            if (forum.image_url !== "") {
+                commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="` + forum
+                    .image_url + `" alt="image description">`
             }
             content += `
     <section>
@@ -279,7 +286,7 @@ require_once('../components/navbar.php')
                         Announcements
                     </span>
                     <span class="text-sm">` + forum
-                            .created_at + `</span>
+                .created_at + `</span>
                 </div>
 
                 <div class="flex justify-between items-center">
@@ -325,11 +332,11 @@ require_once('../components/navbar.php')
                 <!-- End of Like Button -->
                 <!-- Comments -->
                 <form action="https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php" method="POST">
-                    <div id ="commentSection`+forum.id+`">
+                    <div id ="commentSection` + forum.id + `">
                 
                     </div>
                 <input type="text" style="display: none;" name="user_id" value="<?php echo $result[0]['id']; ?>">
-                <input type="text" style="display: none;" name="forum_id" value="`+forum.id+`">
+                <input type="text" style="display: none;" name="forum_id" value="` + forum.id + `">
                 <input type="text" style="display: none;" name="user_email" value="<?php echo $result[0]['email']; ?>">
                 <input type="text" style="display: none;" name="user_full_name" value="<?php echo $result[0]['firstname'] . ' ' . $result[0]['lastname']; ?>">
 
@@ -339,7 +346,7 @@ require_once('../components/navbar.php')
                             class="px-0 w-full text-md text-gray-900 border-0 focus:ring-0 focus:outline-none"
                             placeholder="Write a comment..." required></textarea>
                     </div>
-                    <div class ="mt-2" id ="imageHolder`+forum.id+`">
+                    <div class ="mt-2" id ="imageHolder` + forum.id + `">
 
                     </div>
                     <button type="submit" id="postButton"
@@ -348,8 +355,10 @@ require_once('../components/navbar.php')
                         Post comment
                     </button>
                     <div class="flex pl-0 space-x-1 sm:pl-2">
-                        <input  style="display: none;" id = "imageUrl`+forum.id+`"type ="file" onchange="changeProfile()" />
-                        <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick = "triggerInputClick(`+forum.id+`)">
+                        <input  style="display: none;" id = "imageUrl` + forum.id +
+                `"type ="file" onchange="changeProfile()" />
+                        <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick = "triggerInputClick(` +
+                forum.id + `)">
                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
                    <span class="sr-only">Upload image</span>
                </button>
@@ -368,7 +377,7 @@ require_once('../components/navbar.php')
 
 
     `;
-       
+
         })
 
 
@@ -376,44 +385,45 @@ require_once('../components/navbar.php')
 
 
         forumMain.innerHTML = content;
-        
-        
-      
 
 
 
-       
-       response.responseContent.map((forum) => {
-         let content = getcommentPerForum(forum.id)
-       })   
-        
+
+
+
+
+        response.responseContent.map((forum) => {
+            let content = getcommentPerForum(forum.id)
+        })
+
     }
-    
-    const getcommentPerForum = async (id) =>{
+
+    const getcommentPerForum = async (id) => {
         const commentSectionId = document.querySelector('#commentSection' + id);
         formData = new FormData();
         formData.append('ForumId', id);
-      
-        const request = await fetch('../api/comment/get-all-comment-per-forum.php',{
-            method:"POST",
-            body:formData,
+
+        const request = await fetch('../api/comment/get-all-comment-per-forum.php', {
+            method: "POST",
+            body: formData,
         })
-        
+
         const response = await request.json()
-        if(response.responseStatus === 'success'){
-           console.log(response.responseContent)
-          let contents = '';
-            response.responseContent.map((comments)=>{
+        if (response.responseStatus === 'success') {
+            console.log(response.responseContent)
+            let contents = '';
+            response.responseContent.map((comments) => {
                 console.log(comments)
 
                 let commentImaged = ""
-            //check image
-            if(comments.image_url !== ""){
-                console.log("pumasok dito")
-                commentImaged += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+comments.image_url+`" alt="image description">`
-            }
+                //check image
+                if (comments.image_url !== "") {
+                    console.log("pumasok dito")
+                    commentImaged += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="` + comments
+                        .image_url + `" alt="image description">`
+                }
 
-               contents += `
+                contents += `
                <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
                     <div class="inline-flex">
                       
@@ -425,19 +435,19 @@ require_once('../components/navbar.php')
                             </p>
                             <p class="text-md text-gray-600">
                                 <time pubdate datetime="2022-02-08" title="February 8th, 2022">` + comments
-                            .created_at + `</time>
+                    .created_at + `</time>
                             </p>
                         </div>
                     </footer>
                     <p class="text-gray-600">
                    ` + comments
-                .comment_text + `</p>
-                    `+commentImaged+`
+                    .comment_text + `</p>
+                    ` + commentImaged + `
                 </article>
                 
             `
             })
-             commentSectionId.innerHTML = contents
+            commentSectionId.innerHTML = contents
         }
     }
     </script>
@@ -493,107 +503,109 @@ require_once('../components/navbar.php')
         document.documentElement.classList.remove('dark')
     }
     </script>
-<script defer>
-
-let currentUploadInputId = 0;
-  const  triggerInputClick = (id) => {
-    currentUploadInputId = id;
-    const uploadId = document.querySelector('#imageUrl'+id)
-    uploadId.click();
-  }
-  
-  
-  
-const changeProfile = async() =>{
- 
-  let fileupload = document.getElementById('imageUrl'+currentUploadInputId);// fileupload
-  let imageHolder = document.getElementById('commentSection'+currentUploadInputId)
-    console.log(imageHolder)
- // Picking up files from the input .  .  .
- let files = fileupload.files;
-
- // Uploading only one file; multiple uploads are not allowed.
-  let imageFile = files[0]; 
-
-   // Create a FormData object.
-  formData = new FormData();
-
-  // Add the file to the request.
-  formData.append('profileEdit', imageFile, imageFile.name);
-
-try{
-
-const fetchResponse = await fetch("../api/images/move-only-image.php",{
-    method: "POST",
-    body:formData,
-});
-
-const receivedStatus = await fetchResponse.json();
-console.log(receivedStatus)
-
-if(receivedStatus.statusCode === 200){
-    console.log("pumasok dito")
-let output = ''; 
-let checkIfBlankImage =""
-
-if(receivedStatus.image !== ""){
-    checkIfBlankImage += `<img class="m-2 h-auto max-w-xs transition-all duration-300 rounded-lg blur-sm hover:blur-none" src="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" alt="image description">`
-}
-output += `
- <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />
-`+checkIfBlankImage+`
-`;
-  
-imageHolder.innerHTML = output;
-}else{
-    alert('error')
-}
- 
-
-
-    }catch (e){
-    console.log(e)
+    <script defer>
+    let currentUploadInputId = 0;
+    const triggerInputClick = (id) => {
+        currentUploadInputId = id;
+        const uploadId = document.querySelector('#imageUrl' + id)
+        uploadId.click();
     }
-}
-</script>
-<script defer>
-    //liked button
-    const likedButtonClicked = async (id) =>{
-        const likeButton = document.querySelector('#btnLike'+id)
-        const likeButtonCounter = document.querySelector('#likeCount'+id)
-        
-        
-        let counter = parseInt(likeButtonCounter.innerHTML)
-        
-        counter++;
-    
-        
-        try{
-            formData = new FormData()
-        
-            formData.append('forumID', id);
-            formData.append('userID','<?php echo $result[0]['id']; ?>')
-            formData.append('likedCount', counter)
-            
-            const request = await fetch("../api/forum/update-forum-like.php",{
+
+
+
+    const changeProfile = async () => {
+
+        let fileupload = document.getElementById('imageUrl' + currentUploadInputId); // fileupload
+        let imageHolder = document.getElementById('commentSection' + currentUploadInputId)
+        console.log(imageHolder)
+        // Picking up files from the input .  .  .
+        let files = fileupload.files;
+
+        // Uploading only one file; multiple uploads are not allowed.
+        let imageFile = files[0];
+
+        // Create a FormData object.
+        formData = new FormData();
+
+        // Add the file to the request.
+        formData.append('profileEdit', imageFile, imageFile.name);
+
+        try {
+
+            const fetchResponse = await fetch("../api/images/move-only-image.php", {
                 method: "POST",
-                body:formData,
+                body: formData,
+            });
+
+            const receivedStatus = await fetchResponse.json();
+            console.log(receivedStatus)
+
+            if (receivedStatus.statusCode === 200) {
+                console.log("pumasok dito")
+                let output = '';
+                let checkIfBlankImage = ""
+
+                if (receivedStatus.image !== "") {
+                    checkIfBlankImage +=
+                        `<img class="m-2 h-auto max-w-xs transition-all duration-300 rounded-lg blur-sm hover:blur-none" src="https://web-bello.online/web-bello/savedimages/` +
+                        receivedStatus.image + `" alt="image description">`
+                }
+                output += `
+ <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/` +
+                    receivedStatus.image + `" />
+` + checkIfBlankImage + `
+`;
+
+                imageHolder.innerHTML = output;
+            } else {
+                alert('error')
+            }
+
+
+
+        } catch (e) {
+            console.log(e)
+        }
+    }
+    </script>
+    <script defer>
+    //liked button
+    const likedButtonClicked = async (id) => {
+        const likeButton = document.querySelector('#btnLike' + id)
+        const likeButtonCounter = document.querySelector('#likeCount' + id)
+
+
+        let counter = parseInt(likeButtonCounter.innerHTML)
+
+        counter++;
+
+
+        try {
+            formData = new FormData()
+
+            formData.append('forumID', id);
+            formData.append('userID', '<?php echo $result[0]['id']; ?>')
+            formData.append('likedCount', counter)
+
+            const request = await fetch("../api/forum/update-forum-like.php", {
+                method: "POST",
+                body: formData,
             });
             const response = await request.json()
             console.log(response)
-            if(response.responseStatus === 'success'){
+            if (response.responseStatus === 'success') {
                 likeButtonCounter.innerHTML = response.responseContent[0].like_count
                 likeButton.disabled = true;
                 likeButton.classList.add('cursor-not-allowed')
             }
 
-        }catch(e){
+        } catch (e) {
             console.log(e)
         }
-     
-     
+
+
     }
-</script>
+    </script>
 </body>
 
 </html>
