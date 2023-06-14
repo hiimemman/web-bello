@@ -107,7 +107,7 @@ if ($result) {
 </head>
 
 <body>
-    <a href="https://web-bello.online/web-bello/pages/user-forum.php"><button style="border: 2px white solid;" class="mt-3 ml-3">Go back to announcement</button></a>
+    <a href="https://web-bello.online/web-bello/pages/user-index.php"><button style="border: 2px white solid;" class="mt-3 ml-3">Go back to announcement</button></a>
     <div class="container">
         <h1>Edit Profile</h1>
         <form action="../pages/profile.php" method="POST" id="frmUpdateProfile">
@@ -226,7 +226,7 @@ if(response.responseStatus === 'success'){
    location.reload();
    localStorage.setItem('showToast', 'true');
    localStorage.setItem('showToastMessage', response.responseMessage)
-   window.location.href = "https://web-bello.online/web-bello/pages/user-forum.php"
+   window.location.href = "https://web-bello.online/web-bello/pages/user-index.php"
 
     // Close the profile window
     

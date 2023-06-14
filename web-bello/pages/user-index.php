@@ -100,7 +100,7 @@ require_once('../components/navbar.php')
                     </a>
 
                     <a class="block rounded-xl border border-gray-300 p-4 shadow-sm hover:shadow-xl transition-shadow focus:outline-none focus:ring grid-box"
-                        href="/web-bello/pages/update-profile.php">
+                        href="/web-bello/pages/profile.php">
                         <span class="flex items-center justify-center rounded-lg p-3">
                             <svg class="h-12 w-12" fill="none" stroke="currentColor" stroke-width="1.5"
                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
