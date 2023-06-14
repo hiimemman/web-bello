@@ -219,7 +219,7 @@ const usersTblBody = document.querySelector('#usersTblBody');
 const frmRegisterHOA = document.querySelector('#frmRegisterHOA');
 
 //search input
-const searchInput = document.querySelector('#searchInput');
+//const searchInput = document.querySelector('#searchInput');
 
 //update modal
 const updateProductModal =document.querySelector('#updateProductModal')
@@ -302,33 +302,6 @@ const loadTable = async function(){
 }//end of onload
 
 
-frmRegisterHOA.addEventListener('submit', async (event) =>{
-    event.preventDefault()
-    formData = new FormData(frmRegisterHOA)
-
-// uncomment this to print all the content of formData
-    for (const [key, value] of formData.entries()) {
-  console.log(`${key}: ${value}`);
-}
-
-//fetch data
-  const request =  await fetch("../api/monthly-due/new-monthly-due.php",{
-    method: "POST",
-    body:formData,
-  });
-
-//get the response
-
-const response = await request.json();
-console.log(response)
-if(response.responseStatus === 'success'){
-    //reload table
-   location.reload();
-   localStorage.setItem('showToast', 'true');
-   localStorage.setItem('showToastMessage', response.responseMessage)
-}
-
-})
 
 
 //submit edit hoa
