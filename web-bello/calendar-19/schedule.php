@@ -104,7 +104,7 @@ if (!isset($_SESSION['ID'])) {
   .calendar-toolbar {
     display: flex;
     justify-content: center;
-    margin: 10px auto 0 auto;
+    margin: 10px 5px 0 5px;
   }
 
   #calendar {
