@@ -282,7 +282,7 @@ const loadTable = async function() {
   });
   const response = await getUsers.json();
   
-  console.log("response: "+response);
+  console.log("response: "+response.responseStatus);
 
   if (response.responseStatus === 'OK') {
     let content = '';
