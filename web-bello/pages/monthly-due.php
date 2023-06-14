@@ -212,7 +212,7 @@ require_once('../components/navbar.php')
 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 <script defer>
-console.log("test")
+
 //table body
 const usersTblBody = document.querySelector('#usersTblBody');
 //form
@@ -433,7 +433,7 @@ const deleteModal = async (button) =>{
 //Update modal
 
 
-
+console.log("test")
 const updateModal = (button) =>{
 
     const dataJson = button.getAttribute('data-user');
