@@ -89,7 +89,6 @@ if (!isset($_SESSION['ID'])) {
         <button id="addScheduleBtn" class="btn btn-primary">Add Schedule</button>
         <div id='calendar'></div>
     </div>
-
 <!-- Modal -->
 <div id="addScheduleModal" class="modal">
   <div class="modal-content">
@@ -146,6 +145,31 @@ if (!isset($_SESSION['ID'])) {
     cursor: pointer;
   }
 </style>
+
+<script>
+  // Close the modal when the close button (X) is clicked
+  document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById("addScheduleModal");
+    var closeBtn = document.getElementsByClassName("modal-close")[0];
+
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+  });
+
+  // Reload the window after scheduling an event
+  document.addEventListener("DOMContentLoaded", function() {
+    var scheduleForm = document.getElementById("scheduleForm");
+
+    scheduleForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      // Send the data to the server and handle the response
+
+      // Reload the window
+      location.reload();
+    });
+  });
+</script>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
