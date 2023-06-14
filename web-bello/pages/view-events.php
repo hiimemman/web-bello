@@ -214,7 +214,8 @@ require_once('../components/navbar.php')
                     </li>
 
                     <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/">
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/calendar-19/index.php">
                             Schedules
                         </a>
                     </li>
