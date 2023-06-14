@@ -100,6 +100,7 @@ if (!isset($_SESSION['IDUSER'])) {
                 <a href="/web-bello/pages/view-events.php" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Events</a>
                 <a href="/web-bello/pages/view-forums.php" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Forums</a>
                 <a href="/web-bello/calendar-19/index.php" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Schedules</a>
+                <a href="/web-bello/calendar-19/monthly-due.php" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Monthly Due</a>
                 <a href="../api/login/logout.php" class="nav-link text-sm font-semibold leading-6 text-gray-400 dark:text-gray-600 dark:hover:text-white">Sign
                     out</a>
             </div>
