@@ -420,7 +420,8 @@ if (!isset($_SESSION['IDUSER'])) {
 
 
             </div>
-            <form action="https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php" method="POST">
+            
+            <form  id ="addComment">
             <div id ="commentSection`+forum.id+`">
                 
             </div>
@@ -465,7 +466,15 @@ if (!isset($_SESSION['IDUSER'])) {
         forumMain.innerHTML = content;
         
         
-      
+      const addComment = document.querySelector('#addComment')
+
+      addComment.addEventListener('submit', async (e)=>{
+        e.preventDefault()
+
+        const formData = new FormData(e.target.value)
+
+        console.log(formData)
+      })
 
 
 
