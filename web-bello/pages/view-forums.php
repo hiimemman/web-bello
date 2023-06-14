@@ -255,7 +255,7 @@ require_once('../components/navbar.php')
 
 
 
-        const request = await fetch('../api/forum/all-announcement.php')
+        const request = await fetch('../api/forum/all-forums-only.php')
 
         const response = await request.json()
         content = ''
