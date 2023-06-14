@@ -33,10 +33,6 @@ if (!isset($_SESSION['ID'])) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-
     <title>Community Schedules - Web-Bello Online!</title>
     <!-- 
     <style>
@@ -94,7 +90,7 @@ if (!isset($_SESSION['ID'])) {
         <h1 class="text-center mt-6 mb-6">COMMUNITY SCHEDULES</h1>
 
         <div class="calendar-toolbar">
-            <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3"><i class="fa-solid fa-arrow-left"></i>Return to
+            <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3">Return to
                     dashboard</button></a>
             <button id="addScheduleBtn" class="btn btn-primary mr-3">Add schedule</button>
         </div>
