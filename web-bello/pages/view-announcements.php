@@ -35,7 +35,7 @@ require_once('../components/navbar.php')
     }
     </style>
 
-    <header class=" border-b-4 border-sky-300">
+    <header>
         <!-- Intro Header -->
         <div class="container mt-32 mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
             <div class="sm:flex sm:items-center sm:justify-between">
