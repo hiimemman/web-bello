@@ -21,7 +21,10 @@ try {
     $result = mysqli_fetch_all($sqlGet, MYSQLI_ASSOC);
 
     // Return the response as JSON
-    echo json_encode(array("responseStatus" => 'success', "responseContent" => $result, "responseMessage" => 'Comment added successfully!'));
+    // echo json_encode(array("responseStatus" => 'success', "responseContent" => $result, "responseMessage" => 'Comment added successfully!'));
+
+    // Reload the page using JavaScript
+    echo '<script>window.location.reload();</script>';
 } catch (Exception $e) {
     echo json_encode(array("responseStatus" => 'error', "responseContent" => $e->getMessage(), "responseMessage" => 'Failed to add comment!'));
 }
