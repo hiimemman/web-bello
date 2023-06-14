@@ -118,7 +118,7 @@ require_once('../components/navbar.php')
                     </li>
                     <li>
                         <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
-                            href="/web-bello/calendar-19/monthly-due.php">
+                            href="/web-bello/pages/monthly-due.php">
                             Monthly Due
                         </a>
                     </li>
