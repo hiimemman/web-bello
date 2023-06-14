@@ -298,6 +298,28 @@ const loadTable = async function(){
 
     usersTblBody.innerHTML = content;
 
+console.log("test")
+const updateModal = (button) =>{
+
+    const dataJson = button.getAttribute('data-user');
+    const content = JSON.parse(dataJson);
+console.log(content)
+
+updateHiddenButton.click()
+
+// const firstnameUpdate =document.querySelector('#firstnameUpdate')
+// const lastnameUpdate =document.querySelector('#lastnameUpdate')
+// const emailUpdate = document.querySelector('#emailUpdate')
+// const addressUpdate = document.querySelector('#addressUpdate')
+// const roleUpdate =document.querySelector('#roleUpdate')
+// const statusUpdate =document.querySelector('#statusUpdate')
+
+//set the value of input fields
+idUpdate.value = content.payment_id;
+amountUpdateFix.value = content.amount;
+statusUpdate.value = content.status;
+balanceUpdate.value = content.balance;
+}
   }
 }//end of onload
 
@@ -406,28 +428,6 @@ const deleteModal = async (button) =>{
 //Update modal
 
 
-console.log("test")
-const updateModal = (button) =>{
-
-    const dataJson = button.getAttribute('data-user');
-    const content = JSON.parse(dataJson);
-console.log(content)
-
-updateHiddenButton.click()
-
-// const firstnameUpdate =document.querySelector('#firstnameUpdate')
-// const lastnameUpdate =document.querySelector('#lastnameUpdate')
-// const emailUpdate = document.querySelector('#emailUpdate')
-// const addressUpdate = document.querySelector('#addressUpdate')
-// const roleUpdate =document.querySelector('#roleUpdate')
-// const statusUpdate =document.querySelector('#statusUpdate')
-
-//set the value of input fields
-idUpdate.value = content.payment_id;
-amountUpdateFix.value = content.amount;
-statusUpdate.value = content.status;
-balanceUpdate.value = content.balance;
-}
 
 
 
