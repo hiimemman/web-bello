@@ -284,7 +284,7 @@ const loadTable = async function() {
   const response = await getUsers.json();
   
   console.log("response: "+response.responseStatus);
-  console.log("content: " +response.responseContent)
+  console.log("content: " +JSON.stringify(response.responseContent))
 
   if (response.responseStatus === 'OK') {
     let content = '';
