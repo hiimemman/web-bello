@@ -27,7 +27,7 @@ try{
     $result = mysqli_fetch_all($sqlGet, MYSQLI_ASSOC);
 
 // Redirect to the specified URL
-header("Location: https://web-bello.online/web-bello/pages/user-forum.php");
+header("Location: https://web-bello.online/web-bello/pages/view-announcements.php");
 exit();
   
 }catch(Exception $e){
