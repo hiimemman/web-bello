@@ -112,61 +112,6 @@ if (!isset($_SESSION['ID'])) {
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-100">
-        <img src="../" alt="" srcset="">
-        <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
-            <div class="lg:flex lg:items-end lg:justify-between">
-                <div>
-                    <div class="flex justify-center text-teal-600 lg:justify-start">
-                        <a href="#" class="-m-1.5 p-1.5">
-                            <span class="sr-only"></span>
-                            <h2 class="drop-shadow text-lg tracking-wider font-medium">
-                                WEB-BELLO
-                            </h2>
-                        </a>
-                    </div>
-
-                    <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">Connect,
-                        engage, and stay informed with your neighbors, access the latest news and events, all at your
-                        fingertips.
-                    </p>
-                </div>
-
-                <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
-                    <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/">
-                            Announcements
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/">
-                            Events
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/">
-                            Forums
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/">
-                            Schedules
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <p class="mt-12 text-center text-sm text-gray-500 lg:text-right">
-                Copyright &copy; 2023. All rights reserved.
-            </p>
-        </div>
-    </footer>
-    <!-- End of Footer-->
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
