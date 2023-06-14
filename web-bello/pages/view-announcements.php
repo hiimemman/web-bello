@@ -54,7 +54,6 @@ require_once('../components/navbar.php')
     </header>
 
     <!-- Announcement Section -->
-    <h1 class="text-gray-500 dark:text-gray-400">This is result id<?php echo $_SESSION['IDUSER']; ?></h1>
     <main class="px-6 sm:ml-64 h-auto" id="forumMain">
         <!-- FORUM -->
 
