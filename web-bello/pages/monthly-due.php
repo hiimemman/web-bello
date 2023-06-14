@@ -241,7 +241,7 @@ const balanceUpdate = document.querySelector('#balanceUpdate')
 
 //update modal
 const updateModal = (button) =>{
-
+    console.log(button);
     const dataJson = button.getAttribute('data-user');
     const content = JSON.parse(dataJson);
 console.log(content)
