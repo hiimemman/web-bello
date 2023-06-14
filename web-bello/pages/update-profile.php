@@ -2,6 +2,39 @@
 require_once('../components/navbar.php')
 ?>
 
+<?php
+session_start();
+
+// Redirect to login page if user is not logged in
+if (!isset($_SESSION['IDUSER'])) {
+    header('Location: /web-bello/pages/user-login.php');
+    exit();
+}
+
+include_once("../connections/connection.php");
+$con = connection();
+
+$ID = $_SESSION['IDUSER'];
+
+$sql = "SELECT * FROM tbl_residents WHERE id = '$ID'";
+$result = mysqli_query($con, $sql);
+
+if ($result) {
+    $user = mysqli_fetch_assoc($result);
+
+    // Assign the fetched values to variables
+    $Firstname = $user['firstname'];
+    $Lastname = $user['lastname'];
+    $Sex = $user['sex'];
+    $Age = $user['age'];
+    $Address = $user['address'];
+    $Contact = $user['contact'];
+    $Email = $user['email'];
+} else {
+    echo "Error fetching user data: " . mysqli_error($con);
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
