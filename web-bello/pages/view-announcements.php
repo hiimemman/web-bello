@@ -309,15 +309,32 @@ require_once('../components/navbar.php')
 
                 <!-- Image -->
                 <div class="flex justify-center">
-                    <img alt="image" src="` + forum.image_url + `"
+                    <img alt="image" src="` + forum.image_url +
+                `"
                         class="mt-8 h-auto w-auto object-cover" />
                 </div>
                 <!-- End of Image -->
                 <!-- Like Button -->
                 <div class="flex items-center">
-                                    <button class="flex items-center px-3 py-2 bg-blue-500 text-white rounded-full focus:outline-none" id ="btnLike`+forum.id+`"onClick ="likedButtonClicked(`+forum.id+`)">
-                                    👍
-                                      <span id="likeCount`+forum.id+`" class="text-sm">`+forum.like_count+`</span>
+                                    <button class="flex items-center px-3 py-2 text-white rounded-full focus:outline-none" id ="btnLike` + forum.id +
+                `"onClick ="likedButtonClicked(` + forum.id + `)">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        width="24"
+                                        height="24"
+                                        class="h-6 w-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                    >
+                                        <path
+                                        d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+                                        />
+                                    </svg>
+                                      <span id="likeCount` + forum.id + `" class="text-sm">` + forum.like_count + `</span>
                                     </button>
                 </div>
                 <!-- End of Like Button -->
@@ -559,8 +576,8 @@ require_once('../components/navbar.php')
         }
     }
 
-        //liked button
-        const likedButtonClicked = async (id) => {
+    //liked button
+    const likedButtonClicked = async (id) => {
         const likeButton = document.querySelector('#btnLike' + id)
         const likeButtonCounter = document.querySelector('#likeCount' + id)
 
@@ -596,9 +613,9 @@ require_once('../components/navbar.php')
 
     }
     </script>
-   
 
- 
+
+
 </body>
 
 </html>
