@@ -202,31 +202,55 @@ if (!isset($_SESSION['ID'])) {
         });
     });
 
-    function deleteEvent(eventId) {
-        if (confirm("Are you sure you want to delete this event?")) {
-            // Send the event ID to the server for deletion
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "../api/schedule/delete-sched.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        let response = JSON.parse(xhr.responseText);
-                        if (response.status === "success") {
-                            alert("Event deleted successfully.");
-                            // Refresh the calendar
-                            calendar.refetchEvents();
-                        } else {
-                            alert("Error: " + response.message);
-                        }
-                    } else {
-                        alert("An error occurred: " + xhr.status);
-                    }
-                }
-            };
-            xhr.send("event_id=" + encodeURIComponent(eventId));
+    document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        plugins: ['interaction', 'dayGrid'],
+        defaultDate: '2023-06-12',
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events,
+        events: {
+            url: '../api/schedule/all-sched.php',
+            method: 'POST',
+            extraParams: {
+                user_id: <?php echo $_SESSION['ID']; ?> // Pass the user ID to the server
+            },
+            failure: function(xhr, status, error) {
+                console.log(xhr.responseText); // Print the error response
+                alert('Failed to fetch events from the server.' + failure);
+            }
+        },
+        eventRender: function(info) {
+            var deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-event');
+            deleteButton.innerText = 'Delete';
+
+            deleteButton.addEventListener('click', function() {
+                var eventID = info.event.id;
+                deleteEvent(eventID);
+            });
+
+            info.el.appendChild(deleteButton);
         }
-    }
+    });
+    calendar.render();
+});
+
+function deleteEvent(eventID) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '../api/schedule/delete-sched.php');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            alert('Event deleted successfully.');
+            // Refresh the calendar or update the UI as needed
+        } else {
+            alert('Error deleting event: ' + xhr.responseText);
+        }
+    };
+    xhr.send('delete_event=' + eventID);
+}
+
 
     function editEvent(eventId, title, start_date, end_date) {
         // Prompt the user for the new event title
