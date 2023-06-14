@@ -85,6 +85,7 @@ if (!isset($_SESSION['ID'])) {
 </head>
 
 <body>
+  <h1>Community Schedules</h1>
     <div class="content">
     <div class="calendar-toolbar">
     <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3 mt-50">Dashboard</button></a>
