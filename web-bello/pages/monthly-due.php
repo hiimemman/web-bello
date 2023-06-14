@@ -180,10 +180,7 @@ require_once('../components/navbar.php');
             </div>
             
           
-                    <div>
-                        <label for="amountUpdateFix" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount</label>
-                        <input type="text" disabled name="amountUpdateFix" id="amountUpdateFix"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
-            </div>
+                  
             
             <form action="#" id ="updateHoaInformation">
                 
@@ -214,6 +211,8 @@ require_once('../components/navbar.php');
 const imageviewer = document.querySelector('#imageviewer')
 const receiptInput = document.querySelector('#receiptInput')
 
+receiptInput.addEventListener('change'  , async () =>{
+    
 // Picking up files from the input .  .  .
 let files = receiptInput.files;
 
@@ -254,6 +253,7 @@ imageviewer.innerHTML = output;
    }catch (e){
    console.log(e)
 }
+})
 </script>
 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
