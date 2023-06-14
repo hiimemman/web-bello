@@ -87,7 +87,7 @@ if (!isset($_SESSION['ID'])) {
 <body>
     <div class="content">
     <div class="calendar-toolbar">
-    <a href="../web-bello/pages/dashboard.php"><button id="Dashboard" class="fc-today-button fc-button fc-button-primary">Dashboard</button></a>
+    <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary">Dashboard</button></a>
     <button id="addScheduleBtn" class="btn btn-primary">Add Schedule</button>
    
   </div>
@@ -104,7 +104,7 @@ if (!isset($_SESSION['ID'])) {
   .calendar-toolbar {
     display: flex;
     justify-content: center;
-    margin-bottom: 0px;
+    margin-top: 5px;
   }
 
   #calendar {
