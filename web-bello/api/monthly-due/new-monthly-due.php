@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
 include_once("../../connections/connection.php");
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once('../../vendor/autoload.php');
 $con = connection();
 
 $Month = $_POST['month'];
