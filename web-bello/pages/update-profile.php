@@ -90,7 +90,7 @@ require_once('../components/navbar.php')
 
     <section class="border-t-4 border-sky-300 mb-10">
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-36 mt-10">
-            <form action="../pages/profile.php" method="POST" id="frmUpdateProfile" class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
+            <form action="../pages/update-profile.php" method="POST" id="frmUpdateProfile" class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <h2 class="text-lg fo nt-semibold leading-7 text-gray-900">
