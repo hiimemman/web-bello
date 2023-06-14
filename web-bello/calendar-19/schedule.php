@@ -45,7 +45,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900">
+    <footer class="dark">
         <img src="../" alt="" srcset="">
         <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
             <div class="lg:flex lg:items-end lg:justify-between">
