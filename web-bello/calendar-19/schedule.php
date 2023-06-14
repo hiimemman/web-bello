@@ -1,20 +1,3 @@
-<?php
-session_start();
-include_once("../connections/connection.php");
-$con = connection();
-if (!isset($_SESSION['ID'])) {
-  header('Location: ../pages/user-login.php');
-  exit();
-} else {
-  $sql = mysqli_query($con, "SELECT * FROM `tbl_residents` WHERE `id` = {$_SESSION['ID']}");
-  $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
-  $url = $_SERVER['REQUEST_URI'];
-  $pageName = basename($url, '.php');
-  $pageName = str_replace('-', ' ', $pageName);
-  $pageName = strtoupper($pageName);
-}
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -37,49 +20,49 @@ if (!isset($_SESSION['ID'])) {
     <style>
     /* Modal Styles */
     .modal-container {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 400px;
-      height: 300px;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 300px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     .modal-container h1 {
-      margin-top: 0;
+        margin-top: 0;
     }
 
     .modal-container label {
-      display: block;
-      margin-bottom: 10px;
+        display: block;
+        margin-bottom: 10px;
     }
 
     .modal-container input[type="text"],
     .modal-container input[type="datetime-local"],
     .modal-container input[type="submit"] {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
     }
 
     .modal-container input[type="submit"] {
-      background-color: #4caf50;
-      color: #fff;
-      border: none;
-      cursor: pointer;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
     }
 
     .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
     }
-  </style>
+    </style>
 
 
 </head>
@@ -112,176 +95,89 @@ if (!isset($_SESSION['ID'])) {
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-center text-gray-500">
+                <p>&copy; 2023 Web-Bello Online! All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src='fullcalendar/packages/core/main.js'></script>
-    <script src='fullcalendar/packages/interaction/main.js'></script>
     <script src='fullcalendar/packages/daygrid/main.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
+
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: ['interaction', 'dayGrid'],
-            defaultDate: '2023-06-12',
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events,
-            events: {
-                url: '../api/schedule/all-sched.php',
-                method: 'POST',
-                extraParams: {
-                    user_id: <?php echo $_SESSION['ID']; ?> // Pass the user ID to the server
-                },
-                failure: function(xhr, status, error) {
-                    console.log(xhr.responseText); // Print the error response
-                    alert('Failed to fetch events from the server.' + failure);
-                }
-            }
+            plugins: ['dayGrid'],
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            events: 'get-events.php'
         });
+
         calendar.render();
-    });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        var modal = document.getElementById("addScheduleModal");
+        // Modal
+        var modal = document.getElementById('addScheduleModal');
         var addScheduleBtn = document.getElementById("addScheduleBtn");
-        var closeBtn = document.getElementsByClassName("close")[0];
+        var closeSpan = document.getElementsByClassName("close")[0];
 
-        // Open the modal when the button is clicked
-        addScheduleBtn.onclick = function () {
+        addScheduleBtn.onclick = function() {
             modal.style.display = "block";
         }
 
-        // Close the modal when the close button is clicked
-        closeBtn.onclick = function () {
+        closeSpan.onclick = function() {
             modal.style.display = "none";
         }
 
-        // Close the modal when clicked outside of it
-        window.onclick = function (event) {
+        window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
-    });
 
-    document.addEventListener("DOMContentLoaded", function() {
-        // Handle form submission
-        document.getElementById("scheduleForm").addEventListener("submit", function(e) {
-            e.preventDefault();
+        // Schedule Form
+        var scheduleForm = document.getElementById('scheduleForm');
 
-            // Retrieve form data
-            let title = document.getElementById("title").value;
-            let start_date = document.getElementById("start_date").value;
-            let end_date = document.getElementById("end_date").value;
+        scheduleForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var title = document.getElementById('title').value;
+            var start_date = document.getElementById('start_date').value;
+            var end_date = document.getElementById('end_date').value;
 
-            // Send the data to the server
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "../api/schedule/sched.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            // Perform AJAX request to save event
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'save-event.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        let response = JSON.parse(xhr.responseText);
-                        if (response.status === "success") {
-                            alert("Event scheduled successfully.");
-                            // Clear the form
-                            document.getElementById("title").value = "";
-                            document.getElementById("start_date").value = "";
-                            document.getElementById("end_date").value = "";
-                        } else {
-                            alert("Error: " + response.message);
-                        }
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        calendar.addEvent({
+                            title: title,
+                            start: start_date,
+                            end: end_date
+                        });
+                        modal.style.display = "none";
                     } else {
-                        alert("An error occurred: " + xhr.status);
+                        alert('Error saving event. Please try again.');
                     }
                 }
             };
-            xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(start_date) + "&end_date=" + encodeURIComponent(end_date));
+            var params = 'title=' + encodeURIComponent(title) + '&start_date=' + encodeURIComponent(start_date) +
+                '&end_date=' + encodeURIComponent(end_date);
+            xhr.send(params);
         });
     });
-
-    document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: ['interaction', 'dayGrid'],
-        defaultDate: '2023-06-12',
-        editable: true,
-        eventLimit: true, // allow "more" link when too many events,
-        events: {
-            url: '../api/schedule/all-sched.php',
-            method: 'POST',
-            extraParams: {
-                user_id: <?php echo $_SESSION['ID']; ?> // Pass the user ID to the server
-            },
-            failure: function(xhr, status, error) {
-                console.log(xhr.responseText); // Print the error response
-                alert('Failed to fetch events from the server.' + failure);
-            }
-        },
-        eventRender: function(info) {
-            var deleteButton = document.createElement('button');
-            deleteButton.classList.add('delete-event');
-            deleteButton.innerText = 'Delete';
-
-            deleteButton.addEventListener('click', function() {
-                var eventID = info.event.id;
-                deleteEvent(eventID);
-            });
-
-            info.el.appendChild(deleteButton);
-        }
-    });
-    calendar.render();
-});
-
-function deleteEvent(eventID) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../api/schedule/delete-sched.php');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            alert('Event deleted successfully.');
-            // Refresh the calendar or update the UI as needed
-        } else {
-            alert('Error deleting event: ' + xhr.responseText);
-        }
-    };
-    xhr.send('delete_event=' + eventID);
-}
-
-
-    function editEvent(eventId, title, start_date, end_date) {
-        // Prompt the user for the new event title
-        let newTitle = prompt("Enter the new event title:", title);
-
-        // If the user entered a new title, update the event
-        if (newTitle) {
-            // Send the updated event data to the server
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "../api/schedule/update-sched.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        let response = JSON.parse(xhr.responseText);
-                        if (response.status === "success") {
-                            alert("Event updated successfully.");
-                            // Refresh the calendar
-                            calendar.refetchEvents();
-                        } else {
-                            alert("Error: " + response.message);
-                        }
-                    } else {
-                        alert("An error occurred: " + xhr.status);
-                    }
-                }
-            };
-            xhr.send("event_id=" + encodeURIComponent(eventId) + "&title=" + encodeURIComponent(newTitle) + "&start_date=" + encodeURIComponent(start_date) + "&end_date=" + encodeURIComponent(end_date));
-        }
-    }
     </script>
+
 </body>
 
 </html>
