@@ -357,7 +357,7 @@ require_once('../components/navbar.php')
 
                     <div class="py-2 px-4 mb-4 bg-white rounded-xl border-2 border-gray-400">
                         <label for="comment" class="sr-only">Your comment</label>
-                        <textarea id="comment" rows="3"
+                        <textarea id="comment" name ="comment" rows="3"
                             class="px-0 w-full text-md text-gray-900 border-0 focus:ring-0 focus:outline-none"
                             placeholder="Write a comment..." required></textarea>
                     </div>
