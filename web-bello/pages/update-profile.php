@@ -1,6 +1,3 @@
-<?php
-require_once('../components/navbar.php')
-?>
 
 <?php
 session_start();
@@ -33,6 +30,9 @@ if ($result) {
 } else {
     echo "Error fetching user data: " . mysqli_error($con);
 }
+?>
+<?php
+require_once('../components/navbar.php')
 ?>
 
 <!DOCTYPE html>
