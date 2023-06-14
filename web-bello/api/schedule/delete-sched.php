@@ -6,7 +6,12 @@ $con = connection();
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_event'])) {
     $eventID = $_POST['delete_event'];
     $sql = "DELETE FROM tbl_sched WHERE id = $eventID";
-    mysqli_query($con, $sql);
+    if (mysqli_query($con, $sql)) {
+        echo json_encode(array('status' => 'success', 'message' => 'Event deleted successfully.'));
+    } else {
+        echo json_encode(array('status' => 'error', 'message' => 'Error deleting event.'));
+    }
+    exit();
 }
 
 // Select all events from the database
