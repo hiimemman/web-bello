@@ -96,17 +96,17 @@ require_once('../components/navbar.php')
                             <!-- End of Change Photo -->
 
                             <!-- Name Input -->
-                            <div class="sm:col-span-3">
+                            <div class="sm:col-span-3 container">
                                 <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First
                                     name</label>
-                                <div class="mt-2">
+                                <div class="mt-2 form-group">
                                     <input type="text" name="first-name" id="first-name" autocomplete="given-name"
                                         class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" 
                                         value="<?php echo $Firstname; ?>"/>
                                 </div>
                             </div>
 
-                            <div class="sm:col-span-3">
+                            <div class="sm:col-span-3 form-group">
                                 <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last
                                     name</label>
                                 <div class="mt-2">
@@ -118,7 +118,7 @@ require_once('../components/navbar.php')
                             <!-- End of Name Input -->
 
                             <!-- Contact / Sex / Age -->
-                            <div class="sm:col-span-2 sm:col-start-1">
+                            <div class="sm:col-span-2 sm:col-start-1 form-group">
                                 <label for="contact"
                                     class="block text-sm font-medium leading-6 text-gray-900">Contact</label>
                                 <div class="mt-2">
@@ -128,7 +128,7 @@ require_once('../components/navbar.php')
                                 </div>
                             </div>
 
-                            <div class="sm:col-span-2">
+                            <div class="sm:col-span-2 form-group">
                                 <label for="sex" class="block text-sm font-medium leading-6 text-gray-900">Sex</label>
                                 <div class="mt-2">
                                     <input type="text" name="sex" id="sex"
@@ -137,7 +137,7 @@ require_once('../components/navbar.php')
                                 </div>
                             </div>
 
-                            <div class="sm:col-span-2">
+                            <div class="sm:col-span-2 form-group">
                                 <label for="postal-code"
                                     class="block text-sm font-medium leading-6 text-gray-900">Age</label>
                                 <div class="mt-2">
@@ -149,7 +149,7 @@ require_once('../components/navbar.php')
                             <!-- End of Contact / Sex / Age -->
 
                             <!-- Complete Address -->
-                            <div class="col-span-full">
+                            <div class="col-span-full form-group">
                                 <label for="complete-address"
                                     class="block text-sm font-medium leading-6 text-gray-900">Complete address</label>
                                 <div class="mt-2">
@@ -159,7 +159,7 @@ require_once('../components/navbar.php')
                             </div>
                             <!-- End of Complete Address -->
                             <!-- Email Address / Password -->
-                            <div class="sm:col-span-2 sm:col-start-1">
+                            <div class="sm:col-span-2 sm:col-start-1 form-group">
                                 <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email
                                     address</label>
                                 <div class="mt-2">
@@ -169,7 +169,7 @@ require_once('../components/navbar.php')
                                 </div>
                             </div>
 
-                            <div class="sm:col-span-2">
+                            <div class="sm:col-span-2 form-group">
                                 <label for="sex"
                                     class="block text-sm font-medium leading-6 text-gray-900">Password</label>
                                 <div class="mt-2">
@@ -178,7 +178,7 @@ require_once('../components/navbar.php')
                                 </div>
                             </div>
 
-                            <div class="sm:col-span-2">
+                            <div class="sm:col-span-2 form-group">
                                 <label for="postal-code"
                                     class="block text-sm font-medium leading-6 text-gray-900">Confirm password</label>
                                 <div class="mt-2">
