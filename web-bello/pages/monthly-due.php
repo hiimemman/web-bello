@@ -34,7 +34,7 @@ require_once('../components/navbar.php')
         color: #fff;
     }
     </style>
-
+ 
     <header class=" border-b-4 border-sky-300">
         <!-- Intro Header -->
         <div class="container mt-32 mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -52,6 +52,10 @@ require_once('../components/navbar.php')
         </div>
         <!-- End of Intro Header -->
     </header>
+    <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5 flex h-screen w-full">
+    <div class="mx-auto w-full px-4 lg:px-12">
+        <!-- Start coding here -->
+        <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
 
     <div class="overflow-x-auto">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id ="tblHOA">
@@ -79,7 +83,9 @@ require_once('../components/navbar.php')
                 </table>
             </div>
 
-
+            </div>
+</div>
+</section>
 
 
 
