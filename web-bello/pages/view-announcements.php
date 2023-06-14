@@ -567,10 +567,9 @@ require_once('../components/navbar.php')
             console.log(e)
         }
     }
-    </script>
-    <script defer>
-    //liked button
-    const likedButtonClicked = async (id) => {
+
+        //liked button
+        const likedButtonClicked = async (id) => {
         const likeButton = document.querySelector('#btnLike' + id)
         const likeButtonCounter = document.querySelector('#likeCount' + id)
 
@@ -606,6 +605,9 @@ require_once('../components/navbar.php')
 
     }
     </script>
+   
+
+ 
 </body>
 
 </html>
