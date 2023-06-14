@@ -315,19 +315,10 @@ require_once('../components/navbar.php')
                 <!-- End of Image -->
                 <!-- Like Button -->
                 <div class="flex items-center">
-                    <button id ="btnLike`+forum.id+`" class="flex py-2 text-blue-400 rounded-full focus:outline-none"
-                        onclick="likedButtonClicked(`+forum.id+`)">
-                        <svg id="likeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                            class="main-grid-item-icon h-6 w-6" fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="1.5">
-                            <path
-                                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
-                        </svg>
-                        <span id="likeCount`+forum.id+`"
-                            class="inline-flex items-center justify-center px-2.5 py-0.5 text-emerald-700">
-                            <p class="whitespace-nowrap text-md">`+forum.like_count+`</p>
-                        </span>
-                    </button>
+                                    <button class="flex items-center px-3 py-2 bg-blue-500 text-white rounded-full focus:outline-none" id ="btnLike`+forum.id+`"onClick ="likedButtonClicked(`+forum.id+`)">
+                                    👍
+                                      <span id="likeCount`+forum.id+`" class="text-sm">`+forum.like_count+`</span>
+                                    </button>
                 </div>
                 <!-- End of Like Button -->
                 <!-- Comments -->
