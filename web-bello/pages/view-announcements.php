@@ -345,7 +345,7 @@ require_once('../components/navbar.php')
                     </div>
                     <button type="submit" id="postButton"
                         class="text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-6 focus:outline-none"
-                        disabled>
+                        >
                         Post comment
                     </button>
                     <div class="flex pl-0 space-x-1 sm:pl-2">
