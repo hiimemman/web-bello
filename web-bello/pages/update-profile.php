@@ -57,10 +57,10 @@ require_once('../components/navbar.php')
 
     <section class="border-t-4 border-sky-300 mb-10">
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-36 mt-10">
-            <form class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
+            <form action="../pages/profile.php" method="POST" id="frmUpdateProfile" class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
-                        <h2 class="text-lg font-semibold leading-7 text-gray-900">
+                        <h2 class="text-lg fo nt-semibold leading-7 text-gray-900">
                             Personal Information
                         </h2>
                         <p class="text-sm leading-6 text-gray-600">
@@ -101,7 +101,8 @@ require_once('../components/navbar.php')
                                     name</label>
                                 <div class="mt-2">
                                     <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                                        class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" />
+                                        class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" 
+                                        value="<?php echo $Firstname; ?>"/>
                                 </div>
                             </div>
 
@@ -109,7 +110,8 @@ require_once('../components/navbar.php')
                                 <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last
                                     name</label>
                                 <div class="mt-2">
-                                    <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                                    <input type="text" name="last-name" id="lastname" autocomplete="family-name"
+                                    value="<?php echo $Lastname; ?>"
                                         class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
@@ -121,6 +123,7 @@ require_once('../components/navbar.php')
                                     class="block text-sm font-medium leading-6 text-gray-900">Contact</label>
                                 <div class="mt-2">
                                     <input type="text" name="contact" id="contact"
+                                    value="<?php echo $Contact; ?>"
                                         class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
@@ -129,6 +132,7 @@ require_once('../components/navbar.php')
                                 <label for="sex" class="block text-sm font-medium leading-6 text-gray-900">Sex</label>
                                 <div class="mt-2">
                                     <input type="text" name="sex" id="sex"
+                                    value="<?php echo $Sex; ?>"
                                         class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
@@ -138,6 +142,7 @@ require_once('../components/navbar.php')
                                     class="block text-sm font-medium leading-6 text-gray-900">Age</label>
                                 <div class="mt-2">
                                     <input type="text" name="age" id="age"
+                                    value="<?php echo $Age; ?>"
                                         class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
@@ -159,6 +164,7 @@ require_once('../components/navbar.php')
                                     address</label>
                                 <div class="mt-2">
                                     <input type="email" name="email" id="email"
+                                    value="<?php echo $Address; ?>"
                                         class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
@@ -168,7 +174,7 @@ require_once('../components/navbar.php')
                                     class="block text-sm font-medium leading-6 text-gray-900">Password</label>
                                 <div class="mt-2">
                                     <input type="password" name="password" id="password"
-                                        class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" />
+                                        class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" required/>
                                 </div>
                             </div>
 
@@ -177,7 +183,7 @@ require_once('../components/navbar.php')
                                     class="block text-sm font-medium leading-6 text-gray-900">Confirm password</label>
                                 <div class="mt-2">
                                     <input type="password" name="confirm-password" id="confirm-password"
-                                        class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" />
+                                        class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" required/>
                                 </div>
                             </div>
                             <!-- End of Email Address / Password -->
@@ -190,7 +196,7 @@ require_once('../components/navbar.php')
                         Cancel
                     </button>
                     <button type="submit"
-                        class="rounded-md bg-sky-800 px-10 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        class="submit-btn rounded-md bg-sky-800 px-10 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                         Save changes
                     </button>
                 </div>
@@ -257,6 +263,26 @@ require_once('../components/navbar.php')
         </div>
     </footer>
     <!-- End of Footer-->
+
+    
+    <!-- TOASTER -->
+
+ 
+<div id="toast-success" class="hidden fixed flex items-center w-full max-w-xs p-4 mb-4 bottom-5 left-5 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
+  <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+    </svg>
+    <span class="sr-only">Check icon</span>
+  </div>
+  <div class="ml-3 text-sm font-normal">Item moved successfully.</div>
+  <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-success" aria-label="Close">
+    <span class="sr-only">Close</span>
+    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+    </svg>
+  </button>
+</div>
 
     <script>
     const menuToggle = document.getElementById("menu-toggle");
@@ -354,6 +380,99 @@ require_once('../components/navbar.php')
         }
     });
     </script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
+<script defer>
+
+frmUpdateProfile.addEventListener('submit', async (event) =>{
+    event.preventDefault()
+    formData = new FormData(frmUpdateProfile)
+    // formData.append('password', 'default1234')
+// uncomment this to print all the content of formData
+    for (const [key, value] of formData.entries()) {
+  console.log(`${key}: ${value}`);
+}
+
+//fetch data
+  const request =  await fetch("../api/profile/profile.php",{
+    method: "POST",
+    body:formData,
+  });
+
+//get the response
+
+const response = await request.json();
+
+
+
+if(response.responseStatus === 'success'){
+    //reload table
+    console.log("responseContent")
+   location.reload();
+   localStorage.setItem('showToast', 'true');
+   localStorage.setItem('showToastMessage', response.responseMessage)
+   window.location.href = "https://web-bello.online/web-bello/pages/user-forum.php"
+
+    // Close the profile window
+    
+}
+
+})
+
+
+//submit edit hoa
+updateHoaInformation.addEventListener('submit', async (event) =>{
+    event.preventDefault()
+    formData = new FormData(updateHoaInformation)
+    // uncomment this to print all the content of formData
+//     for (const [key, value] of formData.entries()) {
+//   console.log(`${key}: ${value}`);
+// }
+
+//fetch data
+const request =  await fetch("../api/residents/update-residents.php",{
+    method: "POST",
+    body:formData,
+  });
+
+//get the response
+
+const response = await request.json();
+
+if(response.responseStatus === 'success'){
+    //reload table
+    location.reload();
+    
+   localStorage.setItem('showToast', 'true');
+   localStorage.setItem('showToastMessage', response.responseMessage)
+}
+
+})
+
+//toaster 
+const showToast = () => {
+  const toast = document.getElementById('toast-success')
+  const showToastFlag = localStorage.getItem('showToast')
+  const showToastMessage = localStorage.getItem('showToastMessage')
+  if (showToastFlag === 'true') {
+    const toastMessage = toast.querySelector('.font-normal')
+    toastMessage.textContent = showToastMessage
+    toast.classList.remove('hidden');
+    
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      localStorage.removeItem('showToast');
+      localStorage.removeItem('showToastMessage')
+    }, 3000);
+  }
+};
+
+// Call showToast when the page loads
+document.addEventListener('DOMContentLoaded', showToast);
+
+</script>
+
 </body>
 
 </html>
+
