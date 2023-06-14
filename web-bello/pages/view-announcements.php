@@ -407,13 +407,15 @@ require_once('../components/navbar.php')
    
         const addComment = document.querySelector('#addComment')
 
-addComment.addEventListener('submit', async (e)=>{
-  e.preventDefault()
+addComment.addEventListener('submit', async (e) => {
+  e.preventDefault();
 
-  const formData = new FormData(e.target.value)
-
-  console.log(formData)
-})
+  const formData = new FormData(e.target);
+  
+  for (const [key, value] of formData.entries()) {
+    console.log(key, value);
+  }
+});
 
 
 
