@@ -245,7 +245,7 @@ const updateModal = (button) =>{
     console.log(button);
     //const dataJson = button.getAttribute('data-user');
     //const content = JSON.parse(button)
-console.log(content)
+    //console.log(content)
 
 updateHiddenButton.click()
 
