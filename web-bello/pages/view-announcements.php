@@ -35,7 +35,7 @@ require_once('../components/navbar.php')
     }
     </style>
 
-    <header>
+    <header class=" border-b-4 border-sky-300">
         <!-- Intro Header -->
         <div class="container mt-32 mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
             <div class="sm:flex sm:items-center sm:justify-between">
@@ -269,7 +269,7 @@ require_once('../components/navbar.php')
                 commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="`+forum.image_url+`" alt="image description">`
             }
             content += `
-    <section class="border-t-4 border-sky-300 mb-10">
+    <section>
     
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-24 mt-10">
             <article class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
