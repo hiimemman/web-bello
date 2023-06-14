@@ -55,8 +55,7 @@ require_once('../components/navbar.php')
     <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5 flex h-screen w-full">
     <div class="mx-auto w-full px-4 lg:px-12">
         <!-- Start coding here -->
-        <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
-
+    <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
     <div class="overflow-x-auto">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id ="tblHOA">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -153,500 +152,282 @@ require_once('../components/navbar.php')
             </p>
         </div>
     </footer>
-    <!-- End of Footer-->
-
-    <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    menuToggle.addEventListener("click", () => {
-        document.getElementById("menu").classList.toggle("hidden");
-    });
-
-    const closeMenu = document.getElementById("close-menu");
-    closeMenu.addEventListener("click", () => {
-        document.getElementById("menu").classList.toggle("hidden");
-    });
-    </script>
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-
-    <script>
-    // Place the JavaScript code here
-    const announcementText = document.getElementById("announcementText");
-    const readMoreLink = document.getElementById("readMoreLink");
-
-    // Check if the text exceeds the line clamp height
-    const checkTextLength = () => {
-        const lineHeight = parseFloat(
-            getComputedStyle(announcementText).lineHeight
-        );
-        const maxHeight = lineHeight * 2; // Maximum height for line clamp of 3
-        const actualHeight = announcementText.scrollHeight;
-
-        if (actualHeight > maxHeight) {
-            readMoreLink.style.display = "inline-flex";
-        } else {
-            readMoreLink.style.display = "none";
-        }
-    };
-
-    // Toggle line clamp and check text length on load
-    window.addEventListener("load", () => {
-        checkTextLength();
-    });
-
-    // Toggle line clamp and check text length on click
-    readMoreLink.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent default behavior of the <a> tag
-        announcementText.classList.toggle("line-clamp-2");
-        checkTextLength();
-    });
-    </script>
-
-    <script>
-    let isLiked = false;
-    const likeIcon = document.getElementById("likeIcon");
-
-    function toggleLike() {
-        if (isLiked) {
-            likeIcon.style.fill = "none";
-        } else {
-            likeIcon.style.fill = "#1D4ED8";
-        }
-
-        isLiked = !isLiked;
-    }
-    </script>
-
-    <!-- Disabled post comment button when textarea is empty -->
-    <script>
-    const commentInput = document.getElementById("comment");
-    const postButton = document.getElementById("postButton");
-
-    commentInput.addEventListener("input", () => {
-        if (commentInput.value.trim().length > 0) {
-            postButton.classList.remove("bg-sky-800");
-            postButton.classList.add("bg-sky-950");
-            postButton.removeAttribute("disabled");
-            postButton.classList.remove("cursor-not-allowed");
-            postButton.classList.add("cursor-pointer");
-        } else {
-            postButton.classList.remove("bg-sky-950");
-            postButton.classList.add("bg-sky-800");
-            postButton.setAttribute("disabled", "");
-            postButton.classList.remove("cursor-pointer");
-            postButton.classList.add("cursor-not-allowed");
-        }
-    });
-
-    postButton.addEventListener("mouseover", () => {
-        if (commentInput.value.trim().length === 0) {
-            postButton.classList.remove("cursor-pointer");
-            postButton.classList.add("cursor-not-allowed");
-        }
-    });
-
-    postButton.addEventListener("mouseout", () => {
-        if (commentInput.value.trim().length === 0) {
-            postButton.classList.remove("cursor-not-allowed");
-            postButton.classList.add("cursor-pointer");
-        }
-    });
-    </script>
-
-    <script defer>
-    const forumMain = document.querySelector('#forumMain')
-
-
-
-    const badgeAnnouncement =
-        '<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Announcement</span>';
-    const badgeCollectingSchedule =
-        '<span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Collecting Schedule</span>'
-    const badgeEvents =
-        '<span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Events</span>'
-    const badgeForum =
-        '<span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">Forum</span>'
-    const badgeNews =
-        '<span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">News</span>'
-    window.onload = function() {
-        getAllForum()
-    }
-
-    const getAllForum = async () => {
-
-
-
-        const request = await fetch('../api/forum/all-announcement.php')
-
-        const response = await request.json()
-        content = ''
-        response.responseContent.map((forum) => {
-
-
-            let categoryBadge = badgeAnnouncement;
-            if (forum.category === 'Announcement') {
-                categoryBadge = badgeAnnouncement
-            }
-            if (forum.category === 'Collecting Schedule') {
-                categoryBadge = badgeCollectingSchedule
-            }
-            if (forum.category === 'Events') {
-                categoryBadge = badgeEvents
-            }
-            if (forum.category === 'Forum') {
-                categoryBadge = badgeForum
-            }
-            if (forum.category === 'News') {
-                categoryBadge = badgeNews
-            }
-            let commentImage = ""
-            //check image
-            if (forum.image_url !== "") {
-                commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="` + forum
-                    .image_url + `" alt="image description">`
-            }
-            content += `
-    <section>
     
-        <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-24 mt-10">
-            <article class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
-                <div class="flex justify-between items-center mb-5 text-gray-500">
-                    <span
-                        class="bg-purple-100 text-purple-700 text-md font-medium inline-flex items-center px-2.5 py-0.5 rounded">
-                        Announcements
-                    </span>
-                    <span class="text-sm">` + forum
-                .created_at + `</span>
-                </div>
 
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center space-x-4">
-                        <img class="w-7 h-7 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
-                            alt="Bonnie Green avatar" />
-                        <span class="font-medium"> ` + forum.editor_email + ` </span>
-                    </div>
-                </div>
-                <div class="text-justify px-4 py-2">
-                <h2 class="mt-6 text-2xl font-bold tracking-tight text-gray-900">
-                ` + forum
-                .title + `
-                </div>
-                <h2>
-                ` + forum.message_body + `
-                </h2>
-                
 
-                <!-- Image -->
-                <div class="flex justify-center">
-                    <img alt="image" src="` + forum.image_url +
-                `"
-                        class="mt-8 h-auto w-auto object-cover" />
-                </div>
-                <!-- End of Image -->
-                <!-- Like Button -->
-                <div class="flex items-center">
-                                    <button class="flex items-center px-3 py-2 text-blue-500 rounded-full focus:outline-none" id ="btnLike` +
-                forum.id +
-                `"onClick ="likedButtonClicked(` + forum.id + `)">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                        width="24"
-                                        height="24"
-                                        class="h-6 w-6"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.5"
-                                    >
-                                        <path
-                                        d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
-                                        />
-                                    </svg>
-                                      <span id="likeCount` + forum.id + `" class="text-md ml-2">` + forum.like_count + `</span>
-                                    </button>
-                </div>
-                <!-- End of Like Button -->
-                <!-- Comments -->
-                <form action="https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php" method="POST">
-                    <div id ="commentSection` + forum.id + `">
-                
-                    </div>
-                <input type="text" style="display: none;" name="user_id" value="<?php echo $result[0]['id']; ?>">
-                <input type="text" style="display: none;" name="forum_id" value="` + forum.id + `">
-                <input type="text" style="display: none;" name="user_email" value="<?php echo $result[0]['email']; ?>">
-                <input type="text" style="display: none;" name="user_full_name" value="<?php echo $result[0]['firstname'] . ' ' . $result[0]['lastname']; ?>">
 
-                    <div class="py-2 px-4 mb-4 bg-white rounded-xl border-2 border-gray-400">
-                        <label for="comment" class="sr-only">Your comment</label>
-                        <textarea id="comment" rows="3"
-                            class="px-0 w-full text-md text-gray-900 border-0 focus:ring-0 focus:outline-none"
-                            placeholder="Write a comment..." required></textarea>
-                    </div>
-                    <div class ="mt-2" id ="imageHolder` + forum.id + `">
 
-                    </div>
-                    <div class="flex items-center">
-                        <button type="submit" id="postButton" class="text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 focus:outline-none">
-                            Post comment
-                        </button>
-                        <div class="flex pl-0 space-x-1 sm:pl-2">
-                            <input style="display: none;" id="imageUrl` + forum.id +
-                `" type="file" onchange="changeProfile()" />
-                            <button type="button" class="mb-0 inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick="triggerInputClick(` +
-                forum.id + `)">
-                            <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="ml-1">Upload image</span>
-                            </button>
-                        </div>
-                        </div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+<script defer>
 
-                </form>
+//table body
+const usersTblBody = document.querySelector('#usersTblBody');
+//form
+const frmRegisterHOA = document.querySelector('#frmRegisterHOA');
 
-                <!-- End of Comments -->
+//search input
+const searchInput = document.querySelector('#searchInput');
 
-                <!-- Reply Section -->
+//update modal
+const updateProductModal =document.querySelector('#updateProductModal')
 
-                
-                <!-- End of Reply Section -->
-            </article>
+//triggerbutton
+const updateHiddenButton =document.querySelector('#updateHiddenButton')
+
+//Update form modal 
+const updateHoaInformation = document.querySelector('#updateHoaInformation')
+
+//MODAL FIELDS
+const idUpdate =document.querySelector('#idUpdate')
+const statusUpdate =document.querySelector('#statusUpdate')
+const amountUpdateFix = document.querySelector('#amountUpdateFix')
+const balanceUpdate = document.querySelector('#balanceUpdate')
+
+//Onload
+window.onload = function(){
+    loadTable();
+}
+
+//load table
+const loadTable = async function(){
+    //api
+  const getUsers =  await fetch("../api/monthly-due/all-monthly-due.php");
+  const response = await getUsers.json();
+    console.log(response)
+  if(response.responseStatus === 'OK'){
+
+    let content = '';
+    response.responseContent.map((contents)=>{
+        //by default inactive
+        let contentStatus = '<span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Unpaid</span>'
+
+        //change the badge color to active if active
+        if(contents.status === 'paid'){
+          contentStatus =  '<span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Paid</span>'
+        }
+
+        content += `<tr class="border-b dark:border-gray-700">
+        <td class="px-4 py-3">`+contents.user_email+`</td>
+        <td class="px-4 py-3">`+contents.month+`</td>
+        <td class="px-4 py-3">`+contents.amount+`</td>
+        <td class="px-4 py-3">`+contents.balance+`</td>
+      
+       <td class="px-6 py-4 whitespace-nowrap">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 h-10 w-16">
+            <a href="`+contents.receipt_url+`" data-zoomable>
+              <img class="h-10 w-16" src="`+contents.receipt_url+`" alt="Receipt Image">
+            </a>
+          </div>
         </div>
-    </section>
+      </td>
+        
+       <td class="px-4 py-3">`+contentStatus+`</td>
+        <td class="px-4 py-3">`+contents.created_at+`</td>
+        <td class="px-4 py-3 flex items-center justify-end">
+        <div class="inline-flex rounded-md shadow-sm" role="group">
+            <button id ="btnView`+contents.id+`" type="button" data-modal-toggle = "updateProductModal" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border    border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"  data-user='`+JSON.stringify(contents)+`' onclick="updateModal(this)" >
+                   Update
+            </button>
+             
+             <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+             id ="btnDelete`+contents.id+`"
+             data-user='`+JSON.stringify(contents)+`' onclick="deleteModal(this)">
+              Delete
+             </button>
+        </div>                
+        </div>
+        </td>
+        </tr>
+        `
+    })
+   
+
+    usersTblBody.innerHTML = content;
+
+  }
+}//end of onload
 
 
-    `;
+frmRegisterHOA.addEventListener('submit', async (event) =>{
+    event.preventDefault()
+    formData = new FormData(frmRegisterHOA)
 
-        })
+// uncomment this to print all the content of formData
+    for (const [key, value] of formData.entries()) {
+  console.log(`${key}: ${value}`);
+}
+
+//fetch data
+  const request =  await fetch("../api/monthly-due/new-monthly-due.php",{
+    method: "POST",
+    body:formData,
+  });
+
+//get the response
+
+const response = await request.json();
+console.log(response)
+if(response.responseStatus === 'success'){
+    //reload table
+   location.reload();
+   localStorage.setItem('showToast', 'true');
+   localStorage.setItem('showToastMessage', response.responseMessage)
+}
+
+})
 
 
+//submit edit hoa
+updateHoaInformation.addEventListener('submit', async (event) =>{
+    event.preventDefault()
+    formData = new FormData(updateHoaInformation)
+    // uncomment this to print all the content of formData
+    for (const [key, value] of formData.entries()) {
+  console.log(`${key}: ${value}`);
+}
 
+//fetch data
+const request =  await fetch("../api/monthly-due/all-monthly-due-update.php",{
+    method: "POST",
+    body:formData,
+  });
 
+//get the response
 
-        forumMain.innerHTML = content;
-
-
-
-
-
-
-
-        response.responseContent.map((forum) => {
-            let content = getcommentPerForum(forum.id)
-        })
-
+const response = await request.json();
+console.log(response)
+if(response.responseStatus === 'success'){
+    //reload table
+    location.reload();
+    localStorage.setItem('showToast', 'true');
+    localStorage.setItem('showToastMessage', response.responseMessage)
     }
+})
 
-    const getcommentPerForum = async (id) => {
-        const commentSectionId = document.querySelector('#commentSection' + id);
-        formData = new FormData();
-        formData.append('ForumId', id);
 
-        const request = await fetch('../api/comment/get-all-comment-per-forum.php', {
-            method: "POST",
-            body: formData,
-        })
+//sort table
+const addTableSorting = (tableElement) => {
+  const thElements = tableElement.querySelectorAll('th');
+ 
+  thElements.forEach((thElement) => {
+    thElement.addEventListener('click', () => {
+      const isAscending = thElement.getAttribute('data-order') === 'asc';
+      const columnIndex = Array.from(thElement.parentNode.children).indexOf(thElement);
+      const tbodyElement = tableElement.querySelector('tbody');
+      const rows = Array.from(tbodyElement.querySelectorAll('tr'));
 
-        const response = await request.json()
-        if (response.responseStatus === 'success') {
-            console.log(response.responseContent)
-            let contents = '';
-            response.responseContent.map((comments) => {
-                console.log(comments)
-
-                let commentImaged = ""
-                //check image
-                if (comments.image_url !== "") {
-                    console.log("pumasok dito")
-                    commentImaged += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="` + comments
-                        .image_url + `" alt="image description">`
-                }
-
-                contents += `
-               <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
-                    <div class="inline-flex">
-                      
-                    </div>
-                    <footer class="flex justify-between items-center mb-2">
-                        <div class="flex items-center">
-                            <p class="inline-flex items-center mr-3 text-md font-medium text-gray-900">
-                                ` + comments.user_full_name + `
-                            </p>
-                            <p class="text-md text-gray-600">
-                                <time pubdate datetime="2022-02-08" title="February 8th, 2022">` + comments
-                    .created_at + `</time>
-                            </p>
-                        </div>
-                    </footer>
-                    <p class="text-gray-600">
-                   ` + comments
-                    .comment_text + `</p>
-                    ` + commentImaged + `
-                </article>
-                
-            `
-            })
-            commentSectionId.innerHTML = contents
+      const sortedRows = rows.sort((a, b) => {
+        const aCellValue = a.children[columnIndex].textContent.trim();
+        const bCellValue = b.children[columnIndex].textContent.trim();
+        
+        if (aCellValue < bCellValue) {
+          return isAscending ? -1 : 1;
         }
-    }
-    </script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-    <script defer>
-    //Dark theme toggle 
-    let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-    let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
-    // Change the icons inside the button based on previous settings
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-            '(prefers-color-scheme: dark)').matches)) {
-        themeToggleLightIcon.classList.remove('hidden');
-    } else {
-        themeToggleDarkIcon.classList.remove('hidden');
-    }
-
-    let themeToggleBtn = document.getElementById('theme-toggle');
-
-    themeToggleBtn.addEventListener('click', function() {
-
-        // toggle icons inside button
-        themeToggleDarkIcon.classList.toggle('hidden');
-        themeToggleLightIcon.classList.toggle('hidden');
-
-        // if set via local storage previously
-        if (localStorage.getItem('color-theme')) {
-            if (localStorage.getItem('color-theme') === 'light') {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            }
-
-            // if NOT set via local storage previously
-        } else {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            }
+        if (aCellValue > bCellValue) {
+          return isAscending ? 1 : -1;
         }
+        return 0;
+      });
 
+      tbodyElement.append(...sortedRows);
+
+      thElement.setAttribute('data-order', isAscending ? 'desc' : 'asc');
     });
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-            '(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
+  });
+};
+
+
+//search function
+searchInput.addEventListener('input', () => {
+  const searchValue = searchInput.value.toLowerCase().trim();
+  const rows = usersTblBody.querySelectorAll('tr');
+
+  rows.forEach((row) => {
+    const cols = Array.from(row.querySelectorAll('td'));
+
+    if (cols.some((col) => col.textContent.toLowerCase().includes(searchValue))) {
+      row.style.display = '';
     } else {
-        document.documentElement.classList.remove('dark')
+      row.style.display = 'none';
     }
-    </script>
-    <script defer>
-    let currentUploadInputId = 0;
-    const triggerInputClick = (id) => {
-        currentUploadInputId = id;
-        const uploadId = document.querySelector('#imageUrl' + id)
-        uploadId.click();
+  });
+});
+
+//Delete Modal
+
+const deleteModal = async (button) =>{
+    const dataJson = button.getAttribute('data-user');
+    const user = JSON.parse(dataJson);
+    console.log(user)
+
+    formData = new FormData();
+    formData.append('IdDelete', user.payment_id)
+    const request =  await fetch("../api/monthly-due/monthly-due-delete.php",{
+    method: "POST",
+    body:formData,
+    });
+
+    const response = await request.json();
+    console.log(response)
+    if(response.responseStatus === 'success'){
+        location.reload();
+   localStorage.setItem('showToast', 'true');
+    localStorage.setItem('showToastMessage', response.responseMessage)
     }
+}
+
+//Update modal
 
 
 
-    const changeProfile = async () => {
+const updateModal = (button) =>{
 
-        let fileupload = document.getElementById('imageUrl' + currentUploadInputId); // fileupload
-        let imageHolder = document.getElementById('commentSection' + currentUploadInputId)
-        console.log(imageHolder)
-        // Picking up files from the input .  .  .
-        let files = fileupload.files;
+    const dataJson = button.getAttribute('data-user');
+    const content = JSON.parse(dataJson);
+console.log(content)
 
-        // Uploading only one file; multiple uploads are not allowed.
-        let imageFile = files[0];
+updateHiddenButton.click()
 
-        // Create a FormData object.
-        formData = new FormData();
+// const firstnameUpdate =document.querySelector('#firstnameUpdate')
+// const lastnameUpdate =document.querySelector('#lastnameUpdate')
+// const emailUpdate = document.querySelector('#emailUpdate')
+// const addressUpdate = document.querySelector('#addressUpdate')
+// const roleUpdate =document.querySelector('#roleUpdate')
+// const statusUpdate =document.querySelector('#statusUpdate')
 
-        // Add the file to the request.
-        formData.append('profileEdit', imageFile, imageFile.name);
-
-        try {
-
-            const fetchResponse = await fetch("../api/images/move-only-image.php", {
-                method: "POST",
-                body: formData,
-            });
-
-            const receivedStatus = await fetchResponse.json();
-            console.log(receivedStatus)
-
-            if (receivedStatus.statusCode === 200) {
-                console.log("pumasok dito")
-                let output = '';
-                let checkIfBlankImage = ""
-
-                if (receivedStatus.image !== "") {
-                    checkIfBlankImage +=
-                        `<img class="m-2 h-auto max-w-xs transition-all duration-300 rounded-lg blur-sm hover:blur-none" src="https://web-bello.online/web-bello/savedimages/` +
-                        receivedStatus.image + `" alt="image description">`
-                }
-                output += `
- <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/` +
-                    receivedStatus.image + `" />
-` + checkIfBlankImage + `
-`;
-
-                imageHolder.innerHTML = output;
-            } else {
-                alert('error')
-            }
+//set the value of input fields
+idUpdate.value = content.payment_id;
+amountUpdateFix.value = content.amount;
+statusUpdate.value = content.status;
+balanceUpdate.value = content.balance;
+}
 
 
 
-        } catch (e) {
-            console.log(e)
-        }
-    }
+//toaster 
+const showToast = () => {
+  const toast = document.getElementById('toast-success')
+  const showToastFlag = localStorage.getItem('showToast')
+  const showToastMessage = localStorage.getItem('showToastMessage')
+  if (showToastFlag === 'true') {
+    const toastMessage = toast.querySelector('.font-normal')
+    toastMessage.textContent = showToastMessage
+    toast.classList.remove('hidden');
+    
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      localStorage.removeItem('showToast');
+      localStorage.removeItem('showToastMessage')
+    }, 3000);
+  }
+};
 
-    //liked button
-    const likedButtonClicked = async (id) => {
-        const likeButton = document.querySelector('#btnLike' + id)
-        const likeButtonCounter = document.querySelector('#likeCount' + id)
-
-
-        let counter = parseInt(likeButtonCounter.innerHTML)
-
-        counter++;
-
-
-        try {
-            formData = new FormData()
-
-            formData.append('forumID', id);
-            formData.append('userID', '<?php echo $result[0]['id']; ?>')
-            formData.append('likedCount', counter)
-
-            const request = await fetch("../api/forum/update-forum-like.php", {
-                method: "POST",
-                body: formData,
-            });
-            const response = await request.json()
-            console.log(response)
-            if (response.responseStatus === 'success') {
-                likeButtonCounter.innerHTML = response.responseContent[0].like_count
-                likeButton.disabled = true;
-                likeButton.classList.add('cursor-not-allowed')
-            }
-
-        } catch (e) {
-            console.log(e)
-        }
+// Call showToast when the page loads
+document.addEventListener('DOMContentLoaded', showToast);
 
 
-    }
-    </script>
-
+</script>
 
 
 </body>
