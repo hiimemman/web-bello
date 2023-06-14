@@ -281,7 +281,8 @@ const loadTable = async function() {
     body: formData
   });
   const response = await getUsers.json();
-  console.log(response);
+  
+  console.log("response: "+response);
 
   if (response.responseStatus === 'OK') {
     let content = '';
