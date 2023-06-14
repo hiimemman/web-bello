@@ -212,7 +212,7 @@ require_once('../components/navbar.php')
 
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 <script defer>
-
+console.log("test")
 //table body
 const usersTblBody = document.querySelector('#usersTblBody');
 //form
