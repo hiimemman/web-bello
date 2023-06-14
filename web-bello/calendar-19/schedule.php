@@ -176,6 +176,20 @@ if (!isset($_SESSION['ID'])) {
             let start_date = document.getElementById("start_date").value;
             let end_date = document.getElementById("end_date").value;
 
+            // Validate the dates
+            let currentDate = new Date();
+            let startDate = new Date(start_date);
+            if (startDate < currentDate) {
+                alert("Start date should be in the future.");
+                return;
+            }
+
+            let endDate = new Date(end_date);
+            if (endDate < currentDate) {
+                alert("End date should be in the future.");
+                return;
+            }
+
             // Send the data to the server
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "../api/schedule/sched.php", true);
