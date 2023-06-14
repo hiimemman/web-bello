@@ -33,7 +33,7 @@ if (!isset($_SESSION['ID'])) {
     <link rel="stylesheet" href="css/style.css">
 
     <title>Community Schedules - Web-Bello Online!</title>
-
+<!-- 
     <style>
     /* Modal Styles */
     .modal-container {
@@ -79,7 +79,7 @@ if (!isset($_SESSION['ID'])) {
       right: 10px;
       cursor: pointer;
     }
-  </style>
+  </style> -->
 
 
 </head>
@@ -90,28 +90,62 @@ if (!isset($_SESSION['ID'])) {
         <div id='calendar'></div>
     </div>
 
-    <!-- Modal -->
-    <div id="addScheduleModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="scheduleForm">
-                <h1>Schedule an Event</h1>
-                <form id="schedule-form">
-                    <label for="title">Title:</label>
-                    <input type="text" name="title" id="title" required>
-                    <br><br>
-                    <label for="start_date">Start Date:</label>
-                    <input type="datetime-local" name="start_date" id="start_date" required>
-                    <br><br>
-                    <label for="end_date">End Date:</label>
-                    <input type="datetime-local" name="end_date" id="end_date" required>
-                    <br><br>
-                    <input type="submit" value="Schedule Event">
-                </form>
-            </form>
-        </div>
-    </div>
+<!-- Modal -->
+<div id="addScheduleModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <form id="scheduleForm">
+      <h1>Schedule an Event</h1>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="start_date">Start Date:</label>
+        <input type="datetime-local" name="start_date" id="start_date" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="end_date">End Date:</label>
+        <input type="datetime-local" name="end_date" id="end_date" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Schedule Event</button>
+      </div>
+    </form>
+  </div>
+</div>
 
+<style>
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+</style>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
