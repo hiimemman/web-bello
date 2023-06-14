@@ -88,7 +88,7 @@ if (!isset($_SESSION['ID'])) {
     <div class="content">
     <div class="calendar-toolbar">
     <button id="addScheduleBtn" class="btn btn-primary">Add Schedule</button>
-    <!-- <button id="todayBtn" class="fc-today-button fc-button fc-button-primary">Today</button> -->
+    <button id="Dashboard" class="fc-today-button fc-button fc-button-primary">Dashboard</button>
   </div>
   <div id="calendar"></div>
 </div>
@@ -103,7 +103,7 @@ if (!isset($_SESSION['ID'])) {
   .calendar-toolbar {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
   }
 
   #calendar {
