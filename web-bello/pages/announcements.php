@@ -408,8 +408,7 @@ if (!isset($_SESSION['IDUSER'])) {
 
         <h2 class="text-gray-500 dark:text-gray-400"><strong>` + forum
                 .title + `</strong></h2>
-                    <p class="text-gray-500 dark:text-gray-400">` + forum
-                .message_body + `</p>
+                    <p class="text-gray-500 dark:text-gray-400"> </p>
                 `+commentImage+`
                  <div class="flex items-center">
                                     <button class="flex items-center px-3 py-2 bg-blue-500 text-white rounded-full focus:outline-none" id ="btnLike`+forum.id+`"onClick ="likedButtonClicked(`+forum.id+`)">
