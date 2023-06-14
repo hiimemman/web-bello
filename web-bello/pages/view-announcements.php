@@ -346,7 +346,7 @@ require_once('../components/navbar.php')
                 </div>
                 <!-- End of Like Button -->
                 <!-- Comments -->
-                <form action="https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php" method="POST">
+                <form id ="addComment">
                     <div id ="commentSection` + forum.id + `">
                 
                     </div>
@@ -404,6 +404,16 @@ require_once('../components/navbar.php')
 
         forumMain.innerHTML = content;
 
+   
+        const addComment = document.querySelector('#addComment')
+
+addComment.addEventListener('submit', async (e)=>{
+  e.preventDefault()
+
+  const formData = new FormData(e.target.value)
+
+  console.log(formData)
+})
 
 
 
