@@ -409,7 +409,7 @@ const response = await request.json();
 console.log(response)
 if(response.responseStatus === 'success'){
     //reload table
-    //location.reload();
+    location.reload();
     localStorage.setItem('showToast', 'true');
     localStorage.setItem('showToastMessage', response.responseMessage)
     }
