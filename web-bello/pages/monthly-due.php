@@ -1,5 +1,5 @@
 <?php
-require_once('../components/navbar.php')
+require_once('../components/navbar.php');
 ?>
 
 <!DOCTYPE html>
@@ -216,7 +216,7 @@ require_once('../components/navbar.php')
 //table body
 const usersTblBody = document.querySelector('#usersTblBody');
 //form
-const frmRegisterHOA = document.querySelector('#frmRegisterHOA');
+//const frmRegisterHOA = document.querySelector('#frmRegisterHOA');
 
 //search input
 //const searchInput = document.querySelector('#searchInput');
