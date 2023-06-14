@@ -242,86 +242,68 @@ window.onload = function(){
 }
 
 //load table
-const loadTable = async function(){
-    //api
-  const getUsers =  await fetch("../api/monthly-due/all-monthly-due.php");
+const loadTable = async function() {
+  const getUsers = await fetch("../api/monthly-due/all-monthly-due.php");
   const response = await getUsers.json();
-    console.log(response)
-  if(response.responseStatus === 'OK'){
+  console.log(response);
 
+  if (response.responseStatus === 'OK') {
     let content = '';
-    response.responseContent.map((contents)=>{
-        //by default inactive
-        let contentStatus = '<span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Unpaid</span>'
 
-        //change the badge color to active if active
-        if(contents.status === 'paid'){
-          contentStatus =  '<span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Paid</span>'
-        }
+    response.responseContent.forEach((contents) => {
+      let contentStatus = '<span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Unpaid</span>';
 
-        content += `<tr class="border-b dark:border-gray-700">
-        <td class="px-4 py-3">`+contents.user_email+`</td>
-        <td class="px-4 py-3">`+contents.month+`</td>
-        <td class="px-4 py-3">`+contents.amount+`</td>
-        <td class="px-4 py-3">`+contents.balance+`</td>
-      
-       <td class="px-6 py-4 whitespace-nowrap">
-        <div class="flex items-center">
-          <div class="flex-shrink-0 h-10 w-16">
-            <a href="`+contents.receipt_url+`" data-zoomable>
-              <img class="h-10 w-16" src="`+contents.receipt_url+`" alt="Receipt Image">
-            </a>
-          </div>
-        </div>
-      </td>
-        
-       <td class="px-4 py-3">`+contentStatus+`</td>
-        <td class="px-4 py-3">`+contents.created_at+`</td>
-        <td class="px-4 py-3 flex items-center justify-end">
-        <div class="inline-flex rounded-md shadow-sm" role="group">
-            <button id ="btnView`+contents.id+`" type="button" data-modal-toggle = "updateProductModal" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border    border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"  data-user='`+JSON.stringify(contents)+`' onclick="updateModal(this)" >
-                   Update
-            </button>
-             
-             <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
-             id ="btnDelete`+contents.id+`"
-             data-user='`+JSON.stringify(contents)+`' onclick="deleteModal(this)">
-              Delete
-             </button>
-        </div>                
-        </div>
-        </td>
+      if (contents.status === 'paid') {
+        contentStatus = '<span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Paid</span>';
+      }
+
+      content += `
+        <tr class="border-b dark:border-gray-700">
+          <td class="px-4 py-3">${contents.user_email}</td>
+          <td class="px-4 py-3">${contents.month}</td>
+          <td class="px-4 py-3">${contents.amount}</td>
+          <td class="px-4 py-3">${contents.balance}</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="flex-shrink-0 h-10 w-16">
+                <a href="${contents.receipt_url}" data-zoomable>
+                  <img class="h-10 w-16" src="${contents.receipt_url}" alt="Receipt Image">
+                </a>
+              </div>
+            </div>
+          </td>
+          <td class="px-4 py-3">${contentStatus}</td>
+          <td class="px-4 py-3">${contents.created_at}</td>
+          <td class="px-4 py-3 flex items-center justify-end">
+            <div class="inline-flex rounded-md shadow-sm" role="group">
+              <button id="btnView${contents.id}" type="button" data-modal-toggle="updateProductModal" class="update-button px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white" data-user='${JSON.stringify(contents)}'>
+                Update
+              </button>
+              <button type="button" class="delete-button px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white" id="btnDelete${contents.id}" data-user='${JSON.stringify(contents)}'>
+                Delete
+              </button>
+            </div>
+          </td>
         </tr>
-        `
-    })
-   
+      `;
+    });
 
     usersTblBody.innerHTML = content;
 
-console.log("test")
-const updateModal = (button) =>{
+    // Attach event listener to table body
+    usersTblBody.addEventListener('click', function(event) {
+      const target = event.target;
 
-    const dataJson = button.getAttribute('data-user');
-    const content = JSON.parse(dataJson);
-console.log(content)
-
-updateHiddenButton.click()
-
-// const firstnameUpdate =document.querySelector('#firstnameUpdate')
-// const lastnameUpdate =document.querySelector('#lastnameUpdate')
-// const emailUpdate = document.querySelector('#emailUpdate')
-// const addressUpdate = document.querySelector('#addressUpdate')
-// const roleUpdate =document.querySelector('#roleUpdate')
-// const statusUpdate =document.querySelector('#statusUpdate')
-
-//set the value of input fields
-idUpdate.value = content.payment_id;
-amountUpdateFix.value = content.amount;
-statusUpdate.value = content.status;
-balanceUpdate.value = content.balance;
-}
+      if (target.classList.contains('update-button')) {
+        const user = JSON.parse(target.getAttribute('data-user'));
+        updateModal(user);
+      } else if (target.classList.contains('delete-button')) {
+        const user = JSON.parse(target.getAttribute('data-user'));
+        deleteModal(user);
+      }
+    });
   }
-}//end of onload
+};
 
 
 
@@ -428,6 +410,28 @@ const deleteModal = async (button) =>{
 //Update modal
 
 
+console.log("test")
+const updateModal = (button) =>{
+
+    const dataJson = button.getAttribute('data-user');
+    const content = JSON.parse(dataJson);
+console.log(content)
+
+updateHiddenButton.click()
+
+// const firstnameUpdate =document.querySelector('#firstnameUpdate')
+// const lastnameUpdate =document.querySelector('#lastnameUpdate')
+// const emailUpdate = document.querySelector('#emailUpdate')
+// const addressUpdate = document.querySelector('#addressUpdate')
+// const roleUpdate =document.querySelector('#roleUpdate')
+// const statusUpdate =document.querySelector('#statusUpdate')
+
+//set the value of input fields
+idUpdate.value = content.payment_id;
+amountUpdateFix.value = content.amount;
+statusUpdate.value = content.status;
+balanceUpdate.value = content.balance;
+}
 
 
 
