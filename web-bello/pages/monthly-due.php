@@ -243,7 +243,7 @@ const balanceUpdate = document.querySelector('#balanceUpdate')
 const updateModal = (button) =>{
     console.log(button);
     //const dataJson = button.getAttribute('data-user');
-    const content = JSON.parse(button);
+    const content = JSON.parse(button)
 console.log(content)
 
 updateHiddenButton.click()
