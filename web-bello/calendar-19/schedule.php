@@ -87,8 +87,8 @@ if (!isset($_SESSION['ID'])) {
 <body>
     <div class="content">
     <div class="calendar-toolbar">
-    <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-5 mt-10">Dashboard</button></a>
-    <button id="addScheduleBtn" class="btn btn-primary mr-5 mt-10">Add Schedule</button>
+    <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3 mt-50">Dashboard</button></a>
+    <button id="addScheduleBtn" class="btn btn-primary mr-3 mt-50">Add Schedule</button>
   </div>
   <div id="calendar"></div>
 </div>
