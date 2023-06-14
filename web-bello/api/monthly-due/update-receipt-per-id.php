@@ -6,7 +6,7 @@
  $con = connection();
 
 $ID = $_POST['idUpdate'];
-$ReceiptURl = $_POST['receipt_url'];
+$ReceiptURl = $_POST['image_url'];
 
 
 try{
