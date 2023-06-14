@@ -25,6 +25,7 @@ try {
 
     // Reload the page using JavaScript
     echo '<script>window.location.reload();</script>';
+    exit;
 } catch (Exception $e) {
     echo json_encode(array("responseStatus" => 'error', "responseContent" => $e->getMessage(), "responseMessage" => 'Failed to add comment!'));
 }
