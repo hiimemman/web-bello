@@ -47,75 +47,76 @@ require_once('../components/navbar.php')
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0B0B0E;
-            color: #fff;
-        }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #0B0B0E;
+        color: #fff;
+    }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #333333;
-        }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #333333;
+    }
 
-        h1 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+    .form-group {
+        margin-bottom: 20px;
+    }
 
-        .label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
+    .label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
 
-        .input-field {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            background-color: #fff;
-            color: #000;
-        }
+    .input-field {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        background-color: #fff;
+        color: #000;
+    }
 
-        .column-container {
-            display: flex;
-            justify-content: space-between;
-        }
+    .column-container {
+        display: flex;
+        justify-content: space-between;
+    }
 
-        .column {
-            width: 48%;
-        }
+    .column {
+        width: 48%;
+    }
 
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #000;
-            color: #fff;
-            font-weight: bold;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
+    .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #000;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
     </style>
 
 </head>
 
 <body>
-    <a href="https://web-bello.online/web-bello/pages/user-index.php"><button style="border: 2px white solid;" class="mt-3 ml-3">Go back to announcement</button></a>
-    <div class="container">
+    <a href="https://web-bello.online/web-bello/pages/user-index.php"><button style="border: 2px white solid;"
+            class="mt-3 ml-3">Go back to announcement</button></a>
+    <div class="container mt-24">
         <h1>Edit Profile</h1>
         <form action="../pages/profile.php" method="POST" id="frmUpdateProfile">
             <div class="column-container">
@@ -181,18 +182,29 @@ require_once('../components/navbar.php')
     <!-- TOASTER -->
 
 
-    <div id="toast-success" class="hidden fixed flex items-center w-full max-w-xs p-4 mb-4 bottom-5 left-5 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
-        <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
-            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+    <div id="toast-success"
+        class="hidden fixed flex items-center w-full max-w-xs p-4 mb-4 bottom-5 left-5 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+        role="alert">
+        <div
+            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
             </svg>
             <span class="sr-only">Check icon</span>
         </div>
         <div class="ml-3 text-sm font-normal">Item moved successfully.</div>
-        <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-success" aria-label="Close">
+        <button type="button"
+            class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+            data-dismiss-target="#toast-success" aria-label="Close">
             <span class="sr-only">Close</span>
-            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
             </svg>
         </button>
     </div>
@@ -205,91 +217,91 @@ require_once('../components/navbar.php')
 
 
 <script defer>
-    frmUpdateProfile.addEventListener('submit', async (event) => {
-        event.preventDefault()
-        formData = new FormData(frmUpdateProfile)
-        // formData.append('password', 'default1234')
-        // uncomment this to print all the content of formData
-        for (const [key, value] of formData.entries()) {
-            console.log(`${key}: ${value}`);
-        }
+frmUpdateProfile.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    formData = new FormData(frmUpdateProfile)
+    // formData.append('password', 'default1234')
+    // uncomment this to print all the content of formData
+    for (const [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+    }
 
-        //fetch data
-        const request = await fetch("../api/profile/profile.php", {
-            method: "POST",
-            body: formData,
-        });
+    //fetch data
+    const request = await fetch("../api/profile/profile.php", {
+        method: "POST",
+        body: formData,
+    });
 
-        //get the response
+    //get the response
 
-        const response = await request.json();
-
-
-
-        if (response.responseStatus === 'success') {
-            //reload table
-            console.log("responseContent")
-            location.reload();
-            localStorage.setItem('showToast', 'true');
-            localStorage.setItem('showToastMessage', response.responseMessage)
-            window.location.href = "https://web-bello.online/web-bello/pages/user-index.php"
-
-            // Close the profile window
-
-        }
-
-    })
+    const response = await request.json();
 
 
-    //submit edit hoa
-    updateHoaInformation.addEventListener('submit', async (event) => {
-        event.preventDefault()
-        formData = new FormData(updateHoaInformation)
-        // uncomment this to print all the content of formData
-        //     for (const [key, value] of formData.entries()) {
-        //   console.log(`${key}: ${value}`);
-        // }
 
-        //fetch data
-        const request = await fetch("../api/residents/update-residents.php", {
-            method: "POST",
-            body: formData,
-        });
+    if (response.responseStatus === 'success') {
+        //reload table
+        console.log("responseContent")
+        location.reload();
+        localStorage.setItem('showToast', 'true');
+        localStorage.setItem('showToastMessage', response.responseMessage)
+        window.location.href = "https://web-bello.online/web-bello/pages/user-index.php"
 
-        //get the response
+        // Close the profile window
 
-        const response = await request.json();
+    }
 
-        if (response.responseStatus === 'success') {
-            //reload table
-            location.reload();
+})
 
-            localStorage.setItem('showToast', 'true');
-            localStorage.setItem('showToastMessage', response.responseMessage)
-        }
 
-    })
+//submit edit hoa
+updateHoaInformation.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    formData = new FormData(updateHoaInformation)
+    // uncomment this to print all the content of formData
+    //     for (const [key, value] of formData.entries()) {
+    //   console.log(`${key}: ${value}`);
+    // }
 
-    //toaster 
-    const showToast = () => {
-        const toast = document.getElementById('toast-success')
-        const showToastFlag = localStorage.getItem('showToast')
-        const showToastMessage = localStorage.getItem('showToastMessage')
-        if (showToastFlag === 'true') {
-            const toastMessage = toast.querySelector('.font-normal')
-            toastMessage.textContent = showToastMessage
-            toast.classList.remove('hidden');
+    //fetch data
+    const request = await fetch("../api/residents/update-residents.php", {
+        method: "POST",
+        body: formData,
+    });
 
-            setTimeout(() => {
-                toast.classList.add('hidden');
-                localStorage.removeItem('showToast');
-                localStorage.removeItem('showToastMessage')
-            }, 3000);
-        }
-    };
+    //get the response
 
-    // Call showToast when the page loads
-    document.addEventListener('DOMContentLoaded', showToast);
+    const response = await request.json();
+
+    if (response.responseStatus === 'success') {
+        //reload table
+        location.reload();
+
+        localStorage.setItem('showToast', 'true');
+        localStorage.setItem('showToastMessage', response.responseMessage)
+    }
+
+})
+
+//toaster 
+const showToast = () => {
+    const toast = document.getElementById('toast-success')
+    const showToastFlag = localStorage.getItem('showToast')
+    const showToastMessage = localStorage.getItem('showToastMessage')
+    if (showToastFlag === 'true') {
+        const toastMessage = toast.querySelector('.font-normal')
+        toastMessage.textContent = showToastMessage
+        toast.classList.remove('hidden');
+
+        setTimeout(() => {
+            toast.classList.add('hidden');
+            localStorage.removeItem('showToast');
+            localStorage.removeItem('showToastMessage')
+        }, 3000);
+    }
+};
+
+// Call showToast when the page loads
+document.addEventListener('DOMContentLoaded', showToast);
 </script>
 </body>
 
