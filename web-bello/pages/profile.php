@@ -69,15 +69,35 @@ require_once('../components/navbar.php')
         <!-- End of Intro Header -->
     </header>
 
-    <section class="border-t-4 border-sky-300 mb-10">
+    <section>
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-36 mt-10">
             <form action="../pages/profile.php" method="POST" id="frmUpdateProfile"
                 class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
+
+                <div class="space-y-12">
+                    <div class="border-b border-gray-900/10 pb-12">
+                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <!-- insert code here -->
+                            <div class="sm:col-span-3 container">
+                                <div class="form-group">
+                                    <label for="firstname"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">First
+                                        Name</label>
+                                    <input type="text" name="firstname" value="<?php echo $Firstname; ?>"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                            <!-- INSERT NEXT CODE HERE -->
+
+                        </div>
+                    </div>
+                </div>
+
                 <div class=" grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="firstname" class="label">First Name:</label>
                         <input type="text" name="firstname" value="<?php echo $Firstname; ?>" class="input-field">
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <label for="sex" class="label">Sex:</label>
