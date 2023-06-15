@@ -46,70 +46,7 @@ require_once('../components/navbar.php')
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #0B0B0E;
-        color: #fff;
-    }
 
-    .container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #333333;
-    }
-
-    h1 {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-
-    .input-field {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 14px;
-        background-color: #fff;
-        color: #000;
-    }
-
-    .column-container {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .column {
-        width: 48%;
-    }
-
-    .submit-btn {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        background-color: #000;
-        color: #fff;
-        font-weight: bold;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 14px;
-    }
-    </style>
 
 </head>
 
