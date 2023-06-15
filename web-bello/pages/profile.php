@@ -58,10 +58,10 @@ require_once('../components/navbar.php')
         <div class="container mt-32 mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
             <div class="sm:flex sm:items-center sm:justify-between">
                 <div class="text-center sm:text-left">
-                    <h2 class="text-lg fo nt-semibold leading-7 text-gray-900">
-                        Personal Information
-                    </h2>
-                    <p class="text-sm leading-6 text-gray-600">
+                    <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+                        Update your personal information
+                    </h1>
+                    <p class="mt-1.5 text-lg text-gray-500">
                         Stay current and connected with updated personal details.
                     </p>
                 </div>
