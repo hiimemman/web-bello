@@ -133,10 +133,7 @@ require_once('../components/navbar.php')
                 <div class=" grid grid-cols-1 md:grid-cols-2 gap-4">
 
 
-                    <div class="form-group">
-                        <label for="sex" class="label">Sex:</label>
-                        <input type="text" name="sex" value="<?php echo $Sex; ?>" class="input-field">
-                    </div>
+
 
                     <div class="form-group">
                         <label for="address" class="label">Address:</label>
@@ -150,10 +147,6 @@ require_once('../components/navbar.php')
 
 
 
-                    <div class="form-group">
-                        <label for="age" class="label">Age:</label>
-                        <input type="text" name="age" value="<?php echo $Age; ?>" class="input-field">
-                    </div>
 
 
 
