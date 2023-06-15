@@ -111,70 +111,64 @@ require_once('../components/navbar.php')
     </div>
 
     <!-- End of Test Code -->
-    <!-- <a href="https://web-bello.online/web-bello/pages/user-index.php"><button style="border: 2px white solid;"
-            class="mt-3 ml-3">Go back to announcement</button></a>
-    <div class="container mt-24">
-        <h1>Edit Profile</h1>
-        <form action="../pages/profile.php" method="POST" id="frmUpdateProfile">
-            <div class="column-container">
-                <div class="column">
-                    <div class="form-group">
-                        <label for="firstname" class="label">First Name:</label>
-                        <input type="text" name="firstname" value="<?php echo $Firstname; ?>" class="input-field">
+
+    <!-- Footer -->
+    <footer class="bg-gray-100">
+        <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+            <div class="lg:flex lg:items-end lg:justify-between">
+                <div>
+                    <div class="flex justify-center text-teal-600 lg:justify-start">
+                        <a href="/web-bello/pages/user-index.php" class="-m-1.5 p-1.5">
+                            <span class="sr-only"></span>
+                            <h2 class="drop-shadow text-lg tracking-wider font-medium">
+                                WEB-BELLO
+                            </h2>
+                        </a>
                     </div>
 
-                    <div class="form-group">
-                        <label for="sex" class="label">Sex:</label>
-                        <input type="text" name="sex" value="<?php echo $Sex; ?>" class="input-field">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address" class="label">Address:</label>
-                        <input type="text" name="address" value="<?php echo $Address; ?>" class="input-field">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="label">Email:</label>
-                        <input type="email" name="email" value="<?php echo $Email; ?>" class="input-field">
-                    </div>
+                    <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">Connect,
+                        engage, and stay informed with your neighbors, access the latest news and events, all at your
+                        fingertips.
+                    </p>
                 </div>
 
-                <div class="column">
-                    <div class="form-group">
-                        <label for="lastname" class="label">Last Name:</label>
-                        <input type="text" name="lastname" value="<?php echo $Lastname; ?>" class="input-field">
-                    </div>
+                <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-announcements.php">
+                            Announcements
+                        </a>
+                    </li>
 
-                    <div class="form-group">
-                        <label for="age" class="label">Age:</label>
-                        <input type="text" name="age" value="<?php echo $Age; ?>" class="input-field">
-                    </div>
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-events.php">
+                            Events
+                        </a>
+                    </li>
 
-                    <div class="form-group">
-                        <label for="contact" class="label">Contact:</label>
-                        <input type="text" name="contact" value="<?php echo $Contact; ?>" class="input-field">
-                    </div>
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-forums.php">
+                            Forums
+                        </a>
+                    </li>
 
-                    <div class="form-group">
-                        <label for="password" class="label">Password:</label>
-                        <input type="password" name="password" class="input-field" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password1" class="label">Confirm Password:</label>
-                        <input type="password" name="password1" class="input-field" required>
-                    </div>
-                    
-        <div class="form-group">
-            <label for="profileImage">Profile Image:</label>
-            <input type="file" name="profileImage" class="input-field" id="profileImage" enctype="multipart/form-data">
-        </div>
-                </div>
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/calendar-19/index.php">
+                            Schedules
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <input type="submit" value="Save Changes" class="submit-btn">
-        </form>
-    </div> -->
+            <p class="mt-12 text-center text-sm text-gray-500 lg:text-right">
+                Copyright &copy; 2023. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <!-- End of Footer-->
 
     <!-- TOASTER -->
 
