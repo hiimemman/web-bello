@@ -53,64 +53,73 @@ require_once('../components/navbar.php')
 <body>
     <!-- Test Code -->
 
-    <a href="https://web-bello.online/web-bello/pages/user-index.php">
+    <section class="border-t-4 border-sky-300 mb-10">
+        <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-36 mt-10">
+            <form action="../pages/profile.php" method="POST" id="frmUpdateProfile">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="form-group">
+                        <label for="firstname" class="label">First Name:</label>
+                        <input type="text" name="firstname" value="<?php echo $Firstname; ?>" class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sex" class="label">Sex:</label>
+                        <input type="text" name="sex" value="<?php echo $Sex; ?>" class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address" class="label">Address:</label>
+                        <input type="text" name="address" value="<?php echo $Address; ?>" class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="label">Email:</label>
+                        <input type="email" name="email" value="<?php echo $Email; ?>" class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname" class="label">Last Name:</label>
+                        <input type="text" name="lastname" value="<?php echo $Lastname; ?>" class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age" class="label">Age:</label>
+                        <input type="text" name="age" value="<?php echo $Age; ?>" class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact" class="label">Contact:</label>
+                        <input type="text" name="contact" value="<?php echo $Contact; ?>" class="input-field">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="label">Password:</label>
+                        <input type="password" name="password" class="input-field" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password1" class="label">Confirm Password:</label>
+                        <input type="password" name="password1" class="input-field" required>
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Save
+                    Changes</button>
+
+            </form>
+        </div>
+    </section>
+
+
+
+    <!-- <a href="https://web-bello.online/web-bello/pages/user-index.php">
         <button style="border: 2px white solid;" class="mt-3 ml-3">Go back to announcement</button>
     </a>
     <div class="container mt-24">
         <h1 class="text-3xl font-bold">Edit Profile</h1>
-        <form action="../pages/profile.php" method="POST" id="frmUpdateProfile">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="form-group">
-                    <label for="firstname" class="label">First Name:</label>
-                    <input type="text" name="firstname" value="<?php echo $Firstname; ?>" class="input-field">
-                </div>
-
-                <div class="form-group">
-                    <label for="sex" class="label">Sex:</label>
-                    <input type="text" name="sex" value="<?php echo $Sex; ?>" class="input-field">
-                </div>
-
-                <div class="form-group">
-                    <label for="address" class="label">Address:</label>
-                    <input type="text" name="address" value="<?php echo $Address; ?>" class="input-field">
-                </div>
-
-                <div class="form-group">
-                    <label for="email" class="label">Email:</label>
-                    <input type="email" name="email" value="<?php echo $Email; ?>" class="input-field">
-                </div>
-
-                <div class="form-group">
-                    <label for="lastname" class="label">Last Name:</label>
-                    <input type="text" name="lastname" value="<?php echo $Lastname; ?>" class="input-field">
-                </div>
-
-                <div class="form-group">
-                    <label for="age" class="label">Age:</label>
-                    <input type="text" name="age" value="<?php echo $Age; ?>" class="input-field">
-                </div>
-
-                <div class="form-group">
-                    <label for="contact" class="label">Contact:</label>
-                    <input type="text" name="contact" value="<?php echo $Contact; ?>" class="input-field">
-                </div>
-
-                <div class="form-group">
-                    <label for="password" class="label">Password:</label>
-                    <input type="password" name="password" class="input-field" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="password1" class="label">Confirm Password:</label>
-                    <input type="password" name="password1" class="input-field" required>
-                </div>
-            </div>
-
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Save
-                Changes</button>
-
-        </form>
-    </div>
+        
+    </div> -->
 
     <!-- End of Test Code -->
 
