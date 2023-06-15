@@ -82,7 +82,7 @@ require_once('../components/navbar.php')
                                 <div class="form-group">
                                     <label for="firstname"
                                         class="label block text-sm font-medium leading-6 text-gray-900">First
-                                        Name</label>
+                                        name</label>
                                     <input type="text" name="firstname" value="<?php echo $Firstname; ?>"
                                         class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6">
                                 </div>
@@ -92,7 +92,7 @@ require_once('../components/navbar.php')
                                 <div class="form-group">
                                     <label for="lastname"
                                         class="label block text-sm font-medium leading-6 text-gray-900">Last
-                                        Name</label>
+                                        name</label>
                                     <input type="text" name="lastname" value="<?php echo $Lastname; ?>"
                                         class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6">
                                 </div>
@@ -119,66 +119,66 @@ require_once('../components/navbar.php')
                             <div class="sm:col-span-2">
                                 <div class="form-group">
                                     <label for="age"
-                                        class="label block text-sm font-medium leading-6 text-gray-900">Sex</label>
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Age</label>
                                     <input type="text" name="age" value="<?php echo $Age; ?>"
                                         class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
                             <!-- Complete Address -->
+                            <div class="col-span-full">
+                                <div class="form-group">
+                                    <label for="address"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Complete
+                                        address</label>
+                                    <input type="text" name="address" value="<?php echo $Address; ?>"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                            <!-- Email Address -->
+                            <div class="sm:col-span-2 sm:col-start-1">
+                                <div class="form-group">
+                                    <label for="email"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Email
+                                        address</label>
+                                    <input type="text" name="email" value="<?php echo $Email; ?>"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="sm:col-span-2 sm:col-start-1">
+                                <div class="form-group">
+                                    <label for="password"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Password</label>
+                                    <input type="text" name="password"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="sm:col-span-2">
+                                <div class="form-group">
+                                    <label for="password1"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Confirm
+                                        password</label>
+                                    <input type="text" name="password1"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
 
                         </div>
                     </div>
                 </div>
 
-                <div class=" grid grid-cols-1 md:grid-cols-2 gap-4">
-
-
-
-
-                    <div class="form-group">
-                        <label for="address" class="label">Address:</label>
-                        <input type="text" name="address" value="<?php echo $Address; ?>" class="input-field">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="label">Email:</label>
-                        <input type="email" name="email" value="<?php echo $Email; ?>" class="input-field">
-                    </div>
-
-
-
-
-
-
-                    <div class="form-group">
-                        <label for="password" class="label">Password:</label>
-                        <input type="password" name="password" class="input-field" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password1" class="label">Confirm Password:</label>
-                        <input type="password" name="password1" class="input-field" required>
-                    </div>
+                <div class="mt-6 flex items-center justify-end gap-x-6">
+                    <button type="submit"
+                        class="submit-btn rounded-md bg-sky-800 px-10 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        Save changes
+                    </button>
                 </div>
-
-                <button type="submit"
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Save
-                    Changes</button>
-
             </form>
         </div>
     </section>
-
-
-
-    <!-- <a href="https://web-bello.online/web-bello/pages/user-index.php">
-        <button style="border: 2px white solid;" class="mt-3 ml-3">Go back to announcement</button>
-    </a>
-    <div class="container mt-24">
-        <h1 class="text-3xl font-bold">Edit Profile</h1>
-        
-    </div> -->
-
     <!-- End of Test Code -->
 
     <!-- Footer -->
