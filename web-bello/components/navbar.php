@@ -100,9 +100,7 @@ if (!isset($_SESSION['IDUSER'])) {
             <!-- Nav Links -->
             <div class="hidden lg:flex lg:gap-x-12" id="navbar-default">
                 <a href="/web-bello/pages/user-index.php"
-                    class="dropdown-item text-sm leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 nav-link">
-                    Home
-                </a>
+                    class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Home</a>
                 <div class="relative" x-data="{ open: false }">
                     <button type="button"
                         class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center focus:outline-none"
@@ -141,9 +139,8 @@ if (!isset($_SESSION['IDUSER'])) {
 
                 </div>
                 <a href="../api/login/logout.php"
-                    class="dropdown-item text-sm leading-6 text-gray-400 dark:text-gray-600 dark:hover:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 nav-link">
-                    Sign out
-                </a>
+                    class="nav-link text-sm font-semibold leading-6 text-gray-400 dark:text-gray-600 dark:hover:text-white">Sign
+                    out</a>
             </div>
 
         </div>
