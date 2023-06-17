@@ -108,10 +108,7 @@ if (!isset($_SESSION['IDUSER'])) {
                         class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center focus:outline-none"
                         @click="open = !open" aria-expanded="false" aria-haspopup="true">
                         <span>Menu</span>
-                        <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                            fill="currentColor" aria-hidden="true" :class="{ 'rotate-180': open }">
-                            <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                        </svg>
+
                     </button>
 
                     <div x-show="open" @click.away="open = false"
