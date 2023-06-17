@@ -122,23 +122,23 @@ if (!isset($_SESSION['IDUSER'])) {
                         <!-- Dropdown items here -->
 
                         <a href="/web-bello/pages/view-announcements.php"
-                            class="dropdown-item text-sm leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Announcements
                         </a>
                         <a href="/web-bello/pages/view-events.php"
-                            class="dropdown-item text-sm leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Events
                         </a>
                         <a href="/web-bello/pages/view-forums.php"
-                            class="dropdown-item text-sm leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Forums
                         </a>
                         <a href="/web-bello/calendar-19/index.php"
-                            class="dropdown-item text-sm leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Schedules
                         </a>
                         <a href="/web-bello/pages/monthly-due.php"
-                            class="dropdown-item text-sm leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Monthly Due
                         </a>
 
