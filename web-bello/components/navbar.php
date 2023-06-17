@@ -99,17 +99,20 @@ if (!isset($_SESSION['IDUSER'])) {
 
             <!-- Nav Links -->
             <div class="hidden lg:flex lg:gap-x-12" id="navbar-default">
-                <div class="relative">
+                <div class="relative" x-data="{ open: false }">
                     <button type="button"
                         class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center focus:outline-none"
-                        id="dropdownTrigger">
+                        @click="open = !open" aria-expanded="false" aria-haspopup="true">
                         <span>Menu</span>
                         <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                            fill="currentColor" aria-hidden="true">
+                            fill="currentColor" aria-hidden="true" :class="{ 'rotate-180': open }">
                             <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
                         </svg>
                     </button>
-                    <div class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-lg z-10 hidden">
+                    <div x-show="open" @click.away="open = false"
+                        class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-lg z-10"
+                        style="display: none;" id="dropdownMenu">
+                        <!-- Dropdown items here -->
                         <a href="/web-bello/pages/user-index.php"
                             class="dropdown-item text-sm leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Home
@@ -145,6 +148,7 @@ if (!isset($_SESSION['IDUSER'])) {
         </div>
     </nav>
 
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script defer>
