@@ -108,8 +108,9 @@ if (!isset($_SESSION['IDUSER'])) {
                     <button type="button"
                         class="text-sm font-semibold leading-6 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center focus:outline-none"
                         @click="open = !open" aria-expanded="false" aria-haspopup="true">
-                        <span><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <span><svg class="h-6 w-6 hover:bg-gray-100 dark:hover:bg-gray-800" fill="none"
+                                stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"></path>
                             </svg></span>
