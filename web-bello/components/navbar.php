@@ -137,10 +137,10 @@ if (!isset($_SESSION['IDUSER'])) {
                             class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Schedules
                         </a>
-                        <a href="/web-bello/pages/monthly-due.php"
+                        <!-- <a href="/web-bello/pages/monthly-due.php"
                             class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Monthly Due
-                        </a>
+                        </a> -->
 
                     </div>
 
