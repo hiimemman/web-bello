@@ -139,7 +139,7 @@ if (!isset($_SESSION['IDUSER'])) {
 
                 </div>
                 <a href="../api/login/logout.php"
-                    class="nav-link text-sm font-semibold leading-6 text-gray-400 dark:text-gray-600 dark:hover:text-white">Sign
+                    class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 text-gray-400 dark:text-gray-600 dark:hover:text-white">Sign
                     out</a>
             </div>
 
