@@ -117,8 +117,8 @@ if (!isset($_SESSION['IDUSER'])) {
                     </button>
 
                     <div x-show="open" @click.away="open = false"
-                        class="absolute right-0 py-2 w-48 bg-white rounded-md shadow-lg z-10" style="display: none;"
-                        id="dropdownMenu">
+                        class="absolute right-0 py-2 w-48 bg-white dark:bg-gray-900 rounded-md shadow-lg z-10"
+                        style="display: none;" id="dropdownMenu">
                         <!-- Dropdown items here -->
 
                         <a href="/web-bello/pages/view-announcements.php"
