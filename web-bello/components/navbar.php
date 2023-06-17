@@ -122,7 +122,7 @@ if (!isset($_SESSION['IDUSER'])) {
                         <!-- Dropdown items here -->
 
                         <a href="/web-bello/pages/view-announcements.php"
-                            class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:bg-gray-800">
+                            class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2">
                             Announcements
                         </a>
                         <a href="/web-bello/pages/view-events.php"
