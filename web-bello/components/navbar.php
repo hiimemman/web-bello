@@ -101,7 +101,8 @@ if (!isset($_SESSION['IDUSER'])) {
             <div class="hidden lg:flex lg:gap-x-12" id="navbar-default">
                 <div class="relative">
                     <button type="button"
-                        class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center focus:outline-none">
+                        class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center focus:outline-none"
+                        id="dropdownTrigger">
                         <span>Menu</span>
                         <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                             fill="currentColor" aria-hidden="true">
