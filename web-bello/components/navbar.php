@@ -109,14 +109,15 @@ if (!isset($_SESSION['IDUSER'])) {
                             <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
                         </svg>
                     </button>
+                    <a href="/web-bello/pages/user-index.php"
+                        class="dropdown-item text-sm leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Home
+                    </a>
                     <div x-show="open" @click.away="open = false"
                         class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-lg z-10"
                         style="display: none;" id="dropdownMenu">
                         <!-- Dropdown items here -->
-                        <a href="/web-bello/pages/user-index.php"
-                            class="dropdown-item text-sm leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            Home
-                        </a>
+
                         <a href="/web-bello/pages/view-announcements.php"
                             class="dropdown-item text-sm leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Announcements
@@ -137,11 +138,12 @@ if (!isset($_SESSION['IDUSER'])) {
                             class="dropdown-item text-sm leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Monthly Due
                         </a>
-                        <a href="../api/login/logout.php"
-                            class="dropdown-item text-sm leading-6 text-gray-400 dark:text-gray-600 dark:hover:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            Sign out
-                        </a>
+
                     </div>
+                    <a href="../api/login/logout.php"
+                        class="dropdown-item text-sm leading-6 text-gray-400 dark:text-gray-600 dark:hover:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Sign out
+                    </a>
                 </div>
             </div>
 
