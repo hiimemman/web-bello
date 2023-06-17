@@ -106,7 +106,7 @@ if (!isset($_SESSION['IDUSER'])) {
                     out</a>
                 <div class="relative" x-data="{ open: false }">
                     <button type="button"
-                        class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center focus:outline-none"
+                        class="text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center focus:outline-none"
                         @click="open = !open" aria-expanded="false" aria-haspopup="true">
                         <span><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
