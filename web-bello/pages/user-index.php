@@ -211,8 +211,8 @@ require_once('../components/navbar.php')
 <section class="bg-gray-200" id="contact">
     <div class="container px-6 py-16 mx-auto">
         <h2 class="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
-        <div class="flex flex-col md:flex-row mt-12">
-            <div class="w-full md:w-1/2">
+        <div class="flex flex-col md:flex-row mt-12 items-center">
+            <div class="w-full md:w-1/2 text-center md:text-left">
                 <form action="mailto:contact@webbelloonline.com" method="POST" enctype="text/plain" class="max-w-lg mx-auto mt-8">
                     <div class="flex flex-col mb-6">
                         <label for="name" class="text-gray-800">Name</label>
@@ -242,10 +242,17 @@ require_once('../components/navbar.php')
                     </svg>
                     <span class="text-gray-800">+1 (123) 456-7890</span>
                 </div>
+                <div class="flex items-center space-x-4 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    <span class="text-gray-800">contact@webbelloonline.com</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- End of contact us section -->
 
