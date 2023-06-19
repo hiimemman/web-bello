@@ -190,13 +190,14 @@ require_once('../components/navbar.php')
  <!-- About Us Section -->
  <section class="bg-gray-100" id="about">
     <div class="container px-6 py-16 mx-auto">
-        <h2 class="text-3xl font-bold text-gray-800 text-center">About Us</h2>
+        
         <div class="flex flex-wrap items-stretch md:items-center mt-8">
             <div class="w-full md:w-1/2">
                 <img class="rounded-lg h-full w-full object-cover" src="../images/about.jpg" alt="About Us Image">
             </div>
             <div class="w-full md:w-1/2 px-4 flex items-center">
                 <div class="max-w-md mx-auto text-center md:text-left">
+                <h2 class="text-3xl font-bold text-gray-800 text-center">About Us</h2>
                     <p class="mt-4 text-gray-600">We are Web-Bello Online, an online platform dedicated to providing a seamless and convenient experience for homeowners in Palazzo Bello Subdivision. Our mission is to create a vibrant community by offering various services and resources to our valued residents.</p>
                     <p class="mt-4 text-gray-600">With Web-Bello Online, you can easily manage your dues, update your profile, stay informed about announcements and events, and participate in community forums.</p>
                 </div>
