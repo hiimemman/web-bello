@@ -211,36 +211,38 @@ require_once('../components/navbar.php')
 <section class="bg-gray-200" id="contact">
     <div class="container px-6 py-16 mx-auto">
         <h2 class="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
-        <div class="max-w-lg mx-auto mt-12">
-            <div class="flex flex-col items-center justify-center space-y-8">
-                <div class="flex items-center space-x-4">
+        <div class="flex flex-col md:flex-row mt-12">
+            <div class="w-full md:w-1/2">
+                <div class="flex items-center space-x-4 mb-6">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                     </svg>
                     <span class="text-gray-800">123 Main Street, Palazzo Bello</span>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                    </svg>
-                    <span class="text-gray-800">contact@webbelloonline.com</span>
-                </div>
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-4 mb-6">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                     </svg>
                     <span class="text-gray-800">+1 (123) 456-7890</span>
                 </div>
+                <div class="flex items-center space-x-4 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                    <a href="mailto:contact@webbelloonline.com" class="text-gray-800 hover:text-blue-600 transition duration-300">contact@webbelloonline.com</a>
+                </div>
             </div>
-        </div>
-        <div class="max-w-lg mx-auto mt-12">
-            <div class="rounded-lg overflow-hidden shadow-lg">
-                <iframe class="w-full h-64" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890!2d-123.456789!3d12.345678!4m1!2i256!3i512!5i1024!6i2048!7i4096!8i8192" allowfullscreen="" loading="lazy"></iframe>
+            <div class="w-full md:w-1/2">
+                <div class="flex items-center justify-center md:justify-end">
+                    <a href="mailto:contact@webbelloonline.com" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">Email Us</a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 <!-- End of contact us section -->
+
+
     <!-- Footer -->
     <footer class="bg-gray-100">
         <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
