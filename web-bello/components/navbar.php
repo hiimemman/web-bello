@@ -73,7 +73,7 @@ if (!isset($_SESSION['IDUSER'])) {
         }
     </style>
 
-    <nav class="fixed bg-white dark:bg-gray-900 top-0 left-0 right-0 shadow-lg z-10">
+<nav class="fixed bg-white dark:bg-gray-900 top-0 left-0 right-0 shadow-lg z-10">
         <div class="container mx-auto flex flex-wrap max-w-7xl items-center justify-between py-10 lg:px-8">
             <div class="flex lg:flex-1 px-6">
                 <a href="/web-bello/pages/user-index.php" class="-m-1.5 p-1.5">
@@ -96,7 +96,6 @@ if (!isset($_SESSION['IDUSER'])) {
             <!-- Nav Links -->
             <div class="hidden lg:flex lg:gap-x-12" id="navbar-default">
             <a href="/web-bello/pages/user-index.php" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Home</a>
-            <a href="/web-bello/pages/user-index.php#about" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">About Us</a>
             <a href="../api/login/logout.php" class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 text-gray-400 dark:text-gray-600 dark:hover:text-white">Sign out</a>
             <div class="relative" x-data="{ open: false }">
                 <button type="button" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center focus:outline-none" @click="open = !open" aria-expanded="false" aria-haspopup="true">
