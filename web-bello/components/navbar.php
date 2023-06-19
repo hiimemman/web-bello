@@ -96,6 +96,8 @@ if (!isset($_SESSION['IDUSER'])) {
         <!-- Nav Links -->
         <div class="hidden lg:flex lg:gap-x-12" id="navbar-default">
             <a href="/web-bello/pages/user-index.php" class="nav-link text-sm font-semibold leading-6 text-white">Home</a>
+            <a href="/web-bello/pages/user-index.php#about" class="nav-link text-sm font-semibold leading-6 text-white">About Us</a>
+            <a href="/web-bello/pages/user-index.php#contact" class="nav-link text-sm font-semibold leading-6 text-white">Contacts</a>
             <a href="../api/login/logout.php" class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 text-gray-400 dark:text-white dark:hover:text-white">Sign out</a>
             <div class="relative" x-data="{ open: false }">
                 <button type="button" class="text-sm font-semibold leading-6 text-white flex items-center focus:outline-none" @click="open = !open" aria-expanded="false" aria-haspopup="true">

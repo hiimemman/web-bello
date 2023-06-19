@@ -218,7 +218,7 @@ require_once('../components/navbar.php')
                 <div class="max-w-lg mx-auto">
                     <div class="bg-white rounded-lg shadow-md p-6 mb-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Contact Number</h3>
-                        <p class="text-gray-600">09?????????</p>
+                        <p class="text-gray-600">09123456789</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-md p-6 mb-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Location</h3>
