@@ -186,16 +186,23 @@ require_once('../components/navbar.php')
         </div>
     </section>
     <!-- End of New Content Section-->
-    <div id="about"></div>
-    <section class="bg-gray-100">
-    <div class="container px-6 py-16 mx-auto">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-gray-800">About Us</h2>
-            <p class="mt-4 text-gray-600">We are Web-Bello Online, an online platform dedicated to providing a seamless and convenient experience for homeowners in Palazzo Bello Subdivision. Our mission is to create a vibrant community by offering various services and resources to our valued residents.</p>
-            <p class="mt-4 text-gray-600">With Web-Bello Online, you can easily manage your dues, update your profile, stay informed about announcements and events, and participate in community forums. Our user-friendly interface and efficient features make it convenient for you to access and utilize our platform.</p>
+
+ <!-- About Us Section -->
+<section class="bg-gray-100" id="about">
+    <div class="container px-6 py-16 mx-auto flex flex-wrap items-center">
+        <div class="w-full md:w-1/2">
+            <img class="rounded-lg" src="your-image-url.jpg" alt="About Us Image">
+        </div>
+        <div class="w-full md:w-1/2 px-4">
+            <div class="max-w-md mx-auto text-center md:text-left">
+                <h2 class="text-3xl font-bold text-gray-800">About Us</h2>
+                <p class="mt-4 text-gray-600">We are Web-Bello Online, an online platform dedicated to providing a seamless and convenient experience for homeowners in Palazzo Bello Subdivision. Our mission is to create a vibrant community by offering various services and resources to our valued residents.</p>
+                <p class="mt-4 text-gray-600">With Web-Bello Online, you can easily manage your dues, update your profile, stay informed about announcements and events, and participate in community forums. Our user-friendly interface and efficient features make it convenient for you to access and utilize our platform.</p>
+            </div>
         </div>
     </div>
-    </section>
+</section>
+<!-- End of About Us Section -->
 
     <!-- Footer -->
     <footer class="bg-gray-100">
