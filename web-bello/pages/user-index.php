@@ -216,17 +216,17 @@ require_once('../components/navbar.php')
         <div class="flex flex-col md:flex-row mt-12 items-center">
             <div class="w-full md:w-1/2">
                 <div class="max-w-lg mx-auto">
-                    <div class="flex flex-col mb-6">
-                        <label class="text-gray-800">Contact Number</label>
-                        <p class="mt-2">+1234567890</p>
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Contact Number</h3>
+                        <p class="text-gray-600">+1234567890</p>
                     </div>
-                    <div class="flex flex-col mb-6">
-                        <label class="text-gray-800">Location</label>
-                        <p class="mt-2">123 Street, City, Country</p>
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Location</h3>
+                        <p class="text-gray-600">123 Street, City, Country</p>
                     </div>
-                    <div class="flex flex-col mb-6">
-                        <label class="text-gray-800">Facebook Page</label>
-                        <a href="https://www.facebook.com/your-page" target="_blank" class="text-blue-500 hover:underline mt-2">Visit our Facebook Page</a>
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Facebook Page</h3>
+                        <a href="https://www.facebook.com/your-page" target="_blank" class="text-blue-500 hover:underline">Visit our Facebook Page</a>
                     </div>
                     <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300" onclick="location.href='mailto:your-email@example.com';">Send Email</button>
                 </div>
@@ -237,6 +237,7 @@ require_once('../components/navbar.php')
         </div>
     </div>
 </section>
+
 
 
 
