@@ -226,7 +226,7 @@ require_once('../components/navbar.php')
                     </div>
                     <div class="bg-white rounded-lg shadow-md p-6 mb-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Facebook Page</h3>
-                        <a href="https://www.facebook.com/your-page" target="_blank" class="text-blue-500 hover:underline">Visit our Facebook Page</a>
+                        <a href="https://www.facebook.com/pages/Palazzo-Bello/259135290785585" target="_blank" class="text-blue-500 hover:underline">Visit our Facebook Page</a>
                     </div>
                     <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300" onclick="location.href='mailto:your-email@example.com';">Send Email</button>
                 </div>
