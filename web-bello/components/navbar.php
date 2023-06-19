@@ -129,7 +129,7 @@ if (!isset($_SESSION['IDUSER'])) {
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script defer>
