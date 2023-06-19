@@ -225,18 +225,23 @@ require_once('../components/navbar.php')
                     </svg>
                     <span class="text-gray-800">+1 (123) 456-7890</span>
                 </div>
-                <div class="flex items-center space-x-4 mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                    </svg>
-                    <a href="mailto:contact@webbelloonline.com" class="text-gray-800 hover:text-blue-600 transition duration-300">contact@webbelloonline.com</a>
-                </div>
-            </div>
-            <div class="w-full md:w-1/2">
-                <div class="flex items-center justify-center md:justify-end">
-                    <a href="mailto:contact@webbelloonline.com" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">Email Us</a>
-                </div>
-            </div>
+                <section class="bg-gray-200" id="contact">
+                    <form action="mailto:contact@webbelloonline.com" method="POST" enctype="text/plain" class="max-w-lg mx-auto mt-8">
+                        <div class="flex flex-col mb-6">
+                            <label for="name" class="text-gray-800">Name</label>
+                            <input type="text" id="name" name="name" class="bg-white border border-gray-300 px-4 py-2 mt-2 rounded-lg" required>
+                        </div>
+                        <div class="flex flex-col mb-6">
+                            <label for="email" class="text-gray-800">Email</label>
+                            <input type="email" id="email" name="email" class="bg-white border border-gray-300 px-4 py-2 mt-2 rounded-lg" required>
+                        </div>
+                        <div class="flex flex-col mb-6">
+                            <label for="message" class="text-gray-800">Message</label>
+                            <textarea id="message" name="message" rows="5" class="bg-white border border-gray-300 px-4 py-2 mt-2 rounded-lg" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">Send Message</button>
+                    </form>
+                </section>
         </div>
     </div>
 </section>
