@@ -317,9 +317,8 @@ require_once('../components/navbar.php')
 
                 <!-- Image -->
                 <div class="flex justify-center">
-                    <img alt="image" src="` + forum.image_url +
-                `"
-                        class="mt-8 h-auto w-auto object-cover" />
+                    <img alt="image" src="` + forum.image_url + `"
+                    class="mt-8 h-auto w-auto object-cover" style="width: 470px; height: 264px;" />
                 </div>
                 <!-- End of Image -->
                 <!-- Like Button -->
