@@ -187,6 +187,16 @@ require_once('../components/navbar.php')
     </section>
     <!-- End of New Content Section-->
 
+    <section class="bg-gray-100">
+    <div class="container px-6 py-16 mx-auto">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800">About Us</h2>
+            <p class="mt-4 text-gray-600">We are Web-Bello Online, an online platform dedicated to providing a seamless and convenient experience for homeowners in Palazzo Bello Subdivision. Our mission is to create a vibrant community by offering various services and resources to our valued residents.</p>
+            <p class="mt-4 text-gray-600">With Web-Bello Online, you can easily manage your dues, update your profile, stay informed about announcements and events, and participate in community forums. Our user-friendly interface and efficient features make it convenient for you to access and utilize our platform.</p>
+        </div>
+    </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-gray-100">
         <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
