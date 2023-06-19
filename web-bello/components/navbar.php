@@ -95,41 +95,38 @@ if (!isset($_SESSION['IDUSER'])) {
 
             <!-- Nav Links -->
             <div class="hidden lg:flex lg:gap-x-12" id="navbar-default">
-                <a href="/web-bello/pages/user-index.php" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Home</a>
-                <a href="../api/login/logout.php" class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 text-gray-400 dark:text-gray-600 dark:hover:text-white">Sign
-                    out</a>
-                <div class="relative" x-data="{ open: false }">
-                    <button type="button" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center focus:outline-none" @click="open = !open" aria-expanded="false" aria-haspopup="true">
-                        <span><svg class="h-6 w-6 hover:text-gray-600 dark:hover:text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"></path>
-                            </svg></span>
+            <a href="/web-bello/pages/user-index.php" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Home</a>
+            <a href="../api/login/logout.php" class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 text-gray-400 dark:text-gray-600 dark:hover:text-white">Sign out</a>
+            <div class="relative" x-data="{ open: false }">
+                <button type="button" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center focus:outline-none" @click="open = !open" aria-expanded="false" aria-haspopup="true">
+                    <span>
+                        <svg class="h-6 w-6 hover:text-gray-600 dark:hover:text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"></path>
+                        </svg>
+                    </span>
+                </button>
 
-                    </button>
+                <div x-show="open" @click.away="open = false" class="absolute right-0 py-2 w-48 bg-white dark:bg-gray-900 rounded-md shadow-lg z-10" style="display: none;" id="dropdownMenu">
+                    <!-- Dropdown items here -->
 
-                    <div x-show="open" @click.away="open = false" class="absolute right-0 py-2 w-48 bg-white dark:bg-gray-900 rounded-md shadow-lg z-10" style="display: none;" id="dropdownMenu">
-                        <!-- Dropdown items here -->
-
-                        <a href="/web-bello/pages/view-announcements.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            Announcements
-                        </a>
-                        <a href="/web-bello/pages/view-events.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            Events
-                        </a>
-                        <a href="/web-bello/pages/view-forums.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            Forums
-                        </a>
-                        <a href="/web-bello/calendar-19/index.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            Schedules
-                        </a>
-                        <a href="/web-bello/pages/monthly-due.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            Manage Dues
-                        </a>
-
-                    </div>
-
+                    <a href="/web-bello/pages/view-announcements.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Announcements
+                    </a>
+                    <a href="/web-bello/pages/view-events.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Events
+                    </a>
+                    <a href="/web-bello/pages/view-forums.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Forums
+                    </a>
+                    <a href="/web-bello/calendar-19/index.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Schedules
+                    </a>
+                    <a href="/web-bello/pages/monthly-due.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Manage Dues
+                    </a>
                 </div>
-
             </div>
+        </div>
 
         </div>
     </nav>
