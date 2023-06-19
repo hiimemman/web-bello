@@ -218,11 +218,11 @@ require_once('../components/navbar.php')
                 <div class="max-w-lg mx-auto">
                     <div class="bg-white rounded-lg shadow-md p-6 mb-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Contact Number</h3>
-                        <p class="text-gray-600">+1234567890</p>
+                        <p class="text-gray-600">09?????????</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-md p-6 mb-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Location</h3>
-                        <p class="text-gray-600">123 Street, City, Country</p>
+                        <p class="text-gray-600">Palazzo Bello, Carsadang Imus Cavite, Philippines</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-md p-6 mb-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Facebook Page</h3>
