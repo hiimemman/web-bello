@@ -191,7 +191,7 @@ require_once('../components/navbar.php')
 <section class="bg-gray-100" id="about">
     <div class="container px-6 py-16 mx-auto flex flex-wrap items-center">
         <div class="w-full md:w-1/2">
-            <img class="rounded-lg" src="your-image-url.jpg" alt="About Us Image">
+            <img class="rounded-lg" src="../images/bello-about.jpg" alt="About Us Image">
         </div>
         <div class="w-full md:w-1/2 px-4">
             <div class="max-w-md mx-auto text-center md:text-left">
