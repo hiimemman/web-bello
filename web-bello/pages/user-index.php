@@ -187,7 +187,7 @@ require_once('../components/navbar.php')
     </section>
     <!-- End of New Content Section-->
 
-    <section class="bg-gray-100">
+    <section class="bg-gray-100" id="about">
     <div class="container px-6 py-16 mx-auto">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-3xl font-bold text-gray-800">About Us</h2>
