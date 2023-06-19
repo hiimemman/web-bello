@@ -217,18 +217,18 @@ require_once('../components/navbar.php')
             <div class="w-full md:w-1/2">
                 <div class="max-w-lg mx-auto">
                     <div class="flex flex-col mb-6">
-                        <label for="name" class="text-gray-800">Name</label>
-                        <input type="text" id="name" name="name" class="bg-white border border-gray-300 px-4 py-2 mt-2 rounded-lg" required>
+                        <label class="text-gray-800">Contact Number</label>
+                        <p class="mt-2">+1234567890</p>
                     </div>
                     <div class="flex flex-col mb-6">
-                        <label for="email" class="text-gray-800">Email</label>
-                        <input type="email" id="email" name="email" class="bg-white border border-gray-300 px-4 py-2 mt-2 rounded-lg" required>
+                        <label class="text-gray-800">Location</label>
+                        <p class="mt-2">123 Street, City, Country</p>
                     </div>
                     <div class="flex flex-col mb-6">
-                        <label for="message" class="text-gray-800">Message</label>
-                        <textarea id="message" name="message" rows="5" class="bg-white border border-gray-300 px-4 py-2 mt-2 rounded-lg" required></textarea>
+                        <label class="text-gray-800">Facebook Page</label>
+                        <a href="https://www.facebook.com/your-page" target="_blank" class="text-blue-500 hover:underline mt-2">Visit our Facebook Page</a>
                     </div>
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300" onclick="location.href='mailto:manuelolarve@gmail.com';">Send Message</button>
+                    <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300" onclick="location.href='mailto:your-email@example.com';">Send Email</button>
                 </div>
             </div>
             <div class="w-full md:w-1/2 mt-8 md:mt-0">
@@ -237,6 +237,7 @@ require_once('../components/navbar.php')
         </div>
     </div>
 </section>
+
 
 
 
