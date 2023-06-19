@@ -58,16 +58,12 @@ require_once('../components/navbar.php')
     <section class="bg-white dark:bg-gray-900">
         <div class="container px-6 py-16 mx-auto text-center">
             <div class="max-w-lg mx-auto">
-                <h1 class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Building Your Next App with
-                    our Awesome components</h1>
-                <p class="mt-6 text-gray-500 dark:text-gray-300">Lorem ipsum dolor sit, amet consectetur adipisicing
-                    elit. Libero similique
-                    obcaecati illum mollitia.</p>
-                <button
-                    class="px-5 py-2 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-blue-600 rounded-lg hover:bg-blue-500 lg:mx-0 lg:w-auto focus:outline-none">
-                    Start 14-Day free trial
-                </button>
-                <p class="mt-3 text-sm text-gray-400 ">No credit card required</p>
+                <h1 class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Welcome to Palazzo Bello
+                    Subdivision!</h1>
+                <p class="mt-6 text-gray-500 dark:text-gray-300">Discover a remarkable residential experience in the
+                    heart of Imus with Palazzo Bello Subdivision by Landmass Development Corporation. Our community
+                    offers an unparalleled lifestyle that exceeds expectations.</p>
+
             </div>
 
             <div class="flex justify-center mt-10">
