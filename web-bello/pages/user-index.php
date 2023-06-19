@@ -214,28 +214,6 @@ require_once('../components/navbar.php')
         <h2 class="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
         <div class="flex flex-col md:flex-row mt-12 items-center">
             <div class="w-full md:w-1/2">
-                <div class="flex flex-col items-center md:items-start space-y-4">
-                    <div class="flex items-center space-x-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                        </svg>
-                        <span class="text-gray-800">123 Main Street, Palazzo Bello</span>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                        </svg>
-                        <span class="text-gray-800">+1 (123) 456-7890</span>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                        </svg>
-                        <span class="text-gray-800">contact@webbelloonline.com</span>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full md:w-1/2 mt-8 md:mt-0">
                 <form action="mailto:contact@webbelloonline.com" method="POST" enctype="text/plain" class="max-w-lg mx-auto">
                     <div class="flex flex-col mb-6">
                         <label for="name" class="text-gray-800">Name</label>
@@ -252,12 +230,13 @@ require_once('../components/navbar.php')
                     <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">Send Message</button>
                 </form>
             </div>
-        </div>
-        <div class="mt-12">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.6192040335823!2d120.9226916169621!3d14.421285300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d2e5e14e944f%3A0xa386a3d3dc5d8a64!2sPalazzo%20Bello%2C%20Imus%2C%20Cavite!5e1!3m2!1sen!2sph!4v1687189807400!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="w-full md:w-1/2 mt-8 md:mt-0">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.6192040335823!2d120.9226916169621!3d14.421285300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d2e5e14e944f%3A0xa386a3d3dc5d8a64!2sPalazzo%20Bello%2C%20Imus%2C%20Cavite!5e1!3m2!1sen!2sph!4v1687189807400!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </div>
 </section>
+
 
 
 <!-- End of contact us section -->
