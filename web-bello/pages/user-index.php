@@ -215,7 +215,7 @@ require_once('../components/navbar.php')
         <h2 class="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
         <div class="flex flex-col md:flex-row mt-12 items-center">
             <div class="w-full md:w-1/2">
-                <form action="mailto:manuelolarve@gmail.com" method="POST" enctype="text/plain" class="max-w-lg mx-auto">
+                <div class="max-w-lg mx-auto">
                     <div class="flex flex-col mb-6">
                         <label for="name" class="text-gray-800">Name</label>
                         <input type="text" id="name" name="name" class="bg-white border border-gray-300 px-4 py-2 mt-2 rounded-lg" required>
@@ -228,8 +228,8 @@ require_once('../components/navbar.php')
                         <label for="message" class="text-gray-800">Message</label>
                         <textarea id="message" name="message" rows="5" class="bg-white border border-gray-300 px-4 py-2 mt-2 rounded-lg" required></textarea>
                     </div>
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">Send Message</button>
-                </form>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300" onclick="location.href='mailto:manuelolarve@gmail.com';">Send Message</button>
+                </div>
             </div>
             <div class="w-full md:w-1/2 mt-8 md:mt-0">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.6192040335823!2d120.9226916169621!3d14.421285300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d2e5e14e944f%3A0xa386a3d3dc5d8a64!2sPalazzo%20Bello%2C%20Imus%2C%20Cavite!5e1!3m2!1sen!2sph!4v1687189807400!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
