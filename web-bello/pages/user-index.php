@@ -207,6 +207,34 @@ require_once('../components/navbar.php')
 </section>
 <!-- End of About Us Section -->
 
+<!-- Contact Us section -->
+<section class="bg-gray-200" id="contact">
+    <div class="container px-6 py-16 mx-auto">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
+        <div class="max-w-lg mx-auto mt-8">
+<div class="flex flex-col mt-8">
+            <div class="flex items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+                <span class="text-gray-800">123 Main Street, Palazzo Bello</span>
+            </div>
+            <div class="flex items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+                <span class="text-gray-800">contact@webbelloonline.com</span>
+            </div>
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+                <span class="text-gray-800">+1 (123) 456-7890</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of contact us section -->
     <!-- Footer -->
     <footer class="bg-gray-100">
         <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
