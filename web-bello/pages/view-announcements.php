@@ -286,7 +286,7 @@ require_once('../components/navbar.php')
             content += `
     <section>
     
-        <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-24 mt-10">
+        <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-24 mt-10 border border-gray-200 rounded-lg">
             <article class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
                 <div class="flex justify-between items-center mb-5 text-gray-500">
                     <span
