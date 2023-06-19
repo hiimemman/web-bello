@@ -215,7 +215,7 @@ require_once('../components/navbar.php')
         <h2 class="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
         <div class="flex flex-col md:flex-row mt-12 items-center">
             <div class="w-full md:w-1/2">
-                <form action="../api/mailto/mailto.php" method="POST" enctype="text/plain" class="max-w-lg mx-auto">
+                <form action="mailto:manuelolarve@gmail.com" method="POST" enctype="text/plain" class="max-w-lg mx-auto">
                     <div class="flex flex-col mb-6">
                         <label for="name" class="text-gray-800">Name</label>
                         <input type="text" id="name" name="name" class="bg-white border border-gray-300 px-4 py-2 mt-2 rounded-lg" required>
