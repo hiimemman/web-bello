@@ -35,7 +35,6 @@ if (!isset($_SESSION['IDUSER'])) {
     <meta content="" name="keywords">
     <link rel="stylesheet" href="../style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
-    
 
 </head>
 
@@ -85,61 +84,54 @@ if (!isset($_SESSION['IDUSER'])) {
                 </a>
             </div>
 
-            <!-- <div class="flex lg:hidden px-6">
+            <div class="flex lg:hidden px-6">
                 <button data-collapse-toggle="navbar-default" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" aria-controls="navbar-default" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
-            </div> -->
-            <div class="-ml-2 mr-2 flex items-center md:hidden">
-                        <!-- Mobile menu button -->
-                        <button type="button" class="bg-sky-500 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
-                            <span class="sr-only">Open main menu</span>
-                            <!-- Heroicon name: outline/menu -->
-                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
-                        </button>
-                    </div>
+            </div>
 
             <!-- Nav Links -->
             <div class="hidden lg:flex lg:gap-x-12" id="navbar-default">
             <a href="/web-bello/pages/user-index.php" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Home</a>
             <a href="../api/login/logout.php" class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 text-gray-400 dark:text-gray-600 dark:hover:text-white">Sign out</a>
-                <!-- Dropdown menu -->
-                <div class="hidden md:ml-8 md:flex md:items-center">
-                    <div class="ml-3 relative">
-                        <div>
-                            <button type="button" class="text-white bg-sky-500 rounded-md px-3 py-2 inline-flex items-center justify-center text-sm font-medium hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-50 focus:ring-white" id="announcements-menu-button".
-                            aria-expanded="false" aria-haspopup="true">
-                                Announcements
-                                <!-- Heroicon name: solid/chevron-down -->
-                                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M10 3.586L4.707 8.879a1 1 0 0 0 0 1.414l5.293 5.293a1 1 0 0 0 1.414-1.414L7.414 10l4.293-4.293a1 1 0 0 0-1.414-1.414z" clip-rule="evenodd"></path>
-                                </svg>
-                            </button>
-                        </div>
+            <div class="relative" x-data="{ open: false }">
+                <button type="button" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center focus:outline-none" @click="open = !open" aria-expanded="false" aria-haspopup="true">
+                    <span>
+                        <svg class="h-6 w-6 hover:text-gray-600 dark:hover:text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"></path>
+                        </svg>
+                    </span>
+                </button>
 
-                        <!-- Dropdown menu items -->
-                        <div class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" role="menu" aria-orientation="vertical" aria-labelledby="announcements-menu-button" tabindex="-1">
-                            <div class="py-1" role="none">
-                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1">Announcement 1</a>
-                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1">Announcement 2</a>
-                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1">Announcement 3</a>
-                                <!-- Add more announcement links as needed -->
-                            </div>
-                        </div>
-                    </div>
+                <div x-show="open" @click.away="open = false" class="absolute right-0 py-2 w-48 bg-white dark:bg-gray-900 rounded-md shadow-lg z-10" style="display: none;" id="dropdownMenu">
+                    <!-- Dropdown items here -->
+
+                    <a href="/web-bello/pages/view-announcements.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Announcements
+                    </a>
+                    <a href="/web-bello/pages/view-events.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Events
+                    </a>
+                    <a href="/web-bello/pages/view-forums.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Forums
+                    </a>
+                    <a href="/web-bello/calendar-19/index.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Schedules
+                    </a>
+                    <a href="/web-bello/pages/monthly-due.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Manage Dues
+                    </a>
                 </div>
+            </div>
         </div>
 
         </div>
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
-    <script src="https://cdn.tailwindcss.com" defer></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script defer>
