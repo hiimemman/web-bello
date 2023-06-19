@@ -250,7 +250,7 @@ require_once('../components/navbar.php')
                         <span class="text-gray-800">contact@webbelloonline.com</span>
                     </div>
                 </div>
-                <iframe class="w-full h-64 rounded-lg mt-8" src="https://www.google.com.ph/maps/place/Palazzo+Bello,+Imus,+Cavite/@14.4212853,120.9226916,759m" allowfullscreen="" loading="lazy"></iframe>
+                <iframe class="w-full h-64 rounded-lg mt-8" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890!2d-123.456789!3d12.345678!4m1!2i256!3i512!5i1024!6i2048!7i4096!8i8192" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>
