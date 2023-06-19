@@ -184,11 +184,11 @@ require_once('../components/navbar.php')
                 </div>
             </div>
         </div>
-    </section>
+    </section  id="about">
     <!-- End of New Content Section-->
 
  <!-- About Us Section -->
- <section class="bg-gray-100" id="about">
+ <section class="bg-gray-100">
     <div class="container px-6 py-16 mx-auto">
         
         <div class="flex flex-wrap items-stretch md:items-center mt-8">
