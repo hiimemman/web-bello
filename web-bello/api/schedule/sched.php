@@ -9,6 +9,70 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $start_date = $_POST['start_date'];
   $end_date = $_POST['end_date'];
 
+
+
+  $sqlResidents = mysqli_query($con, "SELECT * FROM `tbl_residents`");
+    
+  //store in result
+  $result = mysqli_fetch_all( $sqlResidents, MYSQLI_ASSOC);
+
+  // Iterate over each item in $result and insert a query
+  foreach ($result as $item) {
+      $userId = $item['id'];
+      $userEmail = $item['email'];
+      $balance = $Amount; // Assuming the balance is initially 0
+      $status = 'unpaid'; // Assuming the status is initially 'pending'
+      $receiptUrl = ''; // Assuming the receipt URL is initially empty
+      $name = $item['firstname'];
+      $contact = $item['contact'];
+
+// Configure HTTP basic authorization: BasicAuth
+$config = ClickSend\Configuration::getDefaultConfiguration()
+->setUsername('megumionaka28@gmail.com')
+->setPassword('AF129BBA-2824-E020-7471-42EE0608670B');
+
+$apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(),$config);
+$msg = new \ClickSend\Model\SmsMessage();
+$msg->setBody("📱 SMS Message Template 📱
+
+🏢 Palazo Bello Community Notification 🏢
+
+📅 Attention, Palazo Bello residents! 📅
+
+🎉 Exciting Event Announcement! 🎉
+
+📣 We are thrilled to share the following event happening in Palazo Bello subdivision: $title
+
+📅 Event Date: [$start_date]
+⏰ Event Time: [$end_date]
+📍 Event Location: [Palazzo Bello]
+
+Join us for this exciting event and get the opportunity to connect with your fellow residents. Don't miss out on the fun and the chance to build a stronger community together!
+
+🌟 Your participation and engagement are vital to making Palazo Bello a vibrant and welcoming place to live. Let's come together and make this event a memorable one! 🌟
+
+If you have any questions or need further information, feel free to contact our community office at (555) 123-4567.
+
+We look forward to seeing you there!
+
+Best regards,
+
+Palazo Bello Management"); 
+$msg->setTo($contact);
+$msg->setSource("sdk");
+
+// \ClickSend\Model\SmsMessageCollection | SmsMessageCollection model
+$sms_messages = new \ClickSend\Model\SmsMessageCollection(); 
+$sms_messages->setMessages([$msg]);
+
+try {
+$result = $apiInstance->smsSendPost($sms_messages);
+//print_r($result);
+} catch (Exception $e) {
+echo 'Exception when calling SMSApi->smsSendPost: ', $e->getMessage(), PHP_EOL;
+}
+}
+
   // Insert the event into the database
   $sql = "INSERT INTO tbl_sched (title, start_date, end_date) VALUES ('$title', '$start_date', '$end_date')";
   if (mysqli_query($con, $sql)) {
