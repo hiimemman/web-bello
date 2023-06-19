@@ -319,7 +319,7 @@ require_once('../components/navbar.php')
                 <div class="flex justify-center">
                 <a href="` + forum.image_url + `">
                     <img alt="image" src="` + forum.image_url + `"
-                    class="mt-8 h-auto w-auto object-cover" style="width: 470px; height: 264px;" />
+                    class="mt-8 h-auto w-auto object-cover" style="width: 470px; height: 300px;" />
                 </a>
                 </div>
                 <!-- End of Image -->
