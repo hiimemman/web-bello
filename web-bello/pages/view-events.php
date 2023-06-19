@@ -16,23 +16,23 @@ require_once('../components/navbar.php')
 
 <body>
     <style>
-        .grid-box {
-            background-color: #ffffff;
-            transition: background-color 0.3s;
-            border: solid 2 gray;
-        }
+    .grid-box {
+        background-color: #ffffff;
+        transition: background-color 0.3s;
+        border: solid 2 gray;
+    }
 
-        .grid-box:hover {
-            background-color: #1b263b;
-        }
+    .grid-box:hover {
+        background-color: #1b263b;
+    }
 
-        .grid-box:hover svg {
-            stroke: #fff;
-        }
+    .grid-box:hover svg {
+        stroke: #fff;
+    }
 
-        .grid-box:hover h2 {
-            color: #fff;
-        }
+    .grid-box:hover h2 {
+        color: #fff;
+    }
     </style>
 
     <header class=" border-b-4 border-sky-300">
@@ -285,8 +285,8 @@ require_once('../components/navbar.php')
             <article class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
                 <div class="flex justify-between items-center mb-5 text-gray-500">
                     <span
-                        class="bg-purple-100 text-purple-700 text-md font-medium inline-flex items-center px-2.5 py-0.5 rounded">
-                        Announcements
+                        class="bg-green-100 text-green-700 text-md font-medium inline-flex items-center px-2.5 py-0.5 rounded">
+                        Events
                     </span>
                     <span class="text-sm">` + forum
                 .created_at + `</span>
@@ -401,29 +401,30 @@ require_once('../components/navbar.php')
 
         forumMain.innerHTML = content;
 
-   
+
         const addComment = document.querySelector('#addComment')
 
-addComment.addEventListener('submit', async (e) => {
-  e.preventDefault();
+        addComment.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-  const formData = new FormData(e.target);
-  const request = await fetch('https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php',{
-    method: 'POST',
-    body: formData,
-  })
+            const formData = new FormData(e.target);
+            const request = await fetch(
+                'https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php', {
+                    method: 'POST',
+                    body: formData,
+                })
 
-  const response = await request.json()
+            const response = await request.json()
 
-  if(response.responseStatus === 'success'){
-  
-    getAllForum()
-  }
+            if (response.responseStatus === 'success') {
 
-  for (const [key, value] of formData.entries()) {
-    console.log(key, value);
-  }
-});
+                getAllForum()
+            }
+
+            for (const [key, value] of formData.entries()) {
+                console.log(key, value);
+            }
+        });
 
 
 
@@ -642,11 +643,6 @@ addComment.addEventListener('submit', async (e) => {
 
 
     }
-
-
-
-
-
     </script>
 
 
