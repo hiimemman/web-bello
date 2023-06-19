@@ -85,14 +85,14 @@ if (!isset($_SESSION['IDUSER'])) {
                 </a>
             </div>
 
-            <div class="flex lg:hidden px-6">
+            <!-- <div class="flex lg:hidden px-6">
                 <button data-collapse-toggle="navbar-default" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" aria-controls="navbar-default" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
-            </div>
+            </div> -->
             <div class="-ml-2 mr-2 flex items-center md:hidden">
                         <!-- Mobile menu button -->
                         <button type="button" class="bg-sky-500 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
