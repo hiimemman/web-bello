@@ -1,5 +1,6 @@
 <?php
 include_once("../../connections/connection.php");
+require_once('../../vendor/autoload.php');
 $con = connection();
 
 // Check if form is submitted
