@@ -73,7 +73,7 @@ if (!isset($_SESSION['IDUSER'])) {
     }
     </style>
 
-    <nav class="fixed top-0 left-0 right-0 shadow-lg z-10">
+    <nav class="fixed bg-gray-900 top-0 left-0 right-0 shadow-lg z-10 dark">
         <div class="container mx-auto flex flex-wrap max-w-7xl items-center justify-between py-10 lg:px-8">
             <div class="flex lg:flex-1 px-6">
                 <a href="/web-bello/pages/user-index.php" class="-m-1.5 p-1.5">
