@@ -27,52 +27,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $name = $item['firstname'];
       $contact = $item['contact'];
 
-// Configure HTTP basic authorization: BasicAuth
-$config = ClickSend\Configuration::getDefaultConfiguration()
-->setUsername('megumionaka28@gmail.com')
-->setPassword('AF129BBA-2824-E020-7471-42EE0608670B');
+      // Configure HTTP basic authorization: BasicAuth
+      $config = ClickSend\Configuration::getDefaultConfiguration()
+      ->setUsername('megumionaka28@gmail.com')
+      ->setPassword('AF129BBA-2824-E020-7471-42EE0608670B');
 
-$apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(),$config);
-$msg = new \ClickSend\Model\SmsMessage();
-$msg->setBody("📱 SMS Message Template 📱
+      $apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(),$config);
+      $msg = new \ClickSend\Model\SmsMessage();
+      $msg->setBody("📱 SMS Message Template 📱
 
-🏢 Palazo Bello Community Notification 🏢
+      🏢 Palazo Bello Community Notification 🏢
 
-📅 Attention, Palazo Bello residents! 📅
+      📅 Attention, Palazo Bello residents! 📅
 
-🎉 Exciting Event Announcement! 🎉
+      🎉 Exciting Event Announcement! 🎉
 
-📣 We are thrilled to share the following event happening in Palazo Bello subdivision: $title
+      📣 We are thrilled to share the following event happening in Palazo Bello subdivision: $title
 
-📅 Event Date: [$start_date]
-⏰ Event Time: [$end_date]
-📍 Event Location: [Palazzo Bello]
+      📅 Event Date: [$start_date]
+      ⏰ Event Time: [$end_date]
+      📍 Event Location: [Palazzo Bello]
 
-Join us for this exciting event and get the opportunity to connect with your fellow residents. Don't miss out on the fun and the chance to build a stronger community together!
+      Join us for this exciting event and get the opportunity to connect with your fellow residents. Don't miss out on the fun and the chance to build a stronger community together!
 
-🌟 Your participation and engagement are vital to making Palazo Bello a vibrant and welcoming place to live. Let's come together and make this event a memorable one! 🌟
+      🌟 Your participation and engagement are vital to making Palazo Bello a vibrant and welcoming place to live. Let's come together and make this event a memorable one! 🌟
 
-If you have any questions or need further information, feel free to contact our community office at (555) 123-4567.
+      If you have any questions or need further information, feel free to contact our community office at (555) 123-4567.
 
-We look forward to seeing you there!
+      We look forward to seeing you there!
 
-Best regards,
+      Best regards,
 
-Palazo Bello Management"); 
-$msg->setTo($contact);
-$msg->setSource("sdk");
+      Palazo Bello Management"); 
+      $msg->setTo($contact);
+      $msg->setSource("sdk");
 
-// \ClickSend\Model\SmsMessageCollection | SmsMessageCollection model
-$sms_messages = new \ClickSend\Model\SmsMessageCollection(); 
-$sms_messages->setMessages([$msg]);
+      // \ClickSend\Model\SmsMessageCollection | SmsMessageCollection model
+      $sms_messages = new \ClickSend\Model\SmsMessageCollection(); 
+      $sms_messages->setMessages([$msg]);
 
-try {
-  //$resultsqlResidents = $apiInstance->smsSendPost($sms_messages);
-//print_r($result);
-} catch (Exception $e) {
-echo 'Exception when calling SMSApi->smsSendPost: ', $e->getMessage(), PHP_EOL;
-}
-}
+    try {
+      //$resultsqlResidents = $apiInstance->smsSendPost($sms_messages);
+    //print_r($result);
+    } catch (Exception $e) {
+    echo 'Exception when calling SMSApi->smsSendPost: ', $e->getMessage(), PHP_EOL;
+    exit(json_encode(array("status" =>'error', "responseContent" => $e->getMessage(), "message" =>'Error:!')));
+    }
+  }
 
   // Insert the event into the database
   $sql = "INSERT INTO tbl_sched (title, start_date, end_date) VALUES ('$title', '$start_date', '$end_date')";
