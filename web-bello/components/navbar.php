@@ -86,9 +86,8 @@ if (!isset($_SESSION['IDUSER'])) {
             </div>
 
             <div class="flex lg:hidden px-6">
-                <button data-collapse-toggle="navbar-default" type="button"
-                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                    aria-controls="navbar-default" aria-expanded="false">
+                <button data-collapse-toggle="navbar-default" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                    aria-controls="navbar-default" aria-expanded="false" @click="open = !open">
                     <span class="sr-only">Open main menu</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                         aria-hidden="true">
@@ -99,7 +98,7 @@ if (!isset($_SESSION['IDUSER'])) {
             </div>
 
             <!-- Nav Links -->
-            <div class="hidden lg:flex lg:gap-x-12" id="navbar-default">
+            <div class="hidden lg:flex lg:gap-x-12" id="navbar-default" x-data="{ open: false }">
                 <a href="/web-bello/pages/user-index.php"
                     class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Home</a>
                 <a href="/web-bello/pages/user-index.php#about"
@@ -123,9 +122,8 @@ if (!isset($_SESSION['IDUSER'])) {
                         </span>
                     </button>
 
-                    <div x-show="open" @click.away="open = false"
-                        class="absolute right-0 py-2 w-48 bg-white dark:bg-gray-900 rounded-md shadow-lg z-10"
-                        style="display: none;" id="dropdownMenu">
+                    <div x-show="open" @click.away="open = false" class="absolute right-0 py-2 w-48 bg-white dark:bg-gray-900 rounded-md shadow-lg z-10"
+                        :class="{ 'hidden': !open }" id="dropdownMenu">
                         <!-- Dropdown items here -->
 
                         <a href="/web-bello/pages/view-announcements.php"
