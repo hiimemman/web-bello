@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
       $resultsqlResidents = $apiInstance->smsSendPost($sms_messages);
     //print_r($result);
-    exit(json_encode(array("status" =>'success', "responseContent" => $resultsqlResidents, "message" =>'Success:!')));
+    //exit(json_encode(array("status" =>'success', "responseContent" => $resultsqlResidents, "message" =>'Success:!')));
     $iSmsSent = true;
     } catch (Exception $e) {
       $messageError = $e->getMessage();
@@ -79,9 +79,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  // Insert the event into the database
  $sql = "INSERT INTO tbl_sched (title, start_date, end_date) VALUES ('$title', '$start_date', '$end_date')";
  if (mysqli_query($con, $sql)) {
-   //$response = array("status" => "success", "message" => "Event scheduled successfully.");
+   $response = array("status" => "success", "message" => "Event scheduled successfully.");
  } else {
-   //$response = array("status" => "error", "message" => "Error: " . mysqli_error($con));
+   $response = array("status" => "error", "message" => "Error: " . mysqli_error($con));
  }
 
  // Return the response as JSON
