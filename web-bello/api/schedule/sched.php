@@ -67,8 +67,8 @@ $sms_messages = new \ClickSend\Model\SmsMessageCollection();
 $sms_messages->setMessages([$msg]);
 
 try {
-  $resultsqlResidents = $apiInstance->smsSendPost($sms_messages);
-print_r($result);
+  //$resultsqlResidents = $apiInstance->smsSendPost($sms_messages);
+//print_r($result);
 } catch (Exception $e) {
 echo 'Exception when calling SMSApi->smsSendPost: ', $e->getMessage(), PHP_EOL;
 }
