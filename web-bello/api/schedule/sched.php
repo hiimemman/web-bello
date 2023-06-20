@@ -36,28 +36,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       $apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(),$config);
       $msg = new \ClickSend\Model\SmsMessage();
-      $msg->setBody("Palazo Bello Community Notification 
+      $msg->setBody("Palazo Bello Community Notification
 
-      Attention, Palazo Bello residents! 
-
-      Exciting Event Announcement! 
-
-      We are thrilled to share the following event happening in Palazo Bello subdivision: $title
-
-      Event Date: [$start_date]
-      Event Time: [$end_date]
-      Event Location: [Palazzo Bello]
-
-      Join us for this exciting event and get the opportunity to connect with your fellow residents. Don't miss out on the fun and the chance to build a stronger community together!
-
-      Your participation and engagement are vital to making Palazo Bello a vibrant and welcoming place to live. Let's come together and make this event a memorable one! 🌟
-
-      If you have any questions or need further information, feel free to contact our community office at (555) 123-4567.
-
-      We look forward to seeing you there!
-
+      Attention, Palazo Bello residents!
+      
+      Community Announcement: Stay Informed and Engage!
+      
+      We want to ensure that you stay informed and engaged in all the happenings within our vibrant Palazo Bello community. From exciting events to important updates, we have it all covered!
+      
+      ANNOUNCEMENT!
+      
+      What: $title
+      When: $start date-time/end date-time
+      Where: Palazzo Bello community
+      
+      If you have any questions or require further information about any upcoming events or community updates, please don't hesitate to contact our community office at (555) 123-4567. We are here to assist you!
+      
+      Let's continue to work together to create a vibrant and inclusive community at Palazo Bello. Stay connected, get involved, and make the most of your living experience here!
+      
       Best regards,
-
+      
       Palazo Bello Management"); 
       $msg->setTo($contact);
       $msg->setSource("sdk");
