@@ -15,10 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sqlResidents = mysqli_query($con, "SELECT * FROM `tbl_residents`");
     
   //store in result
-  $result = mysqli_fetch_all( $sqlResidents, MYSQLI_ASSOC);
+  $resultsqlResidents = mysqli_fetch_all( $sqlResidents, MYSQLI_ASSOC);
 
   // Iterate over each item in $result and insert a query
-  foreach ($result as $item) {
+  foreach ($resultsqlResidents as $item) {
       $userId = $item['id'];
       $userEmail = $item['email'];
       $balance = $Amount; // Assuming the balance is initially 0
@@ -67,8 +67,8 @@ $sms_messages = new \ClickSend\Model\SmsMessageCollection();
 $sms_messages->setMessages([$msg]);
 
 try {
-$result = $apiInstance->smsSendPost($sms_messages);
-//print_r($result);
+  $resultsqlResidents = $apiInstance->smsSendPost($sms_messages);
+print_r($result);
 } catch (Exception $e) {
 echo 'Exception when calling SMSApi->smsSendPost: ', $e->getMessage(), PHP_EOL;
 }
