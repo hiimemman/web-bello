@@ -18,23 +18,23 @@ require_once('../components/navbar.php')
 
 <body>
     <style>
-        .grid-box {
-            background-color: #ffffff;
-            transition: background-color 0.3s;
-            border: solid 2 gray;
-        }
+    .grid-box {
+        background-color: #ffffff;
+        transition: background-color 0.3s;
+        border: solid 2 gray;
+    }
 
-        .grid-box:hover {
-            background-color: #1b263b;
-        }
+    .grid-box:hover {
+        background-color: #1b263b;
+    }
 
-        .grid-box:hover svg {
-            stroke: #fff;
-        }
+    .grid-box:hover svg {
+        stroke: #fff;
+    }
 
-        .grid-box:hover h2 {
-            color: #fff;
-        }
+    .grid-box:hover h2 {
+        color: #fff;
+    }
     </style>
 
     <header class=" border-b-4 border-sky-300">
@@ -56,7 +56,7 @@ require_once('../components/navbar.php')
     </header>
 
     <!-- Announcement Section -->
-    <main class="px-6" id="forumMain">
+    <main class="px-6 mx-auto max-w-screen-xl" id="forumMain">
         <!-- FORUM -->
 
 
@@ -92,30 +92,35 @@ require_once('../components/navbar.php')
 
                 <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
                     <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/web-bello/pages/view-announcements.php">
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-announcements.php">
                             Announcements
                         </a>
                     </li>
 
                     <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/web-bello/pages/view-events.php">
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-events.php">
                             Events
                         </a>
                     </li>
 
                     <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/web-bello/pages/view-forums.php">
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-forums.php">
                             Forums
                         </a>
                     </li>
 
                     <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/web-bello/calendar-19/index.php">
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/calendar-19/index.php">
                             Schedules
                         </a>
                     </li>
                     <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/web-bello/pages/monthly-due.php">
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/monthly-due.php">
                             Monthly Due
                         </a>
                     </li>
@@ -132,155 +137,155 @@ require_once('../components/navbar.php')
 
 
     <script>
-        const menuToggle = document.getElementById("menu-toggle");
-        menuToggle.addEventListener("click", () => {
-            document.getElementById("menu").classList.toggle("hidden");
-        });
+    const menuToggle = document.getElementById("menu-toggle");
+    menuToggle.addEventListener("click", () => {
+        document.getElementById("menu").classList.toggle("hidden");
+    });
 
-        const closeMenu = document.getElementById("close-menu");
-        closeMenu.addEventListener("click", () => {
-            document.getElementById("menu").classList.toggle("hidden");
-        });
+    const closeMenu = document.getElementById("close-menu");
+    closeMenu.addEventListener("click", () => {
+        document.getElementById("menu").classList.toggle("hidden");
+    });
     </script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 
     <script>
-        // Place the JavaScript code here
-        const announcementText = document.getElementById("announcementText");
-        const readMoreLink = document.getElementById("readMoreLink");
+    // Place the JavaScript code here
+    const announcementText = document.getElementById("announcementText");
+    const readMoreLink = document.getElementById("readMoreLink");
 
-        // Check if the text exceeds the line clamp height
-        const checkTextLength = () => {
-            const lineHeight = parseFloat(
-                getComputedStyle(announcementText).lineHeight
-            );
-            const maxHeight = lineHeight * 2; // Maximum height for line clamp of 3
-            const actualHeight = announcementText.scrollHeight;
+    // Check if the text exceeds the line clamp height
+    const checkTextLength = () => {
+        const lineHeight = parseFloat(
+            getComputedStyle(announcementText).lineHeight
+        );
+        const maxHeight = lineHeight * 2; // Maximum height for line clamp of 3
+        const actualHeight = announcementText.scrollHeight;
 
-            if (actualHeight > maxHeight) {
-                readMoreLink.style.display = "inline-flex";
-            } else {
-                readMoreLink.style.display = "none";
-            }
-        };
+        if (actualHeight > maxHeight) {
+            readMoreLink.style.display = "inline-flex";
+        } else {
+            readMoreLink.style.display = "none";
+        }
+    };
 
-        // Toggle line clamp and check text length on load
-        window.addEventListener("load", () => {
-            checkTextLength();
-        });
+    // Toggle line clamp and check text length on load
+    window.addEventListener("load", () => {
+        checkTextLength();
+    });
 
-        // Toggle line clamp and check text length on click
-        readMoreLink.addEventListener("click", (event) => {
-            event.preventDefault(); // Prevent default behavior of the <a> tag
-            announcementText.classList.toggle("line-clamp-2");
-            checkTextLength();
-        });
+    // Toggle line clamp and check text length on click
+    readMoreLink.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default behavior of the <a> tag
+        announcementText.classList.toggle("line-clamp-2");
+        checkTextLength();
+    });
     </script>
 
     <script>
-        let isLiked = false;
-        const likeIcon = document.getElementById("likeIcon");
+    let isLiked = false;
+    const likeIcon = document.getElementById("likeIcon");
 
-        function toggleLike() {
-            if (isLiked) {
-                likeIcon.style.fill = "none";
-            } else {
-                likeIcon.style.fill = "#1D4ED8";
-            }
-
-            isLiked = !isLiked;
+    function toggleLike() {
+        if (isLiked) {
+            likeIcon.style.fill = "none";
+        } else {
+            likeIcon.style.fill = "#1D4ED8";
         }
+
+        isLiked = !isLiked;
+    }
     </script>
 
     <!-- Disabled post comment button when textarea is empty -->
     <script>
-        const commentInput = document.getElementById("comment");
-        const postButton = document.getElementById("postButton");
+    const commentInput = document.getElementById("comment");
+    const postButton = document.getElementById("postButton");
 
-        commentInput.addEventListener("input", () => {
-            if (commentInput.value.trim().length > 0) {
-                postButton.classList.remove("bg-sky-800");
-                postButton.classList.add("bg-sky-950");
-                postButton.removeAttribute("disabled");
-                postButton.classList.remove("cursor-not-allowed");
-                postButton.classList.add("cursor-pointer");
-            } else {
-                postButton.classList.remove("bg-sky-950");
-                postButton.classList.add("bg-sky-800");
-                postButton.setAttribute("disabled", "");
-                postButton.classList.remove("cursor-pointer");
-                postButton.classList.add("cursor-not-allowed");
-            }
-        });
+    commentInput.addEventListener("input", () => {
+        if (commentInput.value.trim().length > 0) {
+            postButton.classList.remove("bg-sky-800");
+            postButton.classList.add("bg-sky-950");
+            postButton.removeAttribute("disabled");
+            postButton.classList.remove("cursor-not-allowed");
+            postButton.classList.add("cursor-pointer");
+        } else {
+            postButton.classList.remove("bg-sky-950");
+            postButton.classList.add("bg-sky-800");
+            postButton.setAttribute("disabled", "");
+            postButton.classList.remove("cursor-pointer");
+            postButton.classList.add("cursor-not-allowed");
+        }
+    });
 
-        postButton.addEventListener("mouseover", () => {
-            if (commentInput.value.trim().length === 0) {
-                postButton.classList.remove("cursor-pointer");
-                postButton.classList.add("cursor-not-allowed");
-            }
-        });
+    postButton.addEventListener("mouseover", () => {
+        if (commentInput.value.trim().length === 0) {
+            postButton.classList.remove("cursor-pointer");
+            postButton.classList.add("cursor-not-allowed");
+        }
+    });
 
-        postButton.addEventListener("mouseout", () => {
-            if (commentInput.value.trim().length === 0) {
-                postButton.classList.remove("cursor-not-allowed");
-                postButton.classList.add("cursor-pointer");
-            }
-        });
+    postButton.addEventListener("mouseout", () => {
+        if (commentInput.value.trim().length === 0) {
+            postButton.classList.remove("cursor-not-allowed");
+            postButton.classList.add("cursor-pointer");
+        }
+    });
     </script>
 
     <script defer>
-        const forumMain = document.querySelector('#forumMain')
+    const forumMain = document.querySelector('#forumMain')
 
 
 
-        const badgeAnnouncement =
-            '<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Announcement</span>';
-        const badgeCollectingSchedule =
-            '<span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Collecting Schedule</span>'
-        const badgeEvents =
-            '<span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Events</span>'
-        const badgeForum =
-            '<span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">Forum</span>'
-        const badgeNews =
-            '<span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">News</span>'
-        window.onload = function() {
-            getAllForum()
-        }
+    const badgeAnnouncement =
+        '<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Announcement</span>';
+    const badgeCollectingSchedule =
+        '<span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Collecting Schedule</span>'
+    const badgeEvents =
+        '<span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Events</span>'
+    const badgeForum =
+        '<span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">Forum</span>'
+    const badgeNews =
+        '<span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">News</span>'
+    window.onload = function() {
+        getAllForum()
+    }
 
-        const getAllForum = async () => {
-
-
-
-            const request = await fetch('../api/forum/all-announcement.php')
-
-            const response = await request.json()
-            content = ''
-            response.responseContent.map((forum) => {
+    const getAllForum = async () => {
 
 
-                let categoryBadge = badgeAnnouncement;
-                if (forum.category === 'Announcement') {
-                    categoryBadge = badgeAnnouncement
-                }
-                if (forum.category === 'Collecting Schedule') {
-                    categoryBadge = badgeCollectingSchedule
-                }
-                if (forum.category === 'Events') {
-                    categoryBadge = badgeEvents
-                }
-                if (forum.category === 'Forum') {
-                    categoryBadge = badgeForum
-                }
-                if (forum.category === 'News') {
-                    categoryBadge = badgeNews
-                }
-                let commentImage = ""
-                //check image
-                if (forum.image_url !== "") {
-                    commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="` + forum
-                        .image_url + `" alt="image description">`
-                }
-                content += `
+
+        const request = await fetch('../api/forum/all-announcement.php')
+
+        const response = await request.json()
+        content = ''
+        response.responseContent.map((forum) => {
+
+
+            let categoryBadge = badgeAnnouncement;
+            if (forum.category === 'Announcement') {
+                categoryBadge = badgeAnnouncement
+            }
+            if (forum.category === 'Collecting Schedule') {
+                categoryBadge = badgeCollectingSchedule
+            }
+            if (forum.category === 'Events') {
+                categoryBadge = badgeEvents
+            }
+            if (forum.category === 'Forum') {
+                categoryBadge = badgeForum
+            }
+            if (forum.category === 'News') {
+                categoryBadge = badgeNews
+            }
+            let commentImage = ""
+            //check image
+            if (forum.image_url !== "") {
+                commentImage += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="` + forum
+                    .image_url + `" alt="image description">`
+            }
+            content += `
     <section>
     
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-24 mt-10">
@@ -291,7 +296,7 @@ require_once('../components/navbar.php')
                         Announcements
                     </span>
                     <span class="text-sm">` + forum
-                    .created_at + `</span>
+                .created_at + `</span>
                 </div>
 
                 <div class="flex justify-between items-center">
@@ -305,7 +310,7 @@ require_once('../components/navbar.php')
                 <div class="text-justify px-4 py-2">
                 <h2 class="mt-6 text-2xl font-bold tracking-tight text-gray-900">
                 ` + forum
-                    .title + `
+                .title + `
                 </div>
                 <h2>
                 ` + forum.message_body + `
@@ -316,15 +321,15 @@ require_once('../components/navbar.php')
                 <div class="flex justify-center">
                     <a href="` + forum.image_url + `" title="Click to view full image">
                     <img alt="image" src="` + forum.image_url +
-                    `" class="mt-8 h-auto w-auto object-cover" style="width: 470px; height: 400px;"/>
+                `" class="mt-8 h-auto w-auto object-cover" style="width: 470px; height: 400px;"/>
                     </a>
                 </div>
                 <!-- End of Image -->
                 <!-- Like Button -->
                 <div class="flex items-center">
                                     <button class="flex items-center px-3 py-2 text-blue-500 rounded-full focus:outline-none" id ="btnLike` +
-                    forum.id +
-                    `"onClick ="likedButtonClicked(` + forum.id + `)">
+                forum.id +
+                `"onClick ="likedButtonClicked(` + forum.id + `)">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 24 24"
@@ -370,9 +375,9 @@ require_once('../components/navbar.php')
                         </button>
                         <div class="flex pl-0 space-x-1 sm:pl-2">
                             <input style="display: none;" id="imageUrl` + forum.id +
-                    `" type="file" onchange="changeProfile()" />
+                `" type="file" onchange="changeProfile()" />
                             <button type="button" class="mb-0 inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick="triggerInputClick(` +
-                    forum.id + `)">
+                forum.id + `)">
                             <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
                             </svg>
@@ -396,76 +401,76 @@ require_once('../components/navbar.php')
 
     `;
 
-            })
+        })
 
 
 
 
 
-            forumMain.innerHTML = content;
+        forumMain.innerHTML = content;
 
 
-            const addComment = document.querySelector('#addComment')
+        const addComment = document.querySelector('#addComment')
 
-            addComment.addEventListener('submit', async (e) => {
-                e.preventDefault();
+        addComment.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-                const formData = new FormData(e.target);
-                const request = await fetch(
-                    'https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php', {
-                        method: 'POST',
-                        body: formData,
-                    })
-
-                const response = await request.json()
-
-                if (response.responseStatus === 'success') {
-
-                    getAllForum()
-                }
-
-                for (const [key, value] of formData.entries()) {
-                    console.log(key, value);
-                }
-            });
-
-
-
-
-
-
-            response.responseContent.map((forum) => {
-                let content = getcommentPerForum(forum.id)
-            })
-
-        }
-
-        const getcommentPerForum = async (id) => {
-            const commentSectionId = document.querySelector('#commentSection' + id);
-            formData = new FormData();
-            formData.append('ForumId', id);
-
-            const request = await fetch('../api/comment/get-all-comment-per-forum.php', {
-                method: "POST",
-                body: formData,
-            })
+            const formData = new FormData(e.target);
+            const request = await fetch(
+                'https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php', {
+                    method: 'POST',
+                    body: formData,
+                })
 
             const response = await request.json()
+
             if (response.responseStatus === 'success') {
-                console.log(response.responseContent)
-                let contents = '';
-                response.responseContent.map((comments) => {
-                    console.log(comments)
 
-                    let commentImaged = ""
-                    //check image
-                    if (comments.image_url !== "") {
-                        console.log("pumasok dito")
-                        commentImaged += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="` + comments
-                            .image_url + `" alt="image description">`
-                    }
+                getAllForum()
+            }
 
-                    contents += `
+            for (const [key, value] of formData.entries()) {
+                console.log(key, value);
+            }
+        });
+
+
+
+
+
+
+        response.responseContent.map((forum) => {
+            let content = getcommentPerForum(forum.id)
+        })
+
+    }
+
+    const getcommentPerForum = async (id) => {
+        const commentSectionId = document.querySelector('#commentSection' + id);
+        formData = new FormData();
+        formData.append('ForumId', id);
+
+        const request = await fetch('../api/comment/get-all-comment-per-forum.php', {
+            method: "POST",
+            body: formData,
+        })
+
+        const response = await request.json()
+        if (response.responseStatus === 'success') {
+            console.log(response.responseContent)
+            let contents = '';
+            response.responseContent.map((comments) => {
+                console.log(comments)
+
+                let commentImaged = ""
+                //check image
+                if (comments.image_url !== "") {
+                    console.log("pumasok dito")
+                    commentImaged += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="` + comments
+                        .image_url + `" alt="image description">`
+                }
+
+                contents += `
                <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
                     <div class="inline-flex">
                       
@@ -477,175 +482,175 @@ require_once('../components/navbar.php')
                             </p>
                             <p class="text-md text-gray-600">
                                 <time pubdate datetime="2022-02-08" title="February 8th, 2022">` + comments
-                        .created_at + `</time>
+                    .created_at + `</time>
                             </p>
                         </div>
                     </footer>
                     <p class="text-gray-600">
                    ` + comments
-                        .comment_text + `</p>
+                    .comment_text + `</p>
                     ` + commentImaged + `
                 </article>
                 
             `
-                })
-                commentSectionId.innerHTML = contents
-            }
+            })
+            commentSectionId.innerHTML = contents
         }
+    }
     </script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script defer>
-        //Dark theme toggle 
-        let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    //Dark theme toggle 
+    let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-        // Change the icons inside the button based on previous settings
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-                '(prefers-color-scheme: dark)').matches)) {
-            themeToggleLightIcon.classList.remove('hidden');
-        } else {
-            themeToggleDarkIcon.classList.remove('hidden');
-        }
+    // Change the icons inside the button based on previous settings
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+            '(prefers-color-scheme: dark)').matches)) {
+        themeToggleLightIcon.classList.remove('hidden');
+    } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+    }
 
-        let themeToggleBtn = document.getElementById('theme-toggle');
+    let themeToggleBtn = document.getElementById('theme-toggle');
 
-        themeToggleBtn.addEventListener('click', function() {
+    themeToggleBtn.addEventListener('click', function() {
 
-            // toggle icons inside button
-            themeToggleDarkIcon.classList.toggle('hidden');
-            themeToggleLightIcon.classList.toggle('hidden');
+        // toggle icons inside button
+        themeToggleDarkIcon.classList.toggle('hidden');
+        themeToggleLightIcon.classList.toggle('hidden');
 
-            // if set via local storage previously
-            if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                }
-
-                // if NOT set via local storage previously
+        // if set via local storage previously
+        if (localStorage.getItem('color-theme')) {
+            if (localStorage.getItem('color-theme') === 'light') {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
             } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                }
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
             }
 
-        });
-        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-                '(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
+            // if NOT set via local storage previously
         } else {
-            document.documentElement.classList.remove('dark')
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
         }
+
+    });
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+            '(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
     </script>
     <script defer>
-        let currentUploadInputId = 0;
-        const triggerInputClick = (id) => {
-            currentUploadInputId = id;
-            const uploadId = document.querySelector('#imageUrl' + id)
-            uploadId.click();
-        }
+    let currentUploadInputId = 0;
+    const triggerInputClick = (id) => {
+        currentUploadInputId = id;
+        const uploadId = document.querySelector('#imageUrl' + id)
+        uploadId.click();
+    }
 
 
 
-        const changeProfile = async () => {
+    const changeProfile = async () => {
 
-            let fileupload = document.getElementById('imageUrl' + currentUploadInputId); // fileupload
-            let imageHolder = document.getElementById('commentSection' + currentUploadInputId)
-            console.log(imageHolder)
-            // Picking up files from the input .  .  .
-            let files = fileupload.files;
+        let fileupload = document.getElementById('imageUrl' + currentUploadInputId); // fileupload
+        let imageHolder = document.getElementById('commentSection' + currentUploadInputId)
+        console.log(imageHolder)
+        // Picking up files from the input .  .  .
+        let files = fileupload.files;
 
-            // Uploading only one file; multiple uploads are not allowed.
-            let imageFile = files[0];
+        // Uploading only one file; multiple uploads are not allowed.
+        let imageFile = files[0];
 
-            // Create a FormData object.
-            formData = new FormData();
+        // Create a FormData object.
+        formData = new FormData();
 
-            // Add the file to the request.
-            formData.append('profileEdit', imageFile, imageFile.name);
+        // Add the file to the request.
+        formData.append('profileEdit', imageFile, imageFile.name);
 
-            try {
+        try {
 
-                const fetchResponse = await fetch("../api/images/move-only-image.php", {
-                    method: "POST",
-                    body: formData,
-                });
+            const fetchResponse = await fetch("../api/images/move-only-image.php", {
+                method: "POST",
+                body: formData,
+            });
 
-                const receivedStatus = await fetchResponse.json();
-                console.log(receivedStatus)
+            const receivedStatus = await fetchResponse.json();
+            console.log(receivedStatus)
 
-                if (receivedStatus.statusCode === 200) {
-                    console.log("pumasok dito")
-                    let output = '';
-                    let checkIfBlankImage = ""
+            if (receivedStatus.statusCode === 200) {
+                console.log("pumasok dito")
+                let output = '';
+                let checkIfBlankImage = ""
 
-                    if (receivedStatus.image !== "") {
-                        checkIfBlankImage +=
-                            `<img class="m-2 h-auto max-w-xs transition-all duration-300 rounded-lg blur-sm hover:blur-none" src="https://web-bello.online/web-bello/savedimages/` +
-                            receivedStatus.image + `" alt="image description">`
-                    }
-                    output += `
+                if (receivedStatus.image !== "") {
+                    checkIfBlankImage +=
+                        `<img class="m-2 h-auto max-w-xs transition-all duration-300 rounded-lg blur-sm hover:blur-none" src="https://web-bello.online/web-bello/savedimages/` +
+                        receivedStatus.image + `" alt="image description">`
+                }
+                output += `
  <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/` +
-                        receivedStatus.image + `" />
+                    receivedStatus.image + `" />
 ` + checkIfBlankImage + `
 `;
 
-                    imageHolder.innerHTML = output;
-                } else {
-                    alert('error')
-                }
-
-
-
-            } catch (e) {
-                console.log(e)
-            }
-        }
-
-        //liked button
-        const likedButtonClicked = async (id) => {
-            const likeButton = document.querySelector('#btnLike' + id)
-            const likeButtonCounter = document.querySelector('#likeCount' + id)
-
-
-            let counter = parseInt(likeButtonCounter.innerHTML)
-
-            counter++;
-
-
-            try {
-                formData = new FormData()
-
-                formData.append('forumID', id);
-                formData.append('userID', '<?php echo $result[0]['id']; ?>')
-                formData.append('likedCount', counter)
-
-                const request = await fetch("../api/forum/update-forum-like.php", {
-                    method: "POST",
-                    body: formData,
-                });
-                const response = await request.json()
-                console.log(response)
-                if (response.responseStatus === 'success') {
-                    likeButtonCounter.innerHTML = response.responseContent[0].like_count
-                    likeButton.disabled = true;
-                    likeButton.classList.add('cursor-not-allowed')
-                }
-
-            } catch (e) {
-                console.log(e)
+                imageHolder.innerHTML = output;
+            } else {
+                alert('error')
             }
 
 
+
+        } catch (e) {
+            console.log(e)
         }
+    }
+
+    //liked button
+    const likedButtonClicked = async (id) => {
+        const likeButton = document.querySelector('#btnLike' + id)
+        const likeButtonCounter = document.querySelector('#likeCount' + id)
+
+
+        let counter = parseInt(likeButtonCounter.innerHTML)
+
+        counter++;
+
+
+        try {
+            formData = new FormData()
+
+            formData.append('forumID', id);
+            formData.append('userID', '<?php echo $result[0]['id']; ?>')
+            formData.append('likedCount', counter)
+
+            const request = await fetch("../api/forum/update-forum-like.php", {
+                method: "POST",
+                body: formData,
+            });
+            const response = await request.json()
+            console.log(response)
+            if (response.responseStatus === 'success') {
+                likeButtonCounter.innerHTML = response.responseContent[0].like_count
+                likeButton.disabled = true;
+                likeButton.classList.add('cursor-not-allowed')
+            }
+
+        } catch (e) {
+            console.log(e)
+        }
+
+
+    }
     </script>
 
 
