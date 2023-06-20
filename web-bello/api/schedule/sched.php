@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   foreach ($resultsqlResidents as $item) {
       $userId = $item['id'];
       $userEmail = $item['email'];
-      $balance = $Amount; // Assuming the balance is initially 0
+      $balance = 0; // Assuming the balance is initially 0
       $status = 'unpaid'; // Assuming the status is initially 'pending'
       $receiptUrl = ''; // Assuming the receipt URL is initially empty
       $name = $item['firstname'];
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //print_r($result);
     } catch (Exception $e) {
     echo 'Exception when calling SMSApi->smsSendPost: ', $e->getMessage(), PHP_EOL;
-    exit(json_encode(array("status" =>'error', "responseContent" => $e->getMessage(), "message" =>'Error:!')));
+    // exit(json_encode(array("status" =>'error', "responseContent" => $e->getMessage(), "message" =>'Error:!')));
     }
   }
 
