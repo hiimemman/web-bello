@@ -17,6 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //store in result
   $resultsqlResidents = mysqli_fetch_all( $sqlResidents, MYSQLI_ASSOC);
 
+  $iSmsSent = false;
+  $messageError = "";
   // Iterate over each item in $result and insert a query
   foreach ($resultsqlResidents as $item) {
       $userId = $item['id'];
@@ -67,23 +69,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
       //$resultsqlResidents = $apiInstance->smsSendPost($sms_messages);
     //print_r($result);
+    $iSmsSent = true;
     } catch (Exception $e) {
+      $messageError = $e->getMessage();
     //echo 'Exception when calling SMSApi->smsSendPost: ', $e->getMessage(), PHP_EOL;
     exit(json_encode(array("status" =>'error', "responseContent" => $e->getMessage(), "message" =>'Error:!')));
     }
   }
+  if($iSmsSent == true){
+ // Insert the event into the database
+ $sql = "INSERT INTO tbl_sched (title, start_date, end_date) VALUES ('$title', '$start_date', '$end_date')";
+ if (mysqli_query($con, $sql)) {
+   $response = array("status" => "success", "message" => "Event scheduled successfully.");
+ } else {
+   $response = array("status" => "error", "message" => "Error: " . mysqli_error($con));
+ }
 
-  // Insert the event into the database
-  $sql = "INSERT INTO tbl_sched (title, start_date, end_date) VALUES ('$title', '$start_date', '$end_date')";
-  if (mysqli_query($con, $sql)) {
-    $response = array("status" => "success", "message" => "Event scheduled successfully.");
-  } else {
-    $response = array("status" => "error", "message" => "Error: " . mysqli_error($con));
+ // Return the response as JSON
+ echo json_encode($response);
+ exit(); // Add this line to stop further execution
+  }else{
+    echo json_decode($messageError);
+    exit();
   }
-
-  // Return the response as JSON
-  echo json_encode($response);
-  exit(); // Add this line to stop further execution
+ 
 }
 
 // Fetch all events from the database
