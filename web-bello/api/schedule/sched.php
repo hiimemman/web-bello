@@ -47,10 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       ANNOUNCEMENT!
       
       What: $title
-      When: $start date-time/end date-time
+      When: ".$start_date." - ".$end_date."
       Where: Palazzo Bello community
       
-      If you have any questions or require further information about any upcoming events or community updates, please don't hesitate to contact our community office at (555) 123-4567. We are here to assist you!
+      If you have any questions or require further information about any upcoming events or community updates, please don't hesitate to contact our community office. We are here to assist you!
       
       Let's continue to work together to create a vibrant and inclusive community at Palazo Bello. Stay connected, get involved, and make the most of your living experience here!
       
