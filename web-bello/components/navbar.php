@@ -40,66 +40,66 @@ if (!isset($_SESSION['IDUSER'])) {
 </head>
 
 <body>
-<style>
+    <style>
+    :root {
+        --underline-color: #000000;
+        /* Set the underline color to white */
+    }
+
+    @media (prefers-color-scheme: dark) {
         :root {
-            --underline-color: #000000;
-            /* Set the underline color to white */
+            --underline-color: #ffffff;
+        }
+    }
+
+    .nav-link {
+        position: relative;
+        display: inline-block;
+        line-height: 2;
+    }
+
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: transparent;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before {
+        background-color: var(--underline-color);
+    }
+
+    /**Added CSS */
+    @media (max-width: 1023px) {
+        #navbar-default.flex {
+            display: block;
         }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --underline-color: #ffffff;
-            }
+        #navbar-default.hidden {
+            display: none;
         }
 
         .nav-link {
-            position: relative;
-            display: inline-block;
-            line-height: 2;
+            display: block;
+            padding: 1rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .nav-item {
+            margin-left: 2rem;
         }
 
-        .nav-link::before {
-            content: "";
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: transparent;
-            transition: background-color 0.3s ease-in-out;
+        .nav-item:first-child {
+            margin-left: 0;
         }
-
-        .nav-link:hover::before {
-            background-color: var(--underline-color);
-        }
-
-        /**Added CSS */
-        @media (max-width: 1023px) {
-            #navbar-default.flex {
-                display: block;
-            }
-
-            #navbar-default.hidden {
-                display: none;
-            }
-
-            .nav-link {
-                display: block;
-                padding: 1rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .nav-item {
-                margin-left: 2rem;
-            }
-
-            .nav-item:first-child {
-                margin-left: 0;
-            }
-        }
+    }
     </style>
-    
+
 
     <nav class="fixed bg-white dark:bg-gray-900 top-0 left-0 right-0 shadow-lg z-10">
         <div class="container mx-auto flex flex-wrap max-w-7xl items-center justify-between py-10 lg:px-8">
@@ -113,7 +113,8 @@ if (!isset($_SESSION['IDUSER'])) {
             </div>
 
             <div class="flex lg:hidden px-6">
-                <button data-collapse-toggle="navbar-default" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                <button data-collapse-toggle="navbar-default" type="button"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
                     aria-controls="navbar-default" aria-expanded="false" @click="open = !open">
                     <span class="sr-only">Open main menu</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -126,8 +127,7 @@ if (!isset($_SESSION['IDUSER'])) {
 
             <!-- Nav Links -->
             <div class="hidden lg:flex lg:gap-x-12" id="navbar-default" x-data="{ open: false }"
-                :class="{ 'flex': open, 'hidden': !open }"
-                @click.away="open = false">
+                :class="{ 'flex': open, 'hidden': !open }" @click.away="open = false">
                 <ul class="lg:flex flex-col lg:flex-row list-none lg:ml-auto">
                     <li class="nav-item">
                         <a href="/web-bello/pages/user-index.php"
@@ -138,7 +138,7 @@ if (!isset($_SESSION['IDUSER'])) {
                     <li class="nav-item">
                         <a href="/web-bello/pages/user-index.php#about"
                             class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
-                            <span>About Us</span>
+                            <span>About us</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -168,8 +168,9 @@ if (!isset($_SESSION['IDUSER'])) {
                             </svg>
                         </span>
                     </button>
-                
-                    <div x-show="open" @click.away="open = false" class="absolute right-0 py-2 w-48 bg-white dark:bg-gray-900 rounded-md shadow-lg z-10"
+
+                    <div x-show="open" @click.away="open = false"
+                        class="absolute right-0 py-2 w-48 bg-white dark:bg-gray-900 rounded-md shadow-lg z-10"
                         :class="{ 'hidden': !open }" id="dropdownMenu">
                         <!-- Dropdown items here -->
 
@@ -195,10 +196,79 @@ if (!isset($_SESSION['IDUSER'])) {
                         </a>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </nav>
+
+    <!-- Mobile menu, show/hide based on menu open state -->
+    <div class="block lg:hidden" role="dialog" aria-modal="true" id="menu">
+        <div class="fixed inset-0 z-10">
+            <div
+                class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div class="flex items-center justify-between">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Web-Bello</span>
+                        <h2 class="drop-shadow text-lg tracking-wider font-medium text-gray-900 dark:text-white">
+                            WEB-BELLO
+                        </h2>
+                    </a>
+                    <button type="button" id="close-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Close menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                            <a href=""
+                                class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Home
+                            </a>
+                            <a href=""
+                                class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                About us
+                            </a>
+                            <a href=""
+                                class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Contacts
+                            </a>
+                            <a href=""
+                                class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Announcements
+                            </a>
+                            <a href=""
+                                class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Events
+                            </a>
+                            <a href=""
+                                class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Forums
+                            </a>
+                            <a href=""
+                                class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Schedules
+                            </a>
+                            <a href=""
+                                class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Manage Dues
+                            </a>
+                        </div>
+                        <div class="py-6">
+                            <a href=""
+                                class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Sign out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
