@@ -99,15 +99,6 @@ if (!isset($_SESSION['IDUSER'])) {
     }
     }
 
-    button[data-collapse-toggle="navbar-default"].active > svg:first-child {
-        display: none;
-    }
-
-    button[data-collapse-toggle="navbar-default"].active > svg:last-child {
-        display: block;
-    }
-
-
     </style>
 
     <nav class="fixed bg-white dark:bg-gray-900 top-0 left-0 right-0 shadow-lg z-10">
@@ -122,13 +113,13 @@ if (!isset($_SESSION['IDUSER'])) {
             </div>
 
             <div class="flex lg:hidden px-6">
-                <button data-collapse-toggle="navbar-default" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" aria-controls="navbar-default" aria-expanded="false">
+                <button data-collapse-toggle="navbar-default" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                    aria-controls="navbar-default" aria-expanded="false" @click="open = !open">
                     <span class="sr-only">Open main menu</span>
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-                    </svg>
-                    <svg class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
             </div>
@@ -213,55 +204,86 @@ if (!isset($_SESSION['IDUSER'])) {
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-<script defer>
-  // Dark theme toggle
-  let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-  let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    <script defer>
+    //Dark theme toggle 
+    let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-  // Change the icons inside the button based on previous settings
-  if (
-    localStorage.getItem('color-theme') === 'dark' ||
-    (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    themeToggleLightIcon.classList.remove('hidden');
-  } else {
-    themeToggleDarkIcon.classList.remove('hidden');
-  }
+    let log = document.getElementById("#log")
 
-  let themeToggleBtn = document.getElementById('theme-toggle');
-
-  themeToggleBtn.addEventListener('click', function () {
-    // Toggle icons inside button
-    themeToggleDarkIcon.classList.toggle('hidden');
-    themeToggleLightIcon.classList.toggle('hidden');
-
-    // Toggle color theme
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('color-theme', 'light');
+    // Change the icons inside the button based on previous settings
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+            '(prefers-color-scheme: dark)').matches)) {
+        themeToggleLightIcon.classList.remove('hidden');
     } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('color-theme', 'dark');
+        themeToggleDarkIcon.classList.remove('hidden');
     }
-  });
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const dropdownTrigger = document.getElementById('dropdownTrigger');
-    const dropdownMenu = document.getElementById('dropdownMenu');
+    let themeToggleBtn = document.getElementById('theme-toggle');
 
-    dropdownTrigger.addEventListener('click', function () {
-      dropdownMenu.classList.toggle('hidden');
+    themeToggleBtn.addEventListener('click', function() {
+
+        // toggle icons inside button
+        themeToggleDarkIcon.classList.toggle('hidden');
+        themeToggleLightIcon.classList.toggle('hidden');
+
+        // if set via local storage previously
+        if (localStorage.getItem('color-theme')) {
+            if (localStorage.getItem('color-theme') === 'light') {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            }
+
+            // if NOT set via local storage previously
+        } else {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        }
+
     });
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+            '(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+    </script>
 
-    // Hide the dropdown when clicking outside of it
-    document.addEventListener('click', function (event) {
-      const targetElement = event.target;
-      if (!dropdownTrigger.contains(targetElement) && !dropdownMenu.contains(targetElement)) {
-        dropdownMenu.classList.add('hidden');
-      }
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownTrigger = document.getElementById('dropdownTrigger');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        dropdownTrigger.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Hide the dropdown when clicking outside of it
+        document.addEventListener('click', function(event) {
+            const targetElement = event.target;
+            if (!dropdownTrigger.contains(targetElement) && !dropdownMenu.contains(targetElement)) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
     });
-  });
-</script>
+    </script>
+
+    <script>
+    // Check if dark mode is preferred by the user
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Set the HTML class based on the user's preference
+    document.documentElement.classList.add(prefersDarkMode ? 'dark' : 'light');
+    </script>
 
 </body>
 
