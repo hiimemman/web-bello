@@ -105,7 +105,7 @@ require_once('../components/navbar.php')
 
                 <!-- Grid Boxes -->
 
-                <div class="grid grid-cols-2 gap-4 sm:grid-cols-2">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <a class="block rounded-xl border border-gray-300 p-4 shadow-sm hover:shadow-xl transition-shadow focus:outline-none focus:ring grid-box"
                         href="/web-bello/pages/monthly-due.php">
                         <span class="flex items-center justify-center rounded-lg p-3">
@@ -149,7 +149,7 @@ require_once('../components/navbar.php')
                             </svg>
                         </span>
 
-                        <p class="mt-2 mx-auto justify-center text-sm font-medium tracking-wider text-center">
+                        <p class="mt-2 text-sm font-medium tracking-wider text-center">
                             VIEW ANNOUNCEMENTS
                         </p>
                     </a>
