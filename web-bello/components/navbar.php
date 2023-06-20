@@ -40,66 +40,66 @@ if (!isset($_SESSION['IDUSER'])) {
 </head>
 
 <body>
-    <style>
-    :root {
-        --underline-color: #000000;
-        /* Set the underline color to white */
-    }
-
-    @media (prefers-color-scheme: dark) {
+<style>
         :root {
-            --underline-color: #ffffff;
+            --underline-color: #000000;
+            /* Set the underline color to white */
         }
-    }
 
-    .nav-link {
-        position: relative;
-        display: inline-block;
-        line-height: 2;
-    }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --underline-color: #ffffff;
+            }
+        }
 
-    .nav-link::before {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: transparent;
-        transition: background-color 0.3s ease-in-out;
-    }
+        .nav-link {
+            position: relative;
+            display: inline-block;
+            line-height: 2;
+        }
 
-    .nav-link:hover::before {
-        background-color: var(--underline-color);
-    }
+        .nav-link::before {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: transparent;
+            transition: background-color 0.3s ease-in-out;
+        }
 
-    /**Added CSS */
-    @media (max-width: 1023px) {
-        #navbar-default.flex {
-        display: block;
-    }
-  
-    #navbar-default.hidden {
-        display: none;
-    }
-  
-    .nav-link {
-        display: block;
-        padding: 1rem;
-    }
-    }
+        .nav-link:hover::before {
+            background-color: var(--underline-color);
+        }
 
-    @media (min-width: 1024px) {
-    .nav-item {
-        margin-left: 2rem;
-    }
-  
-    .nav-item:first-child {
-        margin-left: 0;
-    }
-    }
+        /**Added CSS */
+        @media (max-width: 1023px) {
+            #navbar-default.flex {
+                display: block;
+            }
 
+            #navbar-default.hidden {
+                display: none;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .nav-item {
+                margin-left: 2rem;
+            }
+
+            .nav-item:first-child {
+                margin-left: 0;
+            }
+        }
     </style>
+    
 
     <nav class="fixed bg-white dark:bg-gray-900 top-0 left-0 right-0 shadow-lg z-10">
         <div class="container mx-auto flex flex-wrap max-w-7xl items-center justify-between py-10 lg:px-8">
