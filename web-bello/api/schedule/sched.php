@@ -34,23 +34,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       $apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(),$config);
       $msg = new \ClickSend\Model\SmsMessage();
-      $msg->setBody("📱 SMS Message Template 📱
+      $msg->setBody("Palazo Bello Community Notification 
 
-      🏢 Palazo Bello Community Notification 🏢
+      Attention, Palazo Bello residents! 
 
-      📅 Attention, Palazo Bello residents! 📅
+      Exciting Event Announcement! 
 
-      🎉 Exciting Event Announcement! 🎉
+      We are thrilled to share the following event happening in Palazo Bello subdivision: $title
 
-      📣 We are thrilled to share the following event happening in Palazo Bello subdivision: $title
-
-      📅 Event Date: [$start_date]
-      ⏰ Event Time: [$end_date]
-      📍 Event Location: [Palazzo Bello]
+      Event Date: [$start_date]
+      Event Time: [$end_date]
+      Event Location: [Palazzo Bello]
 
       Join us for this exciting event and get the opportunity to connect with your fellow residents. Don't miss out on the fun and the chance to build a stronger community together!
 
-      🌟 Your participation and engagement are vital to making Palazo Bello a vibrant and welcoming place to live. Let's come together and make this event a memorable one! 🌟
+      Your participation and engagement are vital to making Palazo Bello a vibrant and welcoming place to live. Let's come together and make this event a memorable one! 🌟
 
       If you have any questions or need further information, feel free to contact our community office at (555) 123-4567.
 
@@ -70,8 +68,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       //$resultsqlResidents = $apiInstance->smsSendPost($sms_messages);
     //print_r($result);
     } catch (Exception $e) {
-    echo 'Exception when calling SMSApi->smsSendPost: ', $e->getMessage(), PHP_EOL;
-    // exit(json_encode(array("status" =>'error', "responseContent" => $e->getMessage(), "message" =>'Error:!')));
+    //echo 'Exception when calling SMSApi->smsSendPost: ', $e->getMessage(), PHP_EOL;
+    exit(json_encode(array("status" =>'error', "responseContent" => $e->getMessage(), "message" =>'Error:!')));
     }
   }
 

@@ -282,6 +282,7 @@ if (!isset($_SESSION['ID'])) {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         if (xhr.status === 200) {
                             let response = JSON.parse(xhr.responseText);
+                            console.log(response)
                             if (response.status === "success") {
                                 alert("Event scheduled successfully.");
                                 // Clear the form
