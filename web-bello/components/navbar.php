@@ -73,7 +73,7 @@ if (!isset($_SESSION['IDUSER'])) {
             background-color: var(--underline-color);
         }
 
-        /** Added CSS **/
+        /**Added CSS */
         @media (max-width: 1023px) {
             #navbar-default.flex {
                 display: block;
@@ -96,14 +96,6 @@ if (!isset($_SESSION['IDUSER'])) {
 
             .nav-item:first-child {
                 margin-left: 0;
-            }
-
-            #navbar-default {
-                display: flex !important;
-            }
-
-            #navbar-burger {
-                display: none;
             }
         }
     </style>
@@ -164,16 +156,18 @@ if (!isset($_SESSION['IDUSER'])) {
                 </ul>
 
                 <div class="relative" x-data="{ open: false }">
-                <div class="lg:hidden" id="navbar-burger">
-                <button
-                    class="p-2 rounded-md text-gray-800 dark:text-white dark:bg-gray-900 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 focus:text-gray-900 transition duration-150 ease-in-out"
-                    aria-label="Menu" aria-expanded="false">
-                    <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+                    <button type="button"
+                        class="text-sm font-semibold leading-6 text-white flex items-center focus:outline-none"
+                        @click="open = !open" aria-expanded="false" aria-haspopup="true">
+                        <span>
+                            <svg class="h-6 w-6 text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-400"
+                                fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"></path>
+                            </svg>
+                        </span>
+                    </button>
                 
                     <div x-show="open" @click.away="open = false" class="absolute right-0 py-2 w-48 bg-white dark:bg-gray-900 rounded-md shadow-lg z-10"
                         :class="{ 'hidden': !open }" id="dropdownMenu">
