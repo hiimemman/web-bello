@@ -113,7 +113,7 @@ if (!isset($_SESSION['IDUSER'])) {
             </div>
 
             <div class="flex lg:hidden px-6">
-                <button data-collapse-toggle="navbar-default" type="button"
+                <button id="menu-toggle" data-collapse-toggle="navbar-default" type="button"
                     class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
                     aria-controls="navbar-default" aria-expanded="false" @click="open = !open">
                     <span class="sr-only">Open main menu</span>
@@ -353,6 +353,18 @@ if (!isset($_SESSION['IDUSER'])) {
 
     // Set the HTML class based on the user's preference
     document.documentElement.classList.add(prefersDarkMode ? 'dark' : 'light');
+    </script>
+
+    <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    menuToggle.addEventListener("click", () => {
+        document.getElementById("menu").classList.toggle("hidden");
+    });
+
+    const closeMenu = document.getElementById("close-menu");
+    closeMenu.addEventListener("click", () => {
+        document.getElementById("menu").classList.toggle("hidden");
+    });
     </script>
 
 </body>
