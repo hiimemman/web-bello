@@ -12,6 +12,352 @@ require_once('../components/navbar.php')
     <title>Events - Web-Bello Online!</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Default styles */
+        .container {
+            /* Add your default container styles here */
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-gap: 8px;
+            grid-template-columns: 1fr;
+        }
+
+        .p-12 {
+            padding: 12px;
+        }
+
+        .mx-20 {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .bg-white {
+            background-color: #fff;
+        }
+
+        .rounded-lg {
+            border-radius: 8px;
+        }
+
+        .border {
+            border: 1px solid #e5e7eb;
+        }
+
+        .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .mb-5 {
+            margin-bottom: 1.25rem;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .bg-green-100 {
+            background-color: #d1fae5;
+        }
+
+        .text-green-700 {
+            color: #047857;
+        }
+
+        .text-md {
+            font-size: 0.875rem;
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .inline-flex {
+            display: inline-flex;
+        }
+
+        .px-2\\.5 {
+            padding-left: 0.625rem;
+            padding-right: 0.625rem;
+        }
+
+        .py-0\\.5 {
+            padding-top: 0.125rem;
+            padding-bottom: 0.125rem;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .w-7 {
+            width: 1.75rem;
+        }
+
+        .h-7 {
+            height: 1.75rem;
+        }
+
+        .text-justify {
+            text-align: justify;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .bg-gray-400 {
+            background-color: #9ca3af;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .border-0 {
+            border-width: 0;
+        }
+
+        .focus\\:ring-0:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            border-radius: 0;
+        }
+
+        .text-gray-900 {
+            color: #111827;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .tracking-tight {
+            letter-spacing: -0.025em;
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .object-cover {
+            object-fit: cover;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .h-auto {
+            height: auto;
+        }
+
+        .max-w-xs {
+            max-width: 20rem;
+        }
+
+        .mt-10 {
+            margin-top: 2.5rem;
+        }
+
+        .mt-8 {
+            margin-top: 2rem;
+        }
+
+        .h-auto {
+            height: auto;
+        }
+
+        .w-auto {
+            width: auto;
+        }
+
+        .object-cover {
+            object-fit: cover;
+        }
+
+        .w-6 {
+            width: 1.5rem;
+        }
+
+        .h-6 {
+            height: 1.5rem;
+        }
+
+        .text-blue-500 {
+            color: #3b82f6;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .focus\\:outline-none:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            border-radius: 0;
+        }
+
+        .text-md {
+            font-size: 0.875rem;
+        }
+
+        .ml-2 {
+            margin-left: 0.5rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .border-2 {
+            border-width: 2px;
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+
+        .border-gray-400 {
+            border-color: #9ca3af;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .text-gray-900 {
+            color: #111827;
+        }
+
+        .border-0 {
+            border-width: 0;
+        }
+
+        .focus\\:ring-0:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            border-radius: 0;
+        }
+
+        .text-md {
+            font-size: 0.875rem;
+        }
+
+        .text-gray-900 {
+            color: #111827;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .focus\\:outline-none:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            border-radius: 0;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 1024px) {
+            .px-24 {
+                padding-left: 6rem;
+                padding-right: 6rem;
+            }
+
+            .mx-20 {
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .px-24 {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            .mx-20 {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
+            .lg\\:grid-cols-1 {
+                grid-template-columns: 1fr;
+            }
+
+            .max-w-xs {
+                max-width: 100%;
+            }
+
+            .text-2xl {
+                font-size: 1.5rem;
+            }
+
+            .mt-10 {
+                margin-top: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            .px-24 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .mx-20 {
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -33,6 +379,7 @@ require_once('../components/navbar.php')
     .grid-box:hover h2 {
         color: #fff;
     }
+
     </style>
 
     <header class=" border-b-4 border-sky-300">
