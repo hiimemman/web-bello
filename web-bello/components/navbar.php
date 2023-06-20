@@ -75,19 +75,29 @@ if (!isset($_SESSION['IDUSER'])) {
 
     /**Added CSS */
     @media (max-width: 1023px) {
-  #navbar-default.flex {
-    display: block;
-  }
+        #navbar-default.flex {
+        display: block;
+    }
   
-  #navbar-default.hidden {
-    display: none;
-  }
+    #navbar-default.hidden {
+        display: none;
+    }
   
-  .nav-link {
-    display: block;
-    padding: 1rem;
-  }
-}
+    .nav-link {
+        display: block;
+        padding: 1rem;
+    }
+    }
+
+    @media (min-width: 1024px) {
+    .nav-item {
+        margin-left: 2rem;
+    }
+  
+    .nav-item:first-child {
+        margin-left: 0;
+    }
+    }
 
     </style>
 
@@ -119,31 +129,31 @@ if (!isset($_SESSION['IDUSER'])) {
                 :class="{ 'flex': open, 'hidden': !open }"
                 @click.away="open = false">
                 <ul class="lg:flex flex-col lg:flex-row list-none lg:ml-auto">
-    <li class="nav-item">
-        <a href="/web-bello/pages/user-index.php"
-           class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
-            <span>Home</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="/web-bello/pages/user-index.php#about"
-           class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
-            <span>About Us</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="/web-bello/pages/user-index.php#contact"
-           class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
-            <span>Contacts</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="../api/login/logout.php"
-           class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 dark:hover:text-white text-gray-400 dark:text-gray-400 flex items-center">
-            <span>Sign out</span>
-        </a>
-    </li>
-</ul>
+                    <li class="nav-item">
+                        <a href="/web-bello/pages/user-index.php"
+                            class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/web-bello/pages/user-index.php#about"
+                            class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
+                            <span>About Us</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/web-bello/pages/user-index.php#contact"
+                            class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
+                            <span>Contacts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../api/login/logout.php"
+                            class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 dark:hover:text-white text-gray-400 dark:text-gray-400 flex items-center">
+                            <span>Sign out</span>
+                        </a>
+                    </li>
+                </ul>
 
                 <div class="relative" x-data="{ open: false }">
                     <button type="button"
