@@ -19,7 +19,7 @@ if (isset($_SESSION['IDUSER'])) {
 
 
 <body>
-    <style>
+<style>
         .custom-bg {
             background-image: url('/web-bello/images/palazzo-gradient-1.png');
             background-size: cover;
@@ -61,7 +61,6 @@ if (isset($_SESSION['IDUSER'])) {
             color: #023e8a; 
         }
 
-        
         @keyframes fade-in {
             0% {
                 opacity: 0;
@@ -73,6 +72,27 @@ if (isset($_SESSION['IDUSER'])) {
         
         .landing-content {
             animation: fade-in 2s ease-in-out;
+        }
+
+        @media screen and (min-width: 768px) {
+            .landing-content {
+                max-width: 720px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .landing-content {
+                max-width: 960px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .landing-content {
+                max-width: 1140px;
+                margin: 0 auto;
+            }
         }
     </style>
     
