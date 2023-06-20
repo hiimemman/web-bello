@@ -98,7 +98,9 @@ if (!isset($_SESSION['IDUSER'])) {
             </div>
 
             <!-- Nav Links -->
-            <div class="hidden lg:flex lg:gap-x-12" id="navbar-default" x-data="{ open: false }">
+            <div class="hidden lg:flex lg:gap-x-12" id="navbar-default" x-data="{ open: false }"
+                :class="{ 'flex': open, 'hidden': !open }"
+                @click.away="open = false">
                 <a href="/web-bello/pages/user-index.php"
                     class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Home</a>
                 <a href="/web-bello/pages/user-index.php#about"
