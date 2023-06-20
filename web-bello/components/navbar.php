@@ -220,7 +220,7 @@ if (!isset($_SESSION['IDUSER'])) {
                     </button>
                 </div>
 
-                <div class="mt-6 flow-root bg-white dark:bg-gray-900">
+                <div class="mt-6 flow-root">
                     <div class="-my-6 divide-y divide-gray-500/10">
                         <div class="space-y-2 py-6">
                             <a href=""
