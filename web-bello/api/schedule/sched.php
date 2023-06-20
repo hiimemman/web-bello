@@ -67,8 +67,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $sms_messages->setMessages([$msg]);
 
     try {
-      //$resultsqlResidents = $apiInstance->smsSendPost($sms_messages);
+      $resultsqlResidents = $apiInstance->smsSendPost($sms_messages);
     //print_r($result);
+    (json_encode(array("status" =>'success', "responseContent" => $resultsqlResidents, "message" =>'Success:!')));
     $iSmsSent = true;
     } catch (Exception $e) {
       $messageError = $e->getMessage();
