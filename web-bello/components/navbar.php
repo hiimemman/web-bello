@@ -72,6 +72,23 @@ if (!isset($_SESSION['IDUSER'])) {
     .nav-link:hover::before {
         background-color: var(--underline-color);
     }
+
+    /**Added CSS */
+    @media (max-width: 1023px) {
+  #navbar-default.flex {
+    display: block;
+  }
+  
+  #navbar-default.hidden {
+    display: none;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: 1rem;
+  }
+}
+
     </style>
 
     <nav class="fixed bg-white dark:bg-gray-900 top-0 left-0 right-0 shadow-lg z-10">
@@ -101,15 +118,33 @@ if (!isset($_SESSION['IDUSER'])) {
             <div class="hidden lg:flex lg:gap-x-12" id="navbar-default" x-data="{ open: false }"
                 :class="{ 'flex': open, 'hidden': !open }"
                 @click.away="open = false">
-                <a href="/web-bello/pages/user-index.php"
-                    class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Home</a>
-                <a href="/web-bello/pages/user-index.php#about"
-                    class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">About Us</a>
-                <a href="/web-bello/pages/user-index.php#contact"
-                    class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white">Contacts</a>
-                <a href="../api/login/logout.php"
-                    class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 dark:hover:text-white text-gray-400 dark:text-gray-400">Sign
-                    out</a>
+                <ul class="lg:flex flex-col lg:flex-row list-none lg:ml-auto">
+    <li class="nav-item">
+        <a href="/web-bello/pages/user-index.php"
+           class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
+            <span>Home</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/web-bello/pages/user-index.php#about"
+           class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
+            <span>About Us</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/web-bello/pages/user-index.php#contact"
+           class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
+            <span>Contacts</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="../api/login/logout.php"
+           class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 dark:hover:text-white text-gray-400 dark:text-gray-400 flex items-center">
+            <span>Sign out</span>
+        </a>
+    </li>
+</ul>
+
                 <div class="relative" x-data="{ open: false }">
                     <button type="button"
                         class="text-sm font-semibold leading-6 text-white flex items-center focus:outline-none"
@@ -150,6 +185,7 @@ if (!isset($_SESSION['IDUSER'])) {
                         </a>
                     </div>
                 </div>
+                
             </div>
         </div>
     </nav>
