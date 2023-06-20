@@ -130,8 +130,7 @@ if (isset($_SESSION['IDUSER'])) {
 
                             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                                 Or <a href="/web-bello/pages/index.php"
-                                    class="custom-text-btn">sign in
-                                    here</a> as administrator.
+                                    class="custom-text-btn">Log in</a> as administrator.
                             </p>
                         </div>
                     </div>
