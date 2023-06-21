@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $response = array("status" => "error", "message" => "Error: " . mysqli_error($con));
  }
 
- // Return the response as JSON
+
  echo json_encode($response);
  exit(); // Add this line to stop further execution
   }else{
