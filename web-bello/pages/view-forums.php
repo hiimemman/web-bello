@@ -12,6 +12,8 @@ require_once('../components/navbar.php')
     <title>Forums - Web-Bello Online!</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+
+
 </head>
 
 <body>
@@ -55,7 +57,7 @@ require_once('../components/navbar.php')
 
     <!-- Forums Section -->
     <!-- Announcement Section -->
-    <main class="px-6 h-auto" id="forumMain">
+    <main class="px-6 mx-auto max-w-screen-xl" id="forumMain">
         <!-- FORUM -->
 
 
@@ -282,11 +284,11 @@ require_once('../components/navbar.php')
                 content += `
     <section>
     
-        <div class="container mx-auto grid gap-8 lg:grid-cols-1 px-24 mt-10">
-            <article class="p-12 mx-20 bg-white rounded-lg border border-gray-200 shadow-md">
+        <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10">
+            <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
                 <div class="flex justify-between items-center mb-5 text-gray-500">
                     <span
-                        class="bg-orange-100 text-orange-700 text-md font-medium inline-flex items-center px-2.5 py-0.5 rounded">
+                        class="bg-orange-100 text-orange-700 text-sm font-medium inline-flex items-center px-2.5 py-0.5 rounded">
                         Forums
                     </span>
                     <span class="text-sm">` + forum
@@ -301,7 +303,7 @@ require_once('../components/navbar.php')
                         <span class="font-medium"> ` + forum.editor_email + ` </span>
                     </div>
                 </div>
-                <div class="text-justify px-4 py-2">
+                <div class="text-justify py-2">
                 <h2 class="mt-6 text-2xl font-bold tracking-tight text-gray-900">
                 ` + forum
                     .title + `
@@ -314,7 +316,8 @@ require_once('../components/navbar.php')
                 <!-- Image -->
                 <div class="flex justify-center">
                     <a href="` + forum.image_url + `" title="Click to view full image">
-                    <img alt="image" src="` + forum.image_url + `" class="mt-8 h-auto w-auto object-cover" style="width: 470px; height: 400px;"/>
+                    <img alt="image" src="` + forum.image_url +
+                    `" class="mt-8 h-auto w-auto object-cover" style="width: 470px; height: 400px;"/>
                     </a>
                 </div>
                 <!-- End of Image -->

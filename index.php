@@ -11,7 +11,7 @@ if (isset($_SESSION['IDUSER'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Welcome to Web-Bello Test2</title>
+    <title>Home - Welcome to Web-Bello</title>
     <link rel="stylesheet" href="../style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 </head>
@@ -19,7 +19,7 @@ if (isset($_SESSION['IDUSER'])) {
 
 
 <body>
-    <style>
+<style>
         .custom-bg {
             background-image: url('/web-bello/images/palazzo-gradient-1.png');
             background-size: cover;
@@ -61,7 +61,6 @@ if (isset($_SESSION['IDUSER'])) {
             color: #023e8a; 
         }
 
-        
         @keyframes fade-in {
             0% {
                 opacity: 0;
@@ -73,6 +72,27 @@ if (isset($_SESSION['IDUSER'])) {
         
         .landing-content {
             animation: fade-in 2s ease-in-out;
+        }
+
+        @media screen and (min-width: 768px) {
+            .landing-content {
+                max-width: 720px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .landing-content {
+                max-width: 960px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .landing-content {
+                max-width: 1140px;
+                margin: 0 auto;
+            }
         }
     </style>
     
@@ -110,8 +130,7 @@ if (isset($_SESSION['IDUSER'])) {
 
                             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                                 Or <a href="/web-bello/pages/index.php"
-                                    class="custom-text-btn">sign in
-                                    here</a> as administrator.
+                                    class="custom-text-btn">Log in</a> as administrator.
                             </p>
                         </div>
                     </div>
