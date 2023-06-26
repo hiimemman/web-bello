@@ -50,12 +50,34 @@ require_once('../components/navbar.php')
                         Welcome to your Web-Bello Online account!
                     </p>
                 </div>
+                <div class="flex space-x-2">
+                <button type="submit" id="postButton" class="px-6 py-2 text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm focus:outline-none">
+                Post Forum
+                </button>
+                </div>
             </div>
         </div>
         <!-- End of Intro Header -->
     </header>
 
     <!-- Forums Section -->
+    <!-- <form class="space-y-6" action="#" id ="frmRegisterHOA">
+    <div class="mt-10">
+    <div class="flex items-center justify-between">
+        <textarea id="content" name="content" rows="2" class="flex-grow px-2 py-2 mr-2 text-md text-gray-900 bg-white border border-gray-400 rounded-lg focus:outline-none" placeholder="What's on your mind?" required></textarea>
+        <div class="flex space-x-2">
+        <button type="submit" id="postButton" class="px-6 py-2 text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm focus:outline-none">
+                Post Forum
+            </button>
+            <button type="button" class="px-4 py-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick="triggerInputClick(` + forum.id + `)">
+                <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="ml-1">Upload</span>
+            </button>
+        </div>
+    </div>
+</div> -->
     <!-- Announcement Section -->
     <main class="px-6 mx-auto max-w-screen-xl" id="forumMain">
         <!-- FORUM -->
@@ -282,25 +304,6 @@ require_once('../components/navbar.php')
                         .image_url + `" alt="image description">`
                 }
                 content += `
-                <div class="mt-10">
-    <div class="flex items-center justify-between">
-        <textarea id="content" name="content" rows="2" class="flex-grow px-2 py-2 mr-2 text-md text-gray-900 bg-white border border-gray-400 rounded-lg focus:outline-none" placeholder="What's on your mind?" required></textarea>
-        <div class="flex space-x-2">
-        <button type="submit" id="postButton" class="px-6 py-2 text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm focus:outline-none">
-                Post Forum
-            </button>
-            <button type="button" class="px-4 py-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick="triggerInputClick(` + forum.id + `)">
-                <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="ml-1">Upload</span>
-            </button>
-        </div>
-    </div>
-</div>
-
-
-
     <section>
     
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10">
