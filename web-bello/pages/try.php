@@ -133,11 +133,15 @@ var duesChart = new CanvasJS.Chart("duesChartContainer", {
     title: {
         text: "Payment Total"
     },
+    axisY: {
+            suffix: "%",
+            scaleBreaks: {
+                autoCalculate: true
+            }
+    },
     data: [{
-        type: "Pie",
+        type: "line",
         showInLegend: true,
-            toolTipContent: "<b>{label}</b>: {y}",
-            indexLabel: "{label} - {y}",
         dataPoints: <?php echo json_encode($duesDataPoints, JSON_NUMERIC_CHECK); ?>
     }]
 });
