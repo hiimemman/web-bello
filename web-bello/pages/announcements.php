@@ -210,9 +210,7 @@ th.sort-desc::after {
                             <select id="category" name ="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                             <option disabled selected>Choose a category</option>
                             <option value="Announcement">Announcement</option>
-                            <option value="Collecting Schedule">Collecting Schedule</option>
                             <option value="Events">Events</option>
-                            <option value="Forum">Forum</option>
                             
                             </select>
                     </div>
@@ -271,9 +269,8 @@ th.sort-desc::after {
                             <select id="categoryUpdate" name ="categoryUpdate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                             <option disabled selected >Choose a category</option>
                             <option value="Announcement">Announcement</option>
-                            <option value="Collecting Schedule">Collecting Schedule</option>
                             <option value="Events">Events</option>
-                            <option value="Forum">Forum</option>
+                           
                          
                             </select>
                     </div>
