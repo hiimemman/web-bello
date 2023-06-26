@@ -209,17 +209,17 @@ duesChart.render();
             </div>
         </div>
 
-       
+        <div class="flex justify-between items-start flex-wrap m-5">
+            <!-- Chart -->
+            <div class="w-1/2" id="chartContainer"></div>
+
+            <!-- New Chart for Paid and Unpaid Dues -->
+            <div class="w-1/2" id="duesChartContainer"></div>
+        </div>
         
     </div>
 
-    <div class="flex justify-between items-start flex-wrap m-5">
-    <!-- Chart -->
-    <div class="w-1/2" id="chartContainer"></div>
 
-    <!-- New Chart for Paid and Unpaid Dues -->
-    <div class="w-1/2" id="duesChartContainer"></div>
-    </div>
     
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
