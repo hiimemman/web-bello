@@ -96,7 +96,7 @@ chart.render();
 window.onload = function() {
             var chart = new CanvasJS.Chart("chartContainer", {
                 animationEnabled: true,
-                theme: "light2",
+                theme: "dark2",
                 title: {
                     text: "Payment Status"
                 },
