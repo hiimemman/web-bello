@@ -407,7 +407,7 @@ const loadTable = async function(){
         <td class="px-4 py-3">`+users.category+`</td>
         <td class="px-4 py-3">`+user+`</td>
         <td class="px-4 py-3">`+users.editor_email+`</td>
-        <td class="px-4 py-3">`+users.image+`</td>
+        <td class="px-4 py-3">`+users.image_url+`</td>
         <td class="px-4 py-3">`+users.created_at+`</td>
         <td class="px-4 py-3 flex items-center justify-end">
         <div class="inline-flex rounded-md shadow-sm" role="group">
