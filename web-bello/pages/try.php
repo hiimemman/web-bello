@@ -215,10 +215,10 @@ duesChart.render();
 
     <div class="flex justify-between items-start flex-wrap m-5">
     <!-- Chart -->
-    <div class="w-1/2" id="chartContainer"></div>
+    <div class="w-1/2 m-5" id="chartContainer"></div>
 
     <!-- New Chart for Paid and Unpaid Dues -->
-    <div class="w-1/2" id="duesChartContainer"></div>
+    <div class="w-1/2 m-5" id="duesChartContainer"></div>
     </div>
     
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
