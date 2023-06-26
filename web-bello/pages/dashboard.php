@@ -209,7 +209,7 @@ duesChart.render();
             </div>
         </div>
 
-        <div class="flex justify-between items-start flex-wrap mt-10">
+        <div class="flex justify-between items-start flex-wrap mt-10 mb-10">
             <!-- New Chart for Paid and Unpaid Dues -->
             <div class="w-1/2" id="duesChartContainer" style="width: 49%"></div>
             
