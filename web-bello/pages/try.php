@@ -209,7 +209,7 @@ duesChart.render();
             </div>
         </div>
 
-        <div class="flex justify-between items-start flex-wrap m-5">
+        <div class="flex justify-between items-start flex-wrap mt-5">
             <!-- Chart -->
             <div class="w-1/2" id="chartContainer"></div>
 
