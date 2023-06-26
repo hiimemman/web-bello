@@ -10,12 +10,13 @@ $Title = $_POST['titleUpdate'];
 $Message = $_POST['message_bodyUpdate'];
 $Category = $_POST['categoryUpdate'];
 $Status = $_POST['statusUpdate'];
+$Image = $_POST['image_url'];
 
 try{
     
 
 
-    $sql = "UPDATE `tbl_forum` SET `title` ='$Title', `message_body` ='$Message',`category` ='$Category',`status` = '$Status' WHERE `tbl_forum`.`id` = '$ID';";
+    $sql = "UPDATE `tbl_forum` SET `title` ='$Title', `message_body` ='$Message',`category` ='$Category',`status` = '$Status', `image_url` = '$Image' WHERE `tbl_forum`.`id` = '$ID';";
     mysqli_query($con, $sql);
 
    
