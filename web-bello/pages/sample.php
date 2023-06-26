@@ -51,7 +51,7 @@ require_once('../components/navbar.php')
                     </p>
                 </div>
                 <div class="flex space-x-2">
-                <button type="submit" id="postButton" class="px-6 py-2 text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm focus:outline-none">
+                <button type="button" id="postButton" class="px-6 py-2 text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm focus:outline-none" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">
                 Post Forum
                 </button>
                 </div>
