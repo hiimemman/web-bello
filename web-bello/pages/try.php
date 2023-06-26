@@ -117,7 +117,7 @@ window.onload = function() {
                 animationEnabled: true,
                 theme: "dark2",
                 title: {
-                    text: "Payment Status"
+                    text: "PAYMENT STATUS"
                 },
                 data: [{
                     type: "column",
@@ -131,7 +131,7 @@ var duesChart = new CanvasJS.Chart("duesChartContainer", {
     animationEnabled: true,
     theme: "dark2",
     title: {
-        text: "Payment Total"
+        text: "TOTAL AMOUNT"
     },
     data: [{
         type: "bar",
@@ -213,7 +213,7 @@ duesChart.render();
         
     </div>
 
-    <div class="flex justify-between items-start flex-wrap m-10 w-25">
+    <div class="flex justify-between items-start flex-wrap m-5">
     <!-- Chart -->
     <div class="w-1/2" id="chartContainer"></div>
 
