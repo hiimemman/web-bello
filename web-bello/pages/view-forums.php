@@ -50,12 +50,34 @@ require_once('../components/navbar.php')
                         Welcome to your Web-Bello Online account!
                     </p>
                 </div>
+                <div class="flex space-x-2">
+                <button type="button" id="postButton" class="px-6 py-2 text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm focus:outline-none" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">
+                Post Forum
+                </button>
+                </div>
             </div>
         </div>
         <!-- End of Intro Header -->
     </header>
 
     <!-- Forums Section -->
+    <!-- <form class="space-y-6" action="#" id ="frmRegisterHOA">
+    <div class="mt-10">
+    <div class="flex items-center justify-between">
+        <textarea id="content" name="content" rows="2" class="flex-grow px-2 py-2 mr-2 text-md text-gray-900 bg-white border border-gray-400 rounded-lg focus:outline-none" placeholder="What's on your mind?" required></textarea>
+        <div class="flex space-x-2">
+        <button type="submit" id="postButton" class="px-6 py-2 text-white bg-sky-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm focus:outline-none">
+                Post Forum
+            </button>
+            <button type="button" class="px-4 py-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600" onClick="triggerInputClick(` + forum.id + `)">
+                <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="ml-1">Upload</span>
+            </button>
+        </div>
+    </div>
+</div> -->
     <!-- Announcement Section -->
     <main class="px-6 mx-auto max-w-screen-xl" id="forumMain">
         <!-- FORUM -->
@@ -130,6 +152,73 @@ require_once('../components/navbar.php')
     </footer>
     <!-- End of Footer-->
 
+
+    <!-- TOASTER -->
+<div id="toast-success" class="hidden fixed flex items-center w-full max-w-xs p-4 mb-4 bottom-5 left-5 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
+  <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+    </svg>
+    <span class="sr-only">Check icon</span>
+  </div>
+  <div class="ml-3 text-sm font-normal">Item moved successfully.</div>
+  <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-success" aria-label="Close">
+    <span class="sr-only">Close</span>
+    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+    </svg>
+  </button>
+</div>
+<!-- END OF TOASTER -->
+    
+    <!-- Add new modal -->
+<div id="authentication-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative w-full max-w-md max-h-full">
+
+        <!-- Modal content -->
+         <input type ="hidden" name ="emailEditor" id ="emailEditor" value ="<?php echo $result[0]['email']?>">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="authentication-modal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <div class="px-6 py-6 lg:px-8">
+                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Add Forum</h3>
+                <form class="space-y-6" action="#" id ="frmRegisterHOA">
+                    
+                    <div>
+                        <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+                        <input type="title" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  required>
+                    </div>
+                    <div>
+                    <label for="message_body" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
+                        <textarea id="message_body" name ="message_body" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Write your post here..."></textarea>
+                    </div>
+                    <div>
+                        <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                            <select id="category" name ="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                            <option value="Forum">Forum</option>
+                            
+                            </select>
+                    </div>
+                    <div id ="imageHolder">
+                        
+                    </div>
+                    <div>
+                                                
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Image</label>
+                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="image_url" type="file">
+                        <!--<p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>-->
+
+                    </div>
+                    
+                    <button type="submit" class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">Create Forum</button>
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 
 
 
     <script>
@@ -252,7 +341,7 @@ require_once('../components/navbar.php')
 
 
 
-            const request = await fetch('../api/forum/all-forums-only.php')
+            const request = await fetch('../api/forum/all-forums-user.php')
 
             const response = await request.json()
             content = ''
@@ -647,6 +736,84 @@ require_once('../components/navbar.php')
 
 
         }
+
+
+
+
+        const frmRegisterHOA = document.querySelector('#frmRegisterHOA');
+        const image_url = document.querySelector('#image_url')
+        const imageHolder = document.querySelector('#imageHolder')
+
+        frmRegisterHOA.addEventListener('submit', async (event) =>{
+        event.preventDefault()
+        formData = new FormData(frmRegisterHOA)
+        formData.append('editor_email',emailEditor.value)
+        // uncomment this to print all the content of formData
+        for (const [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+        }
+
+        //fetch data
+        const request =  await fetch("../api/forum/add-forum.php",{
+        method: "POST",
+        body:formData,
+        });
+
+        //get the response
+
+        const response = await request.json();
+        console.log(response)
+        if(response.responseStatus === 'success'){
+        //reload table
+        location.reload()
+        localStorage.setItem('showToast', 'true');
+        localStorage.setItem('showToastMessage', response.responseMessage)
+        }
+
+        })
+
+        //image move
+image_url.addEventListener('change', async (event) =>{
+ const selectedFile = event.target.files[0];
+    
+// Uploading only one file; multiple uploads are not allowed.
+  let imageFile = event.target.files[0]; 
+
+   // Create a FormData object.
+  formData = new FormData();
+
+  // Add the file to the request.
+  formData.append('profileEdit', imageFile, imageFile.name);
+
+try{
+
+const fetchResponse = await fetch("../api/images/move-only-image.php",{
+    method: "POST",
+    body:formData,
+});
+
+const receivedStatus = await fetchResponse.json();
+console.log(receivedStatus)
+
+if(receivedStatus.statusCode === 200){
+
+let output = ''; 
+output += `
+ <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />
+<img class="m-2 h-auto max-w-xs rounded-lg " src="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" alt="image description">
+`;
+  
+imageHolder.innerHTML = output;
+}else{
+    alert('error')
+}
+ 
+
+
+    }catch (e){
+    console.log(e)
+    }
+})
     </script>
 
 
