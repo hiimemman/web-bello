@@ -282,7 +282,7 @@ require_once('../components/navbar.php')
                         .image_url + `" alt="image description">`
                 }
                 content += `
-                <div class="py-2 px-4 mb-4 bg-white rounded-xl border-2 border-gray-400">
+                <div class="py-2 px-4 mt-5 mb-4 bg-white rounded-xl border-2 border-gray-400">
     <label for="content" class="sr-only">What's on your mind?</label>
     <textarea id="content" name="content" rows="3" class="px-0 w-full text-md text-gray-900 border-0 focus:ring-0 focus:outline-none" placeholder="What's on your mind?" required></textarea>
 </div>
