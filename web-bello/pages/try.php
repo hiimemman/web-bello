@@ -35,6 +35,19 @@ $countForum = $rowForum['count'];
 
 // Query to get the count of paid and unpaid statuses
 $sqlStatus = mysqli_query($con, "SELECT COUNT(*) as count, status FROM `tbl_payment` GROUP BY status");
+
+// Query to get the total amount of paid dues
+$sqlPaidDues = mysqli_query($con, "SELECT SUM(amount) as totalAmount, status FROM `tbl_payment` WHERE status = 'Paid'");
+$rowPaidDues = mysqli_fetch_assoc($sqlPaidDues);
+$totalPaidAmount = $rowPaidDues['totalAmount'];
+
+// Query to get the total amount of unpaid dues
+$sqlUnpaidDues = mysqli_query($con, "SELECT SUM(amount) as totalAmount, status FROM `tbl_payment` WHERE status = 'Unpaid'");
+$rowUnpaidDues = mysqli_fetch_assoc($sqlUnpaidDues);
+$totalUnpaidAmount = $rowUnpaidDues['totalAmount'];
+
+
+//==============DATA POINTS HERE======================
  
 
 $dataPoints = array( 
@@ -53,6 +66,12 @@ while ($rowStatus = mysqli_fetch_assoc($sqlStatus)) {
     $count = $rowStatus['count'];
     $dPoints[] = array("y" => $count, "label" => $status);
 }
+
+// Create an array of data points for the paid and unpaid amounts
+$duesDataPoints = array(
+    array("y" => $totalPaidAmount, "label" => "Paid"),
+    array("y" => $totalUnpaidAmount, "label" => "Unpaid")
+);
  
 ?>
 
@@ -176,11 +195,14 @@ window.onload = function() {
             </div>
         </div>
 
-        <!-- Chart -->
+       
         
     </div>
-
+    <!-- Chart -->
     <div id="chartContainer" style="height: 370px; width: 50%;"></div>
+
+    <!-- New Chart for Paid and Unpaid Dues -->
+    <div id="duesChartContainer" style="height: 370px; width: 50%;"></div>
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 </body>
