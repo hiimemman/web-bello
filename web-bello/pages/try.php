@@ -199,7 +199,7 @@ window.onload = function() {
         
     </div>
     <!-- Chart -->
-    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <!-- <div id="chartContainer" style="height: 370px; width: 100%;"></div> -->
 
     <!-- New Chart for Paid and Unpaid Dues -->
     <div id="duesChartContainer" style="height: 370px; width: 100%;"></div>
