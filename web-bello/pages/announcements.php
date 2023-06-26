@@ -371,7 +371,7 @@ window.onload = function(){
 //load table
 const loadTable = async function(){
     //api
-  const getUsers =  await fetch("../api/forum/all-forum.php");
+  const getUsers =  await fetch("../api/forum/new-announcement.php");
   const response = await getUsers.json();
     console.log(response)
   if(response.responseStatus === 'OK'){
