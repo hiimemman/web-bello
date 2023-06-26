@@ -736,6 +736,39 @@ require_once('../components/navbar.php')
 
 
         }
+
+
+
+
+        const frmRegisterHOA = document.querySelector('#frmRegisterHOA');
+
+        frmRegisterHOA.addEventListener('submit', async (event) =>{
+    event.preventDefault()
+    formData = new FormData(frmRegisterHOA)
+    formData.append('editor_email',emailEditor.value)
+// uncomment this to print all the content of formData
+    for (const [key, value] of formData.entries()) {
+  console.log(`${key}: ${value}`);
+}
+
+//fetch data
+  const request =  await fetch("../api/forum/add-forum.php",{
+    method: "POST",
+    body:formData,
+  });
+
+//get the response
+
+const response = await request.json();
+console.log(response)
+if(response.responseStatus === 'success'){
+    //reload table
+    location.reload()
+    localStorage.setItem('showToast', 'true');
+    localStorage.setItem('showToastMessage', response.responseMessage)
+}
+
+})
     </script>
 
 
