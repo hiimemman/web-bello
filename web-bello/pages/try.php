@@ -125,7 +125,21 @@ window.onload = function() {
                 }]
             });
             chart.render();
-        }
+        
+
+var duesChart = new CanvasJS.Chart("duesChartContainer", {
+    animationEnabled: true,
+    theme: "dark2",
+    title: {
+        text: "Payment Status"
+    },
+    data: [{
+        type: "column",
+        dataPoints: <?php echo json_encode($duesDataPoints, JSON_NUMERIC_CHECK); ?>
+    }]
+});
+duesChart.render();
+}
 </script>
 </head>
 
@@ -199,7 +213,7 @@ window.onload = function() {
         
     </div>
     <!-- Chart -->
-    <!-- <div id="chartContainer" style="height: 370px; width: 100%;"></div> -->
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 
     <!-- New Chart for Paid and Unpaid Dues -->
     <div id="duesChartContainer" style="height: 370px; width: 100%;"></div>
