@@ -33,6 +33,21 @@ $sqlForum = mysqli_query($con, "SELECT COUNT(*) as count FROM `tbl_forum`");
 $rowForum = mysqli_fetch_assoc($sqlForum);
 $countForum = $rowForum['count'];
 
+// Query to get the count of paid and unpaid statuses
+$sqlStatus = mysqli_query($con, "SELECT COUNT(*) as count, status FROM `tbl_payment` GROUP BY status");
+
+// Query to get the total amount of paid dues
+$sqlPaidDues = mysqli_query($con, "SELECT SUM(amount) as totalAmount, status FROM `tbl_payment` WHERE status = 'Paid'");
+$rowPaidDues = mysqli_fetch_assoc($sqlPaidDues);
+$totalPaidAmount = $rowPaidDues['totalAmount'];
+
+// Query to get the total amount of unpaid dues
+$sqlUnpaidDues = mysqli_query($con, "SELECT SUM(amount) as totalAmount, status FROM `tbl_payment` WHERE status = 'Unpaid'");
+$rowUnpaidDues = mysqli_fetch_assoc($sqlUnpaidDues);
+$totalUnpaidAmount = $rowUnpaidDues['totalAmount'];
+
+
+//==============DATA POINTS HERE======================
  
 
 $dataPoints = array( 
@@ -40,6 +55,22 @@ $dataPoints = array(
 	array("y" => $countUser, "label" => "User" ),
 	array("y" => $countResident, "label" => "Resident" ),
 	array("y" => $countForum, "label" => "Forum" ),
+);
+
+// Initialize an empty array to store the data points
+$dPoints = array();
+
+// Fetch the data from the query result and add it to the dataPoints array
+while ($rowStatus = mysqli_fetch_assoc($sqlStatus)) {
+    $status = $rowStatus['status'];
+    $count = $rowStatus['count'];
+    $dPoints[] = array("y" => $count, "label" => $status);
+}
+
+// Create an array of data points for the paid and unpaid amounts
+$duesDataPoints = array(
+    array("y" => $totalPaidAmount, "label" => "Paid"),
+    array("y" => $totalUnpaidAmount, "label" => "Unpaid")
 );
  
 ?>
@@ -79,6 +110,35 @@ var chart = new CanvasJS.Chart("chartContainer", {
 });
 chart.render();
  
+}
+
+window.onload = function() {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                theme: "dark2",
+                title: {
+                    text: "PAYMENT STATUS"
+                },
+                data: [{
+                    type: "column",
+                    dataPoints: <?php echo json_encode($dPoints, JSON_NUMERIC_CHECK); ?>
+                }]
+            });
+            chart.render();
+        
+
+var duesChart = new CanvasJS.Chart("duesChartContainer", {
+    animationEnabled: true,
+    theme: "dark2",
+    title: {
+        text: "TOTAL AMOUNT"
+    },
+    data: [{
+        type: "bar",
+        dataPoints: <?php echo json_encode($duesDataPoints, JSON_NUMERIC_CHECK); ?>
+    }]
+});
+duesChart.render();
 }
 </script>
 </head>
@@ -148,9 +208,22 @@ chart.render();
             </a>
             </div>
         </div>
+
+        <div class="flex justify-between items-start flex-wrap mt-10">
+            <!-- New Chart for Paid and Unpaid Dues -->
+            <div class="w-1/2" id="duesChartContainer" style="width: 49%"></div>
+            
+            <!-- Chart -->
+            <div class="w-1/2" id="chartContainer" style="width: 49%"></div>
+
+        </div>
+        
     </div>
 
-    <!--<div id="chartContainer" style="height: 370px; width: 100%;"></div>-->
+
+    
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 </body>
