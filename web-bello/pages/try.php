@@ -209,12 +209,12 @@ duesChart.render();
             </div>
         </div>
 
-        <div class="flex justify-between items-start flex-wrap mt-5">
+        <div class="flex justify-between items-start flex-wrap mt-10">
             <!-- Chart -->
-            <div class="w-1/2" id="chartContainer"></div>
+            <div class="w-1/2 mr-2" id="chartContainer"></div>
 
             <!-- New Chart for Paid and Unpaid Dues -->
-            <div class="w-1/2" id="duesChartContainer"></div>
+            <div class="w-1/2 ml-2" id="duesChartContainer"></div>
         </div>
         
     </div>
