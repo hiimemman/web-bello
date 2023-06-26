@@ -437,7 +437,7 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
 }
 
 //fetch data
-  const request =  await fetch("../api/forum/add-forum.php",{
+  const request =  await fetch("../api/forum/update-new-forum.php",{
     method: "POST",
     body:formData,
   });
