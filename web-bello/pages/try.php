@@ -33,6 +33,8 @@ $sqlForum = mysqli_query($con, "SELECT COUNT(*) as count FROM `tbl_forum`");
 $rowForum = mysqli_fetch_assoc($sqlForum);
 $countForum = $rowForum['count'];
 
+// Query to get the count of paid and unpaid statuses
+$sqlStatus = mysqli_query($con, "SELECT COUNT(*) as count, status FROM `tbl_payment` GROUP BY status");
  
 
 $dataPoints = array( 
@@ -41,6 +43,16 @@ $dataPoints = array(
 	array("y" => $countResident, "label" => "Resident" ),
 	array("y" => $countForum, "label" => "Forum" ),
 );
+
+// Initialize an empty array to store the data points
+$dPoints = array();
+
+// Fetch the data from the query result and add it to the dataPoints array
+while ($rowStatus = mysqli_fetch_assoc($sqlStatus)) {
+    $status = $rowStatus['status'];
+    $count = $rowStatus['count'];
+    $dPoints[] = array("y" => $count, "label" => $status);
+}
  
 ?>
 
@@ -80,6 +92,21 @@ var chart = new CanvasJS.Chart("chartContainer", {
 chart.render();
  
 }
+
+window.onload = function() {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                theme: "light2",
+                title: {
+                    text: "Payment Status"
+                },
+                data: [{
+                    type: "column",
+                    dataPoints: <?php echo json_encode($dPoints, JSON_NUMERIC_CHECK); ?>
+                }]
+            });
+            chart.render();
+        }
 </script>
 </head>
 
@@ -148,6 +175,9 @@ chart.render();
             </a>
             </div>
         </div>
+
+        <!-- Chart -->
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
     </div>
 
     <!--<div id="chartContainer" style="height: 370px; width: 100%;"></div>-->
