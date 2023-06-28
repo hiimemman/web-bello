@@ -42,6 +42,7 @@ if (!isset($_SESSION['IDUSER'])) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
 
+
    
     </head>
 
@@ -106,6 +107,10 @@ if (!isset($_SESSION['IDUSER'])) {
                 margin-left: 0;
             }
         }
+        .swal2-toast-background-green {
+  background-color: green;
+}
+
     </style>
 
 
@@ -119,7 +124,7 @@ if (!isset($_SESSION['IDUSER'])) {
                     </h2>
                 </a>
             </div>
-
+            
             <div class="flex lg:hidden px-6">
                 <button id="menu-toggle" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Open main menu</span>
@@ -356,8 +361,21 @@ if (!isset($_SESSION['IDUSER'])) {
 
 
 <script defer>
-     // Show a notification
-Swal.fire('Welcome back! <?php $result['firstname']?>');
+// Show a notification
+Swal.fire({
+  title: 'Welcome back, <?php echo $result[0]['firstname']?>',
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  iconHtml: '<i class="fas fa-check-circle"></i>',
+  customClass: {
+    popup: 'swal2-toast-background-green',
+    title: 'swal2-toast-title'
+  }
+});
+
+
 
     </script>
 </body>
