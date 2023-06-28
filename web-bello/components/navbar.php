@@ -357,7 +357,7 @@ if (!isset($_SESSION['IDUSER'])) {
 
 <script defer>
      // Show a notification
-Swal.fire('Welcome back! <?php $result['firstname']?>');
+Swal.fire('Welcome back! <?php $result?>');
 
     </script>
 </body>
