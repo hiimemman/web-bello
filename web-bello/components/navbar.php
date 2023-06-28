@@ -42,18 +42,7 @@ if (!isset($_SESSION['IDUSER'])) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0/noty.min.js"></script>
 
-    <script>
-        // Initialize Noty
-var n = new Noty({
-  text: 'Hello, Noty!',
-  type: 'success', // Set the notification type (success, error, warning, info)
-  timeout: 3000 // Set the duration the notification will be displayed (in milliseconds)
-});
-
-// Show the notification
-n.show();
-
-    </script>
+   
     </head>
 
 
@@ -365,6 +354,19 @@ n.show();
         });
     </script>
 
+
+<script defer>
+        // Initialize Noty
+        var n = new Noty({
+        text: 'Hello, Noty!',
+        type: 'success', // Set the notification type (success, error, warning, info)
+        timeout: 3000 // Set the duration the notification will be displayed (in milliseconds)
+        });
+
+        // Show the notification
+        n.show();
+
+    </script>
 </body>
 
 </html>
