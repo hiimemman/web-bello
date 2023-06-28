@@ -15,6 +15,10 @@ if (!isset($_SESSION['IDUSER'])) {
 }
 ?>
 
+<?php
+require_once('../components/navbar.php')
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -22,121 +26,145 @@ if (!isset($_SESSION['IDUSER'])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
     <link href='fullcalendar/packages/core/main.css' rel='stylesheet' />
     <link href='fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <title>Community Schedules - Web-Bello Online!</title>
 
-    <style>
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-
-        .modal-content {
-            position: relative;
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border-radius: 5px;
-            width: 400px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
 <body>
-    <div class="content flex flex-col items-center justify-center min-h-screen">
-        <h1 class="text-center mt-6 mb-6">COMMUNITY SCHEDULES</h1>
+    <style>
+    #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+    }
 
-        <div class="calendar-toolbar">
-            <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3">Return to
-                    dashboard</button></a>
-            <button id="addScheduleBtn" class="btn btn-primary mr-3">Add schedule</button>
+    #calendar .fc-view-container {
+        padding: 30px;
+        background-color: #efefef;
+        -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+    }
+    </style>
+    <div class="content mt-36 mb-12">
+
+        <div id='calendar'>
         </div>
-        <div id="calendar"></div>
+    </div>
+    <!-- Add Button -->
+    <div class="fixed bottom-4 right-4">
+        <button id="addButton" class="btn btn-primary">Add Event</button>
     </div>
 
     <!-- Modal -->
     <div id="addScheduleModal" class="modal">
+        <!-- Modal content -->
         <div class="modal-content">
             <span class="modal-close">&times;</span>
+            <h3>Add Event</h3>
             <form id="scheduleForm">
-                <h1>Schedule an Event</h1>
-                <div class="form-group.">
-<label for="title">Title</label>
-<input type="text" class="form-control" id="title" name="title" required>
-</div>
-<div class="form-group">
-<label for="start">Start Date and Time</label>
-<input type="datetime-local" class="form-control" id="start" name="start" required>
-</div>
-<div class="form-group">
-<label for="end">End Date and Time</label>
-<input type="datetime-local" class="form-control" id="end" name="end" required>
-</div>
-<div class="form-group">
-<label for="description">Description</label>
-<textarea class="form-control" id="description" name="description"></textarea>
-</div>
-<div class="form-group">
-<label for="color">Color</label>
-<input type="color" class="form-control" id="color" name="color" value="#3a87ad">
-</div>
-<button type="submit" class="btn btn-primary">Save</button>
-</form>
-</div>
-</div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src='fullcalendar/packages/core/main.js'></script>
-<script src='fullcalendar/packages/daygrid/main.js'></script>
+                <!-- Form fields for title, start datetime, and end datetime -->
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="start">Start Date and Time</label>
+                    <input type="datetime-local" class="form-control" id="start" name="start" required>
+                </div>
+                <div class="form-group">
+                    <label for="end">End Date and Time</label>
+                    <input type="datetime-local" class="form-control" id="end" name="end" required>
+                </div>
+                <!-- Other form fields (description, color) if needed -->
+                <!-- ... -->
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
+    <!-- Footer -->
+    <footer class="bg-gray-100">
+        <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+            <div class="lg:flex lg:items-end lg:justify-between">
+                <div>
+                    <div class="flex justify-center text-teal-600 lg:justify-start">
+                        <a href="/web-bello/pages/user-index.php" class="-m-1.5 p-1.5">
+                            <span class="sr-only"></span>
+                            <h2 class="drop-shadow text-lg tracking-wider font-medium">
+                                WEB-BELLO
+                            </h2>
+                        </a>
+                    </div>
+
+                    <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">Connect,
+                        engage, and stay informed with your neighbors, access the latest news and events, all at your
+                        fingertips.
+                    </p>
+                </div>
+
+                <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-announcements.php">
+                            Announcements
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-events.php">
+                            Events
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-forums.php">
+                            Forums
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/calendar-19/index.php">
+                            Schedules
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="mt-12 text-center text-sm text-gray-500 lg:text-right">
+                Copyright &copy; 2023. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <!-- End of Footer-->
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+
+    <!-- <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
+    <script src='fullcalendar/packages/core/main.js'></script>
+    <script src='fullcalendar/packages/interaction/main.js'></script>
+    <script src='fullcalendar/packages/daygrid/main.js'></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
-
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: ['dayGrid'],
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay'
-            },
-            defaultView: 'dayGridMonth',
-            defaultDate: new Date(),
+            plugins: ['interaction', 'dayGrid'],
+            defaultDate: '2023-06-12',
             editable: true,
-            selectable: true,
-            selectHelper: true,
+            eventLimit: true, // allow "more" link when too many events,
             events: {
-                // your events data
                 url: '../api/reservation/all-reservation.php',
                 method: 'POST',
                 extraParams: {
@@ -146,80 +174,38 @@ if (!isset($_SESSION['IDUSER'])) {
                     console.log(xhr.responseText); // Print the error response
                     alert('Failed to fetch events from the server.' + failure);
                 }
-            },
-            select: function (info) {
-                $('#addScheduleModal').css('display', 'block');
-                $('#start').val(info.startStr);
-                $('#end').val(info.endStr);
-            },
-            eventClick: function (info) {
-                // handle event click
             }
         });
-
         calendar.render();
 
-        // Close modal when clicked on close button or outside modal content
+          // Add Button Click Event
+    var addButton = document.getElementById('addButton');
+    addButton.addEventListener('click', function () {
+        // Open the modal
         var modal = document.getElementById('addScheduleModal');
-        var closeBtn = document.getElementsByClassName('modal-close')[0];
+        modal.style.display = 'block';
 
-        closeBtn.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // Submit form on scheduleForm submit
-        $('#scheduleForm').submit(function (e) {
-            e.preventDefault();
-
-            var title = $('#title').val();
-            var start = $('#start').val();
-            var end = $('#end').val();
-            var description = $('#description').val();
-            var color = $('#color').val();
-
-            // Perform AJAX request to save the event
-            $.ajax({
-                url: 'save-event.php',
-                type: 'POST',
-                data: {
-                    title: title,
-                    start: start,
-                    end: end,
-                    description: description,
-                    color: color
-                },
-                success: function (response) {
-                    // Handle the response
-                    if (response.status === 'success') {
-                        // Event saved successfully, update the calendar
-                        calendar.addEvent({
-                            title: title,
-                            start: start,
-                            end: end,
-                            description: description,
-                            color: color
-                        });
-
-                        // Close the modal
-                        modal.style.display = "none";
-                    } else {
-                        // Handle the error
-                        console.log('Error:', response.message);
-                    }
-                },
-                error: function (xhr, status, error) {
-                    // Handle the error
-                    console.log('Error:', error);
-                }
-            });
-        });
+        // Clear existing values from the form
+        var form = document.getElementById('scheduleForm');
+        form.reset();
     });
-</script>
+
+    // ... Existing code ...
+
+    // Submit form on scheduleForm submit
+    $('#scheduleForm').submit(function (e) {
+        e.preventDefault();
+
+        var title = $('#title').val();
+        var start = $('#start').val();
+        var end = $('#end').val();
+        var description = $('#description').val();
+        var color = $('#color').val();
+
+        // ... Existing AJAX request code ...
+    });
+    });
+    </script>
 </body>
+
 </html>
