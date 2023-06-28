@@ -40,7 +40,7 @@ require_once('../components/navbar.php')
 </head>
 
 <body>
-    <style>
+    <!-- <style>
     #calendar {
         max-width: 900px;
         margin: 0 auto;
@@ -57,7 +57,7 @@ require_once('../components/navbar.php')
         -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
         box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
     }
-    </style>
+    </style> -->
     <div class="content mt-36 mb-12">
 
         <div class="calendar-toolbar">
@@ -69,6 +69,25 @@ require_once('../components/navbar.php')
         <div id='calendar'>
         </div>
     </div>
+
+    <style>
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .calendar-toolbar {
+            display: flex;
+            justify-content: center;
+        }
+
+        #calendar {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
 
      <!-- Modal -->
      <div id="addScheduleModal" class="modal">
