@@ -120,7 +120,7 @@ if (!isset($_SESSION['IDUSER'])) {
                     </h2>
                 </a>
             </div>
-
+            <p><?php  $result[0]['firstname'] ?></p>
             <div class="flex lg:hidden px-6">
                 <button id="menu-toggle" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Open main menu</span>
