@@ -174,7 +174,7 @@ if (!isset($_SESSION['IDUSER'])) {
                             Manage dues
                         </a>
                         <a href="../api/login/logout.php" class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 dark:hover:text-white text-gray-400 dark:text-gray-400 flex items-center">
-                            <span>Sign out</span>
+                            <span style="text-align: center;">Sign out</span>
                         </a>
                     </div>
                 </div>
