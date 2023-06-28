@@ -37,21 +37,21 @@ if (!isset($_SESSION['ID'])) {
   <link rel="stylesheet" href="../style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0/noty.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0/noty.min.css">
 
 </head>
 <script>
- // Initialize Toastr
-toastr.options = {
-  positionClass: 'toast-top-right', // Set the position of the notification
-  closeButton: true, // Show a close button
-  progressBar: true // Show a progress bar
-};
+// Initialize Noty
+var n = new Noty({
+  text: 'Hello, Noty!',
+  type: 'success', // Set the notification type (success, error, warning, info)
+  timeout: 3000 // Set the duration the notification will be displayed (in milliseconds)
+});
 
-// Show a notification
-toastr.success('Hello, Toastr!');
+// Show the notification
+n.show();
 </script>
 <body>
   <div class="antialiased bg-gray-50 dark:bg-gray-900">
