@@ -8,14 +8,12 @@
 $ID = $_POST['idUpdate'];
 $Title = $_POST['titleUpdate'];
 $Name = $_POST['nameUpdate'];
-// $Start = $_POST['startUpdate'];
-// $End = $_POST['endUpdate'];
 
 try{
     
 
 
-    $sql = "UPDATE `tbl_reservation` SET `title` ='$Title', `reserved_by` ='$Name', WHERE `tbl_reservation`.`id` = '$ID';";
+    $sql = "UPDATE `tbl_reservation` SET `title` ='$Title', `reserved_by` ='$Name' WHERE `tbl_reservation`.`id` = '$ID';";
     mysqli_query($con, $sql);
 
    

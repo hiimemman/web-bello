@@ -343,8 +343,8 @@ const updateHoaInformation = document.querySelector('#updateHoaInformation')
 const idUpdate =document.querySelector('#idUpdate')
 const titleUpdate =document.querySelector('#titleUpdate')
 const nameUpdate =document.querySelector('#nameUpdate')
-const startUpdate = document.querySelector('#startUpdate')
-const endUpdate = document.querySelector('#endUpdate')
+// const startUpdate = document.querySelector('#startUpdate')
+// const endUpdate = document.querySelector('#endUpdate')
 
 
 //Onload
@@ -550,8 +550,6 @@ updateHiddenButton.click()
 idUpdate.value = user.id;
 titleUpdate.value = user.title;
 nameUpdate.value = user.reserved_by;
-// startUpdate.value = user.start_date;
-// endUpdate.value = user.end_date;
 }
 
 
