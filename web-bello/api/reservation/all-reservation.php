@@ -6,7 +6,7 @@ try{
 $con = connection();
 
 
-$sql = mysqli_query($con, "SELECT * FROM `tbl_reservation` ORDER BY `created_at` DESC");
+$sql = mysqli_query($con, "SELECT * FROM `tbl_reservation` ORDER BY `date_created` DESC");
 
 //store in result
 
