@@ -76,27 +76,6 @@ if (isset($_SESSION['IDUSER'])) {
     .landing-content {
         animation: fade-in 2s ease-in-out;
     }
-
-    @media screen and (min-width: 768px) {
-        .landing-content {
-            max-width: 720px;
-            margin: 0 auto;
-        }
-    }
-
-    @media screen and (min-width: 992px) {
-        .landing-content {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-    }
-
-    @media screen and (min-width: 1200px) {
-        .landing-content {
-            max-width: 1140px;
-            margin: 0 auto;
-        }
-    }
     </style>
 
     <!-- New Landing Page -->
@@ -104,7 +83,8 @@ if (isset($_SESSION['IDUSER'])) {
     <section class="bg-gray-50 custom-bg">
         <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
             <div class="mx-auto max-w-xl text-center">
-                <h1 class="landing-content mb-4 text-4xl font-extrabold tracking-tight text-white">
+                <h1
+                    class="landing-content mb-4 text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl text-white">
                     Welcome to Web-Bello!
                 </h1>
 
