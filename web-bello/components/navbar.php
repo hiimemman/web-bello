@@ -120,7 +120,7 @@ if (!isset($_SESSION['IDUSER'])) {
                     </h2>
                 </a>
             </div>
-            <p><?php  $result[0]['firstname'] ?></p>
+            
             <div class="flex lg:hidden px-6">
                 <button id="menu-toggle" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Open main menu</span>
@@ -359,11 +359,16 @@ if (!isset($_SESSION['IDUSER'])) {
 <script defer>
 // Show a notification
 Swal.fire({
-  title: 'Hello, SweetAlert2!',
+  title: 'Welcome back, <?php echo $result[0]['firstname']?>',
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
-  timer: 3000
+  timer: 3000,
+  iconHtml: '<i class="fas fa-check-circle"></i>',
+  customClass: {
+    popup: 'swal2-toast-background-green',
+    title: 'swal2-toast-title'
+  }
 });
 
 
