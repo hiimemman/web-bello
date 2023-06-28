@@ -46,6 +46,11 @@ require_once('../components/navbar.php')
         margin: 0 auto;
     }
 
+    .calendar-toolbar {
+            display: flex;
+            justify-content: center;
+        }
+
     #calendar .fc-view-container {
         padding: 30px;
         background-color: #efefef;
@@ -55,40 +60,96 @@ require_once('../components/navbar.php')
     </style>
     <div class="content mt-36 mb-12">
 
+        <div class="calendar-toolbar">
+            <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3">Return to
+                    dashboard</button></a>
+            <button id="addScheduleBtn" class="btn btn-primary mr-3">Add schedule</button>
+        </div>
+
         <div id='calendar'>
         </div>
     </div>
-    <!-- Add Button -->
-    <div class="fixed bottom-4 right-4">
-        <button id="addButton" class="btn btn-primary">Add Event</button>
-    </div>
 
-    <!-- Modal -->
-    <div id="addScheduleModal" class="modal">
-        <!-- Modal content -->
+     <!-- Modal -->
+     <div id="addScheduleModal" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
-            <h3>Add Event</h3>
             <form id="scheduleForm">
-                <!-- Form fields for title, start datetime, and end datetime -->
+                <h1>Schedule an Event</h1>
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" required>
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="start">Start Date and Time</label>
-                    <input type="datetime-local" class="form-control" id="start" name="start" required>
+                    <label for="start_date">Start Date:</label>
+                    <input type="datetime-local" name="start_date" id="start_date" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="end">End Date and Time</label>
-                    <input type="datetime-local" class="form-control" id="end" name="end" required>
+                    <label for="end_date">End Date:</label>
+                    <input type="datetime-local" name="end_date" id="end_date" class="form-control" required>
                 </div>
-                <!-- Other form fields (description, color) if needed -->
-                <!-- ... -->
-                <button type="submit" class="btn btn-primary">Save</button>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Schedule Event</button>
+                </div>
             </form>
         </div>
     </div>
+
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Close the modal when the close button (X) is clicked
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById("addScheduleModal");
+            var closeBtn = document.getElementsByClassName("modal-close")[0];
+
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+        });
+
+        // Reload the window after scheduling an event
+        document.addEventListener("DOMContentLoaded", function() {
+            var scheduleForm = document.getElementById("scheduleForm");
+
+            scheduleForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+                // Send the data to the server and handle the response
+
+                // Reload the window
+                location.reload();
+            });
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="bg-gray-100">
@@ -177,34 +238,83 @@ require_once('../components/navbar.php')
             }
         });
         calendar.render();
-
-          // Add Button Click Event
-    var addButton = document.getElementById('addButton');
-    addButton.addEventListener('click', function () {
-        // Open the modal
-        var modal = document.getElementById('addScheduleModal');
-        modal.style.display = 'block';
-
-        // Clear existing values from the form
-        var form = document.getElementById('scheduleForm');
-        form.reset();
     });
 
-    // ... Existing code ...
+    document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById("addScheduleModal");
+            var addScheduleBtn = document.getElementById("addScheduleBtn");
+            var closeBtn = document.getElementsByClassName("close")[0];
 
-    // Submit form on scheduleForm submit
-    $('#scheduleForm').submit(function (e) {
-        e.preventDefault();
+            // Open the modal when the button is clicked
+            addScheduleBtn.onclick = function() {
+                modal.style.display = "block";
+            }
 
-        var title = $('#title').val();
-        var start = $('#start').val();
-        var end = $('#end').val();
-        var description = $('#description').val();
-        var color = $('#color').val();
+            // Close the modal when the close button is clicked
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
 
-        // ... Existing AJAX request code ...
-    });
-    });
+            // Close the modal when clicked outside of it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Handle form submission
+            document.getElementById("scheduleForm").addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                // Retrieve form data
+                let title = document.getElementById("title").value;
+                let start_date = document.getElementById("start_date").value;
+                let end_date = document.getElementById("end_date").value;
+
+                // Validate the dates
+                let currentDate = new Date();
+                let startDate = new Date(start_date);
+                if (startDate < currentDate) {
+                    alert("Start date should be in the future.");
+                    return;
+                }
+
+                let endDate = new Date(end_date);
+                if (endDate < currentDate) {
+                    alert("End date should be in the future.");
+                    return;
+                }
+
+                // Send the data to the server
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "../api/schedule/sched.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            let response = JSON.parse(xhr.responseText);
+                            console.log(response)
+                            if (response.status === "success") {
+                                alert("Event scheduled successfully.");
+                                // Clear the form
+                                document.getElementById("title").value = "";
+                                document.getElementById("start_date").value = "";
+                                document.getElementById("end_date").value = "";
+                            } else {
+                                alert("Error: " + response.message);
+                            }
+                        } else {
+                            alert("An error occurred: " + xhr.status);
+                        }
+                    }
+                };
+                xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(
+                    start_date) + "&end_date=" + encodeURIComponent(end_date));
+            });
+        });
+
     </script>
 </body>
 
