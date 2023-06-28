@@ -42,7 +42,17 @@ if (!isset($_SESSION['ID'])) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 </head>
+<script>
+ // Initialize Toastr
+toastr.options = {
+  positionClass: 'toast-top-right', // Set the position of the notification
+  closeButton: true, // Show a close button
+  progressBar: true // Show a progress bar
+};
 
+// Show a notification
+toastr.success('Hello, Toastr!');
+</script>
 <body>
   <div class="antialiased bg-gray-50 dark:bg-gray-900">
     <nav class="bg-white border-b border-gray-300 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50 ">

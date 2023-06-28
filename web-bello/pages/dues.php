@@ -3,17 +3,7 @@ require_once('../components/navbarDashboard.php')
 ?>
 
 
-<script>
- // Initialize Toastr
-toastr.options = {
-  positionClass: 'toast-top-right', // Set the position of the notification
-  closeButton: true, // Show a close button
-  progressBar: true // Show a progress bar
-};
 
-// Show a notification
-toastr.success('Hello, Toastr!');
-</script>
 <style>
     th {
   cursor: pointer;
