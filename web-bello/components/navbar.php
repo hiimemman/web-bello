@@ -174,11 +174,12 @@ if (!isset($_SESSION['IDUSER'])) {
                             Manage dues
                         </a>
                         <a href="../api/login/logout.php" class="dropdown-item flex items-center text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            <span class="mr-auto">Sign out</span>
+                            <span class="mr-2">Sign out</span>
                             <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"></path>
                             </svg>
                         </a>
+
                     </div>
                 </div>
 
