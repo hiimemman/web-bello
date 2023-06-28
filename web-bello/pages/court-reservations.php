@@ -387,8 +387,9 @@ const loadTable = async function(){
         content += `<tr class="border-b dark:border-gray-700">
         
         <td class="px-4 py-3">`+users.title+`</td>
+        <td class="px-4 py-3">`+users.reserved_by+`</td>
         <td class="px-4 py-3">`+users.start_date+`</td>
-        <td class="px-4 py-3">`+users.end_date+`</td>git
+        <td class="px-4 py-3">`+users.end_date+`</td>
         <td class="px-4 py-3">`+users.date_created+`</td>
         <td class="px-4 py-3 flex items-center justify-end">
         <div class="inline-flex rounded-md shadow-sm" role="group">
