@@ -55,7 +55,9 @@ require_once('../components/navbar.php')
     </style>
     <div class="content mt-36 mb-12">
 
-        <div id='calendar'></div>
+        <div id='calendar'>
+            <button>Add</button>
+        </div>
     </div>
 
     <!-- Footer -->
