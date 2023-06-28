@@ -38,23 +38,25 @@ if (!isset($_SESSION['IDUSER'])) {
     <script src="https://cdn.tailwindcss.com"></script>
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0/noty.min.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0/noty.min.js"></script>
 
-    </head>
     <script>
-    // Initialize Toastr
-    toastr.options = {
-    positionClass: 'toast-top-right', // Set the position of the notification
-    closeButton: true, // Show a close button
-    progressBar: true // Show a progress bar
-    };
+        // Initialize Noty
+var n = new Noty({
+  text: 'Hello, Noty!',
+  type: 'success', // Set the notification type (success, error, warning, info)
+  timeout: 3000 // Set the duration the notification will be displayed (in milliseconds)
+});
 
-    // Show a notification
-    toastr.success('Hello, Toastr!');
+// Show the notification
+n.show();
+
     </script>
-</head>
+    </head>
+
+
 
 <body>
     <style>
