@@ -340,7 +340,7 @@ if (!isset($_SESSION['ID'])) {
             if (newTitle) {
                 // Send the updated event data to the server
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "../api/schedule/update-sched.php", true);
+                xhr.open("POST", "../api/reservation/reserve.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
