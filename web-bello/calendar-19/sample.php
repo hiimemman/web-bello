@@ -289,7 +289,7 @@ require_once('../components/navbar.php')
 
                 // Send the data to the server
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "../api/schedule/sched.php", true);
+                xhr.open("POST", "../api/reservation/add-reservation.php", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -297,7 +297,7 @@ require_once('../components/navbar.php')
                             let response = JSON.parse(xhr.responseText);
                             console.log(response)
                             if (response.status === "success") {
-                                alert("Event scheduled successfully.");
+                                alert("Event reserved successfully.");
                                 // Clear the form
                                 document.getElementById("title").value = "";
                                 document.getElementById("start_date").value = "";
