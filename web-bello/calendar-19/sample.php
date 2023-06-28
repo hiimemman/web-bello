@@ -2,11 +2,11 @@
 session_start();
 include_once("../connections/connection.php");
 $con = connection();
-if (!isset($_SESSION['ID'])) {
+if (!isset($_SESSION['IDUSER'])) {
     header('Location: ../pages/user-login.php');
     exit();
 } else {
-    $sql = mysqli_query($con, "SELECT * FROM `tbl_residents` WHERE `id` = {$_SESSION['ID']}");
+    $sql = mysqli_query($con, "SELECT * FROM `tbl_residents` WHERE `id` = {$_SESSION['IDUSER']}");
     $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
     $url = $_SERVER['REQUEST_URI'];
     $pageName = basename($url, '.php');
