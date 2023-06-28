@@ -33,7 +33,7 @@ require_once('../components/navbar.php')
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- Style -->
     <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <title>Community Schedules - Web-Bello Online!</title>
+    <title>Court Reservation - Web-Bello Online!</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -133,7 +133,7 @@ require_once('../components/navbar.php')
             editable: true,
             eventLimit: true, // allow "more" link when too many events,
             events: {
-                url: '../api/schedule/all-sched.php',
+                url: '../api/reservation/all-reservation.php',
                 method: 'POST',
                 extraParams: {
                     user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
