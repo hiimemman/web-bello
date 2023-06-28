@@ -22,60 +22,60 @@ if (isset($_SESSION['IDUSER'])) {
 
 <body>
     <style>
-        .custom-bg {
-            background-image: url('/web-bello/images/palazzo-gradient-1.png');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            height: 100vh;
+    .custom-bg {
+        background-image: url('/web-bello/images/palazzo-gradient-1.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .custom-signin-btn {
+        width: 100%;
+        color: white;
+        background-color: #003049;
+        border: none;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        font-size: 0.875rem;
+        padding: 0.625rem 1.25rem;
+        text-align: center;
+        outline: none;
+    }
+
+    .custom-signin-btn:hover {
+        background-color: #023e8a;
+    }
+
+    .custom-signin-btn:focus {
+        outline-width: 4px;
+        outline-color: #caf0f8;
+    }
+
+    .custom-text-btn {
+        font-weight: 500;
+        color: #003049;
+        text-decoration: none;
+    }
+
+    .custom-text-btn:hover {
+        text-decoration: underline;
+        color: #023e8a;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
         }
 
-        .custom-signin-btn {
-            width: 100%;
-            color: white;
-            background-color: #003049;
-            border: none;
-            border-radius: 0.375rem;
-            font-weight: 500;
-            font-size: 0.875rem;
-            padding: 0.625rem 1.25rem;
-            text-align: center;
-            outline: none;
+        100% {
+            opacity: 1;
         }
+    }
 
-        .custom-signin-btn:hover {
-            background-color: #023e8a;
-        }
-
-        .custom-signin-btn:focus {
-            outline-width: 4px;
-            outline-color: #caf0f8;
-        }
-
-        .custom-text-btn {
-            font-weight: 500;
-            color: #003049;
-            text-decoration: none;
-        }
-
-        .custom-text-btn:hover {
-            text-decoration: underline;
-            color: #023e8a;
-        }
-
-        @keyframes fade-in {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .landing-content {
-            animation: fade-in 2s ease-in-out;
-        }
+    .landing-content {
+        animation: fade-in 2s ease-in-out;
+    }
     </style>
 
     <!-- New Landing Page -->
@@ -87,18 +87,20 @@ if (isset($_SESSION['IDUSER'])) {
                     Welcome to Web-Bello!
                 </h1>
 
-                <p class="mt-4 sm:text-xl/snug text-white font-medium">
+                <p class="mt-4 sm:text-xl/none text-white font-medium">
                     The ultimate hub for homeowners to stay connected and informed! With Web-Bello, you can easily
                     connect with your neighbors, stay informed on the latest news and events, and receive important
                     alerts and notifications.
                 </p>
 
                 <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a class="block w-full rounded bg-sky-900 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto" href="/get-started">
+                    <a class="block w-full rounded bg-sky-900 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto"
+                        href="/get-started">
                         Resident
                     </a>
 
-                    <a class="block w-full rounded bg-sky-900 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto" href="/about">
+                    <a class="block w-full rounded bg-sky-900 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto"
+                        href="/about">
                         Admin
                     </a>
                 </div>
@@ -114,9 +116,11 @@ if (isset($_SESSION['IDUSER'])) {
     <section class="bg-white dark:bg-gray-900 custom-bg">
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
             <div class="mr-auto place-self-center lg:col-span-7">
-                <h1 class="landing-content max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
+                <h1
+                    class="landing-content max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
                     Welcome to Web-Bello!</h1>
-                <p class="landing-content max-w-2xl mb-6 font-medium text-white lg:mb-8 md:text-lg lg:text-xl dark:text-white">
+                <p
+                    class="landing-content max-w-2xl mb-6 font-medium text-white lg:mb-8 md:text-lg lg:text-xl dark:text-white">
                     The
                     ultimate hub for homeowners to stay connected and informed! With Web-Bello, you can easily connect
                     with your neighbors, stay informed on the latest news and events, and receive important alerts and
@@ -125,9 +129,11 @@ if (isset($_SESSION['IDUSER'])) {
                 <!--<button style="color: white; class="p-4 rounded-lg landing-content">About Us</button>-->
             </div>
             <div class="landing-content lg:mt-0 lg:col-span-5 lg:flex">
-                <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                <div
+                    class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                     <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        <h1
+                            class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                             Sign in to your account
                         </h1>
 
