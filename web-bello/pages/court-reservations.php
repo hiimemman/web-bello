@@ -400,15 +400,12 @@ const loadTable = async function(){
         }
 
         content += `<tr class="border-b dark:border-gray-700">
-        <td class="px-4 py-3">`+users.firstname+" "+users.lastname+`</td>
-        <td class="px-4 py-3">`+users.sex+`</td>
-        <td class="px-4 py-3">`+users.age+`</td>
-        <td class="px-4 py-3">`+users.address+`</td>
-        <td class="px-4 py-3">`+users.contact+`</td>
-        <td class="px-4 py-3">`+users.email+`</td>
-        <td class="px-4 py-3">`+users.payment_status+`</td>
-        <td class="px-4 py-3">`+users.created_at+`</td>
-        <td class="px-4 py-3">`+user+`</td>
+        <td class="px-4 py-3">`+users.title+`</td>
+        <td class="px-4 py-3">`+users.name+`</td>
+        <td class="px-4 py-3">`+users.start_date+`</td>
+        <td class="px-4 py-3">`+users.end_date+`</td>
+        <td class="px-4 py-3">`+users.date_created+`</td>
+        
         <td class="px-4 py-3 flex items-center justify-end">
         <div class="inline-flex rounded-md shadow-sm" role="group">
             <button id ="btnView`+users.id+`" type="button" data-modal-toggle = "updateProductModal" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border    border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"  data-user='`+JSON.stringify(users)+`' onclick="updateModal(this)" >
