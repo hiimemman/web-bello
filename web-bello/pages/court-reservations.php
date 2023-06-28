@@ -385,7 +385,7 @@ const loadTable = async function(){
 
 
         content += `<tr class="border-b dark:border-gray-700">
-        <td class="px-4 py-3">`+users.name`</td>
+        
         <td class="px-4 py-3">`+users.title+`</td>
         <td class="px-4 py-3">`+users.start_date+`</td>
         <td class="px-4 py-3">`+users.end_date+`</td>
