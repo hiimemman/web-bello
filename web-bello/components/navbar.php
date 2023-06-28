@@ -37,6 +37,23 @@ if (!isset($_SESSION['IDUSER'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    </head>
+    <script>
+    // Initialize Toastr
+    toastr.options = {
+    positionClass: 'toast-top-right', // Set the position of the notification
+    closeButton: true, // Show a close button
+    progressBar: true // Show a progress bar
+    };
+
+    // Show a notification
+    toastr.success('Hello, Toastr!');
+    </script>
 </head>
 
 <body>
