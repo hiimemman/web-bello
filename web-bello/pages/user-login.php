@@ -115,7 +115,7 @@ if (isset($_SESSION['IDUSER'])) {
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <title>Login to Web-Bello</title>
+    <title>Resident Login - Web-Bello Online</title>
     <link rel="stylesheet" href="../style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -126,7 +126,7 @@ if (isset($_SESSION['IDUSER'])) {
 
     <style>
         .custom-bg {
-            background-image: url('/web-bello/images/palazzo-gradient-1.png');
+            background-image: url('/web-bello/images/palazzo-2.png');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
