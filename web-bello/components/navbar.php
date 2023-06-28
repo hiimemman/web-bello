@@ -107,6 +107,10 @@ if (!isset($_SESSION['IDUSER'])) {
                 margin-left: 0;
             }
         }
+        .swal2-toast-background-green {
+  background-color: green;
+}
+
     </style>
 
 
