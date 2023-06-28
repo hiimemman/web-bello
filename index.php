@@ -22,67 +22,67 @@ if (isset($_SESSION['IDUSER'])) {
 
 <body>
     <style>
-    .custom-bg {
-        background-image: url('/web-bello/images/palazzo-gradient-1.png');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        height: 100vh;
-    }
-
-    .custom-signin-btn {
-        width: 100%;
-        color: white;
-        background-color: #003049;
-        border: none;
-        border-radius: 0.375rem;
-        font-weight: 500;
-        font-size: 0.875rem;
-        padding: 0.625rem 1.25rem;
-        text-align: center;
-        outline: none;
-    }
-
-    .custom-signin-btn:hover {
-        background-color: #023e8a;
-    }
-
-    .custom-signin-btn:focus {
-        outline-width: 4px;
-        outline-color: #caf0f8;
-    }
-
-    .custom-text-btn {
-        font-weight: 500;
-        color: #003049;
-        text-decoration: none;
-    }
-
-    .custom-text-btn:hover {
-        text-decoration: underline;
-        color: #023e8a;
-    }
-
-    @keyframes fade-in {
-        0% {
-            opacity: 0;
+        .custom-bg {
+            background-image: url('/web-bello/images/palazzo-gradient-1.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 100vh;
         }
 
-        100% {
-            opacity: 1;
+        .custom-signin-btn {
+            width: 100%;
+            color: white;
+            background-color: #003049;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            padding: 0.625rem 1.25rem;
+            text-align: center;
+            outline: none;
         }
-    }
 
-    .landing-content {
-        animation: fade-in 2s ease-in-out;
-    }
+        .custom-signin-btn:hover {
+            background-color: #023e8a;
+        }
+
+        .custom-signin-btn:focus {
+            outline-width: 4px;
+            outline-color: #caf0f8;
+        }
+
+        .custom-text-btn {
+            font-weight: 500;
+            color: #003049;
+            text-decoration: none;
+        }
+
+        .custom-text-btn:hover {
+            text-decoration: underline;
+            color: #023e8a;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .landing-content {
+            animation: fade-in 2s ease-in-out;
+        }
     </style>
 
     <!-- New Landing Page -->
 
     <section class="bg-gray-50 custom-bg">
         <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center ">
-            <div class="landing-content mx-auto max-w-xl text-center rounded-lg shadow bg-white px-16 py-20">
+            <div class="landing-content mx-auto max-w-xl text-center rounded-lg shadow bg-white px-10 py-20">
                 <h1 class=" mb-4 text-4xl font-extrabold tracking-tight text-gray-800">
                     Welcome to Web-Bello!
                 </h1>
@@ -94,13 +94,11 @@ if (isset($_SESSION['IDUSER'])) {
                 </p>
 
                 <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium tracking-wide text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto lg:w-auto xl:w-auto"
-                        href="/web-bello/pages/user-login.php">
+                    <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium tracking-wide text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto lg:w-auto xl:w-auto" href="/web-bello/pages/user-login.php">
                         Resident
                     </a>
 
-                    <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium tracking-wide text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto lg:w-auto xl:w-auto"
-                        href="/web-bello/pages/index.php">
+                    <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium tracking-wide text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto lg:w-auto xl:w-auto" href="/web-bello/pages/index.php">
                         Admin
                     </a>
                     <p class="text-sm font-light text-gray-500">
