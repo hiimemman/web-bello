@@ -87,18 +87,18 @@ if (isset($_SESSION['IDUSER'])) {
                     Welcome to Web-Bello!
                 </h1>
 
-                <p class="mt-4 sm:text-xl/tight text-white font-medium">
+                <p class="mt-4 sm:text-xl/tight text-white font-medium tracking-wide">
                     The ultimate hub for homeowners to stay connected and informed! With Web-Bello, you can easily
                     connect with your neighbors, stay informed on the latest news and events, and receive important
                     alerts and notifications.
                 </p>
 
                 <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto" href="/get-started">
+                    <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto md:w-auto" href="/get-started">
                         Resident
                     </a>
 
-                    <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto" href="/about">
+                    <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto md:w-auto" href="/about">
                         Admin
                     </a>
                 </div>
