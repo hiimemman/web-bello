@@ -332,6 +332,23 @@ require_once('../components/navbar.php')
         </div>
     </footer>
     <!-- End of Footer-->
+
+
+    
+<script defer>
+// Show a notification
+Swal.fire({
+  title: 'Welcome back, <?php echo $result[0]['firstname']?>',
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  background: '#00ff00' // Green background color
+});
+
+
+
+    </script>
 </body>
 
 </html>
