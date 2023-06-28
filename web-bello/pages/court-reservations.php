@@ -251,23 +251,23 @@ th.sort-desc::after {
                 <div class="grid gap-4 mb-4 sm:grid-cols-2">
                     <input type ="hidden" name ="idUpdate" id ="idUpdate" >
                     <div>
-                        <label for="firstnameUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
-                        <input type="text" name="firstnameUpdate" id="firstnameUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                        <label for="titleUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+                        <input type="text" name="titleUpdate" id="titleUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                     </div>
 
                     <div>
-                        <label for="lastnameUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last name</label>
-                        <input type="text" name="lastnameUpdate" id="lastnameUpdate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                        <label for="nameUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                        <input type="text" name="nameUpdate" id="nameUpdate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                     </div>
 
                     <div>
-                        <label for="emailUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                        <input type="text" name="emailUpdate" id="emailUpdate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                        <label for="startUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Start Date-Time</label>
+                        <input type="datetime-local" name="startUpdate" id="startUpdate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                     </div>
 
                     <div>
-                        <label for="addressUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
-                        <input type="text" name="addressUpdate" id="addressUpdate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                        <label for="endUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">End Date-Time</label>
+                        <input type="datetime-local" name="endUpdate" id="endUpdate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                     </div>
                     
                     <div>
@@ -275,13 +275,6 @@ th.sort-desc::after {
                         <select id="roleUpdate" name ="roleUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             <option value="admin">Admin</option>
                             <option value="board member">Board member</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="statusUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</label>
-                        <select id="statusUpdate" name ="statusUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                            <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
                         </select>
                     </div>
                 </div>
@@ -356,12 +349,10 @@ const updateHoaInformation = document.querySelector('#updateHoaInformation')
 
 //MODAL FIELDS
 const idUpdate =document.querySelector('#idUpdate')
-const firstnameUpdate =document.querySelector('#firstnameUpdate')
-const lastnameUpdate =document.querySelector('#lastnameUpdate')
-const emailUpdate = document.querySelector('#emailUpdate')
-const addressUpdate = document.querySelector('#addressUpdate')
-const roleUpdate =document.querySelector('#roleUpdate')
-const statusUpdate =document.querySelector('#statusUpdate')
+const titleUpdate =document.querySelector('#titleUpdate')
+const nameUpdate =document.querySelector('#nameUpdate')
+const startUpdate = document.querySelector('#startUpdate')
+const endUpdate = document.querySelector('#endUpdate')
 
 
 //Onload
@@ -454,7 +445,7 @@ updateHoaInformation.addEventListener('submit', async (event) =>{
 // }
 
 //fetch data
-const request =  await fetch("../api/hoa/update-hoa.php",{
+const request =  await fetch("../api/reservation/update-reserve.php",{
     method: "POST",
     body:formData,
   });
