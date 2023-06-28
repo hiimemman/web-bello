@@ -548,13 +548,10 @@ updateHiddenButton.click()
 
 //set the value of input fields
 idUpdate.value = user.id;
-firstnameUpdate.value = user.firstname;
-lastnameUpdate.value = user.lastname;
-emailUpdate.value = user.email;
-addressUpdate.value = user.address;
-roleUpdate.value = user.role;
-statusUpdate.value = user.status;
-
+titleUpdate.value = user.title;
+nameUpdate.value = user.reserved_by;
+startUpdate.value = user.start_date;
+endUpdate.value = user.end_date;
 }
 
 
