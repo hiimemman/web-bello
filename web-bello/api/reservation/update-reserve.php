@@ -18,7 +18,7 @@ try{
 
    
     
-    exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Forum updated succesfully!')));
+    exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Reservation updated succesfully!')));
 
 }catch(Exception $e){
     exit(json_encode(array("responseStatus" =>'error', "responseContent" =>$e->getMessage(), "responseMessage" =>'Update failed error:!')));

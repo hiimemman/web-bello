@@ -24,11 +24,11 @@ try{
 
     $result = mysqli_fetch_all($sqlGet, MYSQLI_ASSOC);
 
-    exit(json_encode(array("responseStatus" =>'success', "responseContent" =>$result, "responseMessage" =>'Forum has been added succesfully!')));
+    exit(json_encode(array("responseStatus" =>'success', "responseContent" =>$result, "responseMessage" =>'Reservation slot has been added succesfully!')));
 
   
 }catch(Exception $e){
-    exit(json_encode(array("responseStatus" =>'error', "responseContent" =>$e->getMessage(), "responseMessage" =>'Adding new home owner failed error:!')));
+    exit(json_encode(array("responseStatus" =>'error', "responseContent" =>$e->getMessage(), "responseMessage" =>'Adding new reservation failed error:!')));
 }
 
 
