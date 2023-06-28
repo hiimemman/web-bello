@@ -257,7 +257,7 @@ th.sort-desc::after {
             
             <form action="#" id ="updateHoaInformation">
                 
-                   <div class="grid gap-4 mb-4 sm:grid-cols-2">
+              
                     <input type ="hidden" name ="idUpdate" id ="idUpdate" >
                     <div>
                         <label for="balanceUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Balance</label>
@@ -277,7 +277,7 @@ th.sort-desc::after {
                             <option value="unpaid">Unpaid</option>
                         </select>
                     </div>
-                </div>
+               
                 <div class="flex items-center">
                     <button type="submit" class="w-full focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 ">
                         Update 
