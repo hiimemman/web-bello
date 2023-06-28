@@ -2,10 +2,20 @@
 require_once('../components/navbarDashboard.php')
 ?>
 
-<link href="../node_modules/toastr/toastr.scss" rel="stylesheet"/>
-<script type ="module" src="../node_modules/toastr/toastr.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 <script>
-  toastr.info('Are you the 6 fingered man?')
+ // Initialize Toastr
+toastr.options = {
+  positionClass: 'toast-top-right', // Set the position of the notification
+  closeButton: true, // Show a close button
+  progressBar: true // Show a progress bar
+};
+
+// Show a notification
+toastr.success('Hello, Toastr!');
 </script>
 <style>
     th {
