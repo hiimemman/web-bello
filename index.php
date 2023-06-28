@@ -94,21 +94,21 @@ if (isset($_SESSION['IDUSER'])) {
                 </p>
 
                 <div class="mt-8 flex flex-wrap justify-center gap-4 bg-white rounded-lg shadow dark:border">
-                    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                        <h1
-                            class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                            Help us direct you to the right login.
-                        </h1>
-                        <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto"
-                            href="/get-started">
-                            Resident
-                        </a>
 
-                        <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto"
-                            href="/about">
-                            Admin
-                        </a>
-                    </div>
+                    <h1
+                        class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        Help us direct you to the right login.
+                    </h1>
+                    <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto"
+                        href="/get-started">
+                        Resident
+                    </a>
+
+                    <a class="block w-full rounded bg-sky-950 px-12 py-3 text-sm font-medium text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto"
+                        href="/about">
+                        Admin
+                    </a>
+
 
                 </div>
             </div>
