@@ -100,6 +100,10 @@ require_once('../components/navbar.php')
                     <input type="text" name="title" id="title" class="form-control" required>
                 </div>
                 <div class="form-group">
+                    <label for="reserved_by">Name:</label>
+                    <input type="text" name="title" id="title" class="form-control" required>
+                </div>
+                <div class="form-group">
                     <label for="start_date">Start Date:</label>
                     <input type="datetime-local" name="start_date" id="start_date" class="form-control" required>
                 </div>
@@ -319,6 +323,7 @@ require_once('../components/navbar.php')
                                 alert("Event reserved successfully.");
                                 // Clear the form
                                 document.getElementById("title").value = "";
+                                document.getElementById("received_by").value = "";
                                 document.getElementById("start_date").value = "";
                                 document.getElementById("end_date").value = "";
                             } else {
