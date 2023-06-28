@@ -360,24 +360,6 @@ if (!isset($_SESSION['IDUSER'])) {
     </script>
 
 
-<script defer>
-// Show a notification
-Swal.fire({
-  title: 'Welcome back, <?php echo $result[0]['firstname']?>',
-  toast: true,
-  position: 'top-end',
-  showConfirmButton: false,
-  timer: 3000,
-  iconHtml: '<i class="fas fa-check-circle"></i>',
-  customClass: {
-    popup: 'swal2-toast-background-green',
-    title: 'swal2-toast-title'
-  }
-});
-
-
-
-    </script>
 </body>
 
 </html>
