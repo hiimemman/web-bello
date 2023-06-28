@@ -81,7 +81,7 @@ if (isset($_SESSION['IDUSER'])) {
     <!-- New Landing Page -->
 
     <section class="bg-gray-50 custom-bg">
-        <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+        < class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
             <div class="mx-auto max-w-xl text-center">
                 <h1 class="landing-content mb-4 text-5xl font-extrabold tracking-tight text-white">
                     Welcome to Web-Bello!
@@ -108,33 +108,33 @@ if (isset($_SESSION['IDUSER'])) {
 
             <!-- test -->
 
-            <div class="landing-content">
-                <div
-                    class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                        <h1
-                            class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                            Sign in to your account
-                        </h1>
 
-                        <div class="space-y-4 md:space-y-6">
-                            <a href="/web-bello/pages/user-login.php">
-                                <button type="submit" class="custom-signin-btn">
-                                    Click here
-                                </button>
-                            </a>
+            <div
+                class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <h1
+                        class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        Sign in to your account
+                    </h1>
 
-                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                                Or <a href="/web-bello/pages/index.php" class="custom-text-btn">Log in</a> as
-                                administrator.
-                            </p>
-                        </div>
+                    <div class="space-y-4 md:space-y-6">
+                        <a href="/web-bello/pages/user-login.php">
+                            <button type="submit" class="custom-signin-btn">
+                                Click here
+                            </button>
+                        </a>
+
+                        <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                            Or <a href="/web-bello/pages/index.php" class="custom-text-btn">Log in</a> as
+                            administrator.
+                        </p>
                     </div>
                 </div>
             </div>
 
+
             <!-- end of test -->
-        </div>
+            </div>
     </section>
 
     <!-- End of New Landing Page -->
