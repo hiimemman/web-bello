@@ -368,11 +368,7 @@ Swal.fire({
   position: 'top-end',
   showConfirmButton: false,
   timer: 3000,
-  iconHtml: '<i class="fas fa-check-circle"></i>',
-  customClass: {
-    popup: 'swal2-toast-background-green',
-    title: 'swal2-toast-title'
-  }
+  background: '#00ff00' // Green background color
 });
 
 
