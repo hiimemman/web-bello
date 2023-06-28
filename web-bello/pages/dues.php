@@ -2,6 +2,11 @@
 require_once('../components/navbarDashboard.php')
 ?>
 
+<link href="../node_modules/toastr/toastr.scss" rel="stylesheet"/>
+<script type ="module" src="../node_modules/toastr/toastr.js"></script>
+<script>
+  toastr.info('Are you the 6 fingered man?')
+</script>
 <style>
     th {
   cursor: pointer;

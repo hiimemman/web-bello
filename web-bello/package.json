@@ -6,6 +6,7 @@
     "autoprefixer": "^10.4.14",
     "chart.js": "^4.3.0",
     "flowbite": "^1.6.5",
-    "postcss": "^8.4.23"
+    "postcss": "^8.4.23",
+    "toastr": "^2.1.4"
   }
 }
