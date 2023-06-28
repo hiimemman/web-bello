@@ -550,8 +550,8 @@ updateHiddenButton.click()
 idUpdate.value = user.id;
 titleUpdate.value = user.title;
 nameUpdate.value = user.reserved_by;
-startUpdate.value = user.start_date;
-endUpdate.value = user.end_date;
+// startUpdate.value = user.start_date;
+// endUpdate.value = user.end_date;
 }
 
 
