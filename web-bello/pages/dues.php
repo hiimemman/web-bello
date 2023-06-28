@@ -257,14 +257,19 @@ th.sort-desc::after {
             
             <form action="#" id ="updateHoaInformation">
                 
-                <div class="grid gap-4 mb-4 sm:grid-cols-2">
+                   <div class="grid gap-4 mb-4 sm:grid-cols-2">
                     <input type ="hidden" name ="idUpdate" id ="idUpdate" >
                     <div>
                         <label for="balanceUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Balance</label>
-                        <input type="text" name="balanceUpdate" id="balanceUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                        <input type="text" disabled name="balanceUpdate" id="balanceUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                    </div>
+                    
+                    
+                    <div>
+                        <label for="totalPaymentUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Total Payment</label>
+                        <input type="text" disabled name="totalPaymentUpdate" id="totalPaymentUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                     </div>
 
-                   
                     <div>
                         <label for="statusUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</label>
                         <select id="statusUpdate" name ="statusUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
@@ -349,6 +354,7 @@ const idUpdate =document.querySelector('#idUpdate')
 const statusUpdate =document.querySelector('#statusUpdate')
 const amountUpdateFix = document.querySelector('#amountUpdateFix')
 const balanceUpdate = document.querySelector('#balanceUpdate')
+const totalPaymentUpdate = document.querySelector('#totalPaymentUpdate')
 
 //Onload
 window.onload = function(){
@@ -449,6 +455,12 @@ if(response.responseStatus === 'success'){
 updateHoaInformation.addEventListener('submit', async (event) =>{
     event.preventDefault()
     formData = new FormData(updateHoaInformation)
+    let totalPaymentUpdateValue = parseFloat(totalPaymentUpdate.value)
+    let totalBalanceValue = parseFloat(balanceUpdate)
+
+    totalBalanceValue =totalBalanceValue - totalPaymentUpdateValue
+
+    formData.append('balanceUpdate', totalBalanceValue)
     // uncomment this to print all the content of formData
     for (const [key, value] of formData.entries()) {
   console.log(`${key}: ${value}`);
@@ -568,6 +580,7 @@ idUpdate.value = content.payment_id;
 amountUpdateFix.value = content.amount;
 statusUpdate.value = content.status;
 balanceUpdate.value = content.balance;
+
 }
 
 

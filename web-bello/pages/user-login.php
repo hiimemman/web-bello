@@ -183,49 +183,98 @@ if (isset($_SESSION['IDUSER'])) {
 
 
 
-    <!-- Old Login -->
+    <!-- New resident login page design -->
 
-    <div class="flex justify-center items-center h-screen custom-bg">
+    <div class="bg-white">
+        <div class="flex justify-center h-screen">
+            <div class="hidden bg-cover lg:block lg:w-2/3 custom-bg">
+                <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-70">
+                    <div>
+                        <h2 class="drop-shadow text-2xl font-bold text-white sm:text-3xl">
+                            Sign in to access your account
+                        </h2>
 
-        <form class="w-96 p-5 bg-gray-100 rounded-lg" id="frmLogin" action="#">
-            <a href="https://web-bello.online/">
-                <i class="fas fa-home home-icon"></i>
-            </a>
-
-            <div class="text-center text-gray-900"><strong>Login to your account</strong></div>
-            <div id="errorDiv">
-
-            </div>
-            <div class="mt-3">
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
-                <input type="text" id="email"
-                    class="bg-gray-50 border border-gray-500 text-gray-900 placeholder-gray-700 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-gray-100 dark:border-gray-400"
-                    placeholder="sample@gmail.com" required>
-                <p class="mt-2 text-sm text-gray-600 dark:text-gray-500 hidden"><span class="font-medium">Oops!</span>
-                    Username already taken!</p>
-            </div>
-            <div class="mt-3 relative">
-                <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
-                <input type="password" id="password"
-                    class="bg-gray-50 border border-gray-500 text-gray-900 placeholder-gray-700 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-gray-100 dark:border-gray-400"
-                    required>
-                <div class="flex items-center mt-2">
-                    <input type="checkbox" id="show-password" class="mr-2" onclick="togglePassword()">
-                    <label for="show-password" class="text-sm text-gray-900 font-medium cursor-pointer">Show
-                        password</label>
+                        <p class="drop-shadow max-w-xl mt-3 text-white tracking-wide">
+                            Stay connected and informed within your homeowner association.
+                            Login to your resident account and access important updates,
+                            announcements, and resident-only features.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <button type="submit" class="custom-signin-btn mt-4">Log
-                In</button>
-            <button data-modal-target="defaultModal" data-modal-toggle="defaultModal"
-                class="text-blue-500 hover:text-blue-700 focus:outline-none" type="button">
 
-                Forgot password?
-            </button>
-        </form>
+            <div class="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
+                <div class="flex-1">
+                    <div class="text-center">
+                        <div class="flex justify-center mx-auto">
+                            <h2 class="drop-shadow text-lg tracking-wider font-medium text-gray-900">
+                                WEB-BELLO
+                            </h2>
+                        </div>
 
+                        <p class="mt-3 text-gray-500">Sign in to access your account</p>
+                    </div>
 
+                    <div class="mt-8 mx-6">
+                        <form id="frmLogin" action="#">
+                            <div>
+                                <label for="email" class="block mb-2 text-sm text-gray-600">Email Address</label>
+                                <input type="email" name="email" id="email" placeholder="example@gmail.com"
+                                    class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-lg focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                                    required />
+                            </div>
+
+                            <div class="mt-6">
+                                <div class="flex justify-between mb-2">
+                                    <label for="password" class="text-sm text-gray-600">Password</label>
+                                    <button data-modal-target="defaultModal" data-modal-toggle="defaultModal"
+                                        type="button" href="#"
+                                        class="tracking-wide text-sm text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline">
+                                        Forgot password?
+                                    </button>
+                                </div>
+
+                                <input type="password" name="password" id="password" placeholder="Your Password"
+                                    class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                                    required />
+
+                                <!-- If wrong email or password is typed -->
+                                <div id="errorDiv"></div>
+                                <!-- End of If wrong email or password is typed -->
+
+                                <div class="flex items-center mt-2">
+                                    <input type="checkbox" id="show-password" class="mr-2 text-gray-400"
+                                        onclick="togglePassword()" />
+                                    <label for="show-password" class="text-sm text-gray-600 cursor-pointer">Show
+                                        password</label>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <button
+                                    class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-sky-950 rounded-lg hover:bg-sky-800 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+                                    type="submit">
+                                    Sign in
+                                </button>
+                            </div>
+                        </form>
+
+                        <a href="https://web-bello.online/"
+                            class="flex items-center text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline mt-2 text-sm text-center tracking-wide"><svg
+                                class="h-3 w-3 inline-flex me-1" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
+                            </svg>Click here to go back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- End of new resident login page design -->
+
+
 
 
     <!-- Main modal -->
