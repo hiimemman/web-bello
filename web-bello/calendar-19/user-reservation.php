@@ -15,10 +15,6 @@ if (!isset($_SESSION['IDUSER'])) {
 }
 ?>
 
-<?php
-require_once('../components/navbar.php')
-?>
-
 <!doctype html>
 <html lang="en">
 

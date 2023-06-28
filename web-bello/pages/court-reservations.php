@@ -124,11 +124,10 @@ th.sort-desc::after {
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id ="tblHOA">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Full Name</th>
-                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Email</th>
-                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Role</th>
-                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Address</th>
-                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Status</th>
+                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Title</th>
+                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Name</th>
+                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Start Date-Time</th>
+                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">End Date-Time</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Date Created</th>
                             <th scope="col" class="px-4 py-3">
                                 <span class="sr-only">Actions</span>
