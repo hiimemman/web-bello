@@ -81,8 +81,8 @@ if (isset($_SESSION['IDUSER'])) {
     <!-- New Landing Page -->
 
     <section class="bg-gray-50 custom-bg">
-        <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center bg-gray-300">
-            <div class="mx-auto max-w-xl text-center">
+        <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center ">
+            <div class="mx-auto max-w-xl text-center bg-gray-200">
                 <h1 class="landing-content mb-4 text-5xl font-extrabold tracking-tight text-white">
                     Welcome to Web-Bello!
                 </h1>
