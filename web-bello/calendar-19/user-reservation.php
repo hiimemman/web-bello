@@ -133,7 +133,7 @@ require_once('../components/navbar.php')
             editable: true,
             eventLimit: true, // allow "more" link when too many events,
             events: {
-                url: '../api/reservation/add-reservation.php',
+                url: '../api/reservation/all-reservation.php',
                 method: 'POST',
                 extraParams: {
                     user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
