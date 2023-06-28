@@ -173,8 +173,8 @@ if (!isset($_SESSION['IDUSER'])) {
                         <a href="/web-bello/pages/monthly-due.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Manage dues
                         </a>
-                        <a href="../api/login/logout.php" class="nav-link text-sm font-semibold leading-6 hover:text-gray-900 dark:hover:text-white text-gray-400 dark:text-gray-400 flex items-center">
-                            <span class="mr-10">Sign out</span>
+                        <a href="../api/login/logout.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <span>Sign out</span>
                         </a>
                     </div>
                 </div>
