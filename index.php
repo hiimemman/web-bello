@@ -82,8 +82,8 @@ if (isset($_SESSION['IDUSER'])) {
 
     <section class="bg-gray-50 custom-bg">
         <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
-            <div class="mx-auto max-w-xl text-center">
-                <h1 class="landing-content mb-4 text-5xl font-extrabold tracking-tight text-white">
+            <div class="mx-auto max-w-xl text-center bg-white">
+                <h1 class="landing-content mb-4 text-6xl font-extrabold tracking-tight text-white">
                     Welcome to Web-Bello!
                 </h1>
 
