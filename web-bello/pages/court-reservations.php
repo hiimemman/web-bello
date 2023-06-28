@@ -504,7 +504,7 @@ const deleteModal = async (button) =>{
 
     formData = new FormData();
     formData.append('IdDelete', user.id)
-    const request =  await fetch("../api/hoa/delete-hoa.php",{
+    const request =  await fetch("../api/reservation/delete-reservation.php",{
     method: "POST",
     body:formData,
     });
