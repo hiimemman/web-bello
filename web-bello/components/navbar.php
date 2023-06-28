@@ -39,8 +39,9 @@ if (!isset($_SESSION['IDUSER'])) {
 
 
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0/noty.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0/noty.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+
 
    
     </head>
@@ -356,15 +357,15 @@ if (!isset($_SESSION['IDUSER'])) {
 
 
 <script defer>
- // Initialize Noty
-var n = new Noty({
-  text: 'Hello, Noty!',
-  type: 'success', // Set the notification type (success, error, warning, info)
-  timeout: 3000 // Set the duration the notification will be displayed (in milliseconds)
+// Show a notification
+Swal.fire({
+  title: 'Hello, SweetAlert2!',
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
 });
 
-// Show the notification
-n.show();
 
 
     </script>
