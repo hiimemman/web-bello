@@ -410,7 +410,7 @@ require_once('../components/navbar.php')
         forumMain.innerHTML = content;
 
 
-        const addComment = document.querySelector('#addComment'+forum.id)
+        const addComment = document.querySelector('#addComment')
 
         addComment.addEventListener('submit', async (e) => {
             e.preventDefault();
