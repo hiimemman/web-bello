@@ -10,14 +10,14 @@ $Title = $_POST['titleUpdate'];
 $Name = $_POST['nameUpdate'];
 $Start = $_POST['startUpdate'];
 $End = $_POST['endUpdate'];
-$ImageUrl = $_POST['image_url'];
+
 $Status = $_POST['statusUpdate'];
 
 try{
     
 
 
-    $sql = "UPDATE `tbl_reservation` SET `title` ='$Title', `reserved_by` ='$Name',`start_date` = '$Start', `end_date` = '$End', `image_url` = '$ImageUrl', `status` = '$Status' WHERE `tbl_reservation`.`id` = '$ID';";
+    $sql = "UPDATE `tbl_reservation` SET `title` ='$Title', `reserved_by` ='$Name',`start_date` = '$Start', `end_date` = '$End', `status` = '$Status' WHERE `tbl_reservation`.`id` = '$ID';";
     mysqli_query($con, $sql);
 
    
