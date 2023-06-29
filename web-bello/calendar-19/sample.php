@@ -89,66 +89,105 @@ require_once('../components/navbar.php')
         }
     </style>
 
-     <!-- Modal -->
-     <div id="addScheduleModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <form id="scheduleForm">
-                <h1>Schedule an Event</h1>
-                <div class="form-group">
-                    <label for="title">Title:</label>
-                    <input type="text" name="title" id="title" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="reserved_by">Name:</label>
-                    <input type="text" name="title" id="title" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="start_date">Start Date:</label>
-                    <input type="datetime-local" name="start_date" id="start_date" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="end_date">End Date:</label>
-                    <input type="datetime-local" name="end_date" id="end_date" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Schedule Event</button>
-                </div>
-            </form>
-        </div>
-    </div>
+<!-- Modal -->
+<div id="addScheduleModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <form id="scheduleForm">
+      <h1>Schedule an Event</h1>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="reserved_by">Name:</label>
+        <input type="text" name="reserved_by" id="reserved_by" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="start_date">Start Date:</label>
+        <input type="datetime-local" name="start_date" id="start_date" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="end_date">End Date:</label>
+        <input type="datetime-local" name="end_date" id="end_date" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Schedule Event</button>
+      </div>
+    </form>
+  </div>
+</div>
 
-    <style>
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.6);
-        }
+<style>
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
 
-        .modal-content {
-            position: relative;
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border-radius: 5px;
-            width: 400px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
 
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-        }
-    </style>
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #aaa;
+  }
+
+  .modal-close:hover {
+    color: #555;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+
     <script>
         // Close the modal when the close button (X) is clicked
         document.addEventListener('DOMContentLoaded', function() {
