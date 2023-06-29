@@ -72,18 +72,6 @@ require_once('../components/navbar.php')
     </div>
 
     <style>
-         @media (max-width: 768px) {
-    /* CSS code for screens smaller than 768px */
-    #addScheduleBtn {
-      margin-left: 0;
-    }
-  }
-
-  @media (max-width: 576px) {
-    /* CSS code for screens smaller than 576px */
-    .modal-content {
-      width: 100%;
-    }
          html,
   body {
     height: 100%;
@@ -114,7 +102,6 @@ require_once('../components/navbar.php')
             max-width: 800px;
             margin: 0 auto;
         }
-    }
     </style>
 
 <!-- Modal -->
@@ -157,17 +144,6 @@ require_once('../components/navbar.php')
 </div>
 
 <style>
-     @media (max-width: 768px) {
-    /* CSS code for screens smaller than 768px */
-    #addScheduleBtn {
-      margin-left: 0;
-    }
-  }
-  @media (max-width: 576px) {
-    /* CSS code for screens smaller than 576px */
-    .modal-content {
-      width: 100%;
-    }
   /* Modal Styles */
   .modal {
     display: none;
@@ -235,7 +211,6 @@ require_once('../components/navbar.php')
   .btn:hover {
     background-color: #0056b3;
   }
-}
 </style>
 
     <script>
