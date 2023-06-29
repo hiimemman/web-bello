@@ -413,7 +413,7 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
 }
 
 //fetch data
-  const request =  await fetch("../api/reservation/add-reservation.php",{
+  const request =  await fetch("../api/reservation/add-admin-reservation.php",{
     method: "POST",
     body:formData,
   });

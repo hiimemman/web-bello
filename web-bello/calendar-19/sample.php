@@ -333,7 +333,6 @@ require_once('../components/navbar.php')
 
                 // Retrieve form data
                 let title = document.getElementById("title").value;
-                let reserved_by = document.getElementById("reserved_by").value;
                 let start_date = document.getElementById("start_date").value;
                 let end_date = document.getElementById("end_date").value;
 
@@ -364,7 +363,6 @@ require_once('../components/navbar.php')
                                 alert("Event reserved successfully.");
                                 // Clear the form
                                 document.getElementById("title").value = "";
-                                document.getElementById("received_by").value = "";
                                 document.getElementById("start_date").value = "";
                                 document.getElementById("end_date").value = "";
                             } else {
@@ -375,7 +373,7 @@ require_once('../components/navbar.php')
                         }
                     }
                 };
-                xhr.send("title=" + encodeURIComponent(title) + "reserved_by=" + encodeURIComponent(reserved_by) + "&start_date=" + encodeURIComponent(
+                xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(
                     start_date) + "&end_date=" + encodeURIComponent(end_date));
             });
         });
