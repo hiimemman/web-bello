@@ -367,6 +367,7 @@ const nameUpdate =document.querySelector('#nameUpdate')
 const startUpdate = document.querySelector('#startUpdate')
 const endUpdate = document.querySelector('#endUpdate')
 const image_url = document.querySelector('#image_url')
+const imageHolder = document.querySelector('#imageHolder')
 
 
 //Onload
