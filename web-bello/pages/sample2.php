@@ -591,7 +591,7 @@ titleUpdate.value = user.title;
 nameUpdate.value = user.reserved_by;
 startUpdate.value = user.start_date;
 endUpdate.value = user.end_date;
-
+image_url.value = user.image_url;
 statusUpdate.value = user.status;
 }
 
