@@ -351,7 +351,7 @@ require_once('../components/navbar.php')
                 </div>
                 <!-- End of Like Button -->
                 <!-- Comments -->
-                <form id ="addComment">
+                <form id ="addComment`+ forum.id +`">
                     <div id ="commentSection` + forum.id + `">
                 
                     </div>
@@ -397,8 +397,6 @@ require_once('../components/navbar.php')
             </article>
         </div>
     </section>
-
-
     `;
 
         })
@@ -410,7 +408,7 @@ require_once('../components/navbar.php')
         forumMain.innerHTML = content;
 
 
-        const addComment = document.querySelector('#addComment')
+        let addComment = document.querySelector('#addComment' + forum.id)
 
         addComment.addEventListener('submit', async (e) => {
             e.preventDefault();
