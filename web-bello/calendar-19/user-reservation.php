@@ -281,64 +281,105 @@ require_once('../components/navbar.php')
     <script src='fullcalendar/packages/interaction/main.js'></script>
     <script src='fullcalendar/packages/daygrid/main.js'></script>
 
-    document.addEventListener("DOMContentLoaded", function() {
-  // Handle form submission
-  document.getElementById("scheduleForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: ['interaction', 'dayGrid'],
+            defaultDate: '2023-06-12',
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events,
+            events: {
+                url: '../api/reservation/all-reservation.php',
+                method: 'POST',
+                extraParams: {
+                    user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
+                },
+                failure: function(xhr, status, error) {
+                    console.log(xhr.responseText); // Print the error response
+                    alert('Failed to fetch events from the server.' + failure);
+                }
+            }
+        });
+        calendar.render();
+    });
 
-    // Retrieve form data
-    let title = document.getElementById("title").value;
-    let start_date = document.getElementById("start_date").value;
-    let end_date = document.getElementById("end_date").value;
+    document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById("addScheduleModal");
+            var addScheduleBtn = document.getElementById("addScheduleBtn");
+            var closeBtn = document.getElementsByClassName("close")[0];
 
-    // Validate the dates
-    let currentDate = new Date();
-    let startDate = new Date(start_date);
-    if (startDate < currentDate) {
-      alert("Start date should be in the future.");
-      return;
-    }
+            // Open the modal when the button is clicked
+            addScheduleBtn.onclick = function() {
+                modal.style.display = "block";
+            }
 
-    let endDate = new Date(end_date);
-    if (endDate < currentDate) {
-      alert("End date should be in the future.");
-      return;
-    }
+            // Close the modal when the close button is clicked
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
 
-    // Send the data to the server
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "../api/reservation/add-reservation.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          let response = JSON.parse(xhr.responseText);
-          console.log(response);
-          if (response.status === "success") {
-            alert("Event reserved successfully.");
-            // Clear the form
-            document.getElementById("title").value = "";
-            document.getElementById("start_date").value = "";
-            document.getElementById("end_date").value = "";
-          } else {
-            alert("Error: " + response.message);
-          }
-        } else {
-          alert("An error occurred: " + xhr.status);
-        }
-      }
-    };
-    xhr.send(
-      "title=" +
-        encodeURIComponent(title) +
-        "&start_date=" +
-        encodeURIComponent(start_date) +
-        "&end_date=" +
-        encodeURIComponent(end_date)
-    );
-  });
-});
+            // Close the modal when clicked outside of it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
 
+        document.addEventListener("DOMContentLoaded", function() {
+            // Handle form submission
+            document.getElementById("scheduleForm").addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                // Retrieve form data
+                let title = document.getElementById("title").value;
+                let start_date = document.getElementById("start_date").value;
+                let end_date = document.getElementById("end_date").value;
+
+                // Validate the dates
+                let currentDate = new Date();
+                let startDate = new Date(start_date);
+                if (startDate < currentDate) {
+                    alert("Start date should be in the future.");
+                    return;
+                }
+
+                let endDate = new Date(end_date);
+                if (endDate < currentDate) {
+                    alert("End date should be in the future.");
+                    return;
+                }
+
+                // Send the data to the server
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "../api/reservation/add-reservation.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            let response = JSON.parse(xhr.responseText);
+                            console.log(response)
+                            if (response.status === "success") {
+                                alert("Event reserved successfully.");
+                                // Clear the form
+                                document.getElementById("title").value = "";
+                                document.getElementById("start_date").value = "";
+                                document.getElementById("end_date").value = "";
+                            } else {
+                                alert("Error: " + response.message);
+                            }
+                        } else {
+                            alert("An error occurred: " + xhr.status);
+                        }
+                    }
+                };
+                xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(
+                    start_date) + "&end_date=" + encodeURIComponent(end_date));
+            });
+        });
+
+    </script>
 </body>
 
 </html>
