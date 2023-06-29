@@ -128,6 +128,7 @@ th.sort-desc::after {
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Name</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Start Date-Time</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">End Date-Time</th>
+                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Image URL</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Status</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Date Created</th>
                             <th scope="col" class="px-4 py-3">
@@ -210,6 +211,16 @@ th.sort-desc::after {
                         <label for="end_date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">End Date-Time</label>
                         <input type="datetime-local" name="end_date" id="end_date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  required>
                     </div>
+                    <div id ="imageHolder">
+                        
+                        </div>
+                        <div>
+                                                    
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Image</label>
+                            <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="image_url" type="file">
+                            <!--<p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>-->
+    
+                        </div>
                     <button type="submit" class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">Reserve</button>
                    
                 </form>
@@ -268,6 +279,17 @@ th.sort-desc::after {
                             <option value="inactive">Inactive</option>
                         </select>
                     </div>
+
+                    <div id ="imageHolder">
+                        
+                        </div>
+                            <div>
+                                                        
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Image</label>
+                                <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="image_url" type="file">
+                                <!--<p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>-->
+        
+                            </div>
                 </div>
                 <div class="flex items-center">
                     <button type="submit" class="w-full focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 ">
@@ -375,6 +397,7 @@ const loadTable = async function(){
         <td class="px-4 py-3">`+users.reserved_by+`</td>
         <td class="px-4 py-3">`+users.start_date+`</td>
         <td class="px-4 py-3">`+users.end_date+`</td>
+        <td class="px-4 py-3">`+users.image_url+`</td>
         <td class="px-4 py-3">`+user+`</td>
         <td class="px-4 py-3">`+users.date_created+`</td>
         
@@ -583,7 +606,48 @@ const showToast = () => {
 // Call showToast when the page loads
 document.addEventListener('DOMContentLoaded', showToast);
 
+//image move
+image_url.addEventListener('change', async (event) =>{
+ const selectedFile = event.target.files[0];
+    
+// Uploading only one file; multiple uploads are not allowed.
+  let imageFile = event.target.files[0]; 
 
+   // Create a FormData object.
+  formData = new FormData();
+
+  // Add the file to the request.
+  formData.append('profileEdit', imageFile, imageFile.name);
+
+try{
+
+const fetchResponse = await fetch("../api/images/move-only-image.php",{
+    method: "POST",
+    body:formData,
+});
+
+const receivedStatus = await fetchResponse.json();
+console.log(receivedStatus)
+
+if(receivedStatus.statusCode === 200){
+
+let output = ''; 
+output += `
+ <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />
+<img class="m-2 h-auto max-w-xs rounded-lg " src="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" alt="image description">
+`;
+  
+imageHolder.innerHTML = output;
+}else{
+    alert('error')
+}
+ 
+
+
+    }catch (e){
+    console.log(e)
+    }
+})
 
 
 

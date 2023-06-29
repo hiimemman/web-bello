@@ -10,12 +10,13 @@ $Title = $_POST['title'];
 $Name = $_POST['reserved_by'];
 $Start = $_POST['start_date'];
 $End = $_POST['end_date'];
+$ImageUrl = $_POST['image_url'];
 
 try{
     
 
 
-    $sql = "INSERT INTO `tbl_reservation` (`title`,`reserved_by`,`start_date`,`end_date`) VALUES ('$Title','$Name','$Start', '$End');";
+    $sql = "INSERT INTO `tbl_reservation` (`title`,`reserved_by`,`start_date`,`end_date`,`image_url`) VALUES ('$Title','$Name','$Start', '$End', '$ImageUrl');";
     mysqli_query($con, $sql);
 
     //get all if success
