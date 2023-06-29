@@ -391,7 +391,7 @@ require_once('../components/navbar.php')
                     }
                 };
                 xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(
-                    start_date) + "&end_date=" + encodeURIComponent(end_date) + "&image_url=" + encodeURIComponent(image_url));
+                    start_date) + "&end_date=" + encodeURIComponent(end_date) + "&image_url=" + encodeURIComponent(image_url.value));
             });
         });
 
