@@ -395,7 +395,7 @@ document.getElementById("scheduleForm").addEventListener("submit", function(e) {
                 document.getElementById("end_date").value = "";
                 document.getElementById("image_url").value = "";
             } else {
-                alert("Error: " + data.message);
+                console.error("An error occurred:",  + data.message);
             }
         })
         .catch(error => {
