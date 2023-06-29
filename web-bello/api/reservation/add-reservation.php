@@ -9,15 +9,6 @@ $con = connection();
 session_start();
 $userId = $_SESSION['IDUSER'];
 
-function isReservationAllowed ($start, $end){
-    $startTime = strtotime($start);
-    $endTime = strtotime($end);
-    $allowedStartTime = strtotime('07:00 am');
-    $allowedEndTime = strtotime('10:00 pm');
-
-    return ($startTime >= $allowedStartTime && $endTime <= $allowedEndTime);
-
-}
 
 try {
     // Fetch the user's first name and last name from tbl_residents
@@ -41,14 +32,6 @@ try {
     $Start = $_POST['start_date'];
     $End = $_POST['end_date'];
 
-       // Check if the reservation is within the allowed time range
-       if (!isReservationAllowed($_POST['start_date'], $_POST['end_date'])) {
-        exit(json_encode(array(
-            "responseStatus" => 'error',
-            "responseContent" => null,
-            "responseMessage" => 'Reservations are only allowed between 7am and 10pm!'
-        )));
-    }
 
     $sql = "INSERT INTO `tbl_reservation` (`title`, `reserved_by`, `start_date`, `end_date`) VALUES ('$Title', '$Name', '$Start', '$End')";
     mysqli_query($con, $sql);
