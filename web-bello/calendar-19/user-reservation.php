@@ -340,60 +340,65 @@ require_once('../components/navbar.php')
             }
         });
 
-        document.addEventListener("DOMContentLoaded", function() {
-            // Handle form submission
-            document.getElementById("scheduleForm").addEventListener("submit", function(e) {
-                e.preventDefault();
+        // Update the event listener for form submission
+document.getElementById("scheduleForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-                // Retrieve form data
-                let title = document.getElementById("title").value;
-                let start_date = document.getElementById("start_date").value;
-                let end_date = document.getElementById("end_date").value;
-                let image_url = document.getElementById("image_url").value;
+    // Retrieve form data
+    let title = document.getElementById("title").value;
+    let start_date = document.getElementById("start_date").value;
+    let end_date = document.getElementById("end_date").value;
 
-                // Validate the dates
-                let currentDate = new Date();
-                let startDate = new Date(start_date);
-                if (startDate < currentDate) {
-                    alert("Start date should be in the future.");
-                    return;
-                }
+    // Validate the dates
+    let currentDate = new Date();
+    let startDate = new Date(start_date);
+    if (startDate < currentDate) {
+        alert("Start date should be in the future.");
+        return;
+    }
 
-                let endDate = new Date(end_date);
-                if (endDate < currentDate) {
-                    alert("End date should be in the future.");
-                    return;
-                }
+    let endDate = new Date(end_date);
+    if (endDate < currentDate) {
+        alert("End date should be in the future.");
+        return;
+    }
 
-                // Send the data to the server
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", "../api/reservation/add-reservation.php", true);
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status === 200) {
-                            let response = JSON.parse(xhr.responseText);
-                            console.log(response)
-                            if (response.status === "success") {
-                                alert("Event reserved successfully.");
-                                // Clear the form
-                                document.getElementById("title").value = "";
-                                document.getElementById("start_date").value = "";
-                                document.getElementById("end_date").value = "";
-                                document.getElementById("image_url").value = "";
-                                
-                            } else {
-                                alert("Error: " + response.message);
-                            }
-                        } else {
-                            alert("An error occurred: " + xhr.status);
-                        }
-                    }
-                };
-                xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(
-                    start_date) + "&end_date=" + encodeURIComponent(end_date) + "&image_url=" + encodeURIComponent(image_url.value));
-            });
-        });
+    // Get the file input element
+    let imageFile = document.getElementById("image_url").files[0];
+
+    // Create a FormData object
+    let formData = new FormData();
+
+    // Add the form data to the FormData object
+    formData.append("title", title);
+    formData.append("start_date", start_date);
+    formData.append("end_date", end_date);
+    formData.append("image_url", imageFile);
+
+    // Send the data to the server using fetch
+    fetch("../api/reservation/add-reservation.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            alert("Event reserved successfully.");
+            // Clear the form
+            document.getElementById("title").value = "";
+            document.getElementById("start_date").value = "";
+            document.getElementById("end_date").value = "";
+            document.getElementById("image_url").value = "";
+        } else {
+            alert("Error: " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("An error occurred:", error);
+        alert("An error occurred. Please try again.");
+    });
+});
+
 
 
         //image move
