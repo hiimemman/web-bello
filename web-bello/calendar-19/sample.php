@@ -333,6 +333,7 @@ require_once('../components/navbar.php')
 
                 // Retrieve form data
                 let title = document.getElementById("title").value;
+                let reserved_by = document.getElementById("reserved_by").value;
                 let start_date = document.getElementById("start_date").value;
                 let end_date = document.getElementById("end_date").value;
 
