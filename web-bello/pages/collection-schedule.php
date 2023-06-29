@@ -328,12 +328,11 @@ const updateHiddenButton =document.querySelector('#updateHiddenButton')
 const updateHoaInformation = document.querySelector('#updateHoaInformation')
 
 //MODAL FIELDS
+//MODAL FIELDS
 const idUpdate =document.querySelector('#idUpdate')
-const firstnameUpdate =document.querySelector('#firstnameUpdate')
-const lastnameUpdate =document.querySelector('#lastnameUpdate')
-const emailUpdate = document.querySelector('#emailUpdate')
-const addressUpdate = document.querySelector('#addressUpdate')
-const roleUpdate =document.querySelector('#roleUpdate')
+const titleUpdate =document.querySelector('#titleUpdate')
+const startUpdate = document.querySelector('#startUpdate')
+const endUpdate = document.querySelector('#endUpdate')
 const statusUpdate =document.querySelector('#statusUpdate')
 
 
@@ -430,7 +429,7 @@ updateHoaInformation.addEventListener('submit', async (event) =>{
 // }
 
 //fetch data
-const request =  await fetch("../api/hoa/update-hoa.php",{
+const request =  await fetch("../api/schedule/update-sched.php",{
     method: "POST",
     body:formData,
   });
@@ -541,11 +540,10 @@ updateHiddenButton.click()
 
 //set the value of input fields
 idUpdate.value = user.id;
-firstnameUpdate.value = user.firstname;
-lastnameUpdate.value = user.lastname;
-emailUpdate.value = user.email;
-addressUpdate.value = user.address;
-roleUpdate.value = user.role;
+titleUpdate.value = user.title;
+startUpdate.value = user.start_date;
+endUpdate.value = user.end_date;
+
 statusUpdate.value = user.status;
 
 }
