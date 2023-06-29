@@ -39,6 +39,7 @@ try {
     // Get all reservations if successful
     $sqlGet = mysqli_query($con, "SELECT * FROM `tbl_reservation` ORDER BY `date_created` DESC");
     $result = mysqli_fetch_all($sqlGet, MYSQLI_ASSOC);
+    echo '<script>alert("Reservation slot has been sent! Standby for confirmation.");</script>';
 
     exit(json_encode(array(
         "responseStatus" => 'success',
