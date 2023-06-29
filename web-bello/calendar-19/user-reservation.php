@@ -375,6 +375,7 @@ require_once('../components/navbar.php')
                                 document.getElementById("title").value = "";
                                 document.getElementById("start_date").value = "";
                                 document.getElementById("end_date").value = "";
+                                document.getElementById("image_url").value = "";
                             } else {
                                 alert("Error: " + response.message);
                             }
@@ -384,7 +385,7 @@ require_once('../components/navbar.php')
                     }
                 };
                 xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(
-                    start_date) + "&end_date=" + encodeURIComponent(end_date));
+                    start_date) + "&end_date=" + encodeURIComponent(end_date) + "&image_url=" + encodeURIComponent(image_url));
             });
         });
 
