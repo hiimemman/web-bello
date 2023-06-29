@@ -128,7 +128,7 @@ th.sort-desc::after {
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Name</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Start Date-Time</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">End Date-Time</th>
-                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Image URL</th>
+                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Receipt</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Status</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Date Created</th>
                             <th scope="col" class="px-4 py-3">
@@ -364,8 +364,9 @@ const updateHoaInformation = document.querySelector('#updateHoaInformation')
 const idUpdate =document.querySelector('#idUpdate')
 const titleUpdate =document.querySelector('#titleUpdate')
 const nameUpdate =document.querySelector('#nameUpdate')
-// const startUpdate = document.querySelector('#startUpdate')
-// const endUpdate = document.querySelector('#endUpdate')
+const startUpdate = document.querySelector('#startUpdate')
+const endUpdate = document.querySelector('#endUpdate')
+const image_url = document.querySelector('#image_url')
 
 
 //Onload
