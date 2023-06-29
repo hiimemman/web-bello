@@ -1,9 +1,6 @@
 <?php
 session_start(); //if there is no session then start session
-if (isset($_SESSION['IDUSER'])) {
-    header('Location: /web-bello/pages/user-forum.php');
-    exit();
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
