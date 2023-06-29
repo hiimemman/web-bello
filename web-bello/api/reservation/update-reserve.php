@@ -10,6 +10,7 @@ $Title = $_POST['titleUpdate'];
 $Name = $_POST['nameUpdate'];
 $Start = $_POST['startUpdate'];
 $End = $_POST['endUpdate'];
+
 $Status = $_POST['statusUpdate'];
 
 try{

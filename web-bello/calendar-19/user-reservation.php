@@ -40,11 +40,16 @@ require_once('../components/navbar.php')
 </head>
 
 <body>
-    <style>
+    <!-- <style>
     #calendar {
         max-width: 900px;
         margin: 0 auto;
     }
+
+    .calendar-toolbar {
+            display: flex;
+            justify-content: center;
+        }
 
     #calendar .fc-view-container {
         padding: 30px;
@@ -52,12 +57,172 @@ require_once('../components/navbar.php')
         -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
         box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
     }
-    </style>
+    </style> -->
     <div class="content mt-36 mb-12">
+
+        <div class="calendar-toolbar">
+            <!-- <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3">Return to
+                    dashboard</button></a>  -->
+            <button id="addScheduleBtn" style="margin-left: 650px; margin-bottom: 10px;" class="btn btn-primary mr-3">New Reservation</button>
+        </div>
 
         <div id='calendar'>
         </div>
     </div>
+
+    <style>
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .calendar-toolbar {
+            display: flex;
+            justify-content: center;
+        }
+
+        #calendar {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+
+<!-- Modal -->
+<div id="addScheduleModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <form id="scheduleForm">
+      <h1 style="text-align: center;"> <strong>Want to Reserve Palazzo Bello Court?</strong></h1>
+      <h3 style="text-align: center; color: grey; margin-bottom: 10px;">Fill out this form and wait for the admin confirmation. Thank you!</h3>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" class="form-control" required>
+      </div>
+      <!-- <div class="form-group">
+        <label for="reserved_by">Name:</label>
+        <input type="text" name="reserved_by" id="reserved_by" class="form-control" required>
+      </div> -->
+      <div class="form-group">
+        <label for="start_date">Start Date:</label>
+        <input type="datetime-local" name="start_date" id="start_date" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="end_date">End Date:</label>
+        <input type="datetime-local" name="end_date" id="end_date" class="form-control" required>
+      </div>
+      <div class="form-group" id ="imageHolder">
+                        
+      </div>
+            <div class="mb-10">                               
+            <label class="block mb-2" for="file_input"><strong>Payment Receipt</strong></label>
+            <input class="block w-full" style="border: 1px solid #555;" aria-describedby="file_input_help" id="image_url" type="file" required>
+            <!--<p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>-->
+            </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Schedule Event</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #aaa;
+  }
+
+  .modal-close:hover {
+    color: #555;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+    <script>
+        // Close the modal when the close button (X) is clicked
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById("addScheduleModal");
+            var closeBtn = document.getElementsByClassName("modal-close")[0];
+
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+        });
+
+        // Reload the window after scheduling an event
+        document.addEventListener("DOMContentLoaded", function() {
+            var scheduleForm = document.getElementById("scheduleForm");
+
+            scheduleForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+                
+                // Send the data to the server and handle the response
+
+                // Reload the window
+                location.reload();
+            });
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="bg-gray-100">
@@ -126,6 +291,10 @@ require_once('../components/navbar.php')
     <script src='fullcalendar/packages/daygrid/main.js'></script>
 
     <script>
+    const imageHolder = document.querySelector('#imageHolder')
+    const image_url = document.querySelector('#image_url')
+
+
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -147,6 +316,143 @@ require_once('../components/navbar.php')
         });
         calendar.render();
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById("addScheduleModal");
+            var addScheduleBtn = document.getElementById("addScheduleBtn");
+            var closeBtn = document.getElementsByClassName("close")[0];
+
+            // Open the modal when the button is clicked
+            addScheduleBtn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // Close the modal when the close button is clicked
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Close the modal when clicked outside of it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+
+// Update the event listener for form submission
+document.getElementById("scheduleForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Retrieve form data
+    let title = document.getElementById("title").value;
+    let start_date = document.getElementById("start_date").value;
+    let end_date = document.getElementById("end_date").value;
+
+    // Validate the dates
+    let currentDate = new Date();
+    let startDate = new Date(start_date);
+    if (startDate < currentDate) {
+        alert("Start date should be in the future.");
+        return;
+    }
+
+    let endDate = new Date(end_date);
+    if (endDate < currentDate) {
+        alert("End date should be in the future.");
+        return;
+    }
+
+    // Get the file input element
+    let imageFile = document.getElementById("image_url").files[0];
+
+    // Create a FormData object
+    let formData = new FormData();
+
+    // Add the form data to the FormData object
+    formData.append("title", title);
+    formData.append("start_date", start_date);
+    formData.append("end_date", end_date);
+
+    // Read the file content using FileReader
+    let reader = new FileReader();
+    reader.onload = function() {
+        // Append the file content to FormData
+        formData.append("image_url", reader.result);
+
+        // Send the data to the server using fetch
+        fetch("../api/reservation/add-reservation.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                alert("Event reserved successfully.");
+                // Clear the form
+                document.getElementById("title").value = "";
+                document.getElementById("start_date").value = "";
+                document.getElementById("end_date").value = "";
+                document.getElementById("image_url").value = "";
+            } else {
+                console.error("An error occurred:",  + data.message);
+            }
+        })
+        .catch(error => {
+            console.error("An error occurred:", error);
+        });
+    };
+
+    // Read the file as Data URL
+    reader.readAsDataURL(imageFile);
+});
+
+
+
+
+        //image move
+image_url.addEventListener('change', async (event) =>{
+ const selectedFile = event.target.files[0];
+    
+// Uploading only one file; multiple uploads are not allowed.
+  let imageFile = event.target.files[0]; 
+
+   // Create a FormData object.
+  formData = new FormData();
+
+  // Add the file to the request.
+  formData.append('profileEdit', imageFile, imageFile.name);
+
+try{
+
+const fetchResponse = await fetch("../api/images/move-only-image.php",{
+    method: "POST",
+    body:formData,
+});
+
+const receivedStatus = await fetchResponse.json();
+console.log(receivedStatus)
+
+if(receivedStatus.statusCode === 200){
+
+let output = ''; 
+output += `
+ <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />
+<img class="m-2 h-auto max-w-xs rounded-lg " src="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" alt="image description">
+`;
+  
+imageHolder.innerHTML = output;
+}else{
+    alert('error')
+}
+ 
+
+
+    }catch (e){
+    console.log(e)
+    }
+})
+
     </script>
 </body>
 

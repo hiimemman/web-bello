@@ -5,9 +5,10 @@ header('Content-type: application/json');
 include_once("../../connections/connection.php");
 $con = connection();
 
-// Assuming you have a session storing the user's ID
+// session ID
 session_start();
 $userId = $_SESSION['IDUSER'];
+
 
 try {
     // Fetch the user's first name and last name from tbl_residents
@@ -30,13 +31,16 @@ try {
     $Title = $_POST['title'];
     $Start = $_POST['start_date'];
     $End = $_POST['end_date'];
+    $Image = $_POST['image_url'];
+    
 
-    $sql = "INSERT INTO `tbl_reservation` (`title`, `reserved_by`, `start_date`, `end_date`) VALUES ('$Title', '$Name', '$Start', '$End')";
+    $sql = "INSERT INTO `tbl_reservation` (`title`, `reserved_by`, `start_date`, `end_date`, `image_url`) VALUES ('$Title', '$Name', '$Start', '$End', '$Image')";
     mysqli_query($con, $sql);
 
     // Get all reservations if successful
     $sqlGet = mysqli_query($con, "SELECT * FROM `tbl_reservation` ORDER BY `date_created` DESC");
     $result = mysqli_fetch_all($sqlGet, MYSQLI_ASSOC);
+    
 
     exit(json_encode(array(
         "responseStatus" => 'success',
