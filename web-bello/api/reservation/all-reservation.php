@@ -3,7 +3,7 @@ include_once("../../connections/connection.php");
 $con = connection();
 
 // Select all events from the database
-$sql = "SELECT * FROM tbl_reservation";
+$sql = "SELECT * FROM tbl_reservation WHERE status = 'Active'";
 $result = mysqli_query($con, $sql);
 
 // Check if any events were found
