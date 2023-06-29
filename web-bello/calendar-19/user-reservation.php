@@ -400,7 +400,6 @@ document.getElementById("scheduleForm").addEventListener("submit", function(e) {
         })
         .catch(error => {
             console.error("An error occurred:", error);
-            alert("An error occurred. Please try again.");
         });
     };
 
