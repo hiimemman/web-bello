@@ -349,6 +349,7 @@ require_once('../components/navbar.php')
                 let title = document.getElementById("title").value;
                 let start_date = document.getElementById("start_date").value;
                 let end_date = document.getElementById("end_date").value;
+                let image_url = document.getElementById("image_url").value;
 
                 // Validate the dates
                 let currentDate = new Date();
