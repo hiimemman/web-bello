@@ -5,7 +5,7 @@ header('Content-type: application/json');
 include_once("../../connections/connection.php");
 $con = connection();
 
-// Assuming you have a session storing the user's ID
+// session ID
 session_start();
 $userId = $_SESSION['IDUSER'];
 
@@ -31,7 +31,18 @@ try {
     $Title = $_POST['title'];
     $Start = $_POST['start_date'];
     $End = $_POST['end_date'];
+    
+    // Check if the selected start date and time conflict with existing reservations
+    $sqlCheck = "SELECT * FROM `tbl_reservation` WHERE `start_date` = '$Start' AND `end_date` = '$End'";
+    $resultCheck = mysqli_query($con, $sqlCheck);
 
+    if (mysqli_num_rows($resultCheck) > 0) {
+        exit(json_encode(array(
+            "responseStatus" => 'error',
+            "responseContent" => null,
+            "responseMessage" => 'Invalid date and time. Please select a free slot.'
+         )));
+    }
 
     $sql = "INSERT INTO `tbl_reservation` (`title`, `reserved_by`, `start_date`, `end_date`) VALUES ('$Title', '$Name', '$Start', '$End')";
     mysqli_query($con, $sql);
