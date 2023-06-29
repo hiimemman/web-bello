@@ -212,8 +212,8 @@ require_once('../components/navbar.php')
                 var endTime = document.getElementById("end_time").value;
 
                 // Set the allowed start and end times
-                var allowedStartTime = '07:00:00';
-                var allowedEndTime = '22:00:00';
+                var allowedStartTime = '07:00 am';
+                var allowedEndTime = '10:00 pm';
 
                 // Check if the selected start time is before the allowed start time or the end time is after the allowed end time
                 if (startTime < allowedStartTime || endTime > allowedEndTime) {
