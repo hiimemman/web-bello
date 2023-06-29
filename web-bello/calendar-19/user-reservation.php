@@ -40,7 +40,7 @@ require_once('../components/navbar.php')
 </head>
 
 <body>
-<div class="container">
+
     <!-- <style>
     #calendar {
         max-width: 900px;
@@ -469,7 +469,7 @@ imageHolder.innerHTML = output;
 })
 
     </script>
-</div>
+
 </body>
 
 </html>
