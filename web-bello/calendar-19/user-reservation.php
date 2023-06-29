@@ -293,7 +293,7 @@ require_once('../components/navbar.php')
     <script>
     const imageHolder = document.querySelector('#imageHolder')
     const image_url = document.querySelector('#image_url')
-    
+
 
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -379,7 +379,7 @@ require_once('../components/navbar.php')
                                 document.getElementById("title").value = "";
                                 document.getElementById("start_date").value = "";
                                 document.getElementById("end_date").value = "";
-                                document.getElementById("image_url").value = "";
+                                
                             } else {
                                 alert("Error: " + response.message);
                             }
@@ -389,7 +389,7 @@ require_once('../components/navbar.php')
                     }
                 };
                 xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(
-                    start_date) + "&end_date=" + encodeURIComponent(end_date) + "&image_url=" + encodeURIComponent(image_url));
+                    start_date) + "&end_date=" + encodeURIComponent(end_date));
             });
         });
 
