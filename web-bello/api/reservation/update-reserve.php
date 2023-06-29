@@ -10,7 +10,7 @@ $Title = $_POST['titleUpdate'];
 $Name = $_POST['nameUpdate'];
 $Start = $_POST['startUpdate'];
 $End = $_POST['endUpdate'];
-$ImageUrl = $_POST['receipt_url'];
+$ImageUrl = $_POST['receiptUpdate'];
 $Status = $_POST['statusUpdate'];
 
 try{
