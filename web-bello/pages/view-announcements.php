@@ -410,7 +410,12 @@ require_once('../components/navbar.php')
         forumMain.innerHTML = content;
 
 
-        const addComment = document.querySelector('#addComment'+forum.id)
+        const addComments = []; // Array to store addComment variables
+
+// Inside your loop:
+const addComment = document.querySelector('#addComment' + forum.id);
+addComments.push({ forumId: forum.id, element: addComment });
+ment = document.querySelector('#addComment'+forum.id)
 
         addComment.addEventListener('submit', async (e) => {
             e.preventDefault();
