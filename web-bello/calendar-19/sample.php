@@ -63,7 +63,7 @@ require_once('../components/navbar.php')
         <div class="calendar-toolbar">
             <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3">Return to
                     dashboard</button></a> 
-            <button id="addScheduleBtn" style="margin-left: 400px;" class="btn btn-primary mr-3">Add schedule</button>
+            <button id="addScheduleBtn" style="margin-left: 450px;" class="btn btn-primary mr-3">Add schedule</button>
         </div>
 
         <div id='calendar'>
