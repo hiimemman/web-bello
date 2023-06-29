@@ -9,13 +9,14 @@ $con = connection();
 session_start();
 $userId = $_SESSION['IDUSER'];
 
-function isReservationWithinAllowedTime($start, $end) {
+function isReservationAllowed ($start, $end){
     $startTime = strtotime($start);
     $endTime = strtotime($end);
-    $allowedStartTime = strtotime('07:00:00');
-    $allowedEndTime = strtotime('22:00:00');
-    
+    $allowedStartTime = strtotime('07:00 am');
+    $allowedEndTime = strtotime('10:00 pm');
+
     return ($startTime >= $allowedStartTime && $endTime <= $allowedEndTime);
+
 }
 
 try {
@@ -40,23 +41,12 @@ try {
     $Start = $_POST['start_date'];
     $End = $_POST['end_date'];
 
-    // Check if the reservation is within the allowed time range
-    if (!isReservationWithinAllowedTime($Start, $End)) {
+       // Check if the reservation is within the allowed time range
+       if (!isReservationAllowed($_POST['start_date'], $_POST['end_date'])) {
         exit(json_encode(array(
             "responseStatus" => 'error',
             "responseContent" => null,
             "responseMessage" => 'Reservations are only allowed between 7am and 10pm!'
-        )));
-    }
-
-    // Check for conflicting reservations
-    $sqlCheckConflicts = "SELECT * FROM tbl_reservation WHERE (start_date <= '$End' AND end_date >= '$Start') OR (start_date >= '$Start' AND start_date <= '$End')";
-    $resultCheckConflicts = mysqli_query($con, $sqlCheckConflicts);
-    if (mysqli_num_rows($resultCheckConflicts) > 0) {
-        exit(json_encode(array(
-            "responseStatus" => 'error',
-            "responseContent" => null,
-            "responseMessage" => 'There is a conflicting reservation!'
         )));
     }
 
