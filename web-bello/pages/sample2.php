@@ -279,22 +279,16 @@ th.sort-desc::after {
                             <option value="inactive">Inactive</option>
                         </select>
                     </div>
-
-                    <!-- image -->
-                    <div class="grid gap-4 mb-4 sm:grid-cols-2">
-                    <input type ="hidden" name ="idUpdate" id ="idUpdate" >
-                    <input type ="hidden" name ="receipt_url" id ="receipt_url">
-                    <div>
-                        <div id ="imageviewer" >
-                            
+                    <div id ="imageHolder">
+                        
                         </div>
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="receiptInput">Upload a receipt</label>
-                    <input id ="receiptInput" name ="receiptInput" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" type="file">
-                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
-
-                    </div>
-
-                </div>
+                        <div>
+                                                    
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Payment Receipt</label>
+                            <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="image_url" type="file">
+                            <!--<p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>-->
+    
+                        </div>
                 <div class="flex items-center">
                     <button type="submit" class="w-full focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 ">
                         Update 
