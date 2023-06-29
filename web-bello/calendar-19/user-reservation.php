@@ -94,8 +94,8 @@ require_once('../components/navbar.php')
   <div class="modal-content">
     <span class="modal-close">&times;</span>
     <form id="scheduleForm">
-      <h1> <strong>Want to Reserve Palazzo Bello Court?</strong></h1>
-      <h3 style="color: grey; margin-bottom: 10px;">Fill out this form and wait for the admin confirmation. Thank you!</h3>
+      <h1 style="text-align: center;"> <strong>Want to Reserve Palazzo Bello Court?</strong></h1>
+      <h3 style="text-align: center; color: grey; margin-bottom: 10px;">Fill out this form and wait for the admin confirmation. Thank you!</h3>
       <div class="form-group">
         <label for="title">Title:</label>
         <input type="text" name="title" id="title" class="form-control" required>
