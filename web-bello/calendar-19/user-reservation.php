@@ -40,7 +40,6 @@ require_once('../components/navbar.php')
 </head>
 
 <body>
-
     <!-- <style>
     #calendar {
         max-width: 900px;
@@ -72,20 +71,6 @@ require_once('../components/navbar.php')
     </div>
 
     <style>
-         html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
         .content {
             display: flex;
             flex-direction: column;
@@ -469,7 +454,6 @@ imageHolder.innerHTML = output;
 })
 
     </script>
-
 </body>
 
 </html>
