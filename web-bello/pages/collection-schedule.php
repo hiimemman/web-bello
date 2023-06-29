@@ -65,7 +65,7 @@ th.sort-desc::after {
 
                
                 <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                   <button type="button" class="flex: items-center justify-center focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" >New Reservation</button>
+                   <button type="button" class="flex: items-center justify-center focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" >New Official</button>
                     <div class="flex items-center space-x-3 w-full md:w-auto">
                         <!-- <button id="actionsDropdownButton" data-dropdown-toggle="actionsDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
                             <svg class="-ml-1 mr-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -125,10 +125,8 @@ th.sort-desc::after {
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Title</th>
-                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Name</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Start Date-Time</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">End Date-Time</th>
-                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Receipt</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Status</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Date Created</th>
                             <th scope="col" class="px-4 py-3">
@@ -193,15 +191,11 @@ th.sort-desc::after {
                 <span class="sr-only">Close modal</span>
             </button>
             <div class="px-6 py-6 lg:px-8">
-                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">New Reservation</h3>
+                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">New Schedule</h3>
                 <form class="space-y-6" action="#" id ="frmRegisterHOA">
                     <div>
                         <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                         <input type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  required>
-                    </div>
-                    <div>
-                        <label for="reserved_by" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-                        <input type="text" name="reserved_by" id="reserved_by" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  required>
                     </div>
                     <div>
                         <label for="start_date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Start Date-Time</label>
@@ -211,19 +205,9 @@ th.sort-desc::after {
                         <label for="end_date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">End Date-Time</label>
                         <input type="datetime-local" name="end_date" id="end_date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  required>
                     </div>
-                    <div id ="imageHolder">
-                        
-                        </div>
-                        <div>
-                                                    
-                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Payment Receipt</label>
-                            <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="image_url" type="file" required>
-                            <!--<p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>-->
-    
-                        </div>
-                    <div class="flex items-center">
-                    <button type="submit" class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">Reserve</button>
-                    </div>
+                    
+                    <button type="submit" class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">Schedule</button>
+                   
                 </form>
             </div>
         </div>
@@ -240,7 +224,7 @@ th.sort-desc::after {
             <!-- Modal header -->
             <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                    Update Reservation
+                    Update Schedule
                 </h3>
                 <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="updateProductModal">
                     <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -258,12 +242,6 @@ th.sort-desc::after {
                         <label for="titleUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                         <input type="text" name="titleUpdate" id="titleUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                     </div>
-
-                    <div>
-                        <label for="nameUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-                        <input type="text" name="nameUpdate" id="nameUpdate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
-                    </div>
-
                     <div>
                         <label for="startUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Start Date-Time</label>
                         <input type="datetime-local" name="startUpdate" id="startUpdate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
@@ -280,16 +258,6 @@ th.sort-desc::after {
                             <option value="inactive">Inactive</option>
                         </select>
                     </div>
-                    <!-- <div id ="imageHolder">
-                        
-                        </div>
-                        <div>
-                                                    
-                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Payment Receipt</label>
-                            <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="image_url" type="file">
-                            <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
-    
-                        </div> -->
                 <div class="flex items-center">
                     <button type="submit" class="w-full focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 ">
                         Update 
@@ -361,14 +329,12 @@ const updateHoaInformation = document.querySelector('#updateHoaInformation')
 
 //MODAL FIELDS
 const idUpdate =document.querySelector('#idUpdate')
-const titleUpdate =document.querySelector('#titleUpdate')
-const nameUpdate =document.querySelector('#nameUpdate')
-const startUpdate = document.querySelector('#startUpdate')
-const endUpdate = document.querySelector('#endUpdate')
-const image_url = document.querySelector('#image_url')
-const imageHolder = document.querySelector('#imageHolder')
-
-
+const firstnameUpdate =document.querySelector('#firstnameUpdate')
+const lastnameUpdate =document.querySelector('#lastnameUpdate')
+const emailUpdate = document.querySelector('#emailUpdate')
+const addressUpdate = document.querySelector('#addressUpdate')
+const roleUpdate =document.querySelector('#roleUpdate')
+const statusUpdate =document.querySelector('#statusUpdate')
 
 
 //Onload
@@ -379,7 +345,7 @@ window.onload = function(){
 //load table
 const loadTable = async function(){
     //api
-  const getUsers =  await fetch("../api/reservation/all-reserved.php");
+  const getUsers =  await fetch("../api/schedule/all-sched.php");
   const response = await getUsers.json();
     console.log(response)
   if(response.responseStatus === 'OK'){
@@ -390,26 +356,16 @@ const loadTable = async function(){
         let user = '<span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Inactive</span>'
 
         //change the badge color to active if active
-        if(users.status === 'active'){
+        if(users.status === 'Active'){
           user =  '<span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Active</span>'
         }
 
         content += `<tr class="border-b dark:border-gray-700">
-        
-        <td class="px-4 py-3">`+users.title+`</td>
-        <td class="px-4 py-3">`+users.reserved_by+`</td>
+        <td class="px-4 py-3">`+users.title`</td>
         <td class="px-4 py-3">`+users.start_date+`</td>
         <td class="px-4 py-3">`+users.end_date+`</td>
-        <td class="px-4 py-3">
-        <div class="flex-shrink-0 h-10 w-16">
-            <a href="`+users.image_url+`" data-zoomable>
-              <img class="h-10 w-16" src="`+users.image_url+`" alt="Receipt Image">
-            </a>
-        </div>
-        </td>
         <td class="px-4 py-3">`+user+`</td>
-        <td class="px-4 py-3">`+users.date_created+`</td>
-        
+        <td class="px-4 py-3">`+users.created_at+`</td>
         <td class="px-4 py-3 flex items-center justify-end">
         <div class="inline-flex rounded-md shadow-sm" role="group">
             <button id ="btnView`+users.id+`" type="button" data-modal-toggle = "updateProductModal" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border    border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"  data-user='`+JSON.stringify(users)+`' onclick="updateModal(this)" >
@@ -445,7 +401,7 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
 }
 
 //fetch data
-  const request =  await fetch("../api/reservation/add-admin-reservation.php",{
+  const request =  await fetch("../api/schedule/sched.php",{
     method: "POST",
     body:formData,
   });
@@ -474,7 +430,7 @@ updateHoaInformation.addEventListener('submit', async (event) =>{
 // }
 
 //fetch data
-const request =  await fetch("../api/reservation/update-reserve.php",{
+const request =  await fetch("../api/hoa/update-hoa.php",{
     method: "POST",
     body:formData,
   });
@@ -550,7 +506,7 @@ const deleteModal = async (button) =>{
 
     formData = new FormData();
     formData.append('IdDelete', user.id)
-    const request =  await fetch("../api/reservation/delete-reservation.php",{
+    const request =  await fetch("../api/hoa/delete-hoa.php",{
     method: "POST",
     body:formData,
     });
@@ -585,12 +541,13 @@ updateHiddenButton.click()
 
 //set the value of input fields
 idUpdate.value = user.id;
-titleUpdate.value = user.title;
-nameUpdate.value = user.reserved_by;
-startUpdate.value = user.start_date;
-endUpdate.value = user.end_date;
-
+firstnameUpdate.value = user.firstname;
+lastnameUpdate.value = user.lastname;
+emailUpdate.value = user.email;
+addressUpdate.value = user.address;
+roleUpdate.value = user.role;
 statusUpdate.value = user.status;
+
 }
 
 
@@ -616,48 +573,8 @@ const showToast = () => {
 // Call showToast when the page loads
 document.addEventListener('DOMContentLoaded', showToast);
 
-//image move
-image_url.addEventListener('change', async (event) =>{
- const selectedFile = event.target.files[0];
-    
-// Uploading only one file; multiple uploads are not allowed.
-  let imageFile = event.target.files[0]; 
-
-   // Create a FormData object.
-  formData = new FormData();
-
-  // Add the file to the request.
-  formData.append('profileEdit', imageFile, imageFile.name);
-
-try{
-
-const fetchResponse = await fetch("../api/images/move-only-image.php",{
-    method: "POST",
-    body:formData,
-});
-
-const receivedStatus = await fetchResponse.json();
-console.log(receivedStatus)
-
-if(receivedStatus.statusCode === 200){
-
-let output = ''; 
-output += `
- <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />
-<img class="m-2 h-auto max-w-xs rounded-lg " src="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" alt="image description">
-`;
-  
-imageHolder.innerHTML = output;
-}else{
-    alert('error')
-}
- 
 
 
-    }catch (e){
-    console.log(e)
-    }
-})
 
 
 </script>
