@@ -206,6 +206,21 @@ require_once('../components/navbar.php')
 
             scheduleForm.addEventListener("submit", function(e) {
                 e.preventDefault();
+
+                // Get the selected start and end times
+                var startTime = document.getElementById("start_time").value;
+                var endTime = document.getElementById("end_time").value;
+
+                // Set the allowed start and end times
+                var allowedStartTime = '07:00';
+                var allowedEndTime = '22:00';
+
+                // Check if the selected start time is before the allowed start time or the end time is after the allowed end time
+                if (startTime < allowedStartTime || endTime > allowedEndTime) {
+                alert("Please choose a start time between 07:00 am and 10:00 pm.");
+                return; // Stop the form submission
+            }
+
                 // Send the data to the server and handle the response
 
                 // Reload the window
