@@ -95,7 +95,7 @@ require_once('../components/navbar.php')
     <span class="modal-close">&times;</span>
     <form id="scheduleForm">
       <h1 style="text-align: center;"> <strong>Want to Reserve Palazzo Bello Court?</strong></h1>
-      <h3 style="text-align: center; color: grey; margin-bottom: 10px;">Fill out this form and wait for the admin confirmation. Thank you!</h3>
+      <h3 style="text-align: center; color: grey; margin-bottom: 10px;">Fill out this form, pay the amount to reserve and wait for the admin confirmation. Thank you!</h3>
       <div class="form-group">
         <label for="title">Title:</label>
         <input type="text" name="title" id="title" class="form-control" required>
@@ -116,7 +116,7 @@ require_once('../components/navbar.php')
                         
       </div>
             <div class="mb-10">                               
-            <label class="block mb-2" for="file_input"><strong>Payment (P100):</strong><span style="color: teal;">Gcash/Paymaya: 09123456789</span></label>
+            <label class="block mb-2" for="file_input"><strong>Payment (P100):&nbsp;</strong><span style="color: teal;">Gcash/Paymaya: 09123456789</span></label>
             <input class="block w-full" style="border: 1px solid #555;" aria-describedby="file_input_help" id="image_url" type="file" required>
             <!--<p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>-->
             </div>
