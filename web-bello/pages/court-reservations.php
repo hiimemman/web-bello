@@ -128,6 +128,7 @@ th.sort-desc::after {
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Name</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Start Date-Time</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">End Date-Time</th>
+                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Status</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Date Created</th>
                             <th scope="col" class="px-4 py-3">
                                 <span class="sr-only">Actions</span>
@@ -356,6 +357,10 @@ const loadTable = async function(){
         //by default inactive
         let user = '<span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Inactive</span>'
 
+        //change the badge color to active if active
+        if(users.status === 'active'){
+          user =  '<span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Active</span>'
+        }
 
         content += `<tr class="border-b dark:border-gray-700">
         
@@ -363,7 +368,9 @@ const loadTable = async function(){
         <td class="px-4 py-3">`+users.reserved_by+`</td>
         <td class="px-4 py-3">`+users.start_date+`</td>
         <td class="px-4 py-3">`+users.end_date+`</td>
+        <td class="px-4 py-3">`+user+`</td>
         <td class="px-4 py-3">`+users.date_created+`</td>
+        
         <td class="px-4 py-3 flex items-center justify-end">
         <div class="inline-flex rounded-md shadow-sm" role="group">
             <button id ="btnView`+users.id+`" type="button" data-modal-toggle = "updateProductModal" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border    border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"  data-user='`+JSON.stringify(users)+`' onclick="updateModal(this)" >
