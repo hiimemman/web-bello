@@ -399,7 +399,13 @@ const loadTable = async function(){
         <td class="px-4 py-3">`+users.reserved_by+`</td>
         <td class="px-4 py-3">`+users.start_date+`</td>
         <td class="px-4 py-3">`+users.end_date+`</td>
-        <td class="px-4 py-3">`+users.image_url+`</td>
+        <td class="px-4 py-3">
+        <div class="flex-shrink-0 h-10 w-16">
+            <a href="`+users.image_url+`" data-zoomable>
+              <img class="h-10 w-16" src="`+users.image_url+`" alt="Receipt Image">
+            </a>
+        </div>
+        </td>
         <td class="px-4 py-3">`+user+`</td>
         <td class="px-4 py-3">`+users.date_created+`</td>
         
