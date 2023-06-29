@@ -340,7 +340,7 @@ require_once('../components/navbar.php')
             }
         });
 
-        // Update the event listener for form submission
+// Update the event listener for form submission
 document.getElementById("scheduleForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -373,31 +373,41 @@ document.getElementById("scheduleForm").addEventListener("submit", function(e) {
     formData.append("title", title);
     formData.append("start_date", start_date);
     formData.append("end_date", end_date);
-    formData.append("image_url", imageFile);
 
-    // Send the data to the server using fetch
-    fetch("../api/reservation/add-reservation.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === "success") {
-            alert("Event reserved successfully.");
-            // Clear the form
-            document.getElementById("title").value = "";
-            document.getElementById("start_date").value = "";
-            document.getElementById("end_date").value = "";
-            document.getElementById("image_url").value = "";
-        } else {
-            alert("Error: " + data.message);
-        }
-    })
-    .catch(error => {
-        console.error("An error occurred:", error);
-        alert("An error occurred. Please try again.");
-    });
+    // Read the file content using FileReader
+    let reader = new FileReader();
+    reader.onload = function() {
+        // Append the file content to FormData
+        formData.append("image_url", reader.result);
+
+        // Send the data to the server using fetch
+        fetch("../api/reservation/add-reservation.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                alert("Event reserved successfully.");
+                // Clear the form
+                document.getElementById("title").value = "";
+                document.getElementById("start_date").value = "";
+                document.getElementById("end_date").value = "";
+                document.getElementById("image_url").value = "";
+            } else {
+                alert("Error: " + data.message);
+            }
+        })
+        .catch(error => {
+            console.error("An error occurred:", error);
+            alert("An error occurred. Please try again.");
+        });
+    };
+
+    // Read the file as Data URL
+    reader.readAsDataURL(imageFile);
 });
+
 
 
 
