@@ -410,7 +410,7 @@ require_once('../components/navbar.php')
         forumMain.innerHTML = content;
 
 
-        const addComment = document.querySelector('#addComment')
+        const addComment = document.querySelector('#addComment'+forum.id)
 
         addComment.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -423,7 +423,7 @@ require_once('../components/navbar.php')
                 })
 
             const response = await request.json()
-
+            
             if (response.responseStatus === 'success') {
 
                 getAllForum()
