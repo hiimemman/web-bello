@@ -115,9 +115,9 @@ require_once('../components/navbar.php')
       <div class="form-group" id ="imageHolder">
                         
       </div>
-            <div>                               
-            <label class="block mb-2" for="file_input">Payment Receipt</label>
-            <input class="block w-full" aria-describedby="file_input_help" id="image_url" type="file" required>
+            <div class="mb-10">                               
+            <label class="block mb-2" for="file_input"><strong>Payment Receipt</strong></label>
+            <input class="block w-full" style="border: 1px solid #555;" aria-describedby="file_input_help" id="image_url" type="file" required>
             <!--<p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>-->
             </div>
 
