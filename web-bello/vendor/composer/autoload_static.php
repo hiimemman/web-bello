@@ -13,6 +13,10 @@ class ComposerStaticInit1963b55ac75a68d199c63bf65b01ba4e
     );
 
     public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Twilio\\' => 7,
+        ),
         'S' => 
         array (
             'SMSGatewayMe\\Client\\' => 20,
@@ -36,14 +40,18 @@ class ComposerStaticInit1963b55ac75a68d199c63bf65b01ba4e
     );
 
     public static $prefixDirsPsr4 = array (
+        'Twilio\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twilio/sdk/src/Twilio',
+        ),
         'SMSGatewayMe\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/smsgatewayme/client/lib',
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (

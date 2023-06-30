@@ -2,7 +2,8 @@
     "require": {
         "phpmailer/phpmailer": "^6.7",
         "clicksend/clicksend-php": "^5.0",
-        "smsgatewayme/client": "^0.0.1"
+        "smsgatewayme/client": "^0.0.1",
+        "twilio/sdk": "^7.5"
     },
     "repositories": [
         {
