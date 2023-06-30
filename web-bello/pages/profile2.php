@@ -26,7 +26,6 @@ if ($result) {
     $Address = $user['address'];
     $Contact = $user['contact'];
     $Email = $user['email'];
-    $Image = $user['image_url'];
 } else {
     echo "Error fetching user data: " . mysqli_error($con);
 }
@@ -85,16 +84,13 @@ require_once('../components/navbar.php')
     </header>
 
     <section>
-        
-
-            <!-- <form action="" method="POST" id ="frmRegisterHOA">
-            <div class="space-y-12">
-                    <div class="border-b border-gray-900/10 pb-12">
-                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6"> -->
-                        <!-- Profile Picture -->
-                        <!-- <div class="sm:col-span-2">
+        <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
+            <form action="../pages/profile.php" method="POST" id="frmUpdateProfile"
+                class="p-12 bg-white rounded-lg border border-gray-200 shadow-md" enctype="multipart/form-data">
+<!-- Profile Picture -->
+<div class="sm:col-span-2" id="frmRegisterHOA">
                         <div class="profile-image" id="imageHolder">
-                            <img src="<?php //echo $Image; ?>" alt="Profile Picture">
+                            <img src="<?php echo $Image; ?>" alt="Profile Picture">
                         </div>
 
                         <div class="mt-4">
@@ -102,37 +98,13 @@ require_once('../components/navbar.php')
                             <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
                         </div>
                         </div>
-                        <div class="sm:col-span-2">
-                        <button type="submit" style="border: 2px solid gray;">
-                            Change Profile</button>
-                        </div>
-                        </div>
-                    </div>
-            </form> -->
-        
-        <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
-            <form action="../api/profile/profile.php" method="POST" id="frmUpdateProfile"
-                class="p-12 bg-white rounded-lg border border-gray-200 shadow-md" enctype="multipart/form-data">
-                <!-- Profile Picture -->
-                <div class="sm:col-span-2" id="frmRegisterHOA">
-                        <div class="profile-image" id="imageHolder">
-                            <img src="<?php echo $Image; ?>" alt="Profile Picture">
-                         </div>
-
-                        <div class="mt-4">
-                            <label for="image_url" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
-                            <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
-                        </div>
-                        </div>
-                        </div>
-
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
-
                         
-
+                        <div class="sm:col-span-2">
+                        </div>
                             <!-- First name -->
                             <div class="sm:col-span-3">
                                 <div class="form-group">
@@ -209,45 +181,27 @@ require_once('../components/navbar.php')
                             </div>
 
                             <!-- Password -->
-<div class="sm:col-span-2">
-  <div class="form-group">
-    <label for="password" class="label block text-sm font-medium leading-6 text-gray-900">Password</label>
-    <div class="relative">
-      <input type="password" name="password" id="password" class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" required>
-      <button type="button" class="password-toggle absolute inset-y-0 right-0 px-2 flex items-center focus:outline-none" onclick="togglePasswordVisibility('password')">
-        <span class="password-icon">Show</span>
-      </button>
-    </div>
-  </div>
-</div>
+                            <div class="sm:col-span-2">
+                                <div class="form-group">
+                                    <label for="password"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Password</label>
+                                    <input type="password" name="password"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
 
-<!-- Confirm Password -->
-<div class="sm:col-span-2">
-  <div class="form-group">
-    <label for="password1" class="label block text-sm font-medium leading-6 text-gray-900">Confirm password</label>
-    <div class="relative">
-      <input type="password" name="password1" id="password1" class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" required>
-      <button type="button" class="password-toggle absolute inset-y-0 right-0 px-2 flex items-center focus:outline-none" onclick="togglePasswordVisibility('password1')">
-        <span class="password-icon">Show</span>
-      </button>
-    </div>
-  </div>
-</div>
-
-<script>
-  function togglePasswordVisibility(inputId) {
-    const passwordInput = document.getElementById(inputId);
-    const passwordToggle = passwordInput.nextElementSibling;
-    if (passwordInput.type === "password") {
-      passwordInput.type = "text";
-      passwordToggle.innerHTML = "Hide";
-    } else {
-      passwordInput.type = "password";
-      passwordToggle.innerHTML = "Show";
-    }
-  }
-</script>
-
+                            <!-- Confirm Password -->
+                            <div class="sm:col-span-2">
+                                <div class="form-group">
+                                    <label for="password1"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Confirm
+                                        password</label>
+                                    <input type="password" name="password1"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -420,7 +374,7 @@ frmUpdateProfile.addEventListener('submit', async (event) => {
         location.reload();
         localStorage.setItem('showToast', 'true');
         localStorage.setItem('showToastMessage', response.responseMessage)
-        window.location.href = "https://web-bello.online/web-bello/pages/sample2.php"
+        window.location.href = "https://web-bello.online/web-bello/pages/profile.php"
 
         // Close the profile window
 
