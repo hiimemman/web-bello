@@ -398,7 +398,6 @@ require_once('../components/navbar.php')
         </div>
     </section>
     `;
-
     console.log(forum.id)
 
 let addComment = document.querySelector('#addComment' + forum.id)
@@ -433,7 +432,7 @@ addComment.addEventListener('submit', async (e) => {
 
 
         forumMain.innerHTML = content;
-      
+
 
 
 
