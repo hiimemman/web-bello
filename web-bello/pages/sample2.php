@@ -113,14 +113,8 @@ require_once('../components/navbar.php')
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
             <form action="../api/profile/profile.php" method="POST" id="frmUpdateProfile"
                 class="p-12 bg-white rounded-lg border border-gray-200 shadow-md" enctype="multipart/form-data">
-
-                <div class="space-y-12">
-                    <div class="border-b border-gray-900/10 pb-12">
-                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-
-
-                        <!-- Profile Picture -->
-                        <div class="sm:col-span-2" id="frmRegisterHOA">
+                <!-- Profile Picture -->
+                <div class="sm:col-span-2" id="frmRegisterHOA">
                         <div class="profile-image" id="imageHolder">
                             <img src="<?php echo $Image; ?>" alt="Profile Picture">
                          </div>
@@ -131,8 +125,15 @@ require_once('../components/navbar.php')
                         </div>
                         </div>
                         </div>
-                        <div class="sm:col-span-2">
-                        </div>
+
+                <div class="space-y-12">
+                    <div class="border-b border-gray-900/10 pb-12">
+                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+
+
+                        
+                        <!-- <div class="sm:col-span-2">
+                        </div> -->
 
                             <!-- First name -->
                             <div class="sm:col-span-3">
