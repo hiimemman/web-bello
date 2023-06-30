@@ -93,8 +93,8 @@ require_once('../components/navbar.php')
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <!-- Profile Picture -->
                         <div class="sm:col-span-2">
-                        <div class="profile-image">
-                            <img src="<?php echo $Image; ?>" id="imageHolder" alt="Profile Picture">
+                        <div class="profile-image" id="imageHolder">
+                            <img src="<?php echo $Image; ?>" alt="Profile Picture">
                         </div>
 
                         <div class="mt-4">
