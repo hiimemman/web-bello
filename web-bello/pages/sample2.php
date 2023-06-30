@@ -45,7 +45,21 @@ require_once('../components/navbar.php')
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
 
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 
 </head>
 
