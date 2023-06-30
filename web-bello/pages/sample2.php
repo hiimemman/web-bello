@@ -89,7 +89,12 @@ require_once('../components/navbar.php')
             <form action="../pages/profile.php" method="POST" id="frmUpdateProfile"
                 class="p-12 bg-white rounded-lg border border-gray-200 shadow-md">
 
-                    <!-- Profile Picture -->
+  
+
+                <div class="space-y-12">
+                    <div class="border-b border-gray-900/10 pb-12">
+                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                                              <!-- Profile Picture -->
                         <div class="sm:col-span-2">
                         <div class="profile-image">
                             <img src="<?php echo $Image; ?>" alt="Profile Picture">
@@ -99,10 +104,6 @@ require_once('../components/navbar.php')
                             <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
                         </div>
                         </div>
-
-                <div class="space-y-12">
-                    <div class="border-b border-gray-900/10 pb-12">
-                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                             <!-- First name -->
                             <div class="sm:col-span-3">
                                 <div class="form-group">
