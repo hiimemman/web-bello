@@ -26,6 +26,7 @@ if ($result) {
     $Address = $user['address'];
     $Contact = $user['contact'];
     $Email = $user['email'];
+    $Image = $user['image_url'];
 } else {
     echo "Error fetching user data: " . mysqli_error($con);
 }
@@ -91,8 +92,8 @@ require_once('../components/navbar.php')
                     <!-- Profile Picture -->
                         <div class="sm:col-span-2">
                         <div class="profile-image">
-                            <img src="../images/about.jpg" alt="Profile Picture">
-                            
+                            <img src="<?php echo $Image; ?>" alt="Profile Picture">
+
                         </div>
                         </div>
 
