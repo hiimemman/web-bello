@@ -207,9 +207,7 @@ if (isset($_SESSION['IDUSER'])) {
                 <div class="flex-1">
                     <div class="text-center">
                         <div class="flex justify-center mx-auto">
-                            <h2 class="drop-shadow text-lg tracking-wider font-medium text-gray-900">
-                                WEB-BELLO
-                            </h2>
+                            <img class="h-28 sm:h-28" src="/web-bello/images/bello-logo-final.png" alt="" />
                         </div>
 
                         <p class="mt-3 text-gray-500">Sign in to access your account</p>
