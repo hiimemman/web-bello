@@ -85,7 +85,7 @@ require_once('../components/navbar.php')
     </header>
 
     <section>
-        <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
+        
 
             <form action="" method="POST" id ="frmRegisterHOA">
             <div class="space-y-12">
