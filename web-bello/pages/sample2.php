@@ -355,36 +355,6 @@ frmUpdateProfile.addEventListener('submit', async (event) => {
 })
 
 
-
-//submit edit hoa
-updateHoaInformation.addEventListener('submit', async (event) => {
-    event.preventDefault()
-    formData = new FormData(updateHoaInformation)
-    // uncomment this to print all the content of formData
-    //     for (const [key, value] of formData.entries()) {
-    //   console.log(`${key}: ${value}`);
-    // }
-
-    //fetch data
-    const request = await fetch("../api/residents/update-residents.php", {
-        method: "POST",
-        body: formData,
-    });
-
-    //get the response
-
-    const response = await request.json();
-
-    if (response.responseStatus === 'success') {
-        //reload table
-        location.reload();
-
-        localStorage.setItem('showToast', 'true');
-        localStorage.setItem('showToastMessage', response.responseMessage)
-    }
-
-})
-
 //toaster 
 const showToast = () => {
     const toast = document.getElementById('toast-success')
