@@ -209,27 +209,45 @@ require_once('../components/navbar.php')
                             </div>
 
                             <!-- Password -->
-                            <div class="sm:col-span-2">
-                                <div class="form-group">
-                                    <label for="password"
-                                        class="label block text-sm font-medium leading-6 text-gray-900">Password</label>
-                                    <input type="password" name="password"
-                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
-                                        required>
-                                </div>
-                            </div>
+<div class="sm:col-span-2">
+  <div class="form-group">
+    <label for="password" class="label block text-sm font-medium leading-6 text-gray-900">Password</label>
+    <div class="relative">
+      <input type="password" name="password" id="password" class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" required>
+      <button type="button" class="password-toggle absolute inset-y-0 right-0 px-2 flex items-center focus:outline-none" onclick="togglePasswordVisibility('password')">
+        <span class="password-icon">Show</span>
+      </button>
+    </div>
+  </div>
+</div>
 
-                            <!-- Confirm Password -->
-                            <div class="sm:col-span-2">
-                                <div class="form-group">
-                                    <label for="password1"
-                                        class="label block text-sm font-medium leading-6 text-gray-900">Confirm
-                                        password</label>
-                                    <input type="password" name="password1"
-                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
-                                        required>
-                                </div>
-                            </div>
+<!-- Confirm Password -->
+<div class="sm:col-span-2">
+  <div class="form-group">
+    <label for="password1" class="label block text-sm font-medium leading-6 text-gray-900">Confirm password</label>
+    <div class="relative">
+      <input type="password" name="password1" id="password1" class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" required>
+      <button type="button" class="password-toggle absolute inset-y-0 right-0 px-2 flex items-center focus:outline-none" onclick="togglePasswordVisibility('password1')">
+        <span class="password-icon">Show</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePasswordVisibility(inputId) {
+    const passwordInput = document.getElementById(inputId);
+    const passwordToggle = passwordInput.nextElementSibling;
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      passwordToggle.innerHTML = "Hide";
+    } else {
+      passwordInput.type = "password";
+      passwordToggle.innerHTML = "Show";
+    }
+  }
+</script>
+
 
                         </div>
                     </div>
