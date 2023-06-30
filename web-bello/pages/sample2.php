@@ -93,7 +93,10 @@ require_once('../components/navbar.php')
                         <div class="sm:col-span-2">
                         <div class="profile-image">
                             <img src="<?php echo $Image; ?>" alt="Profile Picture">
-
+                        </div>
+                        <div class="mt-4">
+                            <label for="image_url" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
+                            <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
                         </div>
                         </div>
 
