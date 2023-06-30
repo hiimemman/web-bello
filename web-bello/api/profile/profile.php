@@ -27,7 +27,7 @@ if ($ID) {
             // Check if the password field is empty
             if($Password == $Password1){
             // $HashPassword = password_hash($Password, PASSWORD_DEFAULT);
-            $sql = "UPDATE `tbl_residents` SET `firstname` = '$Firstname', `lastname` = '$Lastname', `sex` = '$Sex', `age` = '$Age', `address` = '$Address', `contact` = '$Contact', `email` = '$Email', `password` = '$Password', `image_url` = '$Image' WHERE id = '$ID';";
+            $sql = "UPDATE `tbl_residents` SET `firstname` = '$Firstname', `lastname` = '$Lastname', `sex` = '$Sex', `age` = '$Age', `address` = '$Address', `contact` = '$Contact', `email` = '$Email', `password` = '$Password' WHERE id = '$ID';";
             $result = mysqli_query($con, $sql);
 
             exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Updated succesfully!')));
@@ -43,5 +43,35 @@ if ($ID) {
 } else {
     echo "User ID not found in session.";
 }
+
+// Check if a file was uploaded
+if (isset($_FILES['image_url']) && $_FILES['image_url']['error'] === UPLOAD_ERR_OK) {
+    $file = $_FILES['image_url'];
+    
+    // Specify the directory where you want to save the uploaded file
+    $uploadDir = '/savedimages/';
+    
+    // Generate a unique filename for the uploaded file
+    $filename = uniqid() . '_' . $file['name'];
+    
+    // Move the uploaded file to the specified directory
+    if (move_uploaded_file($file['tmp_name'], $uploadDir . $filename)) {
+        // Update the user's profile picture in the database
+        $sql = "UPDATE tbl_residents SET image_url = '$uploadDir$filename' WHERE id = '$ID'";
+        $result = mysqli_query($con, $sql);
+        
+        if ($result) {
+            // Success message
+            echo "Profile picture updated successfully!";
+        } else {
+            // Error message
+            echo "Error updating profile picture: " . mysqli_error($con);
+        }
+    } else {
+        // Error message
+        echo "Error uploading file.";
+    }
+}
+
 
 ?>

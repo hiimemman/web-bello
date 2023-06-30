@@ -86,8 +86,8 @@ require_once('../components/navbar.php')
 
     <section>
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
-            <form action="../pages/profile.php" method="POST" id="frmUpdateProfile"
-                class="p-12 bg-white rounded-lg border border-gray-200 shadow-md">
+            <form action="../pages/sample2.php" method="POST" id="frmUpdateProfile"
+                class="p-12 bg-white rounded-lg border border-gray-200 shadow-md" enctype="multipart/form-data">
 
   
 
@@ -99,9 +99,7 @@ require_once('../components/navbar.php')
                         <div class="profile-image">
                             <img src="<?php echo $Image; ?>" alt="Profile Picture">
                         </div>
-                        <div id="imageHolder">
 
-                        </div>
                         <div class="mt-4">
                             <label for="image_url" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
                             <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
@@ -355,6 +353,7 @@ frmUpdateProfile.addEventListener('submit', async (event) => {
     }
 
 })
+
 
 
 //submit edit hoa
