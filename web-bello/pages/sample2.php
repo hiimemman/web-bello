@@ -126,7 +126,7 @@ require_once('../components/navbar.php')
                          </div> -->
 
                         <div class="mt-4">
-                            <label for="file_input" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
+                            <label for="image_url" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
                             <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
                         </div>
                         </div>
