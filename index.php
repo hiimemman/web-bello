@@ -238,34 +238,14 @@ session_start(); //if there is no session then start session
                 </p>
 
                 <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a class="group relative inline-flex items-center overflow-hidden rounded hover:rounded hover:border-2 hover:border-sky-950 hover:bg-white bg-sky-950 px-14 py-3 text-white hover:text-gray-900 focus:outline-none focus:ring active:bg-indigo-500"
+                    <a class="block w-full rounded bg-sky-950 px-14 py-3 text-lg font-medium tracking-wide text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto lg:w-auto xl:w-auto"
                         href="/web-bello/pages/user-login.php">
-                        <span class="absolute -start-full transition-all group-hover:start-4">
-                            <svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </span>
-
-                        <span class="text-lg font-medium transition-all group-hover:ms-4">
-                            Resident
-                        </span>
+                        Resident
                     </a>
 
-                    <a class="group relative inline-flex items-center overflow-hidden rounded border-2 border-sky-950 hover:bg-sky-950 px-16 py-3 text-gray-900 hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
+                    <a class="block w-full rounded bg-sky-950 px-16 py-3 text-lg font-medium tracking-wide text-white shadow hover:bg-sky-700 focus:outline-none focus:ring sm:w-auto lg:w-auto xl:w-auto"
                         href="/web-bello/pages/index.php">
-                        <span class="absolute -start-full transition-all group-hover:start-4">
-                            <svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </span>
-
-                        <span class="text-lg font-medium transition-all group-hover:ms-4">
-                            Admin
-                        </span>
+                        Admin
                     </a>
                     <p class="text-lg font-light text-gray-900">
                         Please select your appropriate login type to continue.
