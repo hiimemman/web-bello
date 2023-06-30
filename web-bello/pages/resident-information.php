@@ -611,6 +611,8 @@ updateHiddenButton.click()
 idUpdate.value = user.id;
 firstnameUpdate.value = user.firstname;
 lastnameUpdate.value = user.lastname;
+sexUpdate.value = user.sex;
+ageUpdate.value = user.age;
 emailUpdate.value = user.email;
 addressUpdate.value = user.address;
 roleUpdate.value = user.role;
