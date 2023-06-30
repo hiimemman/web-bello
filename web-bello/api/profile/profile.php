@@ -17,7 +17,6 @@ $Contact = $_POST['contact'];
 $Email = $_POST['email'];
 $Password = $_POST['password'];
 $Password1 = $_POST['password1'];
-$Image = $_POST['image_url'];
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
