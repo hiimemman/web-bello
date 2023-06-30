@@ -195,10 +195,10 @@ session_start(); //if there is no session then start session
                 <div class="mt-6 flow-root">
                     <div class="-my-6 divide-y divide-gray-500/10">
                         <div class="space-y-2 py-6">
-                            <a href="/web-bello/pages/user-index.php#about" class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <a href="/web-bello/index.php#about" class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                                 About us
                             </a>
-                            <a href="/web-bello/pages/user-index.php#contact" class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <a href="/web-bello/index.php#contact" class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                                 Contact
                             </a>
                         </div>
@@ -405,13 +405,13 @@ session_start(); //if there is no session then start session
 
                 <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
                     <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/web-bello/pages/user-index.php#about">
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/web-bello/index.php#about">
                             About us
                         </a>
                     </li>
 
                     <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/web-bello/pages/user-index.php#contact">
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/web-bello/index.php#contact">
                             Contact
                         </a>
                     </li>
