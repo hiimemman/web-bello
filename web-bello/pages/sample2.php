@@ -346,7 +346,7 @@ frmUpdateProfile.addEventListener('submit', async (event) => {
         location.reload();
         localStorage.setItem('showToast', 'true');
         localStorage.setItem('showToastMessage', response.responseMessage)
-        window.location.href = "https://web-bello.online/web-bello/pages/user-index.php"
+        window.location.href = "https://web-bello.online/web-bello/pages/profile.php"
 
         // Close the profile window
 
@@ -355,27 +355,10 @@ frmUpdateProfile.addEventListener('submit', async (event) => {
 })
 
 
-//toaster 
-const showToast = () => {
-    const toast = document.getElementById('toast-success')
-    const showToastFlag = localStorage.getItem('showToast')
-    const showToastMessage = localStorage.getItem('showToastMessage')
-    if (showToastFlag === 'true') {
-        const toastMessage = toast.querySelector('.font-normal')
-        toastMessage.textContent = showToastMessage
-        toast.classList.remove('hidden');
-
-        setTimeout(() => {
-            toast.classList.add('hidden');
-            localStorage.removeItem('showToast');
-            localStorage.removeItem('showToastMessage')
-        }, 3000);
-    }
-};
 
 
 // Call showToast when the page loads
-document.addEventListener('DOMContentLoaded', showToast);
+// document.addEventListener('DOMContentLoaded', showToast);
 </script>
 </body>
 
