@@ -399,30 +399,52 @@ require_once('../components/navbar.php')
             forumMain.innerHTML = content;
 
 
-            const addComment = document.querySelector('#addComment')
+            // const addComment = document.querySelector('#addComment')
 
-            addComment.addEventListener('submit', async (e) => {
-                e.preventDefault();
+            // addComment.addEventListener('submit', async (e) => {
+            //     e.preventDefault();
 
-                const formData = new FormData(e.target);
-                const request = await fetch(
-                    'https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php', {
-                        method: 'POST',
-                        body: formData,
-                    })
+            //     const formData = new FormData(e.target);
+            //     const request = await fetch(
+            //         'https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php', {
+            //             method: 'POST',
+            //             body: formData,
+            //         })
 
-                const response = await request.json()
+            //     const response = await request.json()
 
-                if (response.responseStatus === 'success') {
+            //     if (response.responseStatus === 'success') {
 
-                    getAllForum()
-                }
+            //         getAllForum()
+            //     }
 
-                for (const [key, value] of formData.entries()) {
-                    console.log(key, value);
-                }
-            });
+            //     for (const [key, value] of formData.entries()) {
+            //         console.log(key, value);
+            //     }
+            // });
+            const addCommentForms = document.querySelectorAll('[id^="addComment"]');
 
+addCommentForms.forEach((addComment) => {
+    addComment.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const request = await fetch('https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php', {
+            method: 'POST',
+            body: formData,
+        });
+
+        const response = await request.json();
+
+        if (response.responseStatus === 'success') {
+            getAllForum();
+        }
+
+        for (const [key, value] of formData.entries()) {
+            console.log(key, value);
+        }
+    });
+});
 
 
 
