@@ -212,7 +212,6 @@ th.sort-desc::after {
                             <option selected>Choose a role</option>
                             <option value="Admin">Admin</option>
                             <option value="Board member">Board member</option>
-                            <option value="Home owner">Home owner</option>
                             </select>
                     </div>
                     <div>
