@@ -400,7 +400,19 @@ require_once('../components/navbar.php')
     `;
     console.log(forum.id)
 
-let addComment = document.querySelector('#addComment' + forum.id)
+
+
+        })
+
+
+
+
+
+        forumMain.innerHTML = content;
+
+
+
+        let addComment = document.querySelector('#addComment' + forum.id)
 
 addComment.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -423,18 +435,6 @@ addComment.addEventListener('submit', async (e) => {
         console.log(key, value);
     }
 });
-
-
-        })
-
-
-
-
-
-        forumMain.innerHTML = content;
-
-
-
 
 
         response.responseContent.map((forum) => {
