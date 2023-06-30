@@ -400,29 +400,6 @@ require_once('../components/navbar.php')
     `;
     console.log(forum.id)
 
-    let addComment = document.querySelector('#addComment' + forum.id)
-
-addComment.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-    const request = await fetch(
-        'https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php', {
-            method: 'POST',
-            body: formData,
-        })
-
-    const response = await request.json()
-    
-    if (response.responseStatus === 'success') {
-
-        getAllForum()
-    }
-
-    for (const [key, value] of formData.entries()) {
-        console.log(key, value);
-    }
-});
 
 
         })
@@ -435,7 +412,54 @@ addComment.addEventListener('submit', async (e) => {
 
 
 
-      
+        // let addComment = document.querySelector('#addComment' + forum.id)
+
+        // addComment.addEventListener('submit', async (e) => {
+        //     e.preventDefault();
+
+        //     const formData = new FormData(e.target);
+        //     const request = await fetch(
+        //         'https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php', {
+        //             method: 'POST',
+        //             body: formData,
+        //         })
+
+        //     const response = await request.json()
+            
+        //     if (response.responseStatus === 'success') {
+
+        //         getAllForum()
+        //     }
+
+        //     for (const [key, value] of formData.entries()) {
+        //         console.log(key, value);
+        //     }
+        // });
+
+        const addCommentForms = document.querySelectorAll('[id^="addComment"]');
+
+addCommentForms.forEach((addComment) => {
+    addComment.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const request = await fetch('https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php', {
+            method: 'POST',
+            body: formData,
+        });
+
+        const response = await request.json();
+
+        if (response.responseStatus === 'success') {
+            getAllForum();
+        }
+
+        for (const [key, value] of formData.entries()) {
+            console.log(key, value);
+        }
+    });
+});
+
 
         response.responseContent.map((forum) => {
             let content = getcommentPerForum(forum.id)
