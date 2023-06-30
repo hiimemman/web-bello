@@ -35,16 +35,8 @@ if ($ID) {
                 echo "Password doesn't match.";
             }
         }
-
-
-    }catch(Exception $e){
-        exit(json_encode(array("responseStatus" =>'error', "responseContent" =>$e->getMessage(), "responseMessage" =>'Update failed error:!')));
-    }
-} else {
-    echo "User ID not found in session.";
-}
-
-// Check if a file was uploaded
+        
+        // Check if a file was uploaded
 if (isset($_FILES['image_url']) && $_FILES['image_url']['error'] === UPLOAD_ERR_OK) {
     $file = $_FILES['image_url'];
     
@@ -72,6 +64,15 @@ if (isset($_FILES['image_url']) && $_FILES['image_url']['error'] === UPLOAD_ERR_
         echo "Error uploading file.";
     }
 }
+
+
+    }catch(Exception $e){
+        exit(json_encode(array("responseStatus" =>'error', "responseContent" =>$e->getMessage(), "responseMessage" =>'Update failed error:!')));
+    }
+} else {
+    echo "User ID not found in session.";
+}
+
 
 
 ?>
