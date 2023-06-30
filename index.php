@@ -17,120 +17,120 @@ session_start(); //if there is no session then start session
 
 <body>
     <style>
-        .custom-bg {
-            background-image: url("/web-bello/images/landing-bg.png");
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            height: 100%;
+    .custom-bg {
+        background-image: url("/web-bello/images/landing-bg.png");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 100%;
+    }
+
+    .custom-signin-btn {
+        width: 100%;
+        color: white;
+        background-color: #003049;
+        border: none;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        font-size: 0.875rem;
+        padding: 0.625rem 1.25rem;
+        text-align: center;
+        outline: none;
+    }
+
+    .custom-signin-btn:hover {
+        background-color: #023e8a;
+    }
+
+    .custom-signin-btn:focus {
+        outline-width: 4px;
+        outline-color: #caf0f8;
+    }
+
+    .custom-text-btn {
+        font-weight: 500;
+        color: #003049;
+        text-decoration: none;
+    }
+
+    .custom-text-btn:hover {
+        text-decoration: underline;
+        color: #023e8a;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
         }
 
-        .custom-signin-btn {
-            width: 100%;
-            color: white;
-            background-color: #003049;
-            border: none;
-            border-radius: 0.375rem;
-            font-weight: 500;
-            font-size: 0.875rem;
-            padding: 0.625rem 1.25rem;
-            text-align: center;
-            outline: none;
+        100% {
+            opacity: 1;
         }
+    }
 
-        .custom-signin-btn:hover {
-            background-color: #023e8a;
-        }
+    .landing-content {
+        animation: fade-in 2s ease-in-out;
+    }
 
-        .custom-signin-btn:focus {
-            outline-width: 4px;
-            outline-color: #caf0f8;
-        }
+    /* Navbar */
 
-        .custom-text-btn {
-            font-weight: 500;
-            color: #003049;
-            text-decoration: none;
-        }
+    :root {
+        --underline-color: #000000;
+        /* Set the underline color to white */
+    }
 
-        .custom-text-btn:hover {
-            text-decoration: underline;
-            color: #023e8a;
-        }
-
-        @keyframes fade-in {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .landing-content {
-            animation: fade-in 2s ease-in-out;
-        }
-
-        /* Navbar */
-
+    @media (prefers-color-scheme: dark) {
         :root {
-            --underline-color: #000000;
-            /* Set the underline color to white */
+            --underline-color: #ffffff;
+        }
+    }
+
+    .nav-link {
+        position: relative;
+        display: inline-block;
+        line-height: 2;
+    }
+
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: transparent;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before {
+        background-color: var(--underline-color);
+    }
+
+    /**Added CSS */
+    @media (max-width: 1023px) {
+        #navbar-default.flex {
+            display: block;
         }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --underline-color: #ffffff;
-            }
+        #navbar-default.hidden {
+            display: none;
         }
 
         .nav-link {
-            position: relative;
-            display: inline-block;
-            line-height: 2;
+            display: block;
+            padding: 1rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .nav-item {
+            margin-left: 2rem;
         }
 
-        .nav-link::before {
-            content: "";
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: transparent;
-            transition: background-color 0.3s ease-in-out;
+        .nav-item:first-child {
+            margin-left: 0;
         }
-
-        .nav-link:hover::before {
-            background-color: var(--underline-color);
-        }
-
-        /**Added CSS */
-        @media (max-width: 1023px) {
-            #navbar-default.flex {
-                display: block;
-            }
-
-            #navbar-default.hidden {
-                display: none;
-            }
-
-            .nav-link {
-                display: block;
-                padding: 1rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .nav-item {
-                margin-left: 2rem;
-            }
-
-            .nav-item:first-child {
-                margin-left: 0;
-            }
-        }
+    }
     </style>
 
     <!-- NavBar Static -->
@@ -147,10 +147,13 @@ session_start(); //if there is no session then start session
             </div>
 
             <div class="flex lg:hidden px-6">
-                <button id="menu-toggle" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                <button id="menu-toggle" type="button"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Open main menu</span>
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
             </div>
@@ -159,12 +162,14 @@ session_start(); //if there is no session then start session
             <div class="hidden lg:flex lg:gap-x-12">
                 <ul class="lg:flex flex-col lg:flex-row list-none lg:ml-auto">
                     <li class="nav-item">
-                        <a href="/index.php#about" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
+                        <a href="/index.php#about"
+                            class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
                             <span>About us</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/index.php#contact" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
+                        <a href="/index.php#contact"
+                            class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
                             <span>Contact</span>
                         </a>
                     </li>
@@ -176,7 +181,8 @@ session_start(); //if there is no session then start session
     <!-- Mobile menu, show/hide based on menu open state -->
     <div class="hidden" role="dialog" aria-modal="true" id="menu">
         <div class="fixed inset-0 z-10">
-            <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-10 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div
+                class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-10 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div class="flex items-center justify-between">
                     <a href="https://web-bello.online/" class="-m-1.5 p-1.5">
                         <span class="sr-only">Web-Bello</span>
@@ -186,7 +192,8 @@ session_start(); //if there is no session then start session
                     </a>
                     <button type="button" id="close-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
                         <span class="sr-only">Close menu</span>
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
@@ -195,10 +202,12 @@ session_start(); //if there is no session then start session
                 <div class="mt-6 flow-root">
                     <div class="-my-6 divide-y divide-gray-500/10">
                         <div class="space-y-2 py-6">
-                            <a href="/index.php#about" class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <a href="/index.php#about"
+                                class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                                 About us
                             </a>
-                            <a href="/index.php#about" class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <a href="/index.php#about"
+                                class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                                 Contact
                             </a>
                         </div>
@@ -215,7 +224,8 @@ session_start(); //if there is no session then start session
 
     <section class="bg-gray-50 custom-bg">
         <div class="mx-auto max-w-screen-xl px-4 pt-8 pb-4 mt-24 lg:flex lg:h-screen lg:items-center">
-            <div class="landing-content mx-auto max-w-xl text-center rounded-lg shadow bg-white/90 px-10 py-20 h-full sm:h-auto">
+            <div
+                class="landing-content mx-auto max-w-xl text-center rounded-lg shadow bg-white/90 px-10 py-20 h-full sm:h-auto">
                 <h1 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-800">
                     Welcome to Web-Bello!
                 </h1>
@@ -228,10 +238,13 @@ session_start(); //if there is no session then start session
                 </p>
 
                 <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a class="group relative inline-flex items-center overflow-hidden rounded hover:rounded hover:border-2 hover:border-sky-950 hover:bg-white bg-sky-950 px-12 py-3 text-white hover:text-gray-900 focus:outline-none focus:ring active:bg-indigo-500" href="/web-bello/pages/user-login.php">
+                    <a class="group relative inline-flex items-center overflow-hidden rounded hover:rounded hover:border-2 hover:border-sky-950 hover:bg-white bg-sky-950 px-14 py-3 text-white hover:text-gray-900 focus:outline-none focus:ring active:bg-indigo-500"
+                        href="/web-bello/pages/user-login.php">
                         <span class="absolute -start-full transition-all group-hover:start-4">
-                            <svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            <svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </span>
 
@@ -240,10 +253,13 @@ session_start(); //if there is no session then start session
                         </span>
                     </a>
 
-                    <a class="group relative inline-flex items-center overflow-hidden rounded border-2 border-sky-950 hover:bg-sky-950 px-14 py-3 text-gray-900 hover:text-white focus:outline-none focus:ring active:bg-indigo-500" href="/web-bello/pages/index.php">
+                    <a class="group relative inline-flex items-center overflow-hidden rounded border-2 border-sky-950 hover:bg-sky-950 px-16 py-3 text-gray-900 hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
+                        href="/web-bello/pages/index.php">
                         <span class="absolute -start-full transition-all group-hover:start-4">
-                            <svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            <svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </span>
 
@@ -266,7 +282,8 @@ session_start(); //if there is no session then start session
         <div class="container px-6 py-16 mx-auto">
             <div class="flex flex-wrap items-stretch md:items-center mt-8">
                 <div class="w-full md:w-1/2 hover:shadow-xl transition-shadow">
-                    <img class="rounded-lg h-full w-full object-cover" src="/web-bello/images/about.jpg" alt="About Us Image" />
+                    <img class="rounded-lg h-full w-full object-cover" src="/web-bello/images/about.jpg"
+                        alt="About Us Image" />
                 </div>
                 <div class="w-full md:w-1/2 px-4 flex items-center">
                     <div class="max-w-md mx-auto text-center md:text-left">
@@ -313,8 +330,10 @@ session_start(); //if there is no session then start session
                 <div class="p-4 md:w-1/2 w-full">
                     <div class="h-full bg-gray-100 p-8 rounded-xl hover:shadow-xl transition-shadow">
                         <a class="inline-flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
-                                <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                <path
+                                    d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
                                 </path>
                             </svg>
                             <span class="flex-grow flex flex-col pl-4 mb-4">
@@ -334,8 +353,10 @@ session_start(); //if there is no session then start session
                 <div class="p-4 md:w-1/2 w-full">
                     <div class="h-full bg-gray-100 p-8 rounded-xl hover:shadow-xl transition-shadow">
                         <a class="inline-flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
-                                <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                <path
+                                    d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
                                 </path>
                             </svg>
                             <span class="flex-grow flex flex-col pl-4 mb-4">
@@ -383,15 +404,21 @@ session_start(); //if there is no session then start session
                             <h3 class="text-xl font-bold text-gray-800 mb-2">
                                 Facebook Page
                             </h3>
-                            <a href="https://www.facebook.com/pages/Palazzo-Bello/259135290785585" target="_blank" class="text-blue-500 hover:underline">Visit our Facebook Page</a>
+                            <a href="https://www.facebook.com/pages/Palazzo-Bello/259135290785585" target="_blank"
+                                class="text-blue-500 hover:underline">Visit our Facebook Page</a>
                         </div>
-                        <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300" onclick="location.href='mailto:your-email@example.com';">
+                        <button type="button"
+                            class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300"
+                            onclick="location.href='mailto:your-email@example.com';">
                             Send Email
                         </button>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 mt-8 md:mt-0">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.6192040335823!2d120.9226916169621!3d14.421285300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d2e5e14e944f%3A0xa386a3d3dc5d8a64!2sPalazzo%20Bello%2C%20Imus%2C%20Cavite!5e1!3m2!1sen!2sph!4v1687189807400!5m2!1sen!2sph" width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.6192040335823!2d120.9226916169621!3d14.421285300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d2e5e14e944f%3A0xa386a3d3dc5d8a64!2sPalazzo%20Bello%2C%20Imus%2C%20Cavite!5e1!3m2!1sen!2sph!4v1687189807400!5m2!1sen!2sph"
+                        width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -427,7 +454,8 @@ session_start(); //if there is no session then start session
                     </li>
 
                     <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75" href="/index.php#contact">
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/index.php#contact">
                             Contact
                         </a>
                     </li>
@@ -446,27 +474,27 @@ session_start(); //if there is no session then start session
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
 
     <script>
-        // Check if dark mode is preferred by the user
-        const prefersDarkMode = window.matchMedia(
-            "(prefers-color-scheme: dark)"
-        ).matches;
+    // Check if dark mode is preferred by the user
+    const prefersDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+    ).matches;
 
-        // Set the HTML class based on the user's preference
-        document.documentElement.classList.add(
-            prefersDarkMode ? "dark" : "light"
-        );
+    // Set the HTML class based on the user's preference
+    document.documentElement.classList.add(
+        prefersDarkMode ? "dark" : "light"
+    );
     </script>
 
     <script>
-        const menuToggle = document.getElementById("menu-toggle");
-        menuToggle.addEventListener("click", () => {
-            document.getElementById("menu").classList.toggle("hidden");
-        });
+    const menuToggle = document.getElementById("menu-toggle");
+    menuToggle.addEventListener("click", () => {
+        document.getElementById("menu").classList.toggle("hidden");
+    });
 
-        const closeMenu = document.getElementById("close-menu");
-        closeMenu.addEventListener("click", () => {
-            document.getElementById("menu").classList.toggle("hidden");
-        });
+    const closeMenu = document.getElementById("close-menu");
+    closeMenu.addEventListener("click", () => {
+        document.getElementById("menu").classList.toggle("hidden");
+    });
     </script>
 </body>
 
