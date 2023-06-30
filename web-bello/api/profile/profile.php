@@ -17,7 +17,7 @@ $Contact = $_POST['contact'];
 $Email = $_POST['email'];
 $Password = $_POST['password'];
 $Password1 = $_POST['password1'];
-// $Image = $_POST['profileImage'];
+$Image = $_POST['image_url'];
 
 if ($ID) {
     try{
@@ -27,7 +27,7 @@ if ($ID) {
             // Check if the password field is empty
             if($Password == $Password1){
             // $HashPassword = password_hash($Password, PASSWORD_DEFAULT);
-            $sql = "UPDATE `tbl_residents` SET `firstname` = '$Firstname', `lastname` = '$Lastname', `sex` = '$Sex', `age` = '$Age', `address` = '$Address', `contact` = '$Contact', `email` = '$Email', `password` = '$Password' WHERE id = '$ID';";
+            $sql = "UPDATE `tbl_residents` SET `firstname` = '$Firstname', `lastname` = '$Lastname', `sex` = '$Sex', `age` = '$Age', `address` = '$Address', `contact` = '$Contact', `email` = '$Email', `password` = '$Password', `image_url` = '$Image' WHERE id = '$ID';";
             $result = mysqli_query($con, $sql);
 
             exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Updated succesfully!')));
