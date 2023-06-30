@@ -132,8 +132,6 @@ require_once('../components/navbar.php')
 
 
                         
-                        <!-- <div class="sm:col-span-2">
-                        </div> -->
 
                             <!-- First name -->
                             <div class="sm:col-span-3">
@@ -210,41 +208,28 @@ require_once('../components/navbar.php')
                                 </div>
                             </div>
 
-<!-- Password -->
-<div class="sm:col-span-2">
-    <div class="form-group">
-        <label for="password" class="label block text-sm font-medium leading-6 text-gray-900">Password</label>
-        <div class="password-container">
-            <input type="password" name="password" id="password"
-                class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
-                required>
-            <span class="password-toggle" onclick="togglePasswordVisibility('password')">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="eye-icon">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.591 11.408a10.05 10.05 0 00-3.611-3.61M2.935 6.364l2.122 2.122m12.021 12.021l2.121 2.122M12 6a2 2 0 100-4 2 2 0 000 4zm0 16a2 2 0 100-4 2 2 0 000 4zM3.757 4.243a8 8 0 0111.314 0 1 1 0 001.414-1.414 10 10 0 00-14.142 0 1 1 0 001.414 1.414z" />
-                </svg>
-            </span>
-        </div>
-    </div>
-</div>
+                            <!-- Password -->
+                            <div class="sm:col-span-2">
+                                <div class="form-group">
+                                    <label for="password"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Password</label>
+                                    <input type="password" name="password"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
 
-<!-- Confirm Password -->
-<div class="sm:col-span-2">
-    <div class="form-group">
-        <label for="password1" class="label block text-sm font-medium leading-6 text-gray-900">Confirm password</label>
-        <div class="password-container">
-            <input type="password" name="password1" id="password1"
-                class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
-                required>
-            <span class="password-toggle" onclick="togglePasswordVisibility('password1')">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="eye-icon">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.591 11.408a10.05 10.05 0 00-3.611-3.61M2.935 6.364l2.122 2.122m12.021 12.021l2.121 2.122M12 6a2 2 0 100-4 2 2 0 000 4zm0 16a2 2 0 100-4 2 2 0 000 4zM3.757 4.243a8 8 0 0111.314 0 1 1 0 001.414-1.414 10 10 0 00-14.142 0 1 1 0 001.414 1.414z" />
-                </svg>
-            </span>
-        </div>
-    </div>
-</div>
+                            <!-- Confirm Password -->
+                            <div class="sm:col-span-2">
+                                <div class="form-group">
+                                    <label for="password1"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Confirm
+                                        password</label>
+                                    <input type="password" name="password1"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -260,32 +245,6 @@ require_once('../components/navbar.php')
         </div>
     </section>
     <!-- End of Test Code -->
-    
-    <!-- SHOW PASSWORD ANIMATION -->
-    <script>
-    function togglePasswordVisibility(inputId) {
-        var passwordInput = document.getElementById(inputId);
-        var passwordToggle = document.querySelector(`#${inputId} + .password-toggle`);
-
-        if (passwordInput.type === "password") {
-            passwordInput.type = "text";
-            passwordToggle.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="eye-icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.591 11.408a10.05 10.05 0 00-3.611-3.61M2.935 6.364l2.122 2.122m12.021 12.021l2.121 2.122M12 6a2 2 0 100-4 2 2 0 000 4zm0 16a2 2 0 100-4 2 2 0 000 4zM3.757 4.243a8 8 0 0111.314 0 1 1 0 001.414-1.414 10 10 0 00-14.142 0 1 1 0 001.414 1.414z" />
-                </svg>
-            `;
-        } else {
-            passwordInput.type = "password";
-            passwordToggle.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="eye-icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.591 11.408a10.05 10.05 0 00-3.611-3.61M2.935 6.364l2.122 2.122m12.021 12.021l2.121 2.122M12 6a2 2 0 100-4 2 2 0 000 4zm0 16a2 2 0 100-4 2 2 0 000 4zM3.757 4.243a8 8 0 0111.314 0 1 1 0 001.414-1.414 10 10 0 00-14.142 0 1 1 0 001.414 1.414z" />
-                </svg>
-            `;
-        }
-    }
-</script>
 
     <!-- Footer -->
     <footer class="bg-gray-100">
