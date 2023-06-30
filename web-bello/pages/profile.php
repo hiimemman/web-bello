@@ -359,7 +359,7 @@ frmUpdateProfile.addEventListener('submit', async (event) => {
         location.reload();
         localStorage.setItem('showToast', 'true');
         localStorage.setItem('showToastMessage', response.responseMessage)
-        window.location.href = "https://web-bello.online/web-bello/pages/sample2.php"
+        window.location.href = "https://web-bello.online/web-bello/pages/profile.php"
 
         // Close the profile window
 
