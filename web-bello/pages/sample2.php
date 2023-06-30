@@ -86,27 +86,34 @@ require_once('../components/navbar.php')
 
     <section>
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
-            <form action="../api/profile/profile.php" method="POST" id="frmUpdateProfile"
-                class="p-12 bg-white rounded-lg border border-gray-200 shadow-md" enctype="multipart/form-data">
 
-  
-
-                <div class="space-y-12">
+            <form action="" method="POST" id ="frmRegisterHOA">
+            <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <!-- Profile Picture -->
                         <div class="sm:col-span-2">
                         <div class="profile-image">
-                            <img src="<?php echo $Image; ?>" alt="Profile Picture">
+                            <img src="<?php echo $Image; ?>" id="imageHolder" alt="Profile Picture">
                         </div>
 
                         <div class="mt-4">
-                            <label for="image_url" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
+                            <label for="file_input" class="text-sm font-medium text-gray-200">Change Profile</label>
                             <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
                         </div>
                         </div>
                         <div class="sm:col-span-2">
                         </div>
+                        <button type="submit" class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
+                            Change Profile</button>
+            </form>
+            
+            <form action="../api/profile/profile.php" method="POST" id="frmUpdateProfile"
+                class="p-12 bg-white rounded-lg border border-gray-200 shadow-md" enctype="multipart/form-data">
+
+  
+
+
 
                             <!-- First name -->
                             <div class="sm:col-span-3">
