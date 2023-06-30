@@ -103,8 +103,8 @@ require_once('../components/navbar.php')
 
                         </div>
                         <div class="mt-4">
-                            <label for="file_input" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
-                            <input type="file" id="image_url" name="image_url" accept="image/*" aria-describedby="file_input_help" class="mt-1">
+                            <label for="image_url" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
+                            <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
                         </div>
                         </div>
                         <div class="sm:col-span-2">
@@ -319,9 +319,6 @@ require_once('../components/navbar.php')
 
 
 <script defer>
-//Image
-const image_url = document.querySelector('#image_url')
-const imageHolder = document.querySelector('#imageHolder')
 
 
 frmUpdateProfile.addEventListener('submit', async (event) => {
@@ -406,49 +403,6 @@ const showToast = () => {
         }, 3000);
     }
 };
-
-//image move
-image_url.addEventListener('change', async (event) =>{
- const selectedFile = event.target.files[0];
-    
-// Uploading only one file; multiple uploads are not allowed.
-  let imageFile = event.target.files[0]; 
-
-   // Create a FormData object.
-  formData = new FormData();
-
-  // Add the file to the request.
-  formData.append('profileEdit', imageFile, imageFile.name);
-
-try{
-
-const fetchResponse = await fetch("../api/images/move-only-image.php",{
-    method: "POST",
-    body:formData,
-});
-
-const receivedStatus = await fetchResponse.json();
-console.log(receivedStatus)
-
-if(receivedStatus.statusCode === 200){
-
-let output = ''; 
-output += `
- <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />
-<img class="m-2 h-auto max-w-xs rounded-lg " src="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" alt="image description">
-`;
-  
-imageHolder.innerHTML = output;
-}else{
-    alert('error')
-}
- 
-
-
-    }catch (e){
-    console.log(e)
-    }
-})
 
 
 // Call showToast when the page loads
