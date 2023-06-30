@@ -137,7 +137,7 @@ if (mysqli_num_rows($emailCheckResult) > 0) {
              
     
         if (!$emailExists) {
-        $sql = "INSERT INTO `tbl_residents` (`firstname`,`lastname`,`sex`,`age`,`address`,`contact`,`email`,`password`,`image_url`) VALUES ('$Firstname','$Lastname','$Sex','$Age','$Address','$Contact','$Email','$Password',$Profile);";
+        $sql = "INSERT INTO `tbl_residents` (`firstname`,`lastname`,`sex`,`age`,`address`,`contact`,`email`,`password`,`image_url`) VALUES ('$Firstname','$Lastname','$Sex','$Age','$Address','$Contact','$Email','$Password','$Profile');";
         mysqli_query($con, $sql);
 
         // Get all residents
