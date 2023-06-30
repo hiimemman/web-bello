@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
+require '../../vendor/autoload.php';
 use Twilio\Rest\Client;
 
 // Your Account SID and Auth Token from twilio.com/console
