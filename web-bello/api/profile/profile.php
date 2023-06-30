@@ -49,7 +49,7 @@ if (isset($_FILES['image_url']) && $_FILES['image_url']['error'] === UPLOAD_ERR_
     $file = $_FILES['image_url'];
     
     // Specify the directory where you want to save the uploaded file
-    $uploadDir = '../savedimages/';
+    $uploadDir = 'https://web-bello.online/web-bello/savedimages/';
     
     // Generate a unique filename for the uploaded file
     $filename = uniqid() . '_' . $file['name'];
