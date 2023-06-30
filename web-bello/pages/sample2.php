@@ -87,14 +87,14 @@ require_once('../components/navbar.php')
     <section>
         
 
-            <form action="" method="POST" id ="frmRegisterHOA">
+            <!-- <form action="" method="POST" id ="frmRegisterHOA">
             <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
-                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6"> -->
                         <!-- Profile Picture -->
-                        <div class="sm:col-span-2">
+                        <!-- <div class="sm:col-span-2">
                         <div class="profile-image" id="imageHolder">
-                            <img src="<?php echo $Image; ?>" alt="Profile Picture">
+                            <img src="<?php //echo $Image; ?>" alt="Profile Picture">
                         </div>
 
                         <div class="mt-4">
@@ -108,7 +108,7 @@ require_once('../components/navbar.php')
                         </div>
                         </div>
                     </div>
-            </form>
+            </form> -->
         
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
             <form action="../api/profile/profile.php" method="POST" id="frmUpdateProfile"
@@ -116,7 +116,17 @@ require_once('../components/navbar.php')
 
   
 
+                        <!-- Profile Picture -->
+                        <div class="sm:col-span-2">
+                        <div class="profile-image" id="imageHolder">
+                            <img src="<?php echo $Image; ?>" alt="Profile Picture">
+                        </div>
 
+                        <div class="mt-4">
+                            <label for="file_input" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
+                            <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
+                        </div>
+                        </div>
 
                             <!-- First name -->
                             <div class="sm:col-span-3">
