@@ -92,6 +92,7 @@ require_once('../components/navbar.php')
                         <div class="sm:col-span-2">
                         <div class="profile-image">
                             <img src="../images/about.jpg" alt="Profile Picture">
+                            
                         </div>
                         </div>
 

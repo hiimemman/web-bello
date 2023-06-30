@@ -22,6 +22,7 @@ $Address = $_POST['address'];
 $Contact = $_POST['contact'];
 $Email = $_POST['email'];
 $Password = $_POST['password'];
+$Profile = 'https://web-bello.online/web-bello/savedimages/profile.png';
 try{
     $emailExists = false;
 $emailCheckQuery = "SELECT * FROM `tbl_residents` WHERE `email` = '$Email'";
@@ -136,7 +137,7 @@ if (mysqli_num_rows($emailCheckResult) > 0) {
              
     
         if (!$emailExists) {
-        $sql = "INSERT INTO `tbl_residents` (`firstname`,`lastname`,`sex`,`age`,`address`,`contact`,`email`,`password`) VALUES ('$Firstname','$Lastname','$Sex','$Age','$Address','$Contact','$Email','$Password');";
+        $sql = "INSERT INTO `tbl_residents` (`firstname`,`lastname`,`sex`,`age`,`address`,`contact`,`email`,`password`,`image_url`) VALUES ('$Firstname','$Lastname','$Sex','$Age','$Address','$Contact','$Email','$Password',$Profile);";
         mysqli_query($con, $sql);
 
         // Get all residents
