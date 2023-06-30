@@ -273,6 +273,140 @@ require_once('../components/navbar.php')
     </section>
     <!-- End of Community Reminder Section-->
 
+    <!-- About Us Section -->
+    <section class="bg-gray-100" id="about">
+        <div class="container px-6 py-16 mx-auto">
+
+            <div class="flex flex-wrap items-stretch md:items-center mt-8">
+                <div class="w-full md:w-1/2 hover:shadow-xl transition-shadow">
+                    <img class="rounded-lg h-full w-full object-cover" src="../images/about.jpg" alt="About Us Image">
+                </div>
+                <div class="w-full md:w-1/2 px-4 flex items-center">
+                    <div class="max-w-md mx-auto text-center md:text-left">
+                        <h2 class="text-3xl font-bold text-gray-800 text-center mt-4">About Us</h2>
+                        <p class="mt-4 text-gray-700 tracking-wide text-md">We are Web-Bello Online, an online platform
+                            dedicated to providing a seamless and convenient experience for homeowners in Palazzo Bello
+                            Subdivision. Our mission is to create a vibrant community by offering various services and
+                            resources to our valued residents.</p>
+                        <p class="mt-4 text-gray-700 tracking-wide text-md">With Web-Bello Online, you can easily manage
+                            your dues, update your profile, stay informed about announcements and events, and
+                            participate in community forums.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of About Us Section -->
+
+    <!-- Mission Vision Statement Section -->
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="text-center mb-20">
+                <h1 class="sm:text-3xl title-font text-3xl font-bold text-gray-900 mb-4">
+                    Our Commitment: Mission & Vision
+                </h1>
+                <p class="leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500 tracking-wide text-md">
+                    Discover our unwavering commitment to excellence and our visionary
+                    goals that drive our homeowners association forward. Learn more
+                    about our mission and vision for a thriving community.
+                </p>
+                <div class="flex mt-6 justify-center">
+                    <div class="w-16 h-1 rounded-full bg-sky-900 inline-flex"></div>
+                </div>
+            </div>
+            <div class="flex flex-wrap -m-4">
+                <div class="p-4 md:w-1/2 w-full ">
+                    <div class="h-full bg-gray-100 p-8 rounded-xl hover:shadow-xl transition-shadow">
+                        <a class="inline-flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                <path
+                                    d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                                </path>
+                            </svg>
+                            <span class="flex-grow flex flex-col pl-4 mb-4">
+                                <span class="title-font text-2xl font-medium text-gray-900">OUR MISSION</span>
+                            </span>
+                        </a>
+
+                        <p class="leading-relaxed mb-6 tracking-wide text-gray-700">
+                            Our mission is to provide a safe, inclusive, and welcoming
+                            environment where residents can enjoy a high quality of life. We
+                            aim to foster a strong sense of community, promote a healthy
+                            lifestyle, and provide top-notch amenities and services that
+                            enhance the well-being of our residents.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-4 md:w-1/2 w-full ">
+                    <div class="h-full bg-gray-100 p-8 rounded-xl hover:shadow-xl transition-shadow">
+                        <a class="inline-flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                                <path
+                                    d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                                </path>
+                            </svg>
+                            <span class="flex-grow flex flex-col pl-4 mb-4">
+                                <span class="title-font text-2xl font-medium text-gray-900">OUR VISION</span>
+                            </span>
+                        </a>
+
+                        <p class="leading-relaxed mb-6 tracking-wide text-gray-700">
+                            Our vision is to create a subdivision that sets the standard for
+                            exceptional living. We envision a community where neighbors come
+                            together to support and inspire each other, where children grow
+                            up in a nurturing environment, and where residents can enjoy a
+                            balanced and fulfilling lifestyle. We strive to be a model
+                            subdivision that others aspire to emulate.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End of Mission Vision Statement Section -->
+
+    <!-- Contact Us Section -->
+
+    <section class="bg-gray-200" id="contact">
+        <div class="container px-6 py-16 mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
+            <div class="flex flex-col md:flex-row mt-12 items-center">
+                <div class="w-full md:w-1/2">
+                    <div class="max-w-lg mx-auto">
+                        <div class="bg-white rounded-lg shadow-md p-6 mb-6 hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Contact Number</h3>
+                            <p class="text-gray-600">09123456789</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 mb-6 hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Location</h3>
+                            <p class="text-gray-600">Palazzo Bello, Carsadang Imus Cavite, Philippines</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-6 mb-6 hover:shadow-xl transition-shadow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Facebook Page</h3>
+                            <a href="https://www.facebook.com/pages/Palazzo-Bello/259135290785585" target="_blank"
+                                class="text-blue-500 hover:underline">Visit our Facebook Page</a>
+                        </div>
+                        <button type="button"
+                            class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300"
+                            onclick="location.href='mailto:your-email@example.com';">Send Email</button>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 mt-8 md:mt-0">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.6192040335823!2d120.9226916169621!3d14.421285300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d2e5e14e944f%3A0xa386a3d3dc5d8a64!2sPalazzo%20Bello%2C%20Imus%2C%20Cavite!5e1!3m2!1sen!2sph!4v1687189807400!5m2!1sen!2sph"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End of Contact Section -->
+
     <!-- Footer -->
     <footer class="bg-gray-100">
         <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
