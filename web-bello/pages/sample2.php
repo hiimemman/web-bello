@@ -98,7 +98,7 @@ require_once('../components/navbar.php')
                         </div>
 
                         <div class="mt-4">
-                            <label for="file_input" class="text-sm font-medium text-gray-200">Change Profile</label>
+                            <label for="file_input" class="text-sm font-medium text-gray-700">Change Profile</label>
                             <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
                         </div>
                         </div>
