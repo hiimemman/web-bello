@@ -104,6 +104,8 @@ require_once('../components/navbar.php')
                             <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
                         </div>
                         </div>
+                        <div class="sm:col-span-2">
+                        </div>
                             <!-- First name -->
                             <div class="sm:col-span-3">
                                 <div class="form-group">
