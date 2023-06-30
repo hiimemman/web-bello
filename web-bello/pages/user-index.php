@@ -11,6 +11,8 @@ require_once('../components/navbar.php')
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Web-Bello Online!</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
     <script src="https://cdn.tailwindcss.com/2.2.19/tailwind.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -430,6 +432,8 @@ require_once('../components/navbar.php')
             background: '#00ff00' // Green background color
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
 </body>
 
 </html>
