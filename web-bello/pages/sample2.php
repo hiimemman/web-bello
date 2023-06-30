@@ -94,10 +94,13 @@ require_once('../components/navbar.php')
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                                              <!-- Profile Picture -->
+                        <!-- Profile Picture -->
                         <div class="sm:col-span-2">
                         <div class="profile-image">
-                            <img src="<?php echo $Image; ?>" id="imageHolder" alt="Profile Picture">
+                            <img src="<?php echo $Image; ?>" alt="Profile Picture">
+                        </div>
+                        <div id="imageHolder">
+
                         </div>
                         <div class="mt-4">
                             <label for="image_url" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
