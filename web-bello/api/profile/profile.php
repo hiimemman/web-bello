@@ -18,7 +18,25 @@ $Email = $_POST['email'];
 $Password = $_POST['password'];
 $Password1 = $_POST['password1'];
 
-// Check if the form is submitted
+
+if ($ID) {
+    try{
+
+        // Check if the password field is empty
+        if(!empty($Password)){
+            // Check if the password field is empty
+            if($Password == $Password1){
+            // $HashPassword = password_hash($Password, PASSWORD_DEFAULT);
+            $sql = "UPDATE `tbl_residents` SET `firstname` = '$Firstname', `lastname` = '$Lastname', `sex` = '$Sex', `age` = '$Age', `address` = '$Address', `contact` = '$Contact', `email` = '$Email', `password` = '$Password', `image_url` = '$Image' WHERE id = '$ID';";
+            $result = mysqli_query($con, $sql);
+
+            exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Updated succesfully!')));
+            }else{
+                echo "Password doesn't match.";
+            }
+        }
+
+        // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Check if a file is uploaded
     if (isset($_FILES['image_url']) && $_FILES['image_url']['error'] === UPLOAD_ERR_OK) {
@@ -43,22 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-if ($ID) {
-    try{
-
-        // Check if the password field is empty
-        if(!empty($Password)){
-            // Check if the password field is empty
-            if($Password == $Password1){
-            // $HashPassword = password_hash($Password, PASSWORD_DEFAULT);
-            $sql = "UPDATE `tbl_residents` SET `firstname` = '$Firstname', `lastname` = '$Lastname', `sex` = '$Sex', `age` = '$Age', `address` = '$Address', `contact` = '$Contact', `email` = '$Email', `password` = '$Password', `image_url` = '$Image' WHERE id = '$ID';";
-            $result = mysqli_query($con, $sql);
-
-            exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Updated succesfully!')));
-            }else{
-                echo "Password doesn't match.";
-            }
-        }
     }catch(Exception $e){
         exit(json_encode(array("responseStatus" =>'error', "responseContent" =>$e->getMessage(), "responseMessage" =>'Update failed error:!')));
     }
