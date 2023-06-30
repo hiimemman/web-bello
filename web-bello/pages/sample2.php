@@ -117,7 +117,7 @@ require_once('../components/navbar.php')
   
 
                         <!-- Profile Picture -->
-                        <div class="sm:col-span-2">
+                        <div class="sm:col-span-2" id="frmRegisterHOA">
                         <div class="profile-image" id="imageHolder">
                             <img src="<?php echo $Image; ?>" alt="Profile Picture">
                         </div>
