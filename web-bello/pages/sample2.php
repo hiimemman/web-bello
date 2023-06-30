@@ -1,17 +1,33 @@
 <?php
 session_start();
+
+// Redirect to login page if user is not logged in
+if (!isset($_SESSION['IDUSER'])) {
+    header('Location: /web-bello/pages/user-login.php');
+    exit();
+}
+
 include_once("../connections/connection.php");
 $con = connection();
-if (!isset($_SESSION['IDUSER'])) {
-    header('Location: ../pages/user-login.php');
-    exit();
+
+$ID = $_SESSION['IDUSER'];
+
+$sql = "SELECT * FROM tbl_residents WHERE id = '$ID'";
+$result = mysqli_query($con, $sql);
+
+if ($result) {
+    $user = mysqli_fetch_assoc($result);
+
+    // Assign the fetched values to variables
+    $Firstname = $user['firstname'];
+    $Lastname = $user['lastname'];
+    $Sex = $user['sex'];
+    $Age = $user['age'];
+    $Address = $user['address'];
+    $Contact = $user['contact'];
+    $Email = $user['email'];
 } else {
-    $sql = mysqli_query($con, "SELECT * FROM `tbl_residents` WHERE `id` = {$_SESSION['IDUSER']}");
-    $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
-    $url = $_SERVER['REQUEST_URI'];
-    $pageName = basename($url, '.php');
-    $pageName = str_replace('-', ' ', $pageName);
-    $pageName = strtoupper($pageName);
+    echo "Error fetching user data: " . mysqli_error($con);
 }
 ?>
 
@@ -19,201 +35,160 @@ if (!isset($_SESSION['IDUSER'])) {
 require_once('../components/navbar.php')
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href='fullcalendar/packages/core/main.css' rel='stylesheet' />
-    <link href='fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <!-- Style -->
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <title>Community Schedules - Web-Bello Online!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Bello | Profile</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+
+
 
 </head>
 
 <body>
-    <!-- <style>
-    #calendar {
-        max-width: 900px;
-        margin: 0 auto;
-    }
+    <!-- Test Code -->
 
-    .calendar-toolbar {
-            display: flex;
-            justify-content: center;
-        }
-
-    #calendar .fc-view-container {
-        padding: 30px;
-        background-color: #efefef;
-        -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-        box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
-    }
-    </style> -->
-    <div class="content mt-36 mb-12">
-
-        <div class="calendar-toolbar">
-            <!-- <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3">Return to
-                    dashboard</button></a>  -->
-            <button id="addScheduleBtn" style="margin-left: 650px; margin-bottom: 10px;" class="btn btn-primary mr-3">New Reservation</button>
+    <header class=" border-b-4 border-sky-300">
+        <!-- Intro Header -->
+        <div class="container mt-32 mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <div class="text-center sm:text-left">
+                    <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+                        Update your personal information
+                    </h1>
+                    <p class="mt-1.5 text-lg text-gray-500">
+                        Stay current and connected with updated personal details.
+                    </p>
+                </div>
+            </div>
         </div>
+        <!-- End of Intro Header -->
+    </header>
 
-        <div id='calendar'>
+    <section>
+        <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
+            <form action="../pages/profile.php" method="POST" id="frmUpdateProfile"
+                class="p-12 bg-white rounded-lg border border-gray-200 shadow-md">
+
+                <div class="space-y-12">
+                    <div class="border-b border-gray-900/10 pb-12">
+                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <!-- First name -->
+                            <div class="sm:col-span-3">
+                                <div class="form-group">
+                                    <label for="firstname"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">First
+                                        name</label>
+                                    <input type="text" name="firstname" value="<?php echo $Firstname; ?>"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
+                            <!-- Last name -->
+                            <div class="sm:col-span-3">
+                                <div class="form-group">
+                                    <label for="lastname"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Last
+                                        name</label>
+                                    <input type="text" name="lastname" value="<?php echo $Lastname; ?>"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
+                            <!-- Contact -->
+                            <div class="sm:col-span-2 sm:col-start-1">
+                                <div class="form-group">
+                                    <label for="contact"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Contact</label>
+                                    <input type="text" name="contact" value="<?php echo $Contact; ?>"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
+                            <!-- Sex -->
+                            <div class="sm:col-span-2">
+                                <div class="form-group">
+                                    <label for="sex"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Sex</label>
+                                    <input type="text" name="sex" value="<?php echo $Sex; ?>"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
+                            <!-- Age -->
+                            <div class="sm:col-span-2">
+                                <div class="form-group">
+                                    <label for="age"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Age</label>
+                                    <input type="text" name="age" value="<?php echo $Age; ?>"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
+                            <!-- Complete Address -->
+                            <div class="col-span-full">
+                                <div class="form-group">
+                                    <label for="address"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Complete
+                                        address</label>
+                                    <input type="text" name="address" value="<?php echo $Address; ?>"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
+                            <!-- Email Address -->
+                            <div class="sm:col-span-2 sm:col-start-1">
+                                <div class="form-group">
+                                    <label for="email"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Email
+                                        address</label>
+                                    <input type="text" name="email" value="<?php echo $Email; ?>"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="sm:col-span-2">
+                                <div class="form-group">
+                                    <label for="password"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Password</label>
+                                    <input type="password" name="password"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="sm:col-span-2">
+                                <div class="form-group">
+                                    <label for="password1"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Confirm
+                                        password</label>
+                                    <input type="password" name="password1"
+                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
+                                        required>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex items-center justify-end gap-x-6">
+                    <button type="submit"
+                        class="submit-btn rounded-md bg-sky-800 px-10 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        Save changes
+                    </button>
+                </div>
+            </form>
         </div>
-    </div>
-
-    <style>
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .calendar-toolbar {
-            display: flex;
-            justify-content: center;
-        }
-
-        #calendar {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-    </style>
-
-<!-- Modal -->
-<div id="addScheduleModal" class="modal">
-  <div class="modal-content">
-    <span class="modal-close">&times;</span>
-    <form id="scheduleForm">
-      <h1 style="text-align: center;"> <strong>Want to Reserve Palazzo Bello Court?</strong></h1>
-      <h3 style="text-align: center; color: grey; margin-bottom: 10px;">Fill out this form and wait for the admin confirmation. Thank you!</h3>
-      <div class="form-group">
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" class="form-control" required>
-      </div>
-      <!-- <div class="form-group">
-        <label for="reserved_by">Name:</label>
-        <input type="text" name="reserved_by" id="reserved_by" class="form-control" required>
-      </div> -->
-      <div class="form-group">
-        <label for="start_date">Start Date:</label>
-        <input type="datetime-local" name="start_date" id="start_date" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="end_date">End Date:</label>
-        <input type="datetime-local" name="end_date" id="end_date" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Schedule Event</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<style>
-  /* Modal Styles */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-
-  .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border-radius: 5px;
-    width: 400px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    color: #aaa;
-  }
-
-  .modal-close:hover {
-    color: #555;
-  }
-
-  .form-group {
-    margin-bottom: 20px;
-  }
-
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-
-  .form-control {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-  }
-
-  .btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 3px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-  }
-
-  .btn:hover {
-    background-color: #0056b3;
-  }
-</style>
-
-    <script>
-        // Close the modal when the close button (X) is clicked
-        document.addEventListener('DOMContentLoaded', function() {
-            var modal = document.getElementById("addScheduleModal");
-            var closeBtn = document.getElementsByClassName("modal-close")[0];
-
-            closeBtn.onclick = function() {
-                modal.style.display = "none";
-            }
-        });
-
-        // Reload the window after scheduling an event
-        document.addEventListener("DOMContentLoaded", function() {
-            var scheduleForm = document.getElementById("scheduleForm");
-
-            scheduleForm.addEventListener("submit", function(e) {
-                e.preventDefault();
-                
-                // Send the data to the server and handle the response
-
-                // Reload the window
-                location.reload();
-            });
-        });
-    </script>
+    </section>
+    <!-- End of Test Code -->
 
     <!-- Footer -->
     <footer class="bg-gray-100">
@@ -272,114 +247,131 @@ require_once('../components/navbar.php')
         </div>
     </footer>
     <!-- End of Footer-->
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 
-    <!-- <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script> -->
-    <script src='fullcalendar/packages/core/main.js'></script>
-    <script src='fullcalendar/packages/interaction/main.js'></script>
-    <script src='fullcalendar/packages/daygrid/main.js'></script>
+    <!-- TOASTER -->
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: ['interaction', 'dayGrid'],
-            defaultDate: '2023-06-12',
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events,
-            events: {
-                url: '../api/reservation/all-reservation.php',
-                method: 'POST',
-                extraParams: {
-                    user_id: <?php echo $_SESSION['IDUSER']; ?> // Pass the user ID to the server
-                },
-                failure: function(xhr, status, error) {
-                    console.log(xhr.responseText); // Print the error response
-                    alert('Failed to fetch events from the server.' + failure);
-                }
-            }
-        });
-        calendar.render();
+
+    <div id="toast-success"
+        class="hidden fixed flex items-center w-full max-w-xs p-4 mb-4 bottom-5 left-5 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+        role="alert">
+        <div
+            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Check icon</span>
+        </div>
+        <div class="ml-3 text-sm font-normal">Item moved successfully.</div>
+        <button type="button"
+            class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+            data-dismiss-target="#toast-success" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+    </div>
+</body>
+
+</html>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
+
+
+<script defer>
+frmUpdateProfile.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    formData = new FormData(frmUpdateProfile)
+    // formData.append('password', 'default1234')
+    // uncomment this to print all the content of formData
+    for (const [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+    }
+
+    //fetch data
+    const request = await fetch("../api/profile/profile.php", {
+        method: "POST",
+        body: formData,
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-            var modal = document.getElementById("addScheduleModal");
-            var addScheduleBtn = document.getElementById("addScheduleBtn");
-            var closeBtn = document.getElementsByClassName("close")[0];
+    //get the response
 
-            // Open the modal when the button is clicked
-            addScheduleBtn.onclick = function() {
-                modal.style.display = "block";
-            }
+    const response = await request.json();
 
-            // Close the modal when the close button is clicked
-            closeBtn.onclick = function() {
-                modal.style.display = "none";
-            }
 
-            // Close the modal when clicked outside of it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        });
 
-        document.addEventListener("DOMContentLoaded", function() {
-            // Handle form submission
-            document.getElementById("scheduleForm").addEventListener("submit", function(e) {
-                e.preventDefault();
+    if (response.responseStatus === 'success') {
+        //reload table
+        console.log("responseContent")
+        location.reload();
+        localStorage.setItem('showToast', 'true');
+        localStorage.setItem('showToastMessage', response.responseMessage)
+        window.location.href = "https://web-bello.online/web-bello/pages/user-index.php"
 
-                // Retrieve form data
-                let title = document.getElementById("title").value;
-                let start_date = document.getElementById("start_date").value;
-                let end_date = document.getElementById("end_date").value;
+        // Close the profile window
 
-                // Validate the dates
-                let currentDate = new Date();
-                let startDate = new Date(start_date);
-                if (startDate < currentDate) {
-                    alert("Start date should be in the future.");
-                    return;
-                }
+    }
 
-                let endDate = new Date(end_date);
-                if (endDate < currentDate) {
-                    alert("End date should be in the future.");
-                    return;
-                }
+})
 
-                // Send the data to the server
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", "../api/reservation/add-reservation.php", true);
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status === 200) {
-                            let response = JSON.parse(xhr.responseText);
-                            console.log(response)
-                            if (response.status === "success") {
-                                alert("Event reserved successfully.");
-                                // Clear the form
-                                document.getElementById("title").value = "";
-                                document.getElementById("start_date").value = "";
-                                document.getElementById("end_date").value = "";
-                            } else {
-                                alert("Error: " + response.message);
-                            }
-                        } else {
-                            alert("An error occurred: " + xhr.status);
-                        }
-                    }
-                };
-                xhr.send("title=" + encodeURIComponent(title) + "&start_date=" + encodeURIComponent(
-                    start_date) + "&end_date=" + encodeURIComponent(end_date));
-            });
-        });
 
-    </script>
+//submit edit hoa
+updateHoaInformation.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    formData = new FormData(updateHoaInformation)
+    // uncomment this to print all the content of formData
+    //     for (const [key, value] of formData.entries()) {
+    //   console.log(`${key}: ${value}`);
+    // }
+
+    //fetch data
+    const request = await fetch("../api/residents/update-residents.php", {
+        method: "POST",
+        body: formData,
+    });
+
+    //get the response
+
+    const response = await request.json();
+
+    if (response.responseStatus === 'success') {
+        //reload table
+        location.reload();
+
+        localStorage.setItem('showToast', 'true');
+        localStorage.setItem('showToastMessage', response.responseMessage)
+    }
+
+})
+
+//toaster 
+const showToast = () => {
+    const toast = document.getElementById('toast-success')
+    const showToastFlag = localStorage.getItem('showToast')
+    const showToastMessage = localStorage.getItem('showToastMessage')
+    if (showToastFlag === 'true') {
+        const toastMessage = toast.querySelector('.font-normal')
+        toastMessage.textContent = showToastMessage
+        toast.classList.remove('hidden');
+
+        setTimeout(() => {
+            toast.classList.add('hidden');
+            localStorage.removeItem('showToast');
+            localStorage.removeItem('showToastMessage')
+        }, 3000);
+    }
+};
+
+// Call showToast when the page loads
+document.addEventListener('DOMContentLoaded', showToast);
+</script>
 </body>
 
 </html>
