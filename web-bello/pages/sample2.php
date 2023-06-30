@@ -86,7 +86,7 @@ require_once('../components/navbar.php')
 
     <section>
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
-            <form action="../pages/sample2.php" method="POST" id="frmUpdateProfile"
+            <form action="../api/profile/profile.php" method="POST" id="frmUpdateProfile"
                 class="p-12 bg-white rounded-lg border border-gray-200 shadow-md" enctype="multipart/form-data">
 
   
