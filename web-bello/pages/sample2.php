@@ -106,9 +106,10 @@ require_once('../components/navbar.php')
                         <button type="submit" style="border: 2px solid gray;">
                             Change Profile</button>
                         </div>
-
+                        </div>
+                    </div>
             </form>
-        </div>
+        
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
             <form action="../api/profile/profile.php" method="POST" id="frmUpdateProfile"
                 class="p-12 bg-white rounded-lg border border-gray-200 shadow-md" enctype="multipart/form-data">
