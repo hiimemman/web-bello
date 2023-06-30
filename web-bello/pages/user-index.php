@@ -91,19 +91,17 @@ require_once('../components/navbar.php')
                         <!--First item-->
                         <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                             data-te-carousel-item data-te-carousel-active>
-                            <img src="../assets/images/banner-3.png" class="block w-full rounded-xl"
-                                alt="Wild Landscape" />
+                            <img src="../assets/images/banner-3.png" class="block w-full rounded-xl" alt="Banner 1" />
                         </div>
                         <!--Second item-->
                         <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                             data-te-carousel-item>
-                            <img src="../assets/images/banner-2.png" class="block w-full rounded-xl" alt="Camera" />
+                            <img src="../assets/images/banner-2.png" class="block w-full rounded-xl" alt="Banner 2" />
                         </div>
                         <!--Third item-->
                         <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                             data-te-carousel-item>
-                            <img src="../assets/images/banner-1.png" class="block w-full rounded-xl"
-                                alt="Exotic Fruits" />
+                            <img src="../assets/images/banner-1.png" class="block w-full rounded-xl" alt="Banner 3" />
                         </div>
                     </div>
 
