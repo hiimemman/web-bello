@@ -326,7 +326,38 @@ require_once('../components/navbar.php')
 
 
 <script defer>
+const frmRegisterHOA = document.querySelector('#frmRegisterHOA');
+const image_url = document.querySelector('#image_url')
+const imageHolder = document.querySelector('#imageHolder')
 
+
+frmRegisterHOA.addEventListener('submit', async (event) =>{
+    event.preventDefault()
+    formData = new FormData(frmRegisterHOA)
+    // formData.append('editor_email',emailEditor.value)
+// uncomment this to print all the content of formData
+    for (const [key, value] of formData.entries()) {
+  console.log(`${key}: ${value}`);
+}
+
+//fetch data
+  const request =  await fetch("../api/profile/update-profile-pic.php",{
+    method: "POST",
+    body:formData,
+  });
+
+//get the response
+
+const response = await request.json();
+console.log(response)
+if(response.responseStatus === 'success'){
+    //reload table
+    location.reload()
+    localStorage.setItem('showToast', 'true');
+    localStorage.setItem('showToastMessage', response.responseMessage)
+}
+
+})
 
 frmUpdateProfile.addEventListener('submit', async (event) => {
     event.preventDefault()
@@ -363,6 +394,48 @@ frmUpdateProfile.addEventListener('submit', async (event) => {
 
 })
 
+//image move
+image_url.addEventListener('change', async (event) =>{
+ const selectedFile = event.target.files[0];
+    
+// Uploading only one file; multiple uploads are not allowed.
+  let imageFile = event.target.files[0]; 
+
+   // Create a FormData object.
+  formData = new FormData();
+
+  // Add the file to the request.
+  formData.append('profileEdit', imageFile, imageFile.name);
+
+try{
+
+const fetchResponse = await fetch("../api/images/move-only-image.php",{
+    method: "POST",
+    body:formData,
+});
+
+const receivedStatus = await fetchResponse.json();
+console.log(receivedStatus)
+
+if(receivedStatus.statusCode === 200){
+
+let output = ''; 
+output += `
+ <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />
+<img class="m-2 h-auto max-w-xs rounded-lg " src="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" alt="image description">
+`;
+  
+imageHolder.innerHTML = output;
+}else{
+    alert('error')
+}
+ 
+
+
+    }catch (e){
+    console.log(e)
+    }
+})
 
 
 
