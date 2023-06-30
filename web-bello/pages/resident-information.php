@@ -615,6 +615,7 @@ sexUpdate.value = user.sex;
 ageUpdate.value = user.age;
 emailUpdate.value = user.email;
 addressUpdate.value = user.address;
+contactUpdate.value = user.contact;
 roleUpdate.value = user.role;
 statusUpdate.value = user.status;
 paymentUpdate.value = user.payment_status;
