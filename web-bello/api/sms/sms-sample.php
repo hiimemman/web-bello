@@ -2,6 +2,8 @@
 require '../../vendor/autoload.php';
 use Twilio\Rest\Client;
 
+try {
+
 // Your Account SID and Auth Token from twilio.com/console
 // To set up environmental variables, see http://twil.io/secure
 $account_sid = 'AC7eb1839388e8c815659095dca8c7129c';
@@ -21,3 +23,6 @@ $client->messages->create(
         'body' => 'I sent this message in under 10 minutes!'
     )
 );
+}catch(Exception $e){
+    exit(json_encode(array("responseStatus" =>'FAILED', "responseContent"=>'Error', "errorMessage" => $e->getMessage())));
+}
