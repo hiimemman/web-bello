@@ -104,7 +104,7 @@ require_once('../components/navbar.php')
                         </div>
                         <div class="sm:col-span-2">
                         </div>
-                        <button type="submit" class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">
+                        <button type="submit">
                             Change Profile</button>
             </form>
             
