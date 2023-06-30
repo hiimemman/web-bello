@@ -73,27 +73,12 @@ require_once('../components/navbar.php')
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
             <form action="../pages/profile.php" method="POST" id="frmUpdateProfile"
                 class="p-12 bg-white rounded-lg border border-gray-200 shadow-md">
-                <!-- Profile picture -->
-                    <div class="mt-10">
-                        <div class="flex items-center justify-center">
-                            <div class="relative">
-                                <img class="h-24 w-24 rounded-full object-cover" src="path_to_profile_picture" alt="Profile Picture">
-                                    <div class="absolute top-0 right-0">
-                                        <label for="profile-picture" class="cursor-pointer">
-                                            <svg class="h-6 w-6 text-gray-400 hover:text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                            </svg>
-                                        </label>
-                                        <input id="profile-picture" type="file" class="hidden">
-                                    </div>
+                        <!-- Profile Picture -->
+                            <div class="sm:col-span-2">
+                                <div class="profile-image">
+                                    <img src="path_to_profile_picture" alt="Profile Picture">
                                 </div>
                             </div>
-                        <p class="mt-2 text-sm text-gray-500">Click the icon to update your profile picture.</p>
-                    </div>
-                <div class="space-y-12">
-                    <div class="border-b border-gray-900/10 pb-12">
-                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-
                             <!-- First name -->
                             <div class="sm:col-span-3">
                                 <div class="form-group">
