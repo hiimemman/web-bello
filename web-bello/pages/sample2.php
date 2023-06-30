@@ -103,7 +103,7 @@ require_once('../components/navbar.php')
                         </div>
                         </div>
                         <div class="sm:col-span-2">
-                        <button type="submit">
+                        <button type="submit" style="border: 2px solid gray;">
                             Change Profile</button>
                         </div>
 
