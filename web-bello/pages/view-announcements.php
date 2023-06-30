@@ -399,6 +399,33 @@ require_once('../components/navbar.php')
     </section>
     `;
 
+    console.log(forum.id)
+
+let addComment = document.querySelector('#addComment' + forum.id)
+
+addComment.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const request = await fetch(
+        'https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php', {
+            method: 'POST',
+            body: formData,
+        })
+
+    const response = await request.json()
+    
+    if (response.responseStatus === 'success') {
+
+        getAllForum()
+    }
+
+    for (const [key, value] of formData.entries()) {
+        console.log(key, value);
+    }
+});
+
+
         })
 
 
@@ -406,33 +433,7 @@ require_once('../components/navbar.php')
 
 
         forumMain.innerHTML = content;
-
-
-        let addComment = document.querySelector('#addComment' + forum.id)
-
-        addComment.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const formData = new FormData(e.target);
-            const request = await fetch(
-                'https://web-bello.online/web-bello/api/comment/add-comment-per-forum.php', {
-                    method: 'POST',
-                    body: formData,
-                })
-
-            const response = await request.json()
-            
-            if (response.responseStatus === 'success') {
-
-                getAllForum()
-            }
-
-            for (const [key, value] of formData.entries()) {
-                console.log(key, value);
-            }
-        });
-
-
+      
 
 
 
