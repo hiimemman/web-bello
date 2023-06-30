@@ -120,7 +120,7 @@ require_once('../components/navbar.php')
 
 
                         <!-- Profile Picture -->
-                        <div class="sm:col-span-2" id="frmRegisterHOA">
+                        <!-- <div class="sm:col-span-2" id="frmRegisterHOA">
                         <div class="profile-image" id="imageHolder">
                             <img src="<?php echo $Image; ?>" alt="Profile Picture">
                         </div>
@@ -130,7 +130,7 @@ require_once('../components/navbar.php')
                             <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
                         </div>
                         </div>
-                        </div>
+                        </div> -->
                         <div class="sm:col-span-2">
                         </div>
 
