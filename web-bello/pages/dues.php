@@ -467,7 +467,7 @@ updateHoaInformation.addEventListener('submit', async (event) =>{
       totalPaymentUpdateValue = 0.00;
     }
 
-    formData.append('balanceUpdate', totalBalanceValue)
+    formData.append('balanceUpdate', totalPaymentUpdateValue)
     // uncomment this to print all the content of formData
     for (const [key, value] of formData.entries()) {
   console.log(`${key}: ${value}`);
