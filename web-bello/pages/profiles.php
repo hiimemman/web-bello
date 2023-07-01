@@ -101,9 +101,6 @@ if ($result) {
         cursor: pointer;
         font-size: 14px;
     }
-    #btnShow{
-        border: 2px solid #ccc;
-    }
 </style>
 
 </head>
@@ -159,7 +156,7 @@ if ($result) {
   <label for="password" class="label">Password:</label>
   <div class="password-field">
     <input type="password" name="password" id="password" class="input-field" required>
-    <span class="password-toggle" onclick="togglePasswordVisibility('password')" id="btnShow">Show</span>
+    <span class="password-toggle" onclick="togglePasswordVisibility('password')" style="border: 1px solid #000;">Show</span>
   </div>
 </div>
 
@@ -168,7 +165,7 @@ if ($result) {
   <label for="password1" class="label">Confirm Password:</label>
   <div class="password-field">
     <input type="password" name="password1" id="password1" class="input-field" required>
-    <span class="password-toggle" onclick="togglePasswordVisibility('password1')" id="btnShow">Show</span>
+    <span class="password-toggle" onclick="togglePasswordVisibility('password1')" style="border: 1px solid #000;">Show</span>
   </div>
 </div>
 
