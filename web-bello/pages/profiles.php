@@ -144,7 +144,6 @@ if ($result) {
             <select name="position" id="" class="input-field">
                             <option value="Admin">Admin</option>
                             <option value="Board Member">Board Member</option>
-                            <option value="Board Member">Homeowner</option>
             </select>
         </div>
 
