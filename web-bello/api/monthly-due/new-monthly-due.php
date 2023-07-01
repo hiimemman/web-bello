@@ -27,8 +27,8 @@ try{
 
 // Configure HTTP basic authorization: BasicAuth
 $config = ClickSend\Configuration::getDefaultConfiguration()
-->setUsername('megumionaka28@gmail.com')
-->setPassword('AF129BBA-2824-E020-7471-42EE0608670B');
+->setUsername('dexrye.domingo@gmail.com')
+->setPassword('6F127CFF-C4A8-85EC-3E20-D6A16D762451');
 
 $apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(),$config);
 $msg = new \ClickSend\Model\SmsMessage();
