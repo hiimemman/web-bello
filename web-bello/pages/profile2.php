@@ -209,7 +209,7 @@ frmUpdateProfile.addEventListener('submit', async (event) =>{
 }
 
 //fetch data
-  const request =  await fetch("../api/admin/profiles.php",{
+  const request =  await fetch("../api/admin/update-profile.php",{
     method: "POST",
     body:formData,
   });
