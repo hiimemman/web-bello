@@ -156,7 +156,7 @@ if ($result) {
   <label for="password" class="label">Password:</label>
   <div class="password-field">
     <input type="password" name="password" id="password" class="input-field" required>
-    <span class="password-toggle" onclick="togglePasswordVisibility('password')" style="margin-top: 2px; border: 1px solid #000;">Show</span>
+    <span class="password-toggle" onclick="togglePasswordVisibility('password')" style="margin-top: 5px; border: 1px solid #fff; padding: 10px;">Show</span>
   </div>
 </div>
 
@@ -165,7 +165,7 @@ if ($result) {
   <label for="password1" class="label">Confirm Password:</label>
   <div class="password-field">
     <input type="password" name="password1" id="password1" class="input-field" required>
-    <span class="password-toggle" onclick="togglePasswordVisibility('password1')" style="margin-top: 2px; border: 1px solid #000;">Show</span>
+    <span class="password-toggle" onclick="togglePasswordVisibility('password1')" style="margin-top: 5px; border: 1px solid #fff; padding: 10px;">Show</span>
   </div>
 </div>
 
