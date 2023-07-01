@@ -151,16 +151,37 @@ if ($result) {
             <label for="contact" class="label">Contact:</label>
             <input type="text" name="contact" value="<?php echo $Contact; ?>" class="input-field">
         </div>
+<!-- Password -->
+<div class="form-group">
+  <label for="password" class="label">Password:</label>
+  <div class="password-field">
+    <input type="password" name="password" id="password" class="input-field" required>
+    <span class="password-toggle" onclick="togglePasswordVisibility('password')">Show</span>
+  </div>
+</div>
 
-        <div class="form-group">
-            <label for="password" class="label">Password:</label>
-            <input type="password" name="password" class="input-field" required>
-        </div>
+<!-- Confirm Password -->
+<div class="form-group">
+  <label for="password1" class="label">Confirm Password:</label>
+  <div class="password-field">
+    <input type="password" name="password1" id="password1" class="input-field" required>
+    <span class="password-toggle" onclick="togglePasswordVisibility('password1')">Show</span>
+  </div>
+</div>
 
-        <div class="form-group">
-            <label for="password1" class="label">Confirm Password:</label>
-            <input type="password" name="password1" class="input-field" required>
-        </div>
+<script>
+  function togglePasswordVisibility(inputId) {
+    const passwordInput = document.getElementById(inputId);
+    const passwordToggle = passwordInput.nextElementSibling;
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      passwordToggle.textContent = "Hide";
+    } else {
+      passwordInput.type = "password";
+      passwordToggle.textContent = "Show";
+    }
+  }
+</script>
 
     </div>
 </div>
