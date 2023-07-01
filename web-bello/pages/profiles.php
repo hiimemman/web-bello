@@ -155,11 +155,17 @@ if ($result) {
         <div class="form-group">
             <label for="password" class="label">Password:</label>
             <input type="password" name="password" class="input-field" required>
+            <button type="button" class="password-toggle absolute inset-y-0 right-0 px-2 flex items-center focus:outline-none" onclick="togglePasswordVisibility('password')">
+        <span class="password-icon">Show</span>
+      </button>
         </div>
 
         <div class="form-group">
             <label for="password1" class="label">Confirm Password:</label>
             <input type="password" name="password1" class="input-field" required>
+            <button type="button" class="password-toggle absolute inset-y-0 right-0 px-2 flex items-center focus:outline-none" onclick="togglePasswordVisibility('password')">
+        <span class="password-icon">Show</span>
+      </button>
         </div>
 
     </div>
@@ -169,7 +175,19 @@ if ($result) {
         </form>
     </div>
 
-    
+    <script>
+  function togglePasswordVisibility(inputId) {
+    const passwordInput = document.getElementById(inputId);
+    const passwordToggle = passwordInput.nextElementSibling;
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      passwordToggle.innerHTML = "Hide";
+    } else {
+      passwordInput.type = "password";
+      passwordToggle.innerHTML = "Show";
+    }
+  }
+</script>
 
     <!-- TOASTER -->
 
