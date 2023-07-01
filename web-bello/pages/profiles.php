@@ -171,11 +171,7 @@ if ($result) {
     </div>
 </div>
 
-            <input type="submit" value="Save Changes" class="submit-btn">
-        </form>
-    </div>
-
-    <script>
+<script>
   function togglePasswordVisibility(inputId) {
     const passwordInput = document.getElementById(inputId);
     const passwordToggle = passwordInput.nextElementSibling;
@@ -188,6 +184,11 @@ if ($result) {
     }
   }
 </script>
+            <input type="submit" value="Save Changes" class="submit-btn">
+        </form>
+    </div>
+
+  
 
     <!-- TOASTER -->
 
