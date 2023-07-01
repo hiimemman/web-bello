@@ -267,12 +267,12 @@ th.sort-desc::after {
                     </div>
                     
                     
-                    <div>
+                    <!-- <div>
                         <label for="totalPaymentUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Total Payment</label>
                         <input type="text" name="totalPaymentUpdate" id="totalPaymentUpdate" pattern="[-+]?[0-9]*\.?[0-9]+" 
 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
 required>
-                    </div>
+                    </div> -->
 
                     <div>
                         <label for="statusUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</label>
@@ -361,28 +361,7 @@ const balanceUpdate = document.querySelector('#balanceUpdate')
 const totalPaymentUpdate = document.querySelector('#totalPaymentUpdate')
 
 
-totalPaymentUpdate.addEventListener('input' , (event) =>{
-  const input = event.target.value;
-  
-  // Remove any non-digit characters from the input
-  const sanitizedInput = input.replace(/[^0-9.]/g, '');
-  
-  // Format the input as a currency value
-  const formattedInput = formatCurrency(sanitizedInput);
-  
-  // Update the input value with the formatted currency value
-  event.target.value = formattedInput;
-})
 
-function formatCurrency(value) {
-  // You can use a library like 'Numeral.js' or 'accounting.js' for more advanced formatting,
-  // or implement your own logic to format the currency value as per your requirements.
-  // Here's a simple example of formatting the value with two decimal places:
-  
-  const formattedValue = parseFloat(value).toFixed(2);
-  
-  return formattedValue;
-}
 //Onload
 window.onload = function(){
     loadTable();
@@ -482,10 +461,11 @@ if(response.responseStatus === 'success'){
 updateHoaInformation.addEventListener('submit', async (event) =>{
     event.preventDefault()
     formData = new FormData(updateHoaInformation)
-    let totalPaymentUpdateValue = parseFloat(totalPaymentUpdate.value)
-    let totalBalanceValue = parseFloat(balanceUpdate)
-
-    totalBalanceValue =totalBalanceValue - totalPaymentUpdateValue
+    let totalPaymentUpdateValue = balanceUpdate
+   
+    if(statusUpdate == 'paid'){
+      totalPaymentUpdateValue = 0.00;
+    }
 
     formData.append('balanceUpdate', totalBalanceValue)
     // uncomment this to print all the content of formData
