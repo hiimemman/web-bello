@@ -24,7 +24,7 @@ if ($ID) {
             // Check if the passwords match
             if ($Password == $Password1) {
                 // $HashPassword = password_hash($Password, PASSWORD_DEFAULT);
-                $sql = "UPDATE `tbl_hoa` SET `firstname` = '$Firstname', `lastname` = '$Lastname', `password` = '$Password', `email` = '$Email', `position` = '$Position', `contact` = '$Contact', `email` = '$Email' WHERE id = '$ID';";
+                $sql = "UPDATE `tbl_hoa` SET `firstname` = '$Firstname', `lastname` = '$Lastname', `password` = '$Password', `email` = '$Email', `position` = '$Position', `contact` = '$Contact', `email` = '$Email', `password` = '$Password' WHERE id = '$ID';";
                 $result = mysqli_query($con, $sql);
 
                 exit(json_encode(array("responseStatus" =>'success', "responseContent" =>'reload', "responseMessage" =>'Updated successfully!')));
