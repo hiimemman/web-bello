@@ -360,6 +360,29 @@ const amountUpdateFix = document.querySelector('#amountUpdateFix')
 const balanceUpdate = document.querySelector('#balanceUpdate')
 const totalPaymentUpdate = document.querySelector('#totalPaymentUpdate')
 
+
+totalPaymentUpdate.addEventListener('input' , (event) =>{
+  const input = event.target.value;
+  
+  // Remove any non-digit characters from the input
+  const sanitizedInput = input.replace(/[^0-9.]/g, '');
+  
+  // Format the input as a currency value
+  const formattedInput = formatCurrency(sanitizedInput);
+  
+  // Update the input value with the formatted currency value
+  event.target.value = formattedInput;
+})
+
+function formatCurrency(value) {
+  // You can use a library like 'Numeral.js' or 'accounting.js' for more advanced formatting,
+  // or implement your own logic to format the currency value as per your requirements.
+  // Here's a simple example of formatting the value with two decimal places:
+  
+  const formattedValue = parseFloat(value).toFixed(2);
+  
+  return formattedValue;
+}
 //Onload
 window.onload = function(){
     loadTable();
