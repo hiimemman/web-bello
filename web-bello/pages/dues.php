@@ -221,7 +221,7 @@ th.sort-desc::after {
                     </div>
 
                   
-                    <button type="submit" class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">Generate</button>
+                    <button type="submit" id ="btnSubmitDue" class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">Generate</button>
                    
                 </form>
             </div>
@@ -352,6 +352,8 @@ const updateHiddenButton =document.querySelector('#updateHiddenButton')
 
 //Update form modal 
 const updateHoaInformation = document.querySelector('#updateHoaInformation')
+//submit button for generate dues
+const btnSubmitDue =document.querySelector('#btnSubmitDue')
 
 //MODAL FIELDS
 const idUpdate =document.querySelector('#idUpdate')
@@ -427,7 +429,9 @@ const loadTable = async function(){
 
 
 frmRegisterHOA.addEventListener('submit', async (event) =>{
+  
     event.preventDefault()
+    btnSubmitDue.classList.add('disabled')
     formData = new FormData(frmRegisterHOA)
 
 // uncomment this to print all the content of formData
