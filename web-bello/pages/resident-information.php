@@ -209,7 +209,8 @@ th.sort-desc::after {
                     <div>
                     <div>
                         <label for="sex" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sex</label>
-                            <select id="sex" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                            <select id="sex" name="sex" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                            <option selected>Choose</option>
                             <option value="Female">Female</option>
                             <option value="Male">Male</option>
                             </select>
@@ -610,8 +611,11 @@ updateHiddenButton.click()
 idUpdate.value = user.id;
 firstnameUpdate.value = user.firstname;
 lastnameUpdate.value = user.lastname;
+sexUpdate.value = user.sex;
+ageUpdate.value = user.age;
 emailUpdate.value = user.email;
 addressUpdate.value = user.address;
+contactUpdate.value = user.contact;
 roleUpdate.value = user.role;
 statusUpdate.value = user.status;
 paymentUpdate.value = user.payment_status;

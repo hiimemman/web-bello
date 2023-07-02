@@ -6,7 +6,7 @@ try{
 $con = connection();
 
 
-$sql = mysqli_query($con, "SELECT * FROM `tbl_residents`");
+$sql = mysqli_query($con, "SELECT * FROM `tbl_residents` ORDER BY created_at DESC");
 
 //store in result
 

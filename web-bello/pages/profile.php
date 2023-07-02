@@ -26,6 +26,7 @@ if ($result) {
     $Address = $user['address'];
     $Contact = $user['contact'];
     $Email = $user['email'];
+    $Image = $user['image_url'];
 } else {
     echo "Error fetching user data: " . mysqli_error($con);
 }
@@ -45,7 +46,21 @@ require_once('../components/navbar.php')
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
 
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 
 </head>
 
@@ -70,13 +85,54 @@ require_once('../components/navbar.php')
     </header>
 
     <section>
+        
+
+            <!-- <form action="" method="POST" id ="frmRegisterHOA">
+            <div class="space-y-12">
+                    <div class="border-b border-gray-900/10 pb-12">
+                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6"> -->
+                        <!-- Profile Picture -->
+                        <!-- <div class="sm:col-span-2">
+                        <div class="profile-image" id="imageHolder">
+                            <img src="<?php //echo $Image; ?>" alt="Profile Picture">
+                        </div>
+
+                        <div class="mt-4">
+                            <label for="file_input" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
+                            <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
+                        </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                        <button type="submit" style="border: 2px solid gray;">
+                            Change Profile</button>
+                        </div>
+                        </div>
+                    </div>
+            </form> -->
+        
         <div class="container mx-auto grid gap-8 lg:grid-cols-1 mt-10 mb-10">
-            <form action="../pages/profile.php" method="POST" id="frmUpdateProfile"
-                class="p-12 bg-white rounded-lg border border-gray-200 shadow-md">
+            <form action="../api/profile/profile.php" method="POST" id="frmUpdateProfile"
+                class="p-12 bg-white rounded-lg border border-gray-200 shadow-md" enctype="multipart/form-data">
+                <!-- Profile Picture -->
+                <div class="sm:col-span-2" id="frmRegisterHOA">
+                        <div class="profile-image" id="imageHolder">
+                            <img src="<?php echo $Image; ?>" alt="Profile Picture">
+                         </div>
+
+                        <div class="mt-4">
+                            <label for="image_url" class="text-sm font-medium text-gray-700">Change Profile Picture</label>
+                            <input type="file" id="image_url" name="image_url" accept="image/*" class="mt-1">
+                        </div>
+                        </div>
+                        </div>
 
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+
+
+                        
+
                             <!-- First name -->
                             <div class="sm:col-span-3">
                                 <div class="form-group">
@@ -153,27 +209,45 @@ require_once('../components/navbar.php')
                             </div>
 
                             <!-- Password -->
-                            <div class="sm:col-span-2">
-                                <div class="form-group">
-                                    <label for="password"
-                                        class="label block text-sm font-medium leading-6 text-gray-900">Password</label>
-                                    <input type="password" name="password"
-                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
-                                        required>
-                                </div>
-                            </div>
+<div class="sm:col-span-2">
+  <div class="form-group">
+    <label for="password" class="label block text-sm font-medium leading-6 text-gray-900">Password</label>
+    <div class="relative">
+      <input type="password" name="password" id="password" class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" required>
+      <button type="button" class="password-toggle absolute inset-y-0 right-0 px-2 flex items-center focus:outline-none" onclick="togglePasswordVisibility('password')">
+        <span class="password-icon">Show</span>
+      </button>
+    </div>
+  </div>
+</div>
 
-                            <!-- Confirm Password -->
-                            <div class="sm:col-span-2">
-                                <div class="form-group">
-                                    <label for="password1"
-                                        class="label block text-sm font-medium leading-6 text-gray-900">Confirm
-                                        password</label>
-                                    <input type="password" name="password1"
-                                        class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
-                                        required>
-                                </div>
-                            </div>
+<!-- Confirm Password -->
+<div class="sm:col-span-2">
+  <div class="form-group">
+    <label for="password1" class="label block text-sm font-medium leading-6 text-gray-900">Confirm password</label>
+    <div class="relative">
+      <input type="password" name="password1" id="password1" class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6" required>
+      <button type="button" class="password-toggle absolute inset-y-0 right-0 px-2 flex items-center focus:outline-none" onclick="togglePasswordVisibility('password1')">
+        <span class="password-icon">Show</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePasswordVisibility(inputId) {
+    const passwordInput = document.getElementById(inputId);
+    const passwordToggle = passwordInput.nextElementSibling;
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      passwordToggle.innerHTML = "Hide";
+    } else {
+      passwordInput.type = "password";
+      passwordToggle.innerHTML = "Show";
+    }
+  }
+</script>
+
 
                         </div>
                     </div>
@@ -286,6 +360,39 @@ require_once('../components/navbar.php')
 
 
 <script defer>
+const frmRegisterHOA = document.querySelector('#frmRegisterHOA');
+const image_url = document.querySelector('#image_url')
+const imageHolder = document.querySelector('#imageHolder')
+
+
+frmRegisterHOA.addEventListener('submit', async (event) =>{
+    event.preventDefault()
+    formData = new FormData(frmRegisterHOA)
+    // formData.append('editor_email',emailEditor.value)
+// uncomment this to print all the content of formData
+    for (const [key, value] of formData.entries()) {
+  console.log(`${key}: ${value}`);
+}
+
+//fetch data
+  const request =  await fetch("../api/profile/update-profile-pic.php",{
+    method: "POST",
+    body:formData,
+  });
+
+//get the response
+
+const response = await request.json();
+console.log(response)
+if(response.responseStatus === 'success'){
+    //reload table
+    location.reload()
+    localStorage.setItem('showToast', 'true');
+    localStorage.setItem('showToastMessage', response.responseMessage)
+}
+
+})
+
 frmUpdateProfile.addEventListener('submit', async (event) => {
     event.preventDefault()
     formData = new FormData(frmUpdateProfile)
@@ -313,7 +420,7 @@ frmUpdateProfile.addEventListener('submit', async (event) => {
         location.reload();
         localStorage.setItem('showToast', 'true');
         localStorage.setItem('showToastMessage', response.responseMessage)
-        window.location.href = "https://web-bello.online/web-bello/pages/user-index.php"
+        window.location.href = "https://web-bello.online/web-bello/pages/sample2.php"
 
         // Close the profile window
 
@@ -321,56 +428,53 @@ frmUpdateProfile.addEventListener('submit', async (event) => {
 
 })
 
+//image move
+image_url.addEventListener('change', async (event) =>{
+ const selectedFile = event.target.files[0];
+    
+// Uploading only one file; multiple uploads are not allowed.
+  let imageFile = event.target.files[0]; 
 
-//submit edit hoa
-updateHoaInformation.addEventListener('submit', async (event) => {
-    event.preventDefault()
-    formData = new FormData(updateHoaInformation)
-    // uncomment this to print all the content of formData
-    //     for (const [key, value] of formData.entries()) {
-    //   console.log(`${key}: ${value}`);
-    // }
+   // Create a FormData object.
+  formData = new FormData();
 
-    //fetch data
-    const request = await fetch("../api/residents/update-residents.php", {
-        method: "POST",
-        body: formData,
-    });
+  // Add the file to the request.
+  formData.append('profileEdit', imageFile, imageFile.name);
 
-    //get the response
+try{
 
-    const response = await request.json();
+const fetchResponse = await fetch("../api/images/move-only-image.php",{
+    method: "POST",
+    body:formData,
+});
 
-    if (response.responseStatus === 'success') {
-        //reload table
-        location.reload();
+const receivedStatus = await fetchResponse.json();
+console.log(receivedStatus)
 
-        localStorage.setItem('showToast', 'true');
-        localStorage.setItem('showToastMessage', response.responseMessage)
+if(receivedStatus.statusCode === 200){
+
+let output = ''; 
+output += `
+ <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />
+<img class="m-2 h-auto max-w-xs rounded-lg " src="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" alt="image description">
+`;
+  
+imageHolder.innerHTML = output;
+}else{
+    alert('error')
+}
+ 
+
+
+    }catch (e){
+    console.log(e)
     }
-
 })
 
-//toaster 
-const showToast = () => {
-    const toast = document.getElementById('toast-success')
-    const showToastFlag = localStorage.getItem('showToast')
-    const showToastMessage = localStorage.getItem('showToastMessage')
-    if (showToastFlag === 'true') {
-        const toastMessage = toast.querySelector('.font-normal')
-        toastMessage.textContent = showToastMessage
-        toast.classList.remove('hidden');
 
-        setTimeout(() => {
-            toast.classList.add('hidden');
-            localStorage.removeItem('showToast');
-            localStorage.removeItem('showToastMessage')
-        }, 3000);
-    }
-};
 
 // Call showToast when the page loads
-document.addEventListener('DOMContentLoaded', showToast);
+// document.addEventListener('DOMContentLoaded', showToast);
 </script>
 </body>
 

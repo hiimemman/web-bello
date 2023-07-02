@@ -38,13 +38,13 @@ if (!isset($_SESSION['IDUSER'])) {
     <script src="https://cdn.tailwindcss.com"></script>
 
 
-  
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
 
 
-   
-    </head>
+
+</head>
 
 
 
@@ -107,10 +107,10 @@ if (!isset($_SESSION['IDUSER'])) {
                 margin-left: 0;
             }
         }
-        .swal2-toast-background-green {
-  background-color: green;
-}
 
+        .swal2-toast-background-green {
+            background-color: green;
+        }
     </style>
 
 
@@ -124,7 +124,7 @@ if (!isset($_SESSION['IDUSER'])) {
                     </h2>
                 </a>
             </div>
-            
+
             <div class="flex lg:hidden px-6">
                 <button id="menu-toggle" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                     <span class="sr-only">Open main menu</span>
@@ -144,14 +144,15 @@ if (!isset($_SESSION['IDUSER'])) {
                     </li>
                     <li class="nav-item">
                         <a href="/web-bello/pages/user-index.php#about" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
-                            <span>About us</span>
+                            <span>About</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="/web-bello/pages/user-index.php#contact" class="nav-link text-sm font-semibold leading-6 text-gray-900 dark:text-white flex items-center">
-                            <span>Contacts</span>
+                            <span>Contact</span>
                         </a>
                     </li>
+
                 </ul>
 
                 <div class="relative" x-data="{ open: false }">
@@ -165,9 +166,7 @@ if (!isset($_SESSION['IDUSER'])) {
 
                     <div x-show="open" @click.away="open = false" class="absolute right-0 py-2 w-48 bg-white dark:bg-gray-900 rounded-md shadow-lg z-10" :class="{ 'hidden': !open }" id="dropdownMenu">
                         <!-- Dropdown items here -->
-                        <a href="/web-bello/pages/profile.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            Update profile
-                        </a>
+
                         <a href="/web-bello/pages/view-announcements.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Announcements
                         </a>
@@ -186,12 +185,19 @@ if (!isset($_SESSION['IDUSER'])) {
                         <a href="/web-bello/pages/monthly-due.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Manage dues
                         </a>
-                        <a href="../api/login/logout.php" class="dropdown-item flex items-center text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            <span class="mr-2">Sign out</span>
-                            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"></path>
-                            </svg>
-                        </a>
+                        <div class="border-t-2 border-gray-100">
+                            <a href="/web-bello/pages/profile.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Update profile
+                            </a>
+                            <a href="../api/login/logout.php" class="dropdown-item flex items-center text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                <span class="mr-2">Sign out</span>
+                                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+
 
                     </div>
                 </div>
@@ -224,12 +230,6 @@ if (!isset($_SESSION['IDUSER'])) {
                         <div class="space-y-2 py-6">
                             <a href="/web-bello/pages/user-index.php" class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                                 Home
-                            </a>
-                            <a href="/web-bello/pages/user-index.php#about" class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                                About us
-                            </a>
-                            <a href="/web-bello/pages/user-index.php#contact" class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                                Contacts
                             </a>
                             <a href="/web-bello/pages/view-announcements.php" class="-mx-3 text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                                 Announcements
