@@ -416,7 +416,9 @@ const loadTable = async function(){
     <td class="px-4 py-3">
         <div class="flex items-center">
             <div class="w-10 h-10 rounded-full overflow-hidden">
+            <a href="`+users.image_url+`">
                 <img src="`+users.image_url+`" alt="User Image">
+            </a>
             </div>
         </div>
     </td>
