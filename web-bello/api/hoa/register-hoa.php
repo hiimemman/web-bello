@@ -23,7 +23,7 @@ $Contact = $_POST['contact'];
 $Email = $_POST['email'];
 $Role = $_POST['role'];
 $Password = $_POST['password'];
-// $Profile = 'https://web-bello.online/web-bello/savedimages/profile.png';
+$ImageUrl = $_POST['image_url'];
 
 try{
     
@@ -140,7 +140,7 @@ if (mysqli_num_rows($emailCheckResult) > 0) {
              
     
         if (!$emailExists) {
-        $sql = "INSERT INTO `tbl_hoa` (`firstname`,`lastname`,`email`,`address`,`role`,`contact`,`password`) VALUES ('$Firstname','$Lastname','$Email','$Address','$Role','$Contact','$Password');";
+        $sql = "INSERT INTO `tbl_hoa` (`firstname`,`lastname`,`email`,`address`,`role`,`contact`,`password`,`image_url`) VALUES ('$Firstname','$Lastname','$Email','$Address','$Role','$Contact','$Password','$ImageUrl');";
         mysqli_query($con, $sql);
 
         // Get all residents
