@@ -15,8 +15,8 @@ $Firstname = $_POST['firstname'];
 $Lastname = $_POST['lastname'];
 $Email = $_POST['email'];
 $Address = $_POST['address'];
-$Role = $_POST['role'];
 $Password = $_POST['password'];
+$Role = $_POST['role'];
 
 try{
         // Check if there is already a president
@@ -164,7 +164,7 @@ try{
                     
 //                         $mail->send();
              
-    $sql = "INSERT INTO `tbl_hoa` (`firstname`,`lastname`,`email`,`address`, `role`, `password`) VALUES ('$Firstname','$Lastname','$Email', '$Address', '$Role', '$Password');";
+    $sql = "INSERT INTO `tbl_hoa` (`firstname`,`lastname`,`email`,`address`, `password`, `role`) VALUES ('$Firstname','$Lastname','$Email', '$Address', '$Password', '$Role');";
     mysqli_query($con, $sql);
 
     //get all if success
