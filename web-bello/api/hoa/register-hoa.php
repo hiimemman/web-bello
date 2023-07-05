@@ -26,6 +26,48 @@ $Password = $_POST['password'];
 // $Profile = 'https://web-bello.online/web-bello/savedimages/profile.png';
 
 try{
+     // Check if there is already a president
+     $sqlPresident = mysqli_query($con, "SELECT * FROM `tbl_hoa` WHERE `role` = 'president'");
+     $presidentCount = mysqli_num_rows($sqlPresident);
+ 
+     if ($presidentCount > 0) {
+         exit(json_encode(array("responseStatus" => 'error', "responseMessage" => 'There is already a president.')));
+     }
+ 
+     // Check if there is already a vice president
+     $sqlVicePresident = mysqli_query($con, "SELECT * FROM `tbl_hoa` WHERE `role` = 'vice president'");
+     $vicePresidentCount = mysqli_num_rows($sqlVicePresident);
+ 
+     if ($vicePresidentCount > 0) {
+         exit(json_encode(array("responseStatus" => 'error', "responseMessage" => 'There is already a vice president.')));
+     }
+ 
+     // Check if there is already a secretary
+     $sqlSecretary = mysqli_query($con, "SELECT * FROM `tbl_hoa` WHERE `role` = 'secretary'");
+     $secretaryCount = mysqli_num_rows($sqlSecretary);
+ 
+     if ($secretaryCount > 0) {
+         exit(json_encode(array("responseStatus" => 'error', "responseMessage" => 'There is already a secretary.')));
+     }
+ 
+     // Check if there is already an auditor
+     $sqlAuditor = mysqli_query($con, "SELECT * FROM `tbl_hoa` WHERE `role` = 'auditor'");
+     $auditorCount = mysqli_num_rows($sqlAuditor);
+ 
+     if ($auditorCount > 0) {
+         exit(json_encode(array("responseStatus" => 'error', "responseMessage" => 'There is already an auditor.')));
+     }
+ 
+     // Check if there are already four board members
+     $sqlBoardMembers = mysqli_query($con, "SELECT * FROM `tbl_hoa` WHERE `role` = 'board member'");
+     $boardMembersCount = mysqli_num_rows($sqlBoardMembers);
+ 
+     if ($boardMembersCount >= 4) {
+         exit(json_encode(array("responseStatus" => 'error', "responseMessage" => 'There are already four board members.')));
+     }
+
+
+    //Email Notification
     $emailExists = false;
 $emailCheckQuery = "SELECT * FROM `tbl_hoa` WHERE `email` = '$Email'";
 $emailCheckResult = mysqli_query($con, $emailCheckQuery);
