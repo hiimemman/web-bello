@@ -124,6 +124,7 @@ th.sort-desc::after {
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id ="tblHOA">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
+                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Image</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Full Name</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Email</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Role</th>
@@ -417,9 +418,9 @@ const loadTable = async function(){
             <div class="w-10 h-10 rounded-full overflow-hidden">
                 <img src="`+users.image_url+`" alt="User Image">
             </div>
-            <span class="ml-3">`+users.firstname+" "+users.lastname+`</span>
         </div>
     </td>
+    <td class="px-4 py-3">`+users.firstname+" "+users.lastname+`</td>
     <td class="px-4 py-3">`+users.email+`</td>
     <td class="px-4 py-3">`+users.role+`</td>
     <td class="px-4 py-3">`+users.address+`</td>
