@@ -439,7 +439,7 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
 }
 
 //fetch data
-  const request =  await fetch("../api/hoa/register-new-hoa.php",{
+  const request =  await fetch("../api/hoa/register-hoa.php",{
     method: "POST",
     body:formData,
   });
