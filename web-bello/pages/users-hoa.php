@@ -12,34 +12,100 @@ require_once('../components/navbar.php')
 <body>
     
 
-<div class="flex flex-col items-center justify-center">
+<div id="officials">
+  <div class="official">
+    <img src="president.jpg" alt="President">
+    <h3>John Doe</h3>
+    <p>President</p>
+  </div>
 
-<div class="text-content">
-<img src="../savedimages/profile.png" alt="" srcset="">
-<h2 class="text-x1 font-bold">John Doe</h2>
-<p class="text-gray-500">President</p>
+  <div class="official">
+    <img src="vice-president.jpg" alt="Vice President">
+    <h3>Jane Smith</h3>
+    <p>Vice President</p>
+  </div>
+
+  <div class="official">
+    <img src="secretary.jpg" alt="Secretary">
+    <h3>Michael Johnson</h3>
+    <p>Secretary</p>
+  </div>
+
+  <div class="official treasurer">
+    <img src="treasurer.jpg" alt="Treasurer">
+    <h3>Sarah Wilson</h3>
+    <p>Treasurer</p>
+  </div>
+
+  <div class="official auditor">
+    <img src="auditor.jpg" alt="Auditor">
+    <h3>Robert Davis</h3>
+    <p>Auditor</p>
+  </div>
+
+  <div class="official">
+    <img src="board-member.jpg" alt="Board Member">
+    <h3>Emily Brown</h3>
+    <p>Board Member</p>
+  </div>
+
+  <div class="official">
+    <img src="board-member.jpg" alt="Board Member">
+    <h3>David Wilson</h3>
+    <p>Board Member</p>
+  </div>
+
+  <div class="official">
+    <img src="board-member.jpg" alt="Board Member">
+    <h3>Jennifer Lee</h3>
+    <p>Board Member</p>
+  </div>
+
+  <div class="official">
+    <img src="board-member.jpg" alt="Board Member">
+    <h3>William Johnson</h3>
+    <p>Board Member</p>
+  </div>
+
+  <div class="official">
+    <img src="board-member.jpg" alt="Board Member">
+    <h3>Amy Davis</h3>
+    <p>Board Member</p>
+  </div>
+
+  <div class="official">
+    <img src="board-member.jpg" alt="Board Member">
+    <h3>Christopher Smith</h3>
+    <p>Board Member</p>
+  </div>
 </div>
 
-<div class="text-content">
-<img src="../savedimages/profile.png" alt="" srcset="">
-<h2 class="text-x1 font-bold">John Doe</h2>
-<p class="text-gray-500">President</p>
-</div>
+<style>
+#officials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-<div class="text-content">
-<img src="../savedimages/profile.png" alt="" srcset="">
-<h2 class="text-x1 font-bold">John Doe</h2>
-<p class="text-gray-500">President</p>
-</div>
+.official {
+  text-align: center;
+  margin: 20px;
+}
 
-<div class="text-content">
-<img src="../savedimages/profile.png" alt="" srcset="">
-<h2 class="text-x1 font-bold">John Doe</h2>
-<p class="text-gray-500">President</p>
-</div>
+.official img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
 
-</div>
+.official h3 {
+  margin-top: 10px;
+}
 
+.official p {
+  margin-top: 5px;
+}
+</style>
 
 </body>
 </html>
