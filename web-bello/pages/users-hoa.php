@@ -14,67 +14,67 @@ require_once('../components/navbar.php')
 
 <div id="officials">
   <div class="official">
-    <img src="president.jpg" alt="President">
+    <img src="../savedimages/profile.png" alt="President">
     <h3>John Doe</h3>
     <p>President</p>
   </div>
 
   <div class="official">
-    <img src="vice-president.jpg" alt="Vice President">
+    <img src="../savedimages/profile.png" alt="Vice President">
     <h3>Jane Smith</h3>
     <p>Vice President</p>
   </div>
 
   <div class="official">
-    <img src="secretary.jpg" alt="Secretary">
+    <img src="../savedimages/profile.png" alt="Secretary">
     <h3>Michael Johnson</h3>
     <p>Secretary</p>
   </div>
 
   <div class="official treasurer">
-    <img src="treasurer.jpg" alt="Treasurer">
+    <img src="../savedimages/profile.png" alt="Treasurer">
     <h3>Sarah Wilson</h3>
     <p>Treasurer</p>
   </div>
 
   <div class="official auditor">
-    <img src="auditor.jpg" alt="Auditor">
+    <img src="../savedimages/profile.png" alt="Auditor">
     <h3>Robert Davis</h3>
     <p>Auditor</p>
   </div>
 
   <div class="official">
-    <img src="board-member.jpg" alt="Board Member">
+    <img src="../savedimages/profile.png" alt="Board Member">
     <h3>Emily Brown</h3>
     <p>Board Member</p>
   </div>
 
   <div class="official">
-    <img src="board-member.jpg" alt="Board Member">
+    <img src="../savedimages/profile.png" alt="Board Member">
     <h3>David Wilson</h3>
     <p>Board Member</p>
   </div>
 
   <div class="official">
-    <img src="board-member.jpg" alt="Board Member">
+    <img src="../savedimages/profile.png" alt="Board Member">
     <h3>Jennifer Lee</h3>
     <p>Board Member</p>
   </div>
 
   <div class="official">
-    <img src="board-member.jpg" alt="Board Member">
+    <img src="../savedimages/profile.png" alt="Board Member">
     <h3>William Johnson</h3>
     <p>Board Member</p>
   </div>
 
   <div class="official">
-    <img src="board-member.jpg" alt="Board Member">
+    <img src="../savedimages/profile.png" alt="Board Member">
     <h3>Amy Davis</h3>
     <p>Board Member</p>
   </div>
 
   <div class="official">
-    <img src="board-member.jpg" alt="Board Member">
+    <img src="../savedimages/profile.png" alt="Board Member">
     <h3>Christopher Smith</h3>
     <p>Board Member</p>
   </div>
