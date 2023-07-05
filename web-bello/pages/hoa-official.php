@@ -192,7 +192,7 @@ th.sort-desc::after {
                 <span class="sr-only">Close modal</span>
             </button>
             <div class="px-6 py-6 lg:px-8">
-                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Add new home owner</h3>
+                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Add new official</h3>
                 <form class="space-y-6" action="#" id ="frmRegisterHOA">
                     <div>
                         <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
@@ -210,13 +210,13 @@ th.sort-desc::after {
                         <label for="role" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Role</label>
                             <select id="role" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                             <option selected>Choose a role</option>
-                            <option value="Admin">Admin</option>
-                            <option value="President">President</option>
-                            <option value="Vice President">Vice President</option>
-                            <option value="Secretary">Secretary</option>
-                            <option value="Treasurer">Treasurer</option>
-                            <option value="Auditor">Auditor</option>
-                            <option value="Board member">Board member</option>
+                            <option value="admin">Admin</option>
+                            <option value="president">President</option>
+                            <option value="vice president">Vice President</option>
+                            <option value="secretary">Secretary</option>
+                            <option value="treasurer">Treasurer</option>
+                            <option value="auditor">Auditor</option>
+                            <option value="board member">Board member</option>
                             </select>
                     </div>
                     <div>
@@ -279,6 +279,11 @@ th.sort-desc::after {
                         <label for="roleUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Role</label>
                         <select id="roleUpdate" name ="roleUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             <option value="admin">Admin</option>
+                            <option value="president">President</option>
+                            <option value="vice president">Vice President</option>
+                            <option value="secretary">Secretary</option>
+                            <option value="treasurer">Treasurer</option>
+                            <option value="auditor">Auditor</option>
                             <option value="board member">Board member</option>
                         </select>
                     </div>
