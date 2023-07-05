@@ -211,6 +211,11 @@ th.sort-desc::after {
                             <select id="role" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                             <option selected>Choose a role</option>
                             <option value="Admin">Admin</option>
+                            <option value="President">President</option>
+                            <option value="Vice President">Vice President</option>
+                            <option value="Secretary">Secretary</option>
+                            <option value="Treasurer">Treasurer</option>
+                            <option value="Auditor">Auditor</option>
                             <option value="Board member">Board member</option>
                             </select>
                     </div>

@@ -20,7 +20,7 @@ require_once('../components/navbar.php')
                         HOA Officials
                     </h1>
                     <p class="mt-1.5 text-lg text-gray-500">
-                        Stay current and connected with updated personal details.
+                    Introducing the Esteemed Officials of Palazzo Bello: Dedicated to Serving Your Community
                     </p>
                 </div>
             </div>
@@ -123,5 +123,61 @@ require_once('../components/navbar.php')
 }
 </style>
 
+<!-- Footer -->
+<footer class="bg-gray-100">
+        <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+            <div class="lg:flex lg:items-end lg:justify-between">
+                <div>
+                    <div class="flex justify-center text-teal-600 lg:justify-start">
+                        <a href="/web-bello/pages/user-index.php" class="-m-1.5 p-1.5">
+                            <span class="sr-only"></span>
+                            <h2 class="drop-shadow text-lg tracking-wider font-medium">
+                                WEB-BELLO
+                            </h2>
+                        </a>
+                    </div>
+
+                    <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">Connect,
+                        engage, and stay informed with your neighbors, access the latest news and events, all at your
+                        fingertips.
+                    </p>
+                </div>
+
+                <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-announcements.php">
+                            Announcements
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-events.php">
+                            Events
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/pages/view-forums.php">
+                            Forums
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
+                            href="/web-bello/calendar-19/index.php">
+                            Schedules
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="mt-12 text-center text-sm text-gray-500 lg:text-right">
+                Copyright &copy; 2023. All rights reserved.
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
