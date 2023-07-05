@@ -412,27 +412,30 @@ const loadTable = async function(){
         }
 
         content += `<tr class="border-b dark:border-gray-700">
-        <td class="px-4 py-3">`+users.firstname+" "+users.lastname+`</td>
-        <td class="px-4 py-3">`+users.email+`</td>
-        <td class="px-4 py-3">`+users.role+`</td>
-        <td class="px-4 py-3">`+users.address+`</td>
-        <td class="px-4 py-3">`+user+`</td>
-        <td class="px-4 py-3">`+users.created_at+`</td>
-        <td class="px-4 py-3 flex items-center justify-end">
-        <div class="inline-flex rounded-md shadow-sm" role="group">
-            <button id ="btnView`+users.id+`" type="button" data-modal-toggle = "updateProductModal" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border    border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"  data-user='`+JSON.stringify(users)+`' onclick="updateModal(this)" >
-                   Edit
-            </button>
-             
-             <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
-             id ="btnDelete`+users.id+`"
-             data-user='`+JSON.stringify(users)+`' onclick="deleteModal(this)">
-              Delete
-             </button>
-        </div>                
+    <td class="px-4 py-3">
+        <div class="flex items-center">
+            <div class="w-10 h-10 rounded-full overflow-hidden">
+                <img src="`+users.image_url+`" alt="User Image">
+            </div>
+            <span class="ml-3">`+users.firstname+" "+users.lastname+`</span>
         </div>
-        </td>
-        </tr>
+    </td>
+    <td class="px-4 py-3">`+users.email+`</td>
+    <td class="px-4 py-3">`+users.role+`</td>
+    <td class="px-4 py-3">`+users.address+`</td>
+    <td class="px-4 py-3">`+user+`</td>
+    <td class="px-4 py-3">`+users.created_at+`</td>
+    <td class="px-4 py-3 flex items-center justify-end">
+        <div class="inline-flex rounded-md shadow-sm" role="group">
+            <button id="btnView`+users.id+`" type="button" data-modal-toggle="updateProductModal" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white" data-user='`+JSON.stringify(users)+`' onclick="updateModal(this)">
+                Edit
+            </button>
+            <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white" id="btnDelete`+users.id+`" data-user='`+JSON.stringify(users)+`' onclick="deleteModal(this)">
+                Delete
+            </button>
+        </div>
+    </td>
+</tr>
         `
     })
    
