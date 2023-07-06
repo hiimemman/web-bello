@@ -155,6 +155,38 @@ if (!isset($_SESSION['IDUSER'])) {
 
                 </ul>
 
+                <!-- Account Dropdown -->
+                <button type="button" class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
+                    <span class="sr-only">Open user menu</span>
+                    <img class="w-8 h-8 rounded-full" src="<?php echo $result[0]['image_url'] ?>" alt="user photo" />
+                </button>
+                <div class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl" id="dropdown">
+                    <div class="py-3 px-4">
+                        <span class="block text-sm font-semibold text-gray-900 dark:text-white"><?php echo $result[0]['firstname'] . ' ' . $result[0]['lastname'] ?></span></span>
+                        <span class="block text-sm text-gray-900 truncate dark:text-white"><?php echo $result[0]['email'] ?></span>
+                    </div>
+                <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
+                    <li>
+                        <a href="/web-bello/pages/profile.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        Update profile
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
+                    <li>
+                        <a href="../api/login/logout.php" class="dropdown-item flex items-center text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <span class="mr-2">Sign out</span>
+                            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                </div>
+
+                <!-- Navbar Dropdown -->
                 <div class="relative" x-data="{ open: false }">
                     <button type="button" class="text-sm font-semibold leading-6 text-white flex items-center focus:outline-none" @click="open = !open" aria-expanded="false" aria-haspopup="true">
                         <span>
@@ -185,20 +217,6 @@ if (!isset($_SESSION['IDUSER'])) {
                         <a href="/web-bello/pages/monthly-due.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
                             Manage dues
                         </a>
-                        <div class="border-t-2 border-gray-100">
-                            <a href="/web-bello/pages/profile.php" class="dropdown-item text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                                Update profile
-                            </a>
-                            <a href="../api/login/logout.php" class="dropdown-item flex items-center text-sm font-semibold leading-6 text-gray-900 dark:text-white block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                                <span class="mr-2">Sign out</span>
-                                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75">
-                                    </path>
-                                </svg>
-                            </a>
-                        </div>
-
-
                     </div>
                 </div>
 
