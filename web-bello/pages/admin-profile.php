@@ -32,7 +32,7 @@ if ($result) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -59,15 +59,6 @@ if ($result) {
             height: 100%;
             object-fit: cover;
         }
-
-            /* Dark mode styles */
-    html.dark {
-        /* Add your dark mode styles here */
-        /* For example, you can update background colors, text colors, etc. */
-        /* Use CSS variables to easily switch between light and dark mode */
-        background-color: #1a202c;
-        color: #f7fafc;
-    }
     </style>
 
     <script>
