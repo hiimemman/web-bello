@@ -41,19 +41,19 @@ require_once('../components/navbar.php')
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+  border-radius: 10px;
+  width: 150px;
+  height: 200px;
 }
 
 .official {
-  width: 150px;
-  height: 200px;
   margin: 20px;
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s;
 }
 
-.official:hover {
+.officials:hover {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
