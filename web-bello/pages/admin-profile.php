@@ -31,10 +31,6 @@ if ($result) {
 }
 ?>
 
-<?php
-require_once('../components/navbarDashboard.php')
-?>
-
 <!DOCTYPE html>
 <html lang="en" class="dark">
 
