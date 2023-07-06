@@ -29,11 +29,7 @@ require_once('../components/navbar.php')
     </header>
 
 <div id="officials">
-  <!-- <div class="official">
-    <img src="../savedimages/profile.png" alt="President">
-    <h3>John Doe</h3>
-    <p>President</p>
-  </div> -->
+
 </div>
 
 <style>
@@ -68,8 +64,10 @@ require_once('../components/navbar.php')
 
 .official p {
   margin-top: 5px;
+  text-transform: uppercase;
 }
 </style>
+
 
 <!-- Footer -->
 <footer class="bg-gray-100">
@@ -159,7 +157,7 @@ const loadTable = async function(){
         <div class="official">
         <img src="`+users.image_url+`" alt="President">
         <h3><strong>`+users.firstname+" "+users.lastname+`</h3>
-        <p style="color: teal;">`+users.role+`</p></strong>
+        <p id="role" style="color: teal;">`+users.role+`</p></strong>
         </div>`
         }
     })
