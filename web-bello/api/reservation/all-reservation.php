@@ -14,6 +14,7 @@ if (mysqli_num_rows($result) > 0) {
   while ($row = mysqli_fetch_assoc($result)) {
     $event = array(
       'title' => $row['title'],
+      'place' => $row['place'],
       'start' => $row['start_date'],
       'end' => $row['end_date']
     );

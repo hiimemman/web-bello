@@ -125,6 +125,7 @@ th.sort-desc::after {
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Title</th>
+                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Place</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Name</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Start Date-Time</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">End Date-Time</th>
@@ -200,6 +201,14 @@ th.sort-desc::after {
                         <input type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  required>
                     </div>
                     <div>
+                        <label for="place" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Place</label>
+                            <select id="place" name="place" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                            <option selected>Choose a place</option>
+                            <option value="Court">Court</option>
+                            <option value="Clubhouse">Clubhouse</option>
+                            </select>
+                    </div>
+                    <div>
                         <label for="reserved_by" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                         <input type="text" name="reserved_by" id="reserved_by" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  required>
                     </div>
@@ -258,7 +267,14 @@ th.sort-desc::after {
                         <label for="titleUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                         <input type="text" name="titleUpdate" id="titleUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                     </div>
-
+                    <div>
+                        <label for="place" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Place</label>
+                            <select id="place" name="place" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                            <option selected>Choose a place</option>
+                            <option value="Court">Court</option>
+                            <option value="Clubhouse">Clubhouse</option>
+                            </select>
+                    </div>
                     <div>
                         <label for="nameUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                         <input type="text" name="nameUpdate" id="nameUpdate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
@@ -397,6 +413,7 @@ const loadTable = async function(){
         content += `<tr class="border-b dark:border-gray-700">
         
         <td class="px-4 py-3">`+users.title+`</td>
+        <td class="px-4 py-3">`+users.place+`</td>
         <td class="px-4 py-3">`+users.reserved_by+`</td>
         <td class="px-4 py-3">`+users.start_date+`</td>
         <td class="px-4 py-3">`+users.end_date+`</td>
@@ -586,6 +603,7 @@ updateHiddenButton.click()
 //set the value of input fields
 idUpdate.value = user.id;
 titleUpdate.value = user.title;
+place.value = user.place;
 nameUpdate.value = user.reserved_by;
 startUpdate.value = user.start_date;
 endUpdate.value = user.end_date;
