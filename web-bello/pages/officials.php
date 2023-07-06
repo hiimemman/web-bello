@@ -44,8 +44,6 @@ require_once('../components/navbar.php')
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s;
   border-radius: 10px;
-  width: 150px;
-  height: 200px;
 }
 
 .official {
