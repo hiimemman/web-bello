@@ -80,8 +80,10 @@ require_once('../components/navbarDashboard.php')
 
 </head>
 
-<body>
-    <!-- Test Code -->
+<body class ="-ml-96">
+
+<section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5 flex h-screen w-full">
+    <div class="mx-auto w-full px-4 lg:px-12">
 
     <header class=" border-b-4 border-sky-300">
         <!-- Intro Header -->
@@ -258,6 +260,7 @@ require_once('../components/navbarDashboard.php')
   </div>
 </div>
 
+
 <script>
   function togglePasswordVisibility(inputId) {
     const passwordInput = document.getElementById(inputId);
@@ -286,6 +289,9 @@ require_once('../components/navbarDashboard.php')
             </form>
         </div>
     </section>
+
+</div>
+</section>
     <!-- End of Test Code -->
 
 
