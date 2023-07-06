@@ -150,8 +150,8 @@ const loadTable = async function(){
         content += `
         <div class="official">
         <img src="`+users.image_url+`" alt="President">
-        <h3>`+users.firstname+" "+users.lastname+`</h3>
-        <p style="color: teal;">`+users.role+`</p>
+        <h3><strong>`+users.firstname+" "+users.lastname+`</h3>
+        <p style="color: teal;">`+users.role+`</p></strong>
         </div>`
         }
     })
