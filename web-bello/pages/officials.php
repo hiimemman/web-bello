@@ -37,44 +37,21 @@ require_once('../components/navbar.php')
 </div>
 
 <style>
-.official-card {
-  display: inline-block;
-  perspective: 1000px;
-  margin: 20px;
-}
-
-.official-card:hover .official {
-  transform: rotateY(180deg);
+#officials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .official {
-  width: 150px;
-  height: 200px;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
+  text-align: center;
+  margin: 20px;
 }
 
 .official img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  backface-visibility: hidden;
-}
-
-.official h3,
-.official p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  backface-visibility: hidden;
 }
 
 .official h3 {
@@ -84,20 +61,6 @@ require_once('../components/navbar.php')
 .official p {
   margin-top: 5px;
 }
-
-.official-card:hover .official h3,
-.official-card:hover .official p {
-  color: white;
-}
-
-.official-card:hover .official {
-  background-color: teal;
-}
-
-.official-card:hover .official img {
-  opacity: 0;
-}
-
 </style>
 
 <!-- Footer -->
@@ -185,12 +148,10 @@ const loadTable = async function(){
         if(users.role !== 'admin'){
 
         content += `
-        <div class="official-card">
         <div class="official">
         <img src="`+users.image_url+`" alt="President">
         <h3>`+users.firstname+" "+users.lastname+`</h3>
         <p style="color: teal;">`+users.role+`</p>
-        </div>
         </div>`
         }
     })
