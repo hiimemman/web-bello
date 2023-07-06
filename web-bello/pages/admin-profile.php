@@ -42,6 +42,10 @@ if ($result) {
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+        body{
+            background-color: #1a202c;
+        color: #f7fafc;
+        }
         .profile-image {
             width: 80px;
             height: 80px;
