@@ -200,12 +200,13 @@ th.sort-desc::after {
                         <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                         <input type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  required>
                     </div>
-                    <label for="place" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Place</label>
-                        <select id="place" name ="place"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                    <div>
+                        <label for="place" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Place</label>
+                            <select id="place" name="place" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                             <option value="Court">Court</option>
                             <option value="Clubhouse">Clubhouse</option>
-                        </select>
-                    <div>
+                            </select>
+                    </div>
                     <div>
                         <label for="reserved_by" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                         <input type="text" name="reserved_by" id="reserved_by" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  required>
@@ -266,11 +267,12 @@ th.sort-desc::after {
                         <input type="text" name="titleUpdate" id="titleUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                     </div>
                     <div>
-                    <label for="place" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Place</label>
-                        <select id="place" name ="place"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                        <label for="place" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Place</label>
+                            <select id="place" name="place" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                             <option value="Court">Court</option>
                             <option value="Clubhouse">Clubhouse</option>
-                        </select>
+                            </select>
+                    </div>
                     <div>
                         <label for="nameUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                         <input type="text" name="nameUpdate" id="nameUpdate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
