@@ -439,6 +439,7 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
   
     event.preventDefault()
     btnSubmitDue.classList.add('disabled')
+    btnSubmitDue.innerHTML = 'submiting'
     formData = new FormData(frmRegisterHOA)
 
 // uncomment this to print all the content of formData
