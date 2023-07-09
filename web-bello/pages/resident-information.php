@@ -487,7 +487,7 @@ try{
     body:formData,
   });
 
-//get the response
+//get the responses
 
 const response = await request.json();
 
