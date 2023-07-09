@@ -468,6 +468,9 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
   console.log(`${key}: ${value}`);
 }
 
+try{
+
+
 //fetch data
   const request =  await fetch("../api/residents/register-new-resident.php",{
     method: "POST",
@@ -478,13 +481,16 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
 
 const response = await request.json();
 
-if(response.responseStatus === 'success'){
-    //reload table
-   location.reload();
-   localStorage.setItem('showToast', 'true');
-   localStorage.setItem('showToastMessage', response.responseMessage)
+console.log("response: "+response)
+    if(response.responseStatus === 'success'){
+        //reload table
+    location.reload();
+    localStorage.setItem('showToast', 'true');
+    localStorage.setItem('showToastMessage', response.responseMessage)
+    }
+}catch(e){
+    alert(e)
 }
-
 })
 
 
