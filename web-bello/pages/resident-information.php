@@ -491,7 +491,7 @@ try{
 
 const response = await request.json();
 
-console.log("response: "+response.responseStatus)
+console.log("response: "+JSON.stringify(response.responseStatus))
     if(response.responseStatus === 'success'){
         //reload table
     location.reload();
