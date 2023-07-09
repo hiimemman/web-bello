@@ -2,17 +2,17 @@
 session_start();
 
 // Redirect to login page if user is not logged in
-if (!isset($_SESSION['IDUSER'])) {
-    header('Location: /web-bello/pages/user-login.php');
+if (!isset($_SESSION['ID'])) {
+    header('Location: /web-bello/pages/index.php');
     exit();
 }
 
 include_once("../connections/connection.php");
 $con = connection();
 
-$ID = $_SESSION['IDUSER'];
+$ID = $_SESSION['ID'];
 
-$sql = "SELECT * FROM tbl_residents WHERE id = '$ID'";
+$sql = "SELECT * FROM tbl_hoa WHERE id = '$ID'";
 $result = mysqli_query($con, $sql);
 
 if ($result) {
@@ -21,8 +21,7 @@ if ($result) {
     // Assign the fetched values to variables
     $Firstname = $user['firstname'];
     $Lastname = $user['lastname'];
-    $Sex = $user['sex'];
-    $Age = $user['age'];
+    $Position = $user['position'];
     $Address = $user['address'];
     $Contact = $user['contact'];
     $Email = $user['email'];
@@ -32,21 +31,21 @@ if ($result) {
 }
 ?>
 
-<?php
-require_once('../components/navbar.php')
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web-Bello | Profile</title>
+    <title>Web-Bello Admin | Profile</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+        body{
+            background-color: #1a202c;
+        color: #f7fafc;
+        }
         .profile-image {
             width: 80px;
             height: 80px;
@@ -65,7 +64,7 @@ require_once('../components/navbar.php')
 </head>
 
 <body>
-    <!-- Test Code -->
+
 
     <header class=" border-b-4 border-sky-300">
         <!-- Intro Header -->
@@ -165,26 +164,34 @@ require_once('../components/navbar.php')
                                         required>
                                 </div>
                             </div>
-                            <!-- Sex -->
+                            <!-- Position -->
                             <div class="sm:col-span-2">
                                 <div class="form-group">
-                                    <label for="sex"
-                                        class="label block text-sm font-medium leading-6 text-gray-900">Sex</label>
-                                    <input type="text" name="sex" value="<?php echo $Sex; ?>"
+                                    <label for="position"
+                                        class="label block text-sm font-medium leading-6 text-gray-900">Position</label>
+                                        <input type="text" name="position" value="<?php echo $Position; ?>"
                                         class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
                                         required>
+                                        <select name="position" id=""><?php echo $Position; ?>
+                                        <option value="Admin">Admin</option>
+                                        <option value="President">President</option>
+                                        <option value="Vice President">Vice President</option>
+                                        <option value="Secretary">Secretary</option>
+                                        <option value="Treasurer">Treasurer</option>
+                                        <option value="Board Member">Board Member</option>
+                                        </select>
                                 </div>
                             </div>
-                            <!-- Age -->
+                            <!-- Age
                             <div class="sm:col-span-2">
                                 <div class="form-group">
                                     <label for="age"
                                         class="label block text-sm font-medium leading-6 text-gray-900">Age</label>
-                                    <input type="text" name="age" value="<?php echo $Age; ?>"
+                                    <input type="text" name="age" value="<?php //echo $Age; ?>"
                                         class="input-field block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
                                         required>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Complete Address -->
                             <div class="col-span-full">
                                 <div class="form-group">
@@ -234,6 +241,7 @@ require_once('../components/navbar.php')
   </div>
 </div>
 
+
 <script>
   function togglePasswordVisibility(inputId) {
     const passwordInput = document.getElementById(inputId);
@@ -262,65 +270,10 @@ require_once('../components/navbar.php')
             </form>
         </div>
     </section>
+
+
     <!-- End of Test Code -->
 
-    <!-- Footer -->
-    <footer class="bg-gray-100">
-        <div class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
-            <div class="lg:flex lg:items-end lg:justify-between">
-                <div>
-                    <div class="flex justify-center text-teal-600 lg:justify-start">
-                        <a href="/web-bello/pages/user-index.php" class="-m-1.5 p-1.5">
-                            <span class="sr-only"></span>
-                            <h2 class="drop-shadow text-lg tracking-wider font-medium">
-                                WEB-BELLO
-                            </h2>
-                        </a>
-                    </div>
-
-                    <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">Connect,
-                        engage, and stay informed with your neighbors, access the latest news and events, all at your
-                        fingertips.
-                    </p>
-                </div>
-
-                <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
-                    <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
-                            href="/web-bello/pages/view-announcements.php">
-                            Announcements
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
-                            href="/web-bello/pages/view-events.php">
-                            Events
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
-                            href="/web-bello/pages/view-forums.php">
-                            Forums
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="text-gray-700 font-medium transition hover:text-gray-700/75"
-                            href="/web-bello/calendar-19/index.php">
-                            Schedules
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <p class="mt-12 text-center text-sm text-gray-500 lg:text-right">
-                Copyright &copy; 2023. All rights reserved.
-            </p>
-        </div>
-    </footer>
-    <!-- End of Footer-->
 
     <!-- TOASTER -->
 
@@ -375,7 +328,7 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
 }
 
 //fetch data
-  const request =  await fetch("../api/profile/update-profile-pic.php",{
+  const request =  await fetch("../api/admin/admin-pofile-pic.php",{
     method: "POST",
     body:formData,
   });
@@ -403,7 +356,7 @@ frmUpdateProfile.addEventListener('submit', async (event) => {
     }
 
     //fetch data
-    const request = await fetch("../api/profile/profile.php", {
+    const request = await fetch("../api/admin/admin-profiles.php", {
         method: "POST",
         body: formData,
     });
@@ -420,7 +373,7 @@ frmUpdateProfile.addEventListener('submit', async (event) => {
         location.reload();
         localStorage.setItem('showToast', 'true');
         localStorage.setItem('showToastMessage', response.responseMessage)
-        window.location.href = "https://web-bello.online/web-bello/pages/profile.php"
+        window.location.href = "https://web-bello.online/web-bello/pages/admin-profiles.php"
 
         // Close the profile window
 
@@ -474,7 +427,7 @@ imageHolder.innerHTML = output;
 
 
 // Call showToast when the page loads
-// document.addEventListener('DOMContentLoaded', showToast);
+document.addEventListener('DOMContentLoaded', showToast);
 </script>
 </body>
 

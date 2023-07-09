@@ -124,6 +124,7 @@ th.sort-desc::after {
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id ="tblHOA">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
+                            <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)"></th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Full Name</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Email</th>
                             <th scope="col" class="px-4 py-3" onClick ="addTableSorting(tblHOA)">Role</th>
@@ -192,7 +193,7 @@ th.sort-desc::after {
                 <span class="sr-only">Close modal</span>
             </button>
             <div class="px-6 py-6 lg:px-8">
-                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Add new home owner</h3>
+                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Add new official</h3>
                 <form class="space-y-6" action="#" id ="frmRegisterHOA">
                     <div>
                         <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
@@ -208,15 +209,32 @@ th.sort-desc::after {
                     </div>
                     <div>
                         <label for="role" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Role</label>
-                            <select id="role" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                            <select id="role" name="role" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                             <option selected>Choose a role</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Board member">Board member</option>
+                            <option value="admin">Admin</option>
+                            <option value="president">President</option>
+                            <option value="vice president">Vice President</option>
+                            <option value="secretary">Secretary</option>
+                            <option value="treasurer">Treasurer</option>
+                            <option value="auditor">Auditor</option>
+                            <option value="board member">Board member</option>
                             </select>
                     </div>
                     <div>
                         <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
                         <input type="address" name="address" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  required>
+                    </div>
+                    <div>
+                        <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact</label>
+                        <input type="contact" name="contact" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  required>
+                    </div>
+                    <div id ="imageHolder">
+                        
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Image</label>
+                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="image_url" accept="image/*" type="file" required>
+                        <!--<p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>-->
                     </div>
                     <button type="submit" class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800">Create Account</button>
                    
@@ -274,6 +292,11 @@ th.sort-desc::after {
                         <label for="roleUpdate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Role</label>
                         <select id="roleUpdate" name ="roleUpdate"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             <option value="admin">Admin</option>
+                            <option value="president">President</option>
+                            <option value="vice president">Vice President</option>
+                            <option value="secretary">Secretary</option>
+                            <option value="treasurer">Treasurer</option>
+                            <option value="auditor">Auditor</option>
                             <option value="board member">Board member</option>
                         </select>
                     </div>
@@ -362,6 +385,8 @@ const emailUpdate = document.querySelector('#emailUpdate')
 const addressUpdate = document.querySelector('#addressUpdate')
 const roleUpdate =document.querySelector('#roleUpdate')
 const statusUpdate =document.querySelector('#statusUpdate')
+const image_url = document.querySelector('#image_url')
+const imageHolder = document.querySelector('#imageHolder')
 
 
 //Onload
@@ -388,27 +413,32 @@ const loadTable = async function(){
         }
 
         content += `<tr class="border-b dark:border-gray-700">
-        <td class="px-4 py-3">`+users.firstname+" "+users.lastname+`</td>
-        <td class="px-4 py-3">`+users.email+`</td>
-        <td class="px-4 py-3">`+users.role+`</td>
-        <td class="px-4 py-3">`+users.address+`</td>
-        <td class="px-4 py-3">`+user+`</td>
-        <td class="px-4 py-3">`+users.created_at+`</td>
-        <td class="px-4 py-3 flex items-center justify-end">
-        <div class="inline-flex rounded-md shadow-sm" role="group">
-            <button id ="btnView`+users.id+`" type="button" data-modal-toggle = "updateProductModal" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border    border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"  data-user='`+JSON.stringify(users)+`' onclick="updateModal(this)" >
-                   Edit
-            </button>
-             
-             <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
-             id ="btnDelete`+users.id+`"
-             data-user='`+JSON.stringify(users)+`' onclick="deleteModal(this)">
-              Delete
-             </button>
-        </div>                
+    <td class="px-4 py-3">
+        <div class="flex items-center">
+            <div class="w-10 h-10 rounded-full overflow-hidden">
+            <a href="`+users.image_url+`">
+                <img src="`+users.image_url+`" alt="User Image">
+            </a>
+            </div>
         </div>
-        </td>
-        </tr>
+    </td>
+    <td class="px-4 py-3">`+users.firstname+" "+users.lastname+`</td>
+    <td class="px-4 py-3">`+users.email+`</td>
+    <td class="px-4 py-3">`+users.role+`</td>
+    <td class="px-4 py-3">`+users.address+`</td>
+    <td class="px-4 py-3">`+user+`</td>
+    <td class="px-4 py-3">`+users.created_at+`</td>
+    <td class="px-4 py-3 flex items-center justify-end">
+        <div class="inline-flex rounded-md shadow-sm" role="group">
+            <button id="btnView`+users.id+`" type="button" data-modal-toggle="updateProductModal" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white" data-user='`+JSON.stringify(users)+`' onclick="updateModal(this)">
+                Edit
+            </button>
+            <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white" id="btnDelete`+users.id+`" data-user='`+JSON.stringify(users)+`' onclick="deleteModal(this)">
+                Delete
+            </button>
+        </div>
+    </td>
+</tr>
         `
     })
    
@@ -429,7 +459,7 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
 }
 
 //fetch data
-  const request =  await fetch("../api/hoa/register-new-hoa.php",{
+  const request =  await fetch("../api/hoa/register-hoa.php",{
     method: "POST",
     body:formData,
   });
@@ -597,6 +627,48 @@ const showToast = () => {
     }, 3000);
   }
 };
+//image move
+image_url.addEventListener('change', async (event) =>{
+ const selectedFile = event.target.files[0];
+    
+// Uploading only one file; multiple uploads are not allowed.
+  let imageFile = event.target.files[0]; 
+
+   // Create a FormData object.
+  formData = new FormData();
+
+  // Add the file to the request.
+  formData.append('profileEdit', imageFile, imageFile.name);
+
+try{
+
+const fetchResponse = await fetch("../api/images/move-only-image.php",{
+    method: "POST",
+    body:formData,
+});
+
+const receivedStatus = await fetchResponse.json();
+console.log(receivedStatus)
+
+if(receivedStatus.statusCode === 200){
+
+let output = ''; 
+output += `
+ <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />
+<img class="m-2 h-auto max-w-xs rounded-lg " src="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" alt="image description">
+`;
+  
+imageHolder.innerHTML = output;
+}else{
+    alert('error')
+}
+ 
+
+
+    }catch (e){
+    console.log(e)
+    }
+})
 
 // Call showToast when the page loads
 document.addEventListener('DOMContentLoaded', showToast);

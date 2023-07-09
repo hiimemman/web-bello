@@ -2,26 +2,66 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\SMTP;
+// use PHPMailer\PHPMailer\Exception;
 
-require '../../vendor/autoload.php';
+// require '../../vendor/autoload.php';
 
 include_once("../../connections/connection.php");
 $con = connection();
-$mail = new PHPMailer(true);
+// $mail = new PHPMailer(true);
 $Firstname = $_POST['firstname'];
 $Lastname = $_POST['lastname'];
 $Email = $_POST['email'];
 $Address = $_POST['address'];
 $Password = $_POST['password'];
+$Role = $_POST['role'];
+
 try{
+        // Check if there is already a president
+        $sqlPresident = mysqli_query($con, "SELECT * FROM `tbl_hoa` WHERE `role` = 'president'");
+        $presidentCount = mysqli_num_rows($sqlPresident);
     
+        if ($presidentCount > 0) {
+            exit(json_encode(array("responseStatus" => 'error', "responseMessage" => 'There is already a president.')));
+        }
+    
+        // Check if there is already a vice president
+        $sqlVicePresident = mysqli_query($con, "SELECT * FROM `tbl_hoa` WHERE `role` = 'vice president'");
+        $vicePresidentCount = mysqli_num_rows($sqlVicePresident);
+    
+        if ($vicePresidentCount > 0) {
+            exit(json_encode(array("responseStatus" => 'error', "responseMessage" => 'There is already a vice president.')));
+        }
+    
+        // Check if there is already a secretary
+        $sqlSecretary = mysqli_query($con, "SELECT * FROM `tbl_hoa` WHERE `role` = 'secretary'");
+        $secretaryCount = mysqli_num_rows($sqlSecretary);
+    
+        if ($secretaryCount > 0) {
+            exit(json_encode(array("responseStatus" => 'error', "responseMessage" => 'There is already a secretary.')));
+        }
+    
+        // Check if there is already an auditor
+        $sqlAuditor = mysqli_query($con, "SELECT * FROM `tbl_hoa` WHERE `role` = 'auditor'");
+        $auditorCount = mysqli_num_rows($sqlAuditor);
+    
+        if ($auditorCount > 0) {
+            exit(json_encode(array("responseStatus" => 'error', "responseMessage" => 'There is already an auditor.')));
+        }
+    
+        // Check if there are already four board members
+        $sqlBoardMembers = mysqli_query($con, "SELECT * FROM `tbl_hoa` WHERE `role` = 'board member'");
+        $boardMembersCount = mysqli_num_rows($sqlBoardMembers);
+    
+        if ($boardMembersCount >= 4) {
+            exit(json_encode(array("responseStatus" => 'error', "responseMessage" => 'There are already four board members.')));
+        }
     
     
 
-     try {
+      try {
          
                         //Enable verbose debug output
                         $mail->SMTPDebug = 0;//SMTP::DEBUG_SERVER;
@@ -124,7 +164,7 @@ try{
                     
                         $mail->send();
              
-    $sql = "INSERT INTO `tbl_hoa` (`firstname`,`lastname`,`email`,`address`,`password`) VALUES ('$Firstname','$Lastname','$Email', '$Address', '$Password');";
+    $sql = "INSERT INTO `tbl_hoa` (`firstname`,`lastname`,`email`,`address`, `password`, `role`) VALUES ('$Firstname','$Lastname','$Email', '$Address', '$Password', '$Role');";
     mysqli_query($con, $sql);
 
     //get all if success

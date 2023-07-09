@@ -6,11 +6,12 @@ $con = connection();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Retrieve form data
   $title = $_POST['title'];
+  $place = $_POST['place'];
   $start_date = $_POST['start_date'];
   $end_date = $_POST['end_date'];
 
   // Insert the event into the database
-  $sql = "INSERT INTO tbl_sched (title, start_date, end_date) VALUES ('$title', '$start_date', '$end_date')";
+  $sql = "INSERT INTO tbl_sched (title, place, start_date, end_date) VALUES ('$title', '$place', '$start_date', '$end_date')";
   if (mysqli_query($con, $sql)) {
     $response = array("status" => "success", "message" => "Reserved successfully.");
   } else {
@@ -33,6 +34,7 @@ if (mysqli_num_rows($result) > 0) {
   while ($row = mysqli_fetch_assoc($result)) {
     $event = array(
       'title' => $row['title'],
+      'place' => $row['place'],
       'start' => $row['start_date'],
       'end' => $row['end_date']
     );

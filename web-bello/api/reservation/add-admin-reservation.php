@@ -7,6 +7,7 @@ $con = connection();
 
 
 $Title = $_POST['title'];
+$Place = $_POST['place'];
 $Name = $_POST['reserved_by'];
 $Start = $_POST['start_date'];
 $End = $_POST['end_date'];
@@ -16,7 +17,7 @@ try{
     
 
 
-    $sql = "INSERT INTO `tbl_reservation` (`title`,`reserved_by`,`start_date`,`end_date`,`image_url`) VALUES ('$Title','$Name','$Start', '$End', '$ImageUrl');";
+    $sql = "INSERT INTO `tbl_reservation` (`title`,`place`,`reserved_by`,`start_date`,`end_date`,`image_url`) VALUES ('$Title','$Place','$Name','$Start', '$End', '$ImageUrl');";
     mysqli_query($con, $sql);
 
     //get all if success
