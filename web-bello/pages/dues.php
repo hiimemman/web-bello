@@ -439,7 +439,7 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
   
     event.preventDefault()
     btnSubmitDue.classList.add('disabled')
-    btnSubmitDue.innerHTML = 'submiting'
+    btnSubmitDue.innerHTML = 'Loading...'
     formData = new FormData(frmRegisterHOA)
 
 // uncomment this to print all the content of formData
@@ -459,6 +459,7 @@ const response = await request.json();
 console.log(response)
 if(response.responseStatus === 'success'){
     //reload table
+    btnSubmitDue.innerHTML = 'Generate'
    location.reload();
    localStorage.setItem('showToast', 'true');
    localStorage.setItem('showToastMessage', response.responseMessage)
