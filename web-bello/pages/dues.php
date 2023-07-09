@@ -198,8 +198,8 @@ th.sort-desc::after {
                 <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Generate new dues</h3>
                 <form class="space-y-6" action="#" id ="frmRegisterHOA">
                     <div>
-                        <label for="amount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
-                        <input type="amount" name="amount" id="amount" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
+                        <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+                        <input type="address" name="address" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
                         <p class="mt-2 text-sm text-blue-600 dark:text-blue-500"><span class="font-medium">Note: </span> You can leave this blank if you don't want to filter the residents that will receive the monthly due.</p>
                     </div>
                      <div>

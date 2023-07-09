@@ -8,12 +8,24 @@ $con = connection();
 
 $Month = $_POST['month'];
 $Amount = $_POST['amount'];
-
+$Address = $_POST['address'];
 try{
-    $sql = mysqli_query($con, "SELECT * FROM `tbl_residents`");
-    
-    //store in result
-    $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
+    // Build the SQL query dynamically
+$sql = "SELECT * FROM `tbl_residents` WHERE 1=1"; // Start with a dummy condition that will always be true
+
+// Add the address filter if it is not empty
+if (!empty($Address)) {
+    $Address = mysqli_real_escape_string($con, $Address); // Escape the address to prevent SQL injection
+    $sql .= " AND `address` = '$Address'";
+}
+
+// Execute the query
+$queryResult = mysqli_query($con, $sql);
+
+if ($queryResult) {
+    // Store the results
+    $result = mysqli_fetch_all($queryResult, MYSQLI_ASSOC);
+}
 
     // Iterate over each item in $result and insert a query
     foreach ($result as $item) {
