@@ -22,10 +22,8 @@ if (!empty($Address)) {
 // Execute the query
 $queryResult = mysqli_query($con, $sql);
 
-if ($queryResult) {
-    // Store the results
-    $result = mysqli_fetch_all($queryResult, MYSQLI_ASSOC);
-}
+$result = mysqli_fetch_all($queryResult, MYSQLI_ASSOC);
+
 
     // Iterate over each item in $result and insert a query
     foreach ($result as $item) {
