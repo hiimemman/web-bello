@@ -610,7 +610,7 @@ addCommentForms.forEach((addComment) => {
 const showAllComments = () => {
   // Call the getcommentPerForum function again without a comment limit
   // Pass the necessary ID as an argument
-  getcommentPerForum(/* pass the ID here */);
+  getcommentPerForum(id);
 };
 
     </script>
