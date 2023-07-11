@@ -294,6 +294,7 @@ require_once('../components/navbar.php')
     const imageHolder = document.querySelector('#imageHolder')
     const image_url = document.querySelector('#image_url')
 
+    let imageReceivedUrl = ''
 
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -341,7 +342,7 @@ require_once('../components/navbar.php')
         });
 
 // Update the event listener for form submission
-document.getElementById("scheduleForm").addEventListener('submit', function(e) {
+document.getElementById("scheduleForm").addEventListener('submit', async (e) => {
     console.log("1")
     e.preventDefault();
     console.log("2")
@@ -375,12 +376,7 @@ document.getElementById("scheduleForm").addEventListener('submit', function(e) {
     formData.append("start_date", start_date);
     formData.append("end_date", end_date);
     formData.append("place" , 'court')
-   
-    // Read the file content using FileReader
-    let reader = new FileReader();
-    reader.onload = function() {
-        // Append the file content to FormData
-        formData.append("image_url", reader.result);
+    formData.append("image_url", imageReceivedUrl);
 
        
     // Print all the form data
@@ -408,13 +404,29 @@ document.getElementById("scheduleForm").addEventListener('submit', function(e) {
         // .catch(error => {
         //     alert("error: "+error)
         // });
-    };
-    reader.onerror = function(event) {
-        console.error("File reading error:", event.target.error);
-    };
-    
-    // Read the file as Data URL
-    //reader.readAsDataURL(imageFile);
+        try{
+            const request = await fetch('../api/reservation/add-reservation.php', {
+                method :'POST',
+                body:formData,
+            })
+            
+            const response = await request.json()
+
+            if(response.status === 'success'){
+                alert("Event reserved successfully.");
+                    //         // Clear the form
+                    //         document.getElementById("title").value = "";
+                    //         document.getElementById("start_date").value = "";
+                    //         document.getElementById("end_date").value = "";
+                    //         document.getElementById("image_url").value = "";
+            }else{
+                console.error("Error")
+            }
+        }catch(e){
+            console.error(e)
+        }
+   
+
 });
 
 
@@ -444,7 +456,7 @@ const receivedStatus = await fetchResponse.json();
 console.log(receivedStatus)
 
 if(receivedStatus.statusCode === 200){
-
+    imageReceivedUrl =receivedStatus.image
 let output = ''; 
 output += `
  <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />
