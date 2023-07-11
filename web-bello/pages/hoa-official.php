@@ -568,8 +568,14 @@ const deleteModal = async (button) => {
     </div>`;
 
     divShowDeleteModalHere.innerHTML = deleteModalContent;
-
+    
+    const deleteModal = document.querySelector('#deleteModal')
     const confirmDeleteButton = document.getElementById('confirmDeleteButton');
+
+    deleteModal.addEventListener('click', () =>{
+        divShowDeleteModalHere.innerHTML = ''
+    })
+
     confirmDeleteButton.addEventListener('click', async () => {
         continueDelete = true;
 
