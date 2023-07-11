@@ -543,7 +543,7 @@ const deleteModal = async (button) =>{
     console.log(user)
     let  continueDelete = false
 
-    const deleteModalContent = `<div id="deleteModal" tabindex="-1" aria-hidden="false" class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-modal md:h-full">
+    const deleteModalContent = `<div id="deleteModal" tabindex="-1" aria-hidden="false" class="fixed top-0 right-0 left-0 bottom-0 flex justify-center items-center bg-black bg-opacity-80">
     <div class="relative p-4 w-full max-w-md h-full md:h-auto bg-opacity-50 bg-black">
         <!-- Modal content -->
         <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
