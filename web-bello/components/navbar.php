@@ -119,9 +119,10 @@ if (!isset($_SESSION['IDUSER'])) {
             <div class="flex lg:flex-1 px-6">
                 <a href="/web-bello/pages/user-index.php" class="-m-1.5 p-1.5">
                     <span class="sr-only"></span>
-                    <h2 class="drop-shadow text-lg tracking-wider font-medium text-gray-900 dark:text-white">
+                    <!-- <h2 class="drop-shadow text-lg tracking-wider font-medium text-gray-900 dark:text-white">
                         WEB-BELLO
-                    </h2>
+                    </h2> -->
+                    <img src ="../images/bello-logo-final.png"/>
                 </a>
             </div>
 
