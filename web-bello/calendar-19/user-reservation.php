@@ -13,7 +13,7 @@ if (!isset($_SESSION['IDUSER'])) {
     $pageName = str_replace('-', ' ', $pageName);
     $pageName = strtoupper($pageName);
 }
-?>./
+?>
 
 <?php
 require_once('../components/navbar.php')
