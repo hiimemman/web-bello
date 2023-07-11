@@ -606,15 +606,15 @@ addCommentForms.forEach((addComment) => {
 
     commentSectionId.innerHTML = contents;
   }
-  const showAllComments = (idForum) => {
+  
+
+};
+
+const showAllComments = (idForum) => {
   // Call the getcommentPerForum function again without a comment limit
   // Pass the necessary ID as an argument
   getcommentPerForum(idForum);
 };
-
-};
-
-
     </script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script defer>
