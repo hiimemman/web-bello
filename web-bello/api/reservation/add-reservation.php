@@ -36,7 +36,8 @@ try {
     }
 
 
-    $sql = "INSERT INTO `tbl_reservation` (`title`, `place`, `reserved_by`, `start_date`, `end_date`, `image_url`) VALUES ('$Title', '$Name', '$Start', '$End', '$Image')";
+    $sql = "INSERT INTO `tbl_reservation` (`title`, `place`, `reserved_by`, `start_date`, `end_date`, `image_url`) VALUES ('$Title', '$Place', '$Name', '$Start', '$End', '$Image')";
+
     mysqli_query($con, $sql);
 
     // Get all reservations if successful
