@@ -377,7 +377,7 @@ document.getElementById("scheduleForm").addEventListener('submit', async (e) => 
     formData.append("end_date", end_date);
     formData.append("place" , 'court')
     formData.append("image_url", imageReceivedUrl);
-    formData.append("userId", $_SESSION['IDUSER'])
+    formData.append("userId", <?php echo $_SESSION['IDUSER']; ?>)
        
     // Print all the form data
     for (let entry of formData.entries()) {
