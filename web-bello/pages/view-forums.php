@@ -553,6 +553,7 @@ addCommentForms.forEach((addComment) => {
 
         }
         const getcommentPerForum = async (id) => {
+            let idForum = id
   const commentSectionId = document.querySelector('#commentSection' + id);
   const formData = new FormData();
   formData.append('ForumId', id);
@@ -600,15 +601,15 @@ addCommentForms.forEach((addComment) => {
     });
 
     if (response.responseContent.length > commentLimit) {
-      contents += `<button type ="button" onclick="showAllComments()">View All Comments</button>`;
+      contents += `<button type ="button" onclick="showAllComments(`+idForum+`)">View All Comments</button>`;
     }
 
     commentSectionId.innerHTML = contents;
   }
-  const showAllComments = () => {
+  const showAllComments = (idForum) => {
   // Call the getcommentPerForum function again without a comment limit
   // Pass the necessary ID as an argument
-  getcommentPerForum(id);
+  getcommentPerForum(idForum);
 };
 
 };
