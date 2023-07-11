@@ -381,27 +381,32 @@ document.getElementById("scheduleForm").addEventListener("submit", function(e) {
         // Append the file content to FormData
         formData.append("image_url", reader.result);
 
+       
+    // Print all the form data
+    for (let entry of formData.entries()) {
+        console.log(entry[0] + ': ' + entry[1]);
+    }
         // Send the data to the server using fetch
-        fetch("../api/reservation/add-reservation.php", {
-            method: "POST",
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === "success") {
-                alert("Event reserved successfully.");
-                // Clear the form
-                document.getElementById("title").value = "";
-                document.getElementById("start_date").value = "";
-                document.getElementById("end_date").value = "";
-                document.getElementById("image_url").value = "";
-            } else {
-                console.error("An error occurred:",  + data.message);
-            }
-        })
-        .catch(error => {
-            alert("error: "+error)
-        });
+        // fetch("../api/reservation/add-reservation.php", {
+        //     method: "POST",
+        //     body: formData
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     if (data.status === "success") {
+        //         alert("Event reserved successfully.");
+        //         // Clear the form
+        //         document.getElementById("title").value = "";
+        //         document.getElementById("start_date").value = "";
+        //         document.getElementById("end_date").value = "";
+        //         document.getElementById("image_url").value = "";
+        //     } else {
+        //         console.error("An error occurred:",  + data.message);
+        //     }
+        // })
+        // .catch(error => {
+        //     alert("error: "+error)
+        // });
     };
 
     // Read the file as Data URL
