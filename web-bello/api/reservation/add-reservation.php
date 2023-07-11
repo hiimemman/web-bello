@@ -6,13 +6,19 @@ include_once("../../connections/connection.php");
 $con = connection();
 
 // session ID
-session_start();
+// session_start();
 $userId = $_SESSION['IDUSER'];
+
+$Title = $_POST['title'];
+$Place = $_POST['place'];
+$Start = $_POST['start_date'];
+$End = $_POST['end_date'];
+$Image = $_POST['image_url'];
 
 
 try {
     // Fetch the user's first name and last name from tbl_residents
-    $sqlUser = "SELECT firstname, lastname FROM tbl_residents WHERE id = $userId";
+    $sqlUser = "SELECT `firstname` , `lastname` FROM tbl_residents WHERE `tbl.residents`.`id` = $userId";
     $resultUser = mysqli_query($con, $sqlUser);
     
     if ($rowUser = mysqli_fetch_assoc($resultUser)) {
@@ -28,12 +34,6 @@ try {
         )));
     }
 
-    $Title = $_POST['title'];
-    $Place = $_POST['place'];
-    $Start = $_POST['start_date'];
-    $End = $_POST['end_date'];
-    $Image = $_POST['image_url'];
-    
 
     $sql = "INSERT INTO `tbl_reservation` (`title`, `place`, `reserved_by`, `start_date`, `end_date`, `image_url`) VALUES ('$Title', '$Name', '$Start', '$End', '$Image')";
     mysqli_query($con, $sql);
