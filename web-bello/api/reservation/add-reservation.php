@@ -7,7 +7,7 @@ $con = connection();
 
 // session ID
 // session_start();
-$userId = $_SESSION['IDUSER'];
+$userId = $_POST['userId'];
 
 $Title = $_POST['title'];
 $Place = $_POST['place'];
