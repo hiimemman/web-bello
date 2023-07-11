@@ -90,9 +90,9 @@ if (!isset($_SESSION['ID'])) {
         <h1 class="text-center mt-6 mb-6">COURT RESERVATION</h1>
 
         <div class="calendar-toolbar">
-            <a href="../pages/dashboard.php"><button id="Dashboard" class="btn btn-primary mr-3">Return to
+            <a href="../pages/collection-schedule.php"><button id="Dashboard" class="btn btn-primary mr-3">Return to
                     dashboard</button></a>
-            <button id="addScheduleBtn" class="btn btn-primary mr-3">Add reservation</button>
+            <!-- <button id="addScheduleBtn" class="btn btn-primary mr-3">Add reservation</button> -->
         </div>
         <div id="calendar"></div>
     </div>
