@@ -42,7 +42,7 @@ $config = ClickSend\Configuration::getDefaultConfiguration()
 
 $apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(),$config);
 $msg = new \ClickSend\Model\SmsMessage();
-$msg->setBody("Dear Palazzo Bello $name,
+$msg->setBody("Dear $name,
 
 This is a friendly reminder that your new monthly due has been calculated for the upcoming month. Please find the details below:
 
