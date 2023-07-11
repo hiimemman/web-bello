@@ -6,7 +6,7 @@ try{
 $con = connection();
 
 
-$sql = mysqli_query($con, "SELECT * FROM `tbl_forum` WHERE `category` IN ('Announcement', 'Events') ORDER BY `created_at` DESC");
+$sql = mysqli_query($con, "SELECT * FROM `tbl_forum` WHERE `category` IN ('Announcement', 'Events')  AND `status` = 'active' ORDER BY `created_at` DESC");
 
 
 //store in result
