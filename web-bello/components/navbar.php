@@ -122,7 +122,7 @@ if (!isset($_SESSION['IDUSER'])) {
                     <!-- <h2 class="drop-shadow text-lg tracking-wider font-medium text-gray-900 dark:text-white">
                         WEB-BELLO
                     </h2> -->
-                    <img src ="../images/bello-logo-final.png" class ="w-5 h-5"/>
+                    <img src ="../images/bello-logo-final.png" class ="w-20 h-20"/>
                 </a>
             </div>
 
