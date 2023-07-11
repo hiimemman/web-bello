@@ -409,7 +409,10 @@ document.getElementById("scheduleForm").addEventListener('submit', function(e) {
         //     alert("error: "+error)
         // });
     };
-
+    reader.onerror = function(event) {
+        console.error("File reading error:", event.target.error);
+    };
+    
     // Read the file as Data URL
     //reader.readAsDataURL(imageFile);
 });
