@@ -457,14 +457,13 @@ frmRegisterHOA.addEventListener('submit', async (event) =>{
 
 const response = await request.json();
 console.log(response)
-if(response.responseStatus === 'success'){
-    //reload table
+  if(response.responseStatus === 'success'){
+      //reload table
     btnSubmitDue.innerHTML = 'Generate'
-   location.reload();
-   localStorage.setItem('showToast', 'true');
-   localStorage.setItem('showToastMessage', response.responseMessage)
-}
-
+    location.reload();
+    localStorage.setItem('showToast', 'true');
+    localStorage.setItem('showToastMessage', response.responseMessage)
+  }
 })
 
 
