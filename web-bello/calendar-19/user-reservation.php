@@ -341,7 +341,7 @@ require_once('../components/navbar.php')
         });
 
 // Update the event listener for form submission
-document.getElementById("scheduleForm").addEventListener("submit", function(e) {
+document.getElementById("scheduleForm").addEventListener('submit', function(e) {
     e.preventDefault();
 
     // Retrieve form data
