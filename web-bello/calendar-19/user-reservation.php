@@ -412,7 +412,7 @@ document.getElementById("scheduleForm").addEventListener('submit', async (e) => 
             
             const response = await request.json()
 
-            if(response.status === 'success'){
+            if(response.status == 'success'){
                 alert("Event reserved successfully.");
                     //         // Clear the form
                     //         document.getElementById("title").value = "";
@@ -422,6 +422,7 @@ document.getElementById("scheduleForm").addEventListener('submit', async (e) => 
             }else{
                 console.error(response.responseContent)
             }
+           location.reload()
         }catch(e){
             console.error(e)
         }
