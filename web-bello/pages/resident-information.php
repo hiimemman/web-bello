@@ -640,7 +640,7 @@ const deleteModal = async (button) => {
             try {
                 formData = new FormData();
                 formData.append('IdDelete', user.id);
-                const request = await fetch("../api/hoa/delete-hoa.php", {
+                const request = await fetch("../api/hoa/delete-residents.php", {
                     method: "POST",
                     body: formData,
                 });
