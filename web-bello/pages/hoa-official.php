@@ -544,7 +544,7 @@ const deleteModal = async (button) =>{
     let  continueDelete = false
 
     const deleteModalContent = `
-    <div id="overlay" class="fixed top-0 right-0 bottom-0 left-0 bg-black opacity-50 z-50">
+    <div id="overlay" class="fixed top-0 right-0 bottom-0 left-0 bg-black opacity-100 z-50">
 
     <div id="deleteModal" tabindex="-1" aria-hidden="false" class="fixed top-0 right-0 left-0 bottom-0 flex justify-center items-center">
     <div class="absolute top-0 right-0 bottom-0 left-0 bg-black bg-opacity-80"></div>
