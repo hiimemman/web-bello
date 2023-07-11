@@ -616,7 +616,7 @@ const deleteModal = async (button) => {
                 const response = await request.json();
                 console.log(response);
                 if (response.responseStatus === 'success') {
-                    location.reload();
+                    //location.reload();
                     localStorage.setItem('showToast', 'true');
                     localStorage.setItem('showToastMessage', response.responseMessage);
                 }
