@@ -210,18 +210,18 @@ require_once('../components/navbar.php')
         });
 
         // Reload the window after scheduling an event
-        document.addEventListener("DOMContentLoaded", function() {
-            var scheduleForm = document.getElementById("scheduleForm");
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     var scheduleForm = document.getElementById("scheduleForm");
 
-            scheduleForm.addEventListener("submit", function(e) {
-                e.preventDefault();
+        //     scheduleForm.addEventListener("submit", function(e) {
+        //         e.preventDefault();
                 
-                // Send the data to the server and handle the response
+        //         // Send the data to the server and handle the response
 
-                // Reload the window
-                location.reload();
-            });
-        });
+        //         // Reload the window
+        //         location.reload();
+        //     });
+        // });
     </script>
 
     <!-- Footer -->
