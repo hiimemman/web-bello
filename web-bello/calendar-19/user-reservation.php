@@ -410,7 +410,7 @@ document.getElementById("scheduleForm").addEventListener("submit", function(e) {
     };
 
     // Read the file as Data URL
-    reader.readAsDataURL(imageFile);
+    //reader.readAsDataURL(imageFile);
 });
 
 
