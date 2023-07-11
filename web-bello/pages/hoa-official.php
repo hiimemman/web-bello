@@ -544,7 +544,7 @@ const deleteModal = async (button) =>{
     const dataJson = button.getAttribute('data-user');
     const user = JSON.parse(dataJson);
     console.log(user)
-
+    let  continueDelete = false
 
     const deleteModalContent = `<div id="deleteModal" tabindex="-1" aria-hidden="false" class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
     <div class="relative p-4 w-full max-w-md h-full md:h-auto">
@@ -570,6 +570,8 @@ const deleteModal = async (button) =>{
 
 divShowDeleteModalHere.innerHTML = deleteModalContent
 
+if(continueDelete){
+    
     try{
         formData = new FormData();
     formData.append('IdDelete', user.id)
@@ -588,6 +590,7 @@ divShowDeleteModalHere.innerHTML = deleteModalContent
     }catch(e){
         alert(e)
     }
+}
 
     
 }
