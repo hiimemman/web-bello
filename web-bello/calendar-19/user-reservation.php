@@ -420,7 +420,7 @@ document.getElementById("scheduleForm").addEventListener('submit', async (e) => 
                     //         document.getElementById("end_date").value = "";
                     //         document.getElementById("image_url").value = "";
             }else{
-                console.error("Error")
+                console.error(response.responseContent)
             }
         }catch(e){
             console.error(e)
