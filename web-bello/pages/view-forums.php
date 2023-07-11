@@ -552,7 +552,7 @@ addCommentForms.forEach((addComment) => {
             })
 
         }
-        const getcommentPerForum = async (id) => {
+const getcommentPerForum = async (id) => {
             let idForum = id
   const commentSectionId = document.querySelector('#commentSection' + id);
   const formData = new FormData();

@@ -37,8 +37,8 @@ $result = mysqli_fetch_all($queryResult, MYSQLI_ASSOC);
 
 // Configure HTTP basic authorization: BasicAuth
 $config = ClickSend\Configuration::getDefaultConfiguration()
-->setUsername('megsdiscountedgamecredits@gmail.com')
-->setPassword('E15BAEB1-154F-FF1C-4024-945F3A77499E');
+->setUsername('Aisat.lao193027@gmail.com')
+->setPassword('1A7CA075-00A2-7062-6A6E-D107988759FF');
 
 $apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(),$config);
 $msg = new \ClickSend\Model\SmsMessage();
