@@ -342,8 +342,9 @@ require_once('../components/navbar.php')
 
 // Update the event listener for form submission
 document.getElementById("scheduleForm").addEventListener('submit', function(e) {
+    console.log("1")
     e.preventDefault();
-
+    console.log("2")
     // Retrieve form data
     let title = document.getElementById("title").value;
     let start_date = document.getElementById("start_date").value;
