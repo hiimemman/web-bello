@@ -116,12 +116,13 @@ if (!isset($_SESSION['IDUSER'])) {
 
     <nav class="fixed bg-white dark:bg-gray-900 top-0 left-0 right-0 shadow-lg z-10">
         <div class="container mx-auto flex flex-wrap max-w-7xl items-center justify-between py-10 lg:px-8">
-            <div class="flex lg:flex-1 px-6">
+            <div class="flex lg:flex-1 px-0">
                 <a href="/web-bello/pages/user-index.php" class="-m-1.5 p-1.5">
                     <span class="sr-only"></span>
-                    <h2 class="drop-shadow text-lg tracking-wider font-medium text-gray-900 dark:text-white">
+                    <!-- <h2 class="drop-shadow text-lg tracking-wider font-medium text-gray-900 dark:text-white">
                         WEB-BELLO
-                    </h2>
+                    </h2> -->
+                    <img src ="../images/bello-logo-final.png" class ="w-20 h-20"/>
                 </a>
             </div>
 

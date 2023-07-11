@@ -256,9 +256,11 @@ require_once('../components/navbar.php')
 
 
 
-        const request = await fetch('../api/forum/all-announcement.php')
+        const request = await fetch('../api/forum/view-announcement-active.php')
 
         const response = await request.json()
+
+        console.log(response)
         content = ''
         response.responseContent.map((forum) => {
 

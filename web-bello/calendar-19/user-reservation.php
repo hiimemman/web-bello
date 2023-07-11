@@ -210,18 +210,18 @@ require_once('../components/navbar.php')
         });
 
         // Reload the window after scheduling an event
-        document.addEventListener("DOMContentLoaded", function() {
-            var scheduleForm = document.getElementById("scheduleForm");
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     var scheduleForm = document.getElementById("scheduleForm");
 
-            scheduleForm.addEventListener("submit", function(e) {
-                e.preventDefault();
+        //     scheduleForm.addEventListener("submit", function(e) {
+        //         e.preventDefault();
                 
-                // Send the data to the server and handle the response
+        //         // Send the data to the server and handle the response
 
-                // Reload the window
-                location.reload();
-            });
-        });
+        //         // Reload the window
+        //         location.reload();
+        //     });
+        // });
     </script>
 
     <!-- Footer -->
@@ -294,6 +294,7 @@ require_once('../components/navbar.php')
     const imageHolder = document.querySelector('#imageHolder')
     const image_url = document.querySelector('#image_url')
 
+    let imageReceivedUrl = ''
 
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -341,9 +342,10 @@ require_once('../components/navbar.php')
         });
 
 // Update the event listener for form submission
-document.getElementById("scheduleForm").addEventListener("submit", function(e) {
+document.getElementById("scheduleForm").addEventListener('submit', async (e) => {
+    console.log("1")
     e.preventDefault();
-
+    console.log("2")
     // Retrieve form data
     let title = document.getElementById("title").value;
     let start_date = document.getElementById("start_date").value;
@@ -373,38 +375,59 @@ document.getElementById("scheduleForm").addEventListener("submit", function(e) {
     formData.append("title", title);
     formData.append("start_date", start_date);
     formData.append("end_date", end_date);
-
-    // Read the file content using FileReader
-    let reader = new FileReader();
-    reader.onload = function() {
-        // Append the file content to FormData
-        formData.append("image_url", reader.result);
-
+    formData.append("place" , 'court')
+    formData.append("image_url", imageReceivedUrl);
+    formData.append("userId", <?php echo $_SESSION['IDUSER']; ?>)
+       
+    // Print all the form data
+    for (let entry of formData.entries()) {
+        console.log(entry[0] + ': ' + entry[1]);
+    }
         // Send the data to the server using fetch
-        fetch("../api/reservation/add-reservation.php", {
-            method: "POST",
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === "success") {
-                alert("Event reserved successfully.");
-                // Clear the form
-                document.getElementById("title").value = "";
-                document.getElementById("start_date").value = "";
-                document.getElementById("end_date").value = "";
-                document.getElementById("image_url").value = "";
-            } else {
-                console.error("An error occurred:",  + data.message);
-            }
-        })
-        .catch(error => {
-            console.error("An error occurred:", error);
-        });
-    };
+        // fetch("../api/reservation/add-reservation.php", {
+        //     method: "POST",
+        //     body: formData
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     if (data.status === "success") {
+        //         alert("Event reserved successfully.");
+        //         // Clear the form
+        //         document.getElementById("title").value = "";
+        //         document.getElementById("start_date").value = "";
+        //         document.getElementById("end_date").value = "";
+        //         document.getElementById("image_url").value = "";
+        //     } else {
+        //         console.error("An error occurred:",  + data.message);
+        //     }
+        // })
+        // .catch(error => {
+        //     alert("error: "+error)
+        // });
+        try{
+            const request = await fetch('../api/reservation/add-reservation.php', {
+                method :'POST',
+                body:formData,
+            })
+            
+            const response = await request.json()
 
-    // Read the file as Data URL
-    reader.readAsDataURL(imageFile);
+            if(response.status == 'success'){
+                alert("Event reserved successfully.");
+                    //         // Clear the form
+                    //         document.getElementById("title").value = "";
+                    //         document.getElementById("start_date").value = "";
+                    //         document.getElementById("end_date").value = "";
+                    //         document.getElementById("image_url").value = "";
+            }else{
+                console.error(response.responseContent)
+            }
+           location.reload()
+        }catch(e){
+            console.error(e)
+        }
+   
+
 });
 
 
@@ -434,7 +457,7 @@ const receivedStatus = await fetchResponse.json();
 console.log(receivedStatus)
 
 if(receivedStatus.statusCode === 200){
-
+    imageReceivedUrl =receivedStatus.image
 let output = ''; 
 output += `
  <input type="text" style="display: none;" name="image_url" value="https://web-bello.online/web-bello/savedimages/`+receivedStatus.image+`" />

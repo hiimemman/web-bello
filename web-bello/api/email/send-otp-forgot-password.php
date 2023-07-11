@@ -34,10 +34,10 @@ try{
                         $mail->SMTPAuth = true;
              
                         //SMTP username
-                        $mail->Username = 'safezonesoftware@gmail.com';
+                        $mail->Username = 'webbello25@gmail.com';
              
                         //SMTP password
-                        $mail->Password = 'gaqpsyxhwbqlnrxo';
+                        $mail->Password = 'xxxydnimqcfgfceg';
              
                         //Enable TLS encryption;
                         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -46,7 +46,7 @@ try{
                         $mail->Port = 587;
              
                         //Recipients
-                        $mail->setFrom('safezonesoftware@gmail.com', 'Palazo bello');
+                        $mail->setFrom('webbello25@gmail.com', 'Palazo bello');
              
                         //Add a recipient
                         $mail->addAddress($Email, $Firstname . ' ' . $Lastname);

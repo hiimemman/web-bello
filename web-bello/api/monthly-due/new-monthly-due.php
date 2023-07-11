@@ -8,12 +8,22 @@ $con = connection();
 
 $Month = $_POST['month'];
 $Amount = $_POST['amount'];
-
+$Address = $_POST['address'];
 try{
-    $sql = mysqli_query($con, "SELECT * FROM `tbl_residents`");
-    
-    //store in result
-    $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
+    // Build the SQL query dynamically
+$sql = "SELECT * FROM `tbl_residents` WHERE 1=1"; // Start with a dummy condition that will always be true
+
+// Add the address filter if it is not empty
+if (!empty($Address)) {
+    $Address = mysqli_real_escape_string($con, $Address); // Escape the address to prevent SQL injection
+    $sql .= " AND `address` = '$Address'";
+}
+
+// Execute the query
+$queryResult = mysqli_query($con, $sql);
+
+$result = mysqli_fetch_all($queryResult, MYSQLI_ASSOC);
+
 
     // Iterate over each item in $result and insert a query
     foreach ($result as $item) {
@@ -27,12 +37,12 @@ try{
 
 // Configure HTTP basic authorization: BasicAuth
 $config = ClickSend\Configuration::getDefaultConfiguration()
-->setUsername('megsdiscountedgamecredits@gmail.com')
-->setPassword('E15BAEB1-154F-FF1C-4024-945F3A77499E');
+->setUsername('Aisat.lao193027@gmail.com')
+->setPassword('1A7CA075-00A2-7062-6A6E-D107988759FF');
 
 $apiInstance = new ClickSend\Api\SMSApi(new GuzzleHttp\Client(),$config);
 $msg = new \ClickSend\Model\SmsMessage();
-$msg->setBody("Dear Palazzo Bello $name,
+$msg->setBody("Dear $name,
 
 This is a friendly reminder that your new monthly due has been calculated for the upcoming month. Please find the details below:
 

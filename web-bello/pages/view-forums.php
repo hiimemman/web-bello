@@ -552,59 +552,69 @@ addCommentForms.forEach((addComment) => {
             })
 
         }
+const getcommentPerForum = async (id) => {
+            let idForum = id
+  const commentSectionId = document.querySelector('#commentSection' + id);
+  const formData = new FormData();
+  formData.append('ForumId', id);
 
-        const getcommentPerForum = async (id) => {
-            const commentSectionId = document.querySelector('#commentSection' + id);
-            formData = new FormData();
-            formData.append('ForumId', id);
+  const request = await fetch('../api/comment/get-all-comment-per-forum.php', {
+    method: "POST",
+    body: formData,
+  });
 
-            const request = await fetch('../api/comment/get-all-comment-per-forum.php', {
-                method: "POST",
-                body: formData,
-            })
+  const response = await request.json();
+  if (response.responseStatus === 'success') {
+    console.log(response.responseContent);
+    let contents = '';
+    const commentLimit = 2; // Set the limit of comments to display
+    const commentsToShow = response.responseContent.slice(0, commentLimit);
+    commentsToShow.map((comments) => {
+      console.log(comments);
 
-            const response = await request.json()
-            if (response.responseStatus === 'success') {
-                console.log(response.responseContent)
-                let contents = '';
-                response.responseContent.map((comments) => {
-                    console.log(comments)
+      let commentImaged = "";
+      // Check image
+      if (comments.image_url !== "") {
+        commentImaged += `<img class="h-auto max-w-xs rounded-lg m-2" src="` + comments.image_url + `" alt="image description">`;
+      }
 
-                    let commentImaged = ""
-                    //check image
-                    if (comments.image_url !== "") {
-                        console.log("pumasok dito")
-                        commentImaged += `<img class="h-auto max-w-xs  rounded-lg  m-2" src="` + comments
-                            .image_url + `" alt="image description">`
-                    }
+      contents += `
+        <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
+          <div class="inline-flex">
+          </div>
+          <footer class="flex justify-between items-center mb-2">
+            <div class="flex items-center">
+              <p class="inline-flex items-center mr-3 text-md font-medium text-gray-900">
+                ` + comments.user_full_name + `
+              </p>
+              <p class="text-md text-gray-600">
+                <time pubdate datetime="2022-02-08" title="February 8th, 2022">` + comments.created_at + `</time>
+              </p>
+            </div>
+          </footer>
+          <p class="text-gray-600">
+            ` + comments.comment_text + `
+          </p>
+          ` + commentImaged + `
+        </article>
+      `;
+    });
 
-                    contents += `
-               <article class="p-6 mb-6 text-base border-t border-gray-200 bg-white">
-                    <div class="inline-flex">
-                      
-                    </div>
-                    <footer class="flex justify-between items-center mb-2">
-                        <div class="flex items-center">
-                            <p class="inline-flex items-center mr-3 text-md font-medium text-gray-900">
-                                ` + comments.user_full_name + `
-                            </p>
-                            <p class="text-md text-gray-600">
-                                <time pubdate datetime="2022-02-08" title="February 8th, 2022">` + comments
-                        .created_at + `</time>
-                            </p>
-                        </div>
-                    </footer>
-                    <p class="text-gray-600">
-                   ` + comments
-                        .comment_text + `</p>
-                    ` + commentImaged + `
-                </article>
-                
-            `
-                })
-                commentSectionId.innerHTML = contents
-            }
-        }
+    if (response.responseContent.length > commentLimit) {
+      contents += `<button type ="button" onclick="showAllComments(`+idForum+`)">View All Comments</button>`;
+    }
+
+    commentSectionId.innerHTML = contents;
+  }
+  
+
+};
+
+const showAllComments = (idForum) => {
+  // Call the getcommentPerForum function again without a comment limit
+  // Pass the necessary ID as an argument
+  getcommentPerForum(idForum);
+};
     </script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     <script defer>
