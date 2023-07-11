@@ -600,7 +600,7 @@ addCommentForms.forEach((addComment) => {
     });
 
     if (response.responseContent.length > commentLimit) {
-      contents += `<button onclick="showAllComments()">View All Comments</button>`;
+      contents += `<button type ="button" onclick="showAllComments()">View All Comments</button>`;
     }
 
     commentSectionId.innerHTML = contents;
