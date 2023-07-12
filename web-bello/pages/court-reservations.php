@@ -411,19 +411,15 @@ const loadTable = async function(){
         let user = '<span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Inactive</span>'
 
         console.log(" "+users.image_url)
-        const img = new Image();
-
-        img.src = "user.image_url";
+      
         let imageContent = ''
-        img.onload = function() {
-            imageContent = `<a href="`+users.image_url+`" data-zoomable>
+       
+        
+            if (users.image_url.startsWith("https")) {
+                imageContent = `<a href="`+users.image_url+`" data-zoomable>
               <img class="h-10 w-16" src="`+users.image_url+`" alt="Receipt Image">
             </a>`
-        };
-        img.onerror = function() {
-            imageContent = ''
-        };
-       
+            }
 
         //change the badge color to active if active
         if(users.status === 'active'){
