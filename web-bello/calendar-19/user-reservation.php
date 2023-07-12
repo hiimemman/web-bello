@@ -101,7 +101,7 @@ require_once('../components/navbar.php')
         <input type="text" name="title" id="title" class="form-control" required>
       </div>
       <!-- <div class="form-group">
-        <label for="reserved_by">Name:</label>
+        <label for="reserved_by">Name: <?php //echo $result['Firstname']?></label>
         <input type="text" name="reserved_by" id="reserved_by" class="form-control" required>
       </div> -->
       <div class="form-group">
@@ -122,7 +122,7 @@ require_once('../components/navbar.php')
             </div>
 
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Schedule Event</button>
+        <button type="submit" class="btn btn-primary">Reserve</button>
       </div>
     </form>
   </div>
