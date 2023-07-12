@@ -410,9 +410,17 @@ const loadTable = async function(){
         //by default inactive
         let user = '<span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">Inactive</span>'
 
+        const imageContent = ''
+
         //change the badge color to active if active
         if(users.status === 'active'){
           user =  '<span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Active</span>'
+        }
+
+        if(user.image_url == ''){
+            imageContent = `<a href="`+users.image_url+`" data-zoomable>
+              <img class="h-10 w-16" src="`+users.image_url+`" alt="Receipt Image">
+            </a>`
         }
 
         content += `<tr class="border-b dark:border-gray-700">
@@ -424,9 +432,7 @@ const loadTable = async function(){
         <td class="px-4 py-3">`+users.end_date+`</td>
         <td class="px-4 py-3">
         <div class="flex-shrink-0 h-10 w-16">
-            <a href="`+users.image_url+`" data-zoomable>
-              <img class="h-10 w-16" src="`+users.image_url+`" alt="Receipt Image">
-            </a>
+           `+ imageContent+`
         </div>
         </td>
         <td class="px-4 py-3">`+user+`</td>
